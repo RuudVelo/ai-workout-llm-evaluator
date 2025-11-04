@@ -8,34 +8,61 @@
     "model_id": "gpt-4o",
     "display_name": "GPT-4o"
   },
-  "generated_at": "2025-11-03T15:44:25.636124",
+  "generated_at": "2025-11-04T11:07:26.096112",
   "generation_metadata": {
-    "latency_ms": 12183,
-    "tokens": {
-      "input": 1002,
-      "output": 855,
-      "total": 1857
+    "attempts": 3,
+    "total_latency_all_attempts": 38433,
+    "total_tokens_all_attempts": {
+      "input": 3006,
+      "output": 2849,
+      "total": 5855
     },
-    "cost": 0.009623,
-    "attempts": 1,
-    "total_cost_all_attempts": 0.009623,
+    "total_cost_all_attempts": 0.031339,
+    "total_input_cost_all_attempts": 0.006553,
+    "total_output_cost_all_attempts": 0.024786,
     "all_attempts": [
       {
         "attempt": 1,
-        "latency_ms": 12183,
+        "latency_ms": 12349,
         "tokens": {
           "input": 1002,
-          "output": 855,
-          "total": 1857
+          "output": 973,
+          "total": 1975
         },
-        "cost": 0.009623
+        "cost": 0.010649,
+        "input_cost": 0.002184,
+        "output_cost": 0.008465
+      },
+      {
+        "attempt": 2,
+        "latency_ms": 15766,
+        "tokens": {
+          "input": 1002,
+          "output": 942,
+          "total": 1944
+        },
+        "cost": 0.01038,
+        "input_cost": 0.002184,
+        "output_cost": 0.008195
+      },
+      {
+        "attempt": 3,
+        "latency_ms": 10318,
+        "tokens": {
+          "input": 1002,
+          "output": 934,
+          "total": 1936
+        },
+        "cost": 0.01031,
+        "input_cost": 0.002184,
+        "output_cost": 0.008126
       }
     ]
   },
   "workout": {
-    "name": "High-Intensity Interval Session",
-    "description": "This workout focuses on enhancing VO2 Max through repeated high-intensity intervals, beneficial for improving endurance and aerobic capacity.",
-    "workout_duration": 4500,
+    "name": "Intense VO2 Max Session",
+    "description": "This workout focuses on improving VO2 max with short, intense intervals followed by recovery periods. It starts with a warm-up and finishes with a cool-down, improving overall endurance and recovery.",
+    "workout_duration": 5400,
     "intervals": [
       {
         "segment_number": 1,
@@ -47,7 +74,7 @@
         "zone": 2,
         "perc_ftp": 60,
         "type": "warmup",
-        "notes": "Warm-up at 60% FTP."
+        "notes": "Warm-up at 60% of FTP to prepare for the workout."
       },
       {
         "segment_number": 2,
@@ -59,7 +86,7 @@
         "zone": 5,
         "perc_ftp": 120,
         "type": "interval",
-        "notes": "High-intensity interval at 120% FTP."
+        "notes": "Interval 1 at VO2 max effort."
       },
       {
         "segment_number": 3,
@@ -70,8 +97,8 @@
         "powerAdjustedDownward": 110,
         "zone": 1,
         "perc_ftp": 48,
-        "type": "rest",
-        "notes": "Recovery at 48% FTP."
+        "type": "recovery",
+        "notes": "Recovery after interval 1."
       },
       {
         "segment_number": 4,
@@ -83,7 +110,7 @@
         "zone": 5,
         "perc_ftp": 120,
         "type": "interval",
-        "notes": "High-intensity interval at 120% FTP."
+        "notes": "Interval 2 at VO2 max effort."
       },
       {
         "segment_number": 5,
@@ -94,8 +121,8 @@
         "powerAdjustedDownward": 110,
         "zone": 1,
         "perc_ftp": 48,
-        "type": "rest",
-        "notes": "Recovery at 48% FTP."
+        "type": "recovery",
+        "notes": "Recovery after interval 2."
       },
       {
         "segment_number": 6,
@@ -107,7 +134,7 @@
         "zone": 5,
         "perc_ftp": 120,
         "type": "interval",
-        "notes": "High-intensity interval at 120% FTP."
+        "notes": "Interval 3 at VO2 max effort."
       },
       {
         "segment_number": 7,
@@ -118,8 +145,8 @@
         "powerAdjustedDownward": 110,
         "zone": 1,
         "perc_ftp": 48,
-        "type": "rest",
-        "notes": "Recovery at 48% FTP."
+        "type": "recovery",
+        "notes": "Recovery after interval 3."
       },
       {
         "segment_number": 8,
@@ -131,7 +158,7 @@
         "zone": 5,
         "perc_ftp": 120,
         "type": "interval",
-        "notes": "High-intensity interval at 120% FTP."
+        "notes": "Interval 4 at VO2 max effort."
       },
       {
         "segment_number": 9,
@@ -142,8 +169,8 @@
         "powerAdjustedDownward": 110,
         "zone": 1,
         "perc_ftp": 48,
-        "type": "rest",
-        "notes": "Recovery at 48% FTP."
+        "type": "recovery",
+        "notes": "Recovery after interval 4."
       },
       {
         "segment_number": 10,
@@ -155,7 +182,7 @@
         "zone": 5,
         "perc_ftp": 120,
         "type": "interval",
-        "notes": "High-intensity interval at 120% FTP."
+        "notes": "Interval 5 at VO2 max effort."
       },
       {
         "segment_number": 11,
@@ -166,8 +193,8 @@
         "powerAdjustedDownward": 110,
         "zone": 1,
         "perc_ftp": 48,
-        "type": "rest",
-        "notes": "Recovery at 48% FTP."
+        "type": "recovery",
+        "notes": "Recovery after interval 5."
       },
       {
         "segment_number": 12,
@@ -179,26 +206,38 @@
         "zone": 5,
         "perc_ftp": 120,
         "type": "interval",
-        "notes": "High-intensity interval at 120% FTP."
+        "notes": "Interval 6 at VO2 max effort."
       },
       {
         "segment_number": 13,
         "startTimeSeconds": 3300,
-        "endTimeSeconds": 4500,
+        "endTimeSeconds": 3480,
+        "power": 120,
+        "powerAdjustedUpward": 130,
+        "powerAdjustedDownward": 110,
+        "zone": 1,
+        "perc_ftp": 48,
+        "type": "recovery",
+        "notes": "Recovery after interval 6."
+      },
+      {
+        "segment_number": 14,
+        "startTimeSeconds": 3480,
+        "endTimeSeconds": 4680,
         "power": 138,
         "powerAdjustedUpward": 148,
         "powerAdjustedDownward": 128,
         "zone": 1,
         "perc_ftp": 55,
         "type": "cooldown",
-        "notes": "Cool down in Zone 1."
+        "notes": "Cool down in Zone 1 to aid recovery."
       }
     ]
   },
   "validation_results": {
-    "overall_score": "8/8",
-    "pass_rate": 100.0,
-    "all_passed": true,
+    "overall_score": "7/8",
+    "pass_rate": 87.5,
+    "all_passed": false,
     "metrics": [
       {
         "metric": "schema_validation",
@@ -212,10 +251,10 @@
       },
       {
         "metric": "duration_consistency",
-        "passed": true,
-        "declared_duration": 4500,
-        "calculated_duration": 4500,
-        "difference": 0
+        "passed": false,
+        "declared_duration": 5400,
+        "calculated_duration": 4680,
+        "difference": 720
       },
       {
         "metric": "time_continuity",
@@ -244,5 +283,6 @@
         "invalid_types": []
       }
     ]
-  }
+  },
+  "validation_passed": false
 }

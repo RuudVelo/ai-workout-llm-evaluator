@@ -8,54 +8,49 @@
     "model_id": "gpt-4o",
     "display_name": "GPT-4o"
   },
-  "generated_at": "2025-11-03T15:44:13.433889",
+  "generated_at": "2025-11-04T11:06:47.592624",
   "generation_metadata": {
-    "latency_ms": 20723,
-    "tokens": {
-      "input": 1016,
-      "output": 1283,
-      "total": 2299
+    "attempts": 2,
+    "total_latency_all_attempts": 40231,
+    "total_tokens_all_attempts": {
+      "input": 2032,
+      "output": 2531,
+      "total": 4563
     },
-    "cost": 0.013377,
-    "attempts": 3,
-    "total_cost_all_attempts": 0.0394,
+    "total_cost_all_attempts": 0.026449,
+    "total_input_cost_all_attempts": 0.00443,
+    "total_output_cost_all_attempts": 0.02202,
     "all_attempts": [
       {
         "attempt": 1,
-        "latency_ms": 11309,
+        "latency_ms": 19483,
         "tokens": {
           "input": 1016,
-          "output": 1297,
-          "total": 2313
+          "output": 1226,
+          "total": 2242
         },
-        "cost": 0.013499
+        "cost": 0.012881,
+        "input_cost": 0.002215,
+        "output_cost": 0.010666
       },
       {
         "attempt": 2,
-        "latency_ms": 19731,
+        "latency_ms": 20748,
         "tokens": {
           "input": 1016,
-          "output": 1185,
-          "total": 2201
+          "output": 1305,
+          "total": 2321
         },
-        "cost": 0.012524
-      },
-      {
-        "attempt": 3,
-        "latency_ms": 20723,
-        "tokens": {
-          "input": 1016,
-          "output": 1283,
-          "total": 2299
-        },
-        "cost": 0.013377
+        "cost": 0.013568,
+        "input_cost": 0.002215,
+        "output_cost": 0.011353
       }
     ]
   },
   "workout": {
-    "name": "FTP Builder with Sprints",
-    "description": "A structured workout targeting FTP improvement followed by short sprints to boost high-intensity power.",
-    "workout_duration": 5100,
+    "name": "Zwift Endurance & Sprint Session",
+    "description": "This workout focuses on improving endurance and sprint power. It starts with a warmup ramp, followed by three intervals at a high endurance pace, quick power sprints, and concludes with a cooldown.",
+    "workout_duration": 4800,
     "intervals": [
       {
         "segment_number": 1,
@@ -67,7 +62,7 @@
         "zone": 2,
         "perc_ftp": 60,
         "type": "warmup",
-        "notes": "Start warmup ramp at 60% FTP."
+        "notes": "Warmup ramp - starting at 60% FTP."
       },
       {
         "segment_number": 2,
@@ -79,7 +74,7 @@
         "zone": 2,
         "perc_ftp": 65,
         "type": "warmup",
-        "notes": "Gradually increase to 65% FTP."
+        "notes": "Warmup ramp - 65% FTP."
       },
       {
         "segment_number": 3,
@@ -88,10 +83,10 @@
         "power": 175,
         "powerAdjustedUpward": 185,
         "powerAdjustedDownward": 165,
-        "zone": 3,
+        "zone": 2,
         "perc_ftp": 70,
         "type": "warmup",
-        "notes": "Ramp to 70% FTP."
+        "notes": "Warmup ramp - 70% FTP."
       },
       {
         "segment_number": 4,
@@ -103,7 +98,7 @@
         "zone": 2,
         "perc_ftp": 75,
         "type": "warmup",
-        "notes": "Increase to 75% FTP."
+        "notes": "Warmup ramp - 75% FTP."
       },
       {
         "segment_number": 5,
@@ -115,7 +110,7 @@
         "zone": 3,
         "perc_ftp": 80,
         "type": "warmup",
-        "notes": "End warmup ramp at 80% FTP."
+        "notes": "Warmup ramp - finishing at 80% FTP."
       },
       {
         "segment_number": 6,
@@ -127,7 +122,7 @@
         "zone": 3,
         "perc_ftp": 95,
         "type": "interval",
-        "notes": "First 12-minute interval at 95% FTP."
+        "notes": "Interval at 95% FTP to build endurance."
       },
       {
         "segment_number": 7,
@@ -139,7 +134,7 @@
         "zone": 1,
         "perc_ftp": 50,
         "type": "recovery",
-        "notes": "5-minute recovery."
+        "notes": "Recovery between intervals."
       },
       {
         "segment_number": 8,
@@ -151,7 +146,7 @@
         "zone": 3,
         "perc_ftp": 95,
         "type": "interval",
-        "notes": "Second 12-minute interval at 95% FTP."
+        "notes": "Interval at 95% FTP to build endurance."
       },
       {
         "segment_number": 9,
@@ -163,7 +158,7 @@
         "zone": 1,
         "perc_ftp": 50,
         "type": "recovery",
-        "notes": "5-minute recovery."
+        "notes": "Recovery between intervals."
       },
       {
         "segment_number": 10,
@@ -175,7 +170,7 @@
         "zone": 3,
         "perc_ftp": 95,
         "type": "interval",
-        "notes": "Third 12-minute interval at 95% FTP."
+        "notes": "Interval at 95% FTP to build endurance."
       },
       {
         "segment_number": 11,
@@ -187,7 +182,7 @@
         "zone": 1,
         "perc_ftp": 50,
         "type": "recovery",
-        "notes": "5-minute recovery before sprints."
+        "notes": "Recovery before sprints."
       },
       {
         "segment_number": 12,
@@ -199,7 +194,7 @@
         "zone": 6,
         "perc_ftp": 150,
         "type": "interval",
-        "notes": "First 30-second sprint at 150% FTP."
+        "notes": "Sprint at 150% FTP for explosive power."
       },
       {
         "segment_number": 13,
@@ -211,7 +206,7 @@
         "zone": 1,
         "perc_ftp": 50,
         "type": "recovery",
-        "notes": "30-second recovery."
+        "notes": "Recovery between sprints."
       },
       {
         "segment_number": 14,
@@ -223,7 +218,7 @@
         "zone": 6,
         "perc_ftp": 150,
         "type": "interval",
-        "notes": "Second 30-second sprint at 150% FTP."
+        "notes": "Sprint at 150% FTP for explosive power."
       },
       {
         "segment_number": 15,
@@ -235,7 +230,7 @@
         "zone": 1,
         "perc_ftp": 50,
         "type": "recovery",
-        "notes": "30-second recovery."
+        "notes": "Recovery between sprints."
       },
       {
         "segment_number": 16,
@@ -247,7 +242,7 @@
         "zone": 6,
         "perc_ftp": 150,
         "type": "interval",
-        "notes": "Third 30-second sprint at 150% FTP."
+        "notes": "Sprint at 150% FTP for explosive power."
       },
       {
         "segment_number": 17,
@@ -259,7 +254,7 @@
         "zone": 1,
         "perc_ftp": 50,
         "type": "recovery",
-        "notes": "30-second recovery."
+        "notes": "Recovery between sprints."
       },
       {
         "segment_number": 18,
@@ -271,38 +266,38 @@
         "zone": 6,
         "perc_ftp": 150,
         "type": "interval",
-        "notes": "Fourth 30-second sprint at 150% FTP."
+        "notes": "Sprint at 150% FTP for explosive power."
       },
       {
         "segment_number": 19,
         "startTimeSeconds": 3570,
-        "endTimeSeconds": 3600,
+        "endTimeSeconds": 3870,
         "power": 125,
         "powerAdjustedUpward": 135,
         "powerAdjustedDownward": 115,
         "zone": 1,
         "perc_ftp": 50,
         "type": "recovery",
-        "notes": "30-second recovery."
+        "notes": "Recovery after sprints."
       },
       {
         "segment_number": 20,
-        "startTimeSeconds": 3600,
-        "endTimeSeconds": 3900,
+        "startTimeSeconds": 3870,
+        "endTimeSeconds": 4800,
         "power": 125,
         "powerAdjustedUpward": 135,
         "powerAdjustedDownward": 115,
         "zone": 1,
         "perc_ftp": 50,
         "type": "cooldown",
-        "notes": "5-minute cooldown at 50% FTP."
+        "notes": "Cool down to finish the workout."
       }
     ]
   },
   "validation_results": {
-    "overall_score": "6/8",
-    "pass_rate": 75.0,
-    "all_passed": false,
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
     "metrics": [
       {
         "metric": "schema_validation",
@@ -316,10 +311,10 @@
       },
       {
         "metric": "duration_consistency",
-        "passed": false,
-        "declared_duration": 5100,
-        "calculated_duration": 3900,
-        "difference": 1200
+        "passed": true,
+        "declared_duration": 4800,
+        "calculated_duration": 4800,
+        "difference": 0
       },
       {
         "metric": "time_continuity",
@@ -329,15 +324,8 @@
       },
       {
         "metric": "power_zone_accuracy",
-        "passed": false,
-        "mismatches": [
-          {
-            "segment_number": 3,
-            "power": 175,
-            "declared_zone": 3,
-            "actual_zone": 2
-          }
-        ]
+        "passed": true,
+        "mismatches": []
       },
       {
         "metric": "ftp_percentage_accuracy",
@@ -355,5 +343,6 @@
         "invalid_types": []
       }
     ]
-  }
+  },
+  "validation_passed": true
 }

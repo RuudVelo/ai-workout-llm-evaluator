@@ -8,34 +8,37 @@
     "model_id": "gpt-4o",
     "display_name": "GPT-4o"
   },
-  "generated_at": "2025-11-03T15:48:45.715772",
+  "generated_at": "2025-11-04T11:11:24.742629",
   "generation_metadata": {
-    "latency_ms": 15618,
-    "tokens": {
-      "input": 1037,
-      "output": 989,
-      "total": 2026
-    },
-    "cost": 0.010865,
     "attempts": 1,
-    "total_cost_all_attempts": 0.010865,
+    "total_latency_all_attempts": 11729,
+    "total_tokens_all_attempts": {
+      "input": 1037,
+      "output": 986,
+      "total": 2023
+    },
+    "total_cost_all_attempts": 0.010839,
+    "total_input_cost_all_attempts": 0.002261,
+    "total_output_cost_all_attempts": 0.008578,
     "all_attempts": [
       {
         "attempt": 1,
-        "latency_ms": 15618,
+        "latency_ms": 11729,
         "tokens": {
           "input": 1037,
-          "output": 989,
-          "total": 2026
+          "output": 986,
+          "total": 2023
         },
-        "cost": 0.010865
+        "cost": 0.010839,
+        "input_cost": 0.002261,
+        "output_cost": 0.008578
       }
     ]
   },
   "workout": {
-    "name": "High Torque Intervals",
-    "description": "A workout designed to improve muscular strength with high torque intervals and efficient recovery segments. Starts and ends with a steady warmup and cooldown.",
-    "workout_duration": 4980,
+    "name": "High Torque Session",
+    "description": "A workout focusing on high torque intervals to build muscular strength, interspersed with active recovery periods. Includes warm-up and cool-down segments.",
+    "workout_duration": 5640,
     "intervals": [
       {
         "segment_number": 1,
@@ -47,7 +50,7 @@
         "zone": 2,
         "perc_ftp": 60,
         "type": "warmup",
-        "notes": "Warmup at 60% FTP with a cadence between 90-100rpm."
+        "notes": "Warm up at 60% FTP, maintain 90-100 rpm."
       },
       {
         "segment_number": 2,
@@ -196,14 +199,14 @@
       {
         "segment_number": 14,
         "startTimeSeconds": 4440,
-        "endTimeSeconds": 4980,
+        "endTimeSeconds": 5640,
         "power": 150,
         "powerAdjustedUpward": 160,
         "powerAdjustedDownward": 140,
         "zone": 2,
         "perc_ftp": 60,
         "type": "cooldown",
-        "notes": "Cooldown at 60% FTP with a cadence between 90-100rpm."
+        "notes": "Cool down at 60% FTP, maintain 90-100 rpm."
       }
     ]
   },
@@ -225,8 +228,8 @@
       {
         "metric": "duration_consistency",
         "passed": true,
-        "declared_duration": 4980,
-        "calculated_duration": 4980,
+        "declared_duration": 5640,
+        "calculated_duration": 5640,
         "difference": 0
       },
       {
@@ -256,5 +259,6 @@
         "invalid_types": []
       }
     ]
-  }
+  },
+  "validation_passed": true
 }

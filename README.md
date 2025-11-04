@@ -88,7 +88,8 @@ poetry run python src/evaluator.py results/run_<timestamp>
 ```
 
 The framework will:
-- Generate workouts from 19 test prompts across all configured models
+- Generate workouts from 19 test prompts across all configured models (except the ground truth reference model)
+- Automatically skip the ground truth model to avoid duplicate generation and costs
 - Track tokens, cost, and latency for each generation
 - Validate structural correctness (schema, zones, timing)
 - Compare against ground truth for semantic similarity
@@ -141,6 +142,8 @@ generation:
 ```
 
 **Tip**: Use your best-performing model (e.g., GPT-4o, Gemini 1.5 Pro) as the reference model to establish high-quality baselines.
+
+**Important**: The reference model specified here will be **automatically excluded** from evaluation runs to prevent duplicate generation and unnecessary costs. The ground truth outputs are already generated via `ground_truth_generator.py`, so running the model again during evaluation would be redundant.
 
 ## Usage
 
@@ -237,13 +240,22 @@ This generates an `evaluation_report.json` with:
   },
   "ftp": 250,
   "timestamp": "2025-11-03T14:30:00",
-  "latency_ms": 1234,
-  "tokens": {
+  "attempts": 1,
+  "total_latency_all_attempts": 1234,
+  "total_tokens_all_attempts": {
     "input": 450,
     "output": 320,
     "total": 770
   },
-  "cost_usd": 0.000259,
+  "total_cost_all_attempts": 0.000259,
+  "all_attempts": [
+    {
+      "attempt": 1,
+      "latency_ms": 1234,
+      "tokens": {"input": 450, "output": 320, "total": 770},
+      "cost": 0.000259
+    }
+  ],
   "response": {
     "parsed_json": { /* workout object */ },
     "parse_error": null

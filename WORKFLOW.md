@@ -197,13 +197,22 @@ Report saved to: results/run_20251103_143000/evaluation_report.json
     "model_id": "gpt-4o-mini",
     "display_name": "GPT-4o Mini"
   },
-  "latency_ms": 1234,
-  "tokens": {
+  "attempts": 1,
+  "total_latency_all_attempts": 1234,
+  "total_tokens_all_attempts": {
     "input": 450,
     "output": 320,
     "total": 770
   },
-  "cost_usd": 0.000259,
+  "total_cost_all_attempts": 0.000259,
+  "all_attempts": [
+    {
+      "attempt": 1,
+      "latency_ms": 1234,
+      "tokens": {"input": 450, "output": 320, "total": 770},
+      "cost": 0.000259
+    }
+  ],
   "response": {
     "parsed_json": { /* the generated workout */ }
   },

@@ -8,94 +8,73 @@
     "model_id": "gpt-4o",
     "display_name": "GPT-4o"
   },
-  "generated_at": "2025-11-03T15:42:43.237046",
+  "generated_at": "2025-11-04T11:05:35.607130",
   "generation_metadata": {
-    "latency_ms": 13807,
-    "tokens": {
-      "input": 990,
-      "output": 386,
-      "total": 1376
-    },
-    "cost": 0.005516,
     "attempts": 1,
-    "total_cost_all_attempts": 0.005516,
+    "total_latency_all_attempts": 4115,
+    "total_tokens_all_attempts": {
+      "input": 990,
+      "output": 236,
+      "total": 1226
+    },
+    "total_cost_all_attempts": 0.004211,
+    "total_input_cost_all_attempts": 0.002158,
+    "total_output_cost_all_attempts": 0.002053,
     "all_attempts": [
       {
         "attempt": 1,
-        "latency_ms": 13807,
+        "latency_ms": 4115,
         "tokens": {
           "input": 990,
-          "output": 386,
-          "total": 1376
+          "output": 236,
+          "total": 1226
         },
-        "cost": 0.005516
+        "cost": 0.004211,
+        "input_cost": 0.002158,
+        "output_cost": 0.002053
       }
     ]
   },
   "workout": {
-    "name": "Tempo and Climb Ride",
-    "description": "A structured two-hour ride with a steady tempo pace for the first hour followed by moderate climbing efforts in the second hour, staying below threshold to build endurance and strength.",
+    "name": "Steady Tempo and Climbing",
+    "description": "This workout focuses on building endurance with a steady tempo ride followed by moderate climbing, staying below threshold to improve climbing efficiency.",
     "workout_duration": 7200,
     "intervals": [
       {
         "segment_number": 1,
         "startTimeSeconds": 0,
         "endTimeSeconds": 3600,
-        "power": 200,
-        "powerAdjustedUpward": 210,
-        "powerAdjustedDownward": 190,
+        "power": 210,
+        "powerAdjustedUpward": 220,
+        "powerAdjustedDownward": 200,
         "zone": 3,
-        "perc_ftp": 80,
+        "perc_ftp": 84,
         "type": "interval",
-        "notes": "Steady tempo riding at 80% FTP to build endurance."
+        "notes": "Steady tempo ride for endurance building."
       },
       {
         "segment_number": 2,
         "startTimeSeconds": 3600,
-        "endTimeSeconds": 4500,
-        "power": 220,
-        "powerAdjustedUpward": 230,
-        "powerAdjustedDownward": 210,
+        "endTimeSeconds": 5400,
+        "power": 230,
+        "powerAdjustedUpward": 240,
+        "powerAdjustedDownward": 220,
         "zone": 3,
-        "perc_ftp": 88,
+        "perc_ftp": 92,
         "type": "interval",
-        "notes": "Moderate climbing effort with a focus on sustaining power below threshold."
+        "notes": "Moderate climbing effort, staying below threshold."
       },
       {
         "segment_number": 3,
-        "startTimeSeconds": 4500,
-        "endTimeSeconds": 5400,
-        "power": 220,
-        "powerAdjustedUpward": 230,
-        "powerAdjustedDownward": 210,
-        "zone": 3,
-        "perc_ftp": 88,
-        "type": "interval",
-        "notes": "Continue moderate climb, maintaining consistent power below threshold."
-      },
-      {
-        "segment_number": 4,
         "startTimeSeconds": 5400,
-        "endTimeSeconds": 6300,
-        "power": 220,
-        "powerAdjustedUpward": 230,
-        "powerAdjustedDownward": 210,
-        "zone": 3,
-        "perc_ftp": 88,
-        "type": "interval",
-        "notes": "Moderate climbing to sustain effort with good form."
-      },
-      {
-        "segment_number": 5,
-        "startTimeSeconds": 6300,
         "endTimeSeconds": 7200,
-        "power": 220,
-        "powerAdjustedUpward": 230,
-        "powerAdjustedDownward": 210,
+        "power": 230,
+        "powerAdjustedUpward": 240,
+        "powerAdjustedDownward": 220,
         "zone": 3,
-        "perc_ftp": 88,
+        "perc_ftp": 92,
         "type": "interval",
-        "notes": "Final moderate climbing interval to end the workout, focusing on smooth power delivery."
+        "notes": "Continue moderate climbing effort, maintaining below threshold power."
       }
     ]
   },
@@ -148,5 +127,6 @@
         "invalid_types": []
       }
     ]
-  }
+  },
+  "validation_passed": true
 }

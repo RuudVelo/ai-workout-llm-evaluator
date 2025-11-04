@@ -8,54 +8,49 @@
     "model_id": "gpt-4o",
     "display_name": "GPT-4o"
   },
-  "generated_at": "2025-11-03T15:45:34.882996",
+  "generated_at": "2025-11-04T11:08:50.598934",
   "generation_metadata": {
-    "latency_ms": 10977,
-    "tokens": {
-      "input": 1011,
-      "output": 666,
-      "total": 1677
+    "attempts": 2,
+    "total_latency_all_attempts": 20151,
+    "total_tokens_all_attempts": {
+      "input": 2022,
+      "output": 1304,
+      "total": 3326
     },
-    "cost": 0.007998,
-    "attempts": 3,
-    "total_cost_all_attempts": 0.026013,
+    "total_cost_all_attempts": 0.015753,
+    "total_input_cost_all_attempts": 0.004408,
+    "total_output_cost_all_attempts": 0.011345,
     "all_attempts": [
       {
         "attempt": 1,
-        "latency_ms": 9908,
+        "latency_ms": 11005,
         "tokens": {
           "input": 1011,
-          "output": 633,
-          "total": 1644
+          "output": 685,
+          "total": 1696
         },
-        "cost": 0.007711
+        "cost": 0.008163,
+        "input_cost": 0.002204,
+        "output_cost": 0.005959
       },
       {
         "attempt": 2,
-        "latency_ms": 23735,
+        "latency_ms": 9146,
         "tokens": {
           "input": 1011,
-          "output": 931,
-          "total": 1942
+          "output": 619,
+          "total": 1630
         },
-        "cost": 0.010304
-      },
-      {
-        "attempt": 3,
-        "latency_ms": 10977,
-        "tokens": {
-          "input": 1011,
-          "output": 666,
-          "total": 1677
-        },
-        "cost": 0.007998
+        "cost": 0.007589,
+        "input_cost": 0.002204,
+        "output_cost": 0.005385
       }
     ]
   },
   "workout": {
-    "name": "Structured Interval Workout",
-    "description": "A workout designed to gradually increase intensity, focusing on endurance and threshold improvement, followed by an easy cool down.",
-    "workout_duration": 5400,
+    "name": "Progressive Intervals and Easy Endurance",
+    "description": "This workout includes a warmup, a main interval set that ramps from tempo to threshold power, followed by an easy cooldown to improve overall endurance and threshold power.",
+    "workout_duration": 4500,
     "intervals": [
       {
         "segment_number": 1,
@@ -67,7 +62,7 @@
         "zone": 2,
         "perc_ftp": 60,
         "type": "warmup",
-        "notes": "Warm-up at 60% of FTP."
+        "notes": "Gradual warmup starting from 60% of FTP."
       },
       {
         "segment_number": 2,
@@ -79,67 +74,67 @@
         "zone": 3,
         "perc_ftp": 85,
         "type": "interval",
-        "notes": "First interval, start at 85% FTP."
+        "notes": "Interval 1 starting at 85% of FTP."
       },
       {
         "segment_number": 3,
         "startTimeSeconds": 1200,
         "endTimeSeconds": 1380,
-        "power": 100,
-        "powerAdjustedUpward": 110,
-        "powerAdjustedDownward": 90,
+        "power": 130,
+        "powerAdjustedUpward": 140,
+        "powerAdjustedDownward": 120,
         "zone": 1,
-        "perc_ftp": 40,
+        "perc_ftp": 52,
         "type": "recovery",
-        "notes": "Recovery at Zone 1."
+        "notes": "Recovery period between intervals."
       },
       {
         "segment_number": 4,
         "startTimeSeconds": 1380,
         "endTimeSeconds": 1980,
-        "power": 219,
-        "powerAdjustedUpward": 229,
-        "powerAdjustedDownward": 209,
-        "zone": 3,
-        "perc_ftp": 88,
-        "type": "interval",
-        "notes": "Second interval, increase to 88% FTP."
-      },
-      {
-        "segment_number": 5,
-        "startTimeSeconds": 1980,
-        "endTimeSeconds": 2160,
-        "power": 100,
-        "powerAdjustedUpward": 110,
-        "powerAdjustedDownward": 90,
-        "zone": 1,
-        "perc_ftp": 40,
-        "type": "recovery",
-        "notes": "Recovery at Zone 1."
-      },
-      {
-        "segment_number": 6,
-        "startTimeSeconds": 2160,
-        "endTimeSeconds": 2760,
         "power": 225,
         "powerAdjustedUpward": 235,
         "powerAdjustedDownward": 215,
         "zone": 3,
         "perc_ftp": 90,
         "type": "interval",
-        "notes": "Third interval, increase to 90% FTP."
+        "notes": "Interval 2 at 90% of FTP."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 1980,
+        "endTimeSeconds": 2160,
+        "power": 130,
+        "powerAdjustedUpward": 140,
+        "powerAdjustedDownward": 120,
+        "zone": 1,
+        "perc_ftp": 52,
+        "type": "recovery",
+        "notes": "Recovery period between intervals."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 2160,
+        "endTimeSeconds": 2760,
+        "power": 238,
+        "powerAdjustedUpward": 248,
+        "powerAdjustedDownward": 228,
+        "zone": 3,
+        "perc_ftp": 95,
+        "type": "interval",
+        "notes": "Interval 3 at 95% of FTP."
       },
       {
         "segment_number": 7,
         "startTimeSeconds": 2760,
         "endTimeSeconds": 2940,
-        "power": 100,
-        "powerAdjustedUpward": 110,
-        "powerAdjustedDownward": 90,
+        "power": 130,
+        "powerAdjustedUpward": 140,
+        "powerAdjustedDownward": 120,
         "zone": 1,
-        "perc_ftp": 40,
+        "perc_ftp": 52,
         "type": "recovery",
-        "notes": "Recovery at Zone 1."
+        "notes": "Recovery period between intervals."
       },
       {
         "segment_number": 8,
@@ -151,38 +146,26 @@
         "zone": 4,
         "perc_ftp": 100,
         "type": "interval",
-        "notes": "Fourth interval, ramp up to 100% FTP."
+        "notes": "Interval 4 at 100% of FTP."
       },
       {
         "segment_number": 9,
         "startTimeSeconds": 3540,
-        "endTimeSeconds": 3720,
-        "power": 100,
-        "powerAdjustedUpward": 110,
-        "powerAdjustedDownward": 90,
-        "zone": 1,
-        "perc_ftp": 40,
-        "type": "recovery",
-        "notes": "Recovery at Zone 1."
-      },
-      {
-        "segment_number": 10,
-        "startTimeSeconds": 3720,
-        "endTimeSeconds": 4620,
+        "endTimeSeconds": 4500,
         "power": 150,
         "powerAdjustedUpward": 160,
         "powerAdjustedDownward": 140,
         "zone": 2,
         "perc_ftp": 60,
         "type": "cooldown",
-        "notes": "Easy spinning to cool down."
+        "notes": "Easy spinning to finish."
       }
     ]
   },
   "validation_results": {
-    "overall_score": "7/8",
-    "pass_rate": 87.5,
-    "all_passed": false,
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
     "metrics": [
       {
         "metric": "schema_validation",
@@ -196,10 +179,10 @@
       },
       {
         "metric": "duration_consistency",
-        "passed": false,
-        "declared_duration": 5400,
-        "calculated_duration": 4620,
-        "difference": 780
+        "passed": true,
+        "declared_duration": 4500,
+        "calculated_duration": 4500,
+        "difference": 0
       },
       {
         "metric": "time_continuity",
@@ -228,5 +211,6 @@
         "invalid_types": []
       }
     ]
-  }
+  },
+  "validation_passed": true
 }

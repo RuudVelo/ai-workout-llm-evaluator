@@ -8,54 +8,61 @@
     "model_id": "gpt-4o",
     "display_name": "GPT-4o"
   },
-  "generated_at": "2025-11-03T15:49:51.037398",
+  "generated_at": "2025-11-04T11:12:06.057466",
   "generation_metadata": {
-    "latency_ms": 18412,
-    "tokens": {
-      "input": 1052,
-      "output": 1218,
-      "total": 2270
-    },
-    "cost": 0.01289,
     "attempts": 3,
-    "total_cost_all_attempts": 0.037791,
+    "total_latency_all_attempts": 41255,
+    "total_tokens_all_attempts": {
+      "input": 3156,
+      "output": 2471,
+      "total": 5627
+    },
+    "total_cost_all_attempts": 0.028378,
+    "total_input_cost_all_attempts": 0.00688,
+    "total_output_cost_all_attempts": 0.021498,
     "all_attempts": [
       {
         "attempt": 1,
-        "latency_ms": 20168,
+        "latency_ms": 14570,
         "tokens": {
           "input": 1052,
-          "output": 1170,
-          "total": 2222
+          "output": 672,
+          "total": 1724
         },
-        "cost": 0.012472
+        "cost": 0.00814,
+        "input_cost": 0.002293,
+        "output_cost": 0.005846
       },
       {
         "attempt": 2,
-        "latency_ms": 26690,
+        "latency_ms": 9505,
         "tokens": {
           "input": 1052,
-          "output": 1165,
-          "total": 2217
+          "output": 656,
+          "total": 1708
         },
-        "cost": 0.012429
+        "cost": 0.008001,
+        "input_cost": 0.002293,
+        "output_cost": 0.005707
       },
       {
         "attempt": 3,
-        "latency_ms": 18412,
+        "latency_ms": 17180,
         "tokens": {
           "input": 1052,
-          "output": 1218,
-          "total": 2270
+          "output": 1143,
+          "total": 2195
         },
-        "cost": 0.01289
+        "cost": 0.012237,
+        "input_cost": 0.002293,
+        "output_cost": 0.009944
       }
     ]
   },
   "workout": {
-    "name": "Mixed Interval Session",
-    "description": "This workout combines ramp-up warmup, short high-intensity intervals, and a cooldown. It improves aerobic capacity, strengthens cardiovascular function, and enhances recovery ability.",
-    "workout_duration": 3960,
+    "name": "Structured FTP Climbs",
+    "description": "This workout focuses on gradually ramping up efforts and includes high-intensity sprints followed by recovery. It aids in improving power output, endurance, and recovery under varied conditions.",
+    "workout_duration": 3840,
     "intervals": [
       {
         "segment_number": 1,
@@ -67,7 +74,7 @@
         "zone": 2,
         "perc_ftp": 60,
         "type": "warmup",
-        "notes": "Ramp up from 30% to 70% FTP over 5 minutes."
+        "notes": "Warmup ramp from 60% FTP"
       },
       {
         "segment_number": 2,
@@ -79,7 +86,7 @@
         "zone": 2,
         "perc_ftp": 65,
         "type": "warmup",
-        "notes": "Ramp up from 30% to 70% FTP over 5 minutes."
+        "notes": "Warmup ramp to 65% FTP"
       },
       {
         "segment_number": 3,
@@ -88,10 +95,10 @@
         "power": 175,
         "powerAdjustedUpward": 185,
         "powerAdjustedDownward": 165,
-        "zone": 3,
+        "zone": 2,
         "perc_ftp": 70,
         "type": "warmup",
-        "notes": "Ramp up from 30% to 70% FTP over 5 minutes."
+        "notes": "Warmup ramp to 70% FTP"
       },
       {
         "segment_number": 4,
@@ -103,7 +110,7 @@
         "zone": 3,
         "perc_ftp": 75,
         "type": "warmup",
-        "notes": "Ramp up from 30% to 70% FTP over 5 minutes."
+        "notes": "Warmup ramp to 75% FTP"
       },
       {
         "segment_number": 5,
@@ -115,7 +122,7 @@
         "zone": 3,
         "perc_ftp": 80,
         "type": "warmup",
-        "notes": "Ramp up from 30% to 70% FTP over 5 minutes."
+        "notes": "Warmup ramp to 80% FTP"
       },
       {
         "segment_number": 6,
@@ -127,7 +134,7 @@
         "zone": 3,
         "perc_ftp": 80,
         "type": "interval",
-        "notes": "20 seconds at 80% FTP."
+        "notes": "Short interval at 80% FTP"
       },
       {
         "segment_number": 7,
@@ -139,7 +146,7 @@
         "zone": 4,
         "perc_ftp": 100,
         "type": "interval",
-        "notes": "20 seconds at 100% FTP."
+        "notes": "Short interval at 100% FTP"
       },
       {
         "segment_number": 8,
@@ -151,7 +158,7 @@
         "zone": 5,
         "perc_ftp": 120,
         "type": "interval",
-        "notes": "20 seconds at 120% FTP."
+        "notes": "Short interval at 120% FTP"
       },
       {
         "segment_number": 9,
@@ -163,7 +170,7 @@
         "zone": 1,
         "perc_ftp": 50,
         "type": "recovery",
-        "notes": "3 minutes at 50% FTP."
+        "notes": "Recovery at 50% FTP"
       },
       {
         "segment_number": 10,
@@ -175,7 +182,7 @@
         "zone": 4,
         "perc_ftp": 110,
         "type": "interval",
-        "notes": "3 minutes at 110% FTP."
+        "notes": "Sustained interval at 110% FTP"
       },
       {
         "segment_number": 11,
@@ -187,7 +194,7 @@
         "zone": 5,
         "perc_ftp": 120,
         "type": "interval",
-        "notes": "2 minutes at 120% FTP."
+        "notes": "Sustained interval at 120% FTP"
       },
       {
         "segment_number": 12,
@@ -199,7 +206,7 @@
         "zone": 1,
         "perc_ftp": 50,
         "type": "recovery",
-        "notes": "6 minutes at 50% FTP."
+        "notes": "Extended recovery at 50% FTP"
       },
       {
         "segment_number": 13,
@@ -210,8 +217,8 @@
         "powerAdjustedDownward": 0,
         "zone": 1,
         "perc_ftp": 0,
-        "type": "active",
-        "notes": "20 minutes free ride at any comfortable pace."
+        "type": "other",
+        "notes": "Free ride session"
       },
       {
         "segment_number": 14,
@@ -223,61 +230,61 @@
         "zone": 1,
         "perc_ftp": 50,
         "type": "cooldown",
-        "notes": "5 minute cooldown starting at 50% FTP reducing to 30%."
+        "notes": "Cooldown ramp from 50% FTP"
       },
       {
         "segment_number": 15,
         "startTimeSeconds": 2700,
-        "endTimeSeconds": 2760,
+        "endTimeSeconds": 3000,
         "power": 113,
         "powerAdjustedUpward": 123,
         "powerAdjustedDownward": 103,
         "zone": 1,
         "perc_ftp": 45,
         "type": "cooldown",
-        "notes": "Reduce from 50% to 30% FTP."
+        "notes": "Cooldown ramp to 45% FTP"
       },
       {
         "segment_number": 16,
-        "startTimeSeconds": 2760,
-        "endTimeSeconds": 2820,
+        "startTimeSeconds": 3000,
+        "endTimeSeconds": 3300,
         "power": 100,
         "powerAdjustedUpward": 110,
         "powerAdjustedDownward": 90,
         "zone": 1,
         "perc_ftp": 40,
         "type": "cooldown",
-        "notes": "Reduce from 50% to 30% FTP."
+        "notes": "Cooldown ramp to 40% FTP"
       },
       {
         "segment_number": 17,
-        "startTimeSeconds": 2820,
-        "endTimeSeconds": 2880,
+        "startTimeSeconds": 3300,
+        "endTimeSeconds": 3600,
         "power": 88,
         "powerAdjustedUpward": 98,
         "powerAdjustedDownward": 78,
         "zone": 1,
         "perc_ftp": 35,
         "type": "cooldown",
-        "notes": "Reduce from 50% to 30% FTP."
+        "notes": "Cooldown ramp to 35% FTP"
       },
       {
         "segment_number": 18,
-        "startTimeSeconds": 2880,
-        "endTimeSeconds": 2940,
+        "startTimeSeconds": 3600,
+        "endTimeSeconds": 3840,
         "power": 75,
         "powerAdjustedUpward": 85,
         "powerAdjustedDownward": 65,
         "zone": 1,
         "perc_ftp": 30,
         "type": "cooldown",
-        "notes": "Reduce from 50% to 30% FTP."
+        "notes": "Complete cooldown"
       }
     ]
   },
   "validation_results": {
-    "overall_score": "6/8",
-    "pass_rate": 75.0,
+    "overall_score": "7/8",
+    "pass_rate": 87.5,
     "all_passed": false,
     "metrics": [
       {
@@ -292,10 +299,10 @@
       },
       {
         "metric": "duration_consistency",
-        "passed": false,
-        "declared_duration": 3960,
-        "calculated_duration": 2940,
-        "difference": 1020
+        "passed": true,
+        "declared_duration": 3840,
+        "calculated_duration": 3840,
+        "difference": 0
       },
       {
         "metric": "time_continuity",
@@ -307,18 +314,6 @@
         "metric": "power_zone_accuracy",
         "passed": false,
         "mismatches": [
-          {
-            "segment_number": 3,
-            "power": 175,
-            "declared_zone": 3,
-            "actual_zone": 2
-          },
-          {
-            "segment_number": 4,
-            "power": 188,
-            "declared_zone": 3,
-            "actual_zone": 2
-          },
           {
             "segment_number": 10,
             "power": 275,
@@ -343,5 +338,6 @@
         "invalid_types": []
       }
     ]
-  }
+  },
+  "validation_passed": false
 }

@@ -1,6 +1,109 @@
 # Recent Updates
 
-## Retry Logic & Cost Tracking (Latest)
+## Automatic Ground Truth Model Exclusion (Latest)
+
+### What Changed
+
+The evaluation runner now **automatically excludes** the ground truth reference model from evaluation runs to prevent duplicate generation and unnecessary costs.
+
+### How It Works
+
+1. **Composite Key Detection**: Uses both `provider` AND `model_id` to identify the reference model
+2. **Automatic Filtering**: Reads `ground_truth.yaml` at startup and filters the model from `models.yaml`
+3. **Cost Savings**: Prevents paying twice for the same model (once in ground truth generation, once in evaluation)
+
+### Example Console Output
+
+```
+================================================================================
+Starting evaluation run: 20251104_123000
+FTP: 250W
+⚠ Skipping ground truth reference model: openai/gpt-4o
+  (Already generated via ground_truth_generator.py)
+Models to evaluate: 7
+Prompts: 19
+Total evaluations: 133
+================================================================================
+```
+
+### Why This Matters
+
+**Before:**
+- Ground truth uses gpt-4o → costs $0.50
+- Evaluation also runs gpt-4o → costs another $0.50
+- **Total: $1.00** (paying twice for the same outputs)
+
+**After:**
+- Ground truth uses gpt-4o → costs $0.50
+- Evaluation skips gpt-4o automatically
+- **Total: $0.50** (50% cost savings)
+
+### Configuration
+
+No configuration needed! The runner automatically:
+1. Loads `ground_truth.yaml` to find the reference model
+2. Filters it from the evaluation model list using `provider` + `model_id`
+3. Displays a warning message so you know it was skipped
+
+## Metadata Structure Cleanup (Previous)
+
+### What Changed
+
+Removed redundant top-level metadata fields that duplicated data from the `all_attempts` array.
+
+**Removed fields:**
+- `latency_ms` (was duplicating `all_attempts[-1].latency_ms`)
+- `tokens` (was duplicating `all_attempts[-1].tokens`)
+- `cost` (was duplicating `all_attempts[-1].cost`)
+- `input_cost` (was duplicating `all_attempts[-1].input_cost`)
+- `output_cost` (was duplicating `all_attempts[-1].output_cost`)
+
+### New Metadata Structure
+
+**Ground truth and evaluation results now use:**
+```json
+"generation_metadata": {
+  "attempts": 2,
+  "total_latency_all_attempts": 2690,
+  "total_tokens_all_attempts": {
+    "input": 900,
+    "output": 635,
+    "total": 1535
+  },
+  "total_cost_all_attempts": 0.006912,
+  "total_input_cost_all_attempts": 0.001962,
+  "total_output_cost_all_attempts": 0.004950,
+  "all_attempts": [
+    {
+      "attempt": 1,
+      "latency_ms": 1234,
+      "tokens": {"input": 450, "output": 315, "total": 765},
+      "cost": 0.003456,
+      "input_cost": 0.000981,
+      "output_cost": 0.002475
+    },
+    {
+      "attempt": 2,
+      "latency_ms": 1456,
+      "tokens": {"input": 450, "output": 320, "total": 770},
+      "cost": 0.003456,
+      "input_cost": 0.000981,
+      "output_cost": 0.002475
+    }
+  ]
+}
+```
+
+**To access last attempt data:** Use `all_attempts[-1]` instead of top-level fields.
+
+### Why This Matters
+
+- ✅ Eliminates redundancy and confusion
+- ✅ Single source of truth for each data point
+- ✅ Cleaner, more maintainable structure
+- ✅ All attempt data (including last) in one place
+
+## Retry Logic & Cost Tracking (Previous)
 
 ### What Changed
 
@@ -13,45 +116,12 @@ Added comprehensive retry logic and cost tracking to both ground truth generatio
 - Retries on: JSON parse errors AND validation failures
 - Saves best result after validation passes
 
-**Cost tracking:**
-```json
-"generation_metadata": {
-  "cost": 0.003456,                    // Cost of successful attempt
-  "attempts": 2,                        // Number of attempts needed
-  "total_cost_all_attempts": 0.006912, // TRUE cost (all attempts)
-  "all_attempts": [                     // Detailed per-attempt data
-    {
-      "attempt": 1,
-      "latency_ms": 1234,
-      "tokens": {...},
-      "cost": 0.003456
-    },
-    {
-      "attempt": 2,
-      "latency_ms": 1456,
-      "tokens": {...},
-      "cost": 0.003456
-    }
-  ]
-}
-```
-
 ### Evaluation Runner
 
 **Retry behavior:**
 - Default: 2 attempts (configurable via `max_retries` parameter)
 - Retries on: JSON parse errors and API errors
 - Does NOT retry on validation failures (accepts what model returns)
-
-**Cost tracking:**
-```json
-{
-  "cost": 0.000259,                    // Cost of successful attempt
-  "attempts": 1,                        // Number of attempts needed
-  "total_cost_all_attempts": 0.000259, // TRUE cost (all attempts)
-  "all_attempts": [...]                 // Detailed per-attempt data
-}
-```
 
 **Summary includes:**
 ```json

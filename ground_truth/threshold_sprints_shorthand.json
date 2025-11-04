@@ -8,34 +8,49 @@
     "model_id": "gpt-4o",
     "display_name": "GPT-4o"
   },
-  "generated_at": "2025-11-03T15:46:49.324941",
+  "generated_at": "2025-11-04T11:10:12.290392",
   "generation_metadata": {
-    "latency_ms": 7608,
-    "tokens": {
-      "input": 1015,
-      "output": 1096,
-      "total": 2111
+    "attempts": 2,
+    "total_latency_all_attempts": 27648,
+    "total_tokens_all_attempts": {
+      "input": 2030,
+      "output": 2203,
+      "total": 4233
     },
-    "cost": 0.011748,
-    "attempts": 1,
-    "total_cost_all_attempts": 0.011748,
+    "total_cost_all_attempts": 0.023591,
+    "total_input_cost_all_attempts": 0.004425,
+    "total_output_cost_all_attempts": 0.019166,
     "all_attempts": [
       {
         "attempt": 1,
-        "latency_ms": 7608,
+        "latency_ms": 12823,
         "tokens": {
           "input": 1015,
-          "output": 1096,
-          "total": 2111
+          "output": 1078,
+          "total": 2093
         },
-        "cost": 0.011748
+        "cost": 0.011591,
+        "input_cost": 0.002213,
+        "output_cost": 0.009379
+      },
+      {
+        "attempt": 2,
+        "latency_ms": 14825,
+        "tokens": {
+          "input": 1015,
+          "output": 1125,
+          "total": 2140
+        },
+        "cost": 0.012,
+        "input_cost": 0.002213,
+        "output_cost": 0.009787
       }
     ]
   },
   "workout": {
-    "name": "Intervals with Sprints",
-    "description": "This workout includes a warmup, threshold intervals, anaerobic sprints, and a cooldown. It is designed to improve aerobic capacity and sprinting ability.",
-    "workout_duration": 4260,
+    "name": "Threshold and Sprint Intervals",
+    "description": "This workout includes a warm-up, threshold intervals to improve endurance, sprint intervals for power, and a cooldown.",
+    "workout_duration": 4500,
     "intervals": [
       {
         "segment_number": 1,
@@ -47,7 +62,7 @@
         "zone": 2,
         "perc_ftp": 60,
         "type": "warmup",
-        "notes": "Warmup at 60% FTP."
+        "notes": "Warm up at 60% FTP to prepare your body for higher intensity segments."
       },
       {
         "segment_number": 2,
@@ -59,19 +74,19 @@
         "zone": 3,
         "perc_ftp": 95,
         "type": "interval",
-        "notes": "Threshold interval at 95% FTP."
+        "notes": "First threshold interval at 95% FTP for endurance."
       },
       {
         "segment_number": 3,
         "startTimeSeconds": 1320,
         "endTimeSeconds": 1620,
-        "power": 100,
-        "powerAdjustedUpward": 110,
-        "powerAdjustedDownward": 90,
+        "power": 130,
+        "powerAdjustedUpward": 140,
+        "powerAdjustedDownward": 120,
         "zone": 1,
-        "perc_ftp": 40,
+        "perc_ftp": 52,
         "type": "recovery",
-        "notes": "Zone 1 recovery."
+        "notes": "Recovery at Zone 1 between threshold intervals."
       },
       {
         "segment_number": 4,
@@ -83,19 +98,19 @@
         "zone": 3,
         "perc_ftp": 95,
         "type": "interval",
-        "notes": "Threshold interval at 95% FTP."
+        "notes": "Second threshold interval at 95% FTP for endurance."
       },
       {
         "segment_number": 5,
         "startTimeSeconds": 2340,
         "endTimeSeconds": 2640,
-        "power": 100,
-        "powerAdjustedUpward": 110,
-        "powerAdjustedDownward": 90,
+        "power": 130,
+        "powerAdjustedUpward": 140,
+        "powerAdjustedDownward": 120,
         "zone": 1,
-        "perc_ftp": 40,
+        "perc_ftp": 52,
         "type": "recovery",
-        "notes": "Zone 1 recovery."
+        "notes": "Recovery at Zone 1 between threshold intervals."
       },
       {
         "segment_number": 6,
@@ -107,19 +122,19 @@
         "zone": 3,
         "perc_ftp": 95,
         "type": "interval",
-        "notes": "Threshold interval at 95% FTP."
+        "notes": "Third threshold interval at 95% FTP for endurance."
       },
       {
         "segment_number": 7,
         "startTimeSeconds": 3360,
         "endTimeSeconds": 3660,
-        "power": 100,
-        "powerAdjustedUpward": 110,
-        "powerAdjustedDownward": 90,
+        "power": 130,
+        "powerAdjustedUpward": 140,
+        "powerAdjustedDownward": 120,
         "zone": 1,
-        "perc_ftp": 40,
+        "perc_ftp": 52,
         "type": "recovery",
-        "notes": "Zone 1 recovery."
+        "notes": "Final recovery at Zone 1 before sprints."
       },
       {
         "segment_number": 8,
@@ -131,19 +146,19 @@
         "zone": 6,
         "perc_ftp": 150,
         "type": "interval",
-        "notes": "30s sprint at 150% FTP."
+        "notes": "Sprint at 150% FTP for power."
       },
       {
         "segment_number": 9,
         "startTimeSeconds": 3690,
         "endTimeSeconds": 3720,
-        "power": 100,
-        "powerAdjustedUpward": 110,
-        "powerAdjustedDownward": 90,
+        "power": 130,
+        "powerAdjustedUpward": 140,
+        "powerAdjustedDownward": 120,
         "zone": 1,
-        "perc_ftp": 40,
+        "perc_ftp": 52,
         "type": "recovery",
-        "notes": "30s easy recovery."
+        "notes": "Recovery between sprints."
       },
       {
         "segment_number": 10,
@@ -155,19 +170,19 @@
         "zone": 6,
         "perc_ftp": 150,
         "type": "interval",
-        "notes": "30s sprint at 150% FTP."
+        "notes": "Sprint at 150% FTP for power."
       },
       {
         "segment_number": 11,
         "startTimeSeconds": 3750,
         "endTimeSeconds": 3780,
-        "power": 100,
-        "powerAdjustedUpward": 110,
-        "powerAdjustedDownward": 90,
+        "power": 130,
+        "powerAdjustedUpward": 140,
+        "powerAdjustedDownward": 120,
         "zone": 1,
-        "perc_ftp": 40,
+        "perc_ftp": 52,
         "type": "recovery",
-        "notes": "30s easy recovery."
+        "notes": "Recovery between sprints."
       },
       {
         "segment_number": 12,
@@ -179,19 +194,19 @@
         "zone": 6,
         "perc_ftp": 150,
         "type": "interval",
-        "notes": "30s sprint at 150% FTP."
+        "notes": "Sprint at 150% FTP for power."
       },
       {
         "segment_number": 13,
         "startTimeSeconds": 3810,
         "endTimeSeconds": 3840,
-        "power": 100,
-        "powerAdjustedUpward": 110,
-        "powerAdjustedDownward": 90,
+        "power": 130,
+        "powerAdjustedUpward": 140,
+        "powerAdjustedDownward": 120,
         "zone": 1,
-        "perc_ftp": 40,
+        "perc_ftp": 52,
         "type": "recovery",
-        "notes": "30s easy recovery."
+        "notes": "Recovery between sprints."
       },
       {
         "segment_number": 14,
@@ -203,19 +218,19 @@
         "zone": 6,
         "perc_ftp": 150,
         "type": "interval",
-        "notes": "30s sprint at 150% FTP."
+        "notes": "Sprint at 150% FTP for power."
       },
       {
         "segment_number": 15,
         "startTimeSeconds": 3870,
         "endTimeSeconds": 3900,
-        "power": 100,
-        "powerAdjustedUpward": 110,
-        "powerAdjustedDownward": 90,
+        "power": 130,
+        "powerAdjustedUpward": 140,
+        "powerAdjustedDownward": 120,
         "zone": 1,
-        "perc_ftp": 40,
+        "perc_ftp": 52,
         "type": "recovery",
-        "notes": "30s easy recovery."
+        "notes": "Recovery between sprints."
       },
       {
         "segment_number": 16,
@@ -227,19 +242,19 @@
         "zone": 6,
         "perc_ftp": 150,
         "type": "interval",
-        "notes": "30s sprint at 150% FTP."
+        "notes": "Final sprint at 150% FTP for power."
       },
       {
         "segment_number": 17,
         "startTimeSeconds": 3930,
-        "endTimeSeconds": 4260,
-        "power": 150,
-        "powerAdjustedUpward": 160,
-        "powerAdjustedDownward": 140,
-        "zone": 2,
-        "perc_ftp": 60,
+        "endTimeSeconds": 4500,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
         "type": "cooldown",
-        "notes": "Cooldown at 60% FTP."
+        "notes": "Cooldown to help recover and cool down the body post-workout."
       }
     ]
   },
@@ -261,8 +276,8 @@
       {
         "metric": "duration_consistency",
         "passed": true,
-        "declared_duration": 4260,
-        "calculated_duration": 4260,
+        "declared_duration": 4500,
+        "calculated_duration": 4500,
         "difference": 0
       },
       {
@@ -292,5 +307,6 @@
         "invalid_types": []
       }
     ]
-  }
+  },
+  "validation_passed": true
 }

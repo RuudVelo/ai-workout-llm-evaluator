@@ -8,66 +8,73 @@
     "model_id": "gpt-4o",
     "display_name": "GPT-4o"
   },
-  "generated_at": "2025-11-03T15:48:08.956428",
+  "generated_at": "2025-11-04T11:11:04.105348",
   "generation_metadata": {
-    "latency_ms": 12655,
-    "tokens": {
-      "input": 1001,
-      "output": 594,
-      "total": 1595
-    },
-    "cost": 0.00735,
     "attempts": 3,
-    "total_cost_all_attempts": 0.022642,
+    "total_latency_all_attempts": 28598,
+    "total_tokens_all_attempts": {
+      "input": 3003,
+      "output": 1937,
+      "total": 4940
+    },
+    "total_cost_all_attempts": 0.023398,
+    "total_input_cost_all_attempts": 0.006547,
+    "total_output_cost_all_attempts": 0.016852,
     "all_attempts": [
       {
         "attempt": 1,
-        "latency_ms": 13300,
+        "latency_ms": 9335,
         "tokens": {
           "input": 1001,
-          "output": 621,
-          "total": 1622
+          "output": 611,
+          "total": 1612
         },
-        "cost": 0.007585
+        "cost": 0.007498,
+        "input_cost": 0.002182,
+        "output_cost": 0.005316
       },
       {
         "attempt": 2,
-        "latency_ms": 11148,
+        "latency_ms": 10581,
         "tokens": {
           "input": 1001,
-          "output": 635,
-          "total": 1636
+          "output": 631,
+          "total": 1632
         },
-        "cost": 0.007707
+        "cost": 0.007672,
+        "input_cost": 0.002182,
+        "output_cost": 0.00549
       },
       {
         "attempt": 3,
-        "latency_ms": 12655,
+        "latency_ms": 8682,
         "tokens": {
           "input": 1001,
-          "output": 594,
-          "total": 1595
+          "output": 695,
+          "total": 1696
         },
-        "cost": 0.00735
+        "cost": 0.008229,
+        "input_cost": 0.002182,
+        "output_cost": 0.006046
       }
     ]
   },
   "workout": {
-    "name": "Progressive Interval Session",
-    "description": "This workout includes a warm-up, progressive intervals, and a cooldown to improve your endurance and threshold capability.",
-    "workout_duration": 4800,
+    "name": "Progressive Intervals",
+    "description": "This workout includes a warm-up, progressive intervals from 85% to 100% FTP with active recovery, and a cooldown. It helps improve aerobic endurance and threshold power.",
+    "workout_duration": 5160,
     "intervals": [
       {
         "segment_number": 1,
         "startTimeSeconds": 0,
         "endTimeSeconds": 600,
-        "power": 164,
-        "powerAdjustedUpward": 174,
-        "powerAdjustedDownward": 154,
+        "power": 175,
+        "powerAdjustedUpward": 185,
+        "powerAdjustedDownward": 165,
         "zone": 2,
-        "perc_ftp": 66,
+        "perc_ftp": 70,
         "type": "warmup",
-        "notes": "Warm-up in Zone 2 at 66% FTP."
+        "notes": "Warm-up in Zone 2 to prepare muscles for intervals."
       },
       {
         "segment_number": 2,
@@ -79,19 +86,19 @@
         "zone": 3,
         "perc_ftp": 85,
         "type": "interval",
-        "notes": "First interval at 85% FTP."
+        "notes": "Interval segment starting at 85% FTP."
       },
       {
         "segment_number": 3,
         "startTimeSeconds": 1200,
         "endTimeSeconds": 1380,
-        "power": 100,
-        "powerAdjustedUpward": 110,
-        "powerAdjustedDownward": 90,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
         "zone": 1,
-        "perc_ftp": 40,
+        "perc_ftp": 50,
         "type": "recovery",
-        "notes": "Recovery between intervals."
+        "notes": "Active recovery at 50% FTP between intervals."
       },
       {
         "segment_number": 4,
@@ -103,19 +110,19 @@
         "zone": 3,
         "perc_ftp": 90,
         "type": "interval",
-        "notes": "Second interval at 90% FTP."
+        "notes": "Interval segment at 90% FTP."
       },
       {
         "segment_number": 5,
         "startTimeSeconds": 1980,
         "endTimeSeconds": 2160,
-        "power": 100,
-        "powerAdjustedUpward": 110,
-        "powerAdjustedDownward": 90,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
         "zone": 1,
-        "perc_ftp": 40,
+        "perc_ftp": 50,
         "type": "recovery",
-        "notes": "Recovery between intervals."
+        "notes": "Active recovery at 50% FTP between intervals."
       },
       {
         "segment_number": 6,
@@ -127,19 +134,19 @@
         "zone": 3,
         "perc_ftp": 95,
         "type": "interval",
-        "notes": "Third interval at 95% FTP."
+        "notes": "Interval segment at 95% FTP."
       },
       {
         "segment_number": 7,
         "startTimeSeconds": 2760,
         "endTimeSeconds": 2940,
-        "power": 100,
-        "powerAdjustedUpward": 110,
-        "powerAdjustedDownward": 90,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
         "zone": 1,
-        "perc_ftp": 40,
+        "perc_ftp": 50,
         "type": "recovery",
-        "notes": "Recovery between intervals."
+        "notes": "Active recovery at 50% FTP between intervals."
       },
       {
         "segment_number": 8,
@@ -151,7 +158,7 @@
         "zone": 4,
         "perc_ftp": 100,
         "type": "interval",
-        "notes": "Fourth interval at 100% FTP."
+        "notes": "Interval segment at 100% FTP."
       },
       {
         "segment_number": 9,
@@ -162,15 +169,27 @@
         "powerAdjustedDownward": 115,
         "zone": 1,
         "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Active recovery period post intervals."
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 4440,
+        "endTimeSeconds": 5160,
+        "power": 120,
+        "powerAdjustedUpward": 130,
+        "powerAdjustedDownward": 110,
+        "zone": 1,
+        "perc_ftp": 48,
         "type": "cooldown",
-        "notes": "Cooldown at 50% FTP."
+        "notes": "Cooldown in Zone 1 to gradually lower heart rate and relax muscles."
       }
     ]
   },
   "validation_results": {
-    "overall_score": "7/8",
-    "pass_rate": 87.5,
-    "all_passed": false,
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
     "metrics": [
       {
         "metric": "schema_validation",
@@ -184,10 +203,10 @@
       },
       {
         "metric": "duration_consistency",
-        "passed": false,
-        "declared_duration": 4800,
-        "calculated_duration": 4440,
-        "difference": 360
+        "passed": true,
+        "declared_duration": 5160,
+        "calculated_duration": 5160,
+        "difference": 0
       },
       {
         "metric": "time_continuity",
@@ -216,5 +235,6 @@
         "invalid_types": []
       }
     ]
-  }
+  },
+  "validation_passed": true
 }

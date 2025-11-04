@@ -14,15 +14,16 @@ When generating ground truth, the system tracks costs across **all retry attempt
 {
   "prompt_id": "threshold_intervals_3x10",
   "generation_metadata": {
-    "latency_ms": 1456,
-    "tokens": {
-      "input": 450,
-      "output": 320,
-      "total": 770
-    },
-    "cost": 0.003456,
     "attempts": 2,
+    "total_latency_all_attempts": 2690,
+    "total_tokens_all_attempts": {
+      "input": 900,
+      "output": 635,
+      "total": 1535
+    },
     "total_cost_all_attempts": 0.006912,
+    "total_input_cost_all_attempts": 0.001962,
+    "total_output_cost_all_attempts": 0.004950,
     "all_attempts": [
       {
         "attempt": 1,
@@ -32,7 +33,9 @@ When generating ground truth, the system tracks costs across **all retry attempt
           "output": 315,
           "total": 765
         },
-        "cost": 0.003455
+        "cost": 0.003455,
+        "input_cost": 0.000981,
+        "output_cost": 0.002474
       },
       {
         "attempt": 2,
@@ -42,7 +45,9 @@ When generating ground truth, the system tracks costs across **all retry attempt
           "output": 320,
           "total": 770
         },
-        "cost": 0.003456
+        "cost": 0.003457,
+        "input_cost": 0.000981,
+        "output_cost": 0.002476
       }
     ]
   }
@@ -51,10 +56,13 @@ When generating ground truth, the system tracks costs across **all retry attempt
 
 ### Field Descriptions
 
-- **`cost`**: Cost of the successful (final) attempt only
 - **`attempts`**: Number of attempts needed (1 = succeeded first try)
 - **`total_cost_all_attempts`**: Cumulative cost across ALL attempts (including failed ones)
-- **`all_attempts`**: Array with detailed metadata for each attempt
+- **`total_latency_all_attempts`**: Total time spent across all attempts
+- **`total_tokens_all_attempts`**: Total tokens consumed across all attempts
+- **`total_input_cost_all_attempts`**: Total input token cost across all attempts
+- **`total_output_cost_all_attempts`**: Total output token cost across all attempts
+- **`all_attempts`**: Array with detailed metadata for each individual attempt (includes `latency_ms`, `tokens`, `cost`, `input_cost`, `output_cost` per attempt)
 
 ### Why Retries Happen
 
@@ -88,20 +96,30 @@ The runner (`runner.py`) now includes retry logic (default: 2 attempts) and trac
     "provider": "openai",
     "model_id": "gpt-4o-mini"
   },
-  "tokens": {
+  "attempts": 1,
+  "total_latency_all_attempts": 1234,
+  "total_tokens_all_attempts": {
     "input": 420,
     "output": 305,
     "total": 725
   },
-  "cost": 0.000259,
-  "attempts": 1,
   "total_cost_all_attempts": 0.000259,
+  "total_input_cost_all_attempts": 0.000084,
+  "total_output_cost_all_attempts": 0.000175,
   "all_attempts": [
     {
       "attempt": 1,
       "latency_ms": 1234,
-      "tokens": {...},
-      "cost": 0.000259
+      "tokens": {
+        "input": 420,
+        "output": 305,
+        "total": 725
+      },
+      "cost": 0.000259,
+      "input_cost": 0.000084,
+      "output_cost": 0.000175,
+      "parse_error": null,
+      "validation_passed": true
     }
   ],
   "success": true
@@ -174,11 +192,11 @@ All "total_cost_all_attempts" = "cost"
 
 3 prompts need 2 attempts, rest succeed first try:
 ```
-16 prompts × €0.0034 = €0.0544
-3 prompts × €0.0068 (2 attempts) = €0.0204
-Total: €0.0748
+Total actual cost: €0.0748
+(16 prompts × €0.0034 avg + 3 prompts × €0.0068 with retries)
 
-Naive calculation (ignoring retries): €0.0646 (18% underestimate!)
+Without tracking all_attempts:
+You'd need to manually sum each prompt's total_cost_all_attempts field
 ```
 
 ### Example 3: Multi-Model Evaluation

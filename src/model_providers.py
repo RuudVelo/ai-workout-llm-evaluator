@@ -8,13 +8,11 @@ import os
 from dotenv import load_dotenv
 
 from openai import OpenAI
-import google.generativeai as genai
 from together import Together
 
 from system_prompt import (
     build_system_prompt_generate,
     WORKOUT_JSON_SCHEMA,
-    GEMINI_SCHEMA,
 )
 
 # Load environment variables from .env file
@@ -46,7 +44,9 @@ class OpenAIProvider:
     """OpenAI API provider with structured output support."""
 
     def __init__(self, api_key: Optional[str] = None):
-        self.client = OpenAI(api_key=api_key or os.getenv("OPENAI_API_KEY"))
+        self.client = OpenAI(
+            api_key=api_key or os.getenv("OPENAI_API_KEY")
+        )
 
     def generate(
         self,
@@ -55,23 +55,31 @@ class OpenAIProvider:
         ftp: int,
         input_price_per_million: float,
         output_price_per_million: float,
+        reasoning_effort: Optional[str] = None,
     ) -> ModelResponse:
         """Generate workout using OpenAI API with structured output."""
         system_prompt = build_system_prompt_generate(ftp)
 
         start_time = time.time()
 
-        response = self.client.chat.completions.create(
-            model=model_id,
-            messages=[
+        # Build API call parameters
+        api_params = {
+            "model": model_id,
+            "messages": [
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_prompt},
             ],
-            response_format={
+            "response_format": {
                 "type": "json_schema",
                 "json_schema": WORKOUT_JSON_SCHEMA,
             },
-        )
+        }
+
+        # Add reasoning_effort if provided (for GPT-5 models)
+        if reasoning_effort is not None:
+            api_params["reasoning_effort"] = reasoning_effort
+
+        response = self.client.chat.completions.create(**api_params)
 
         latency_ms = int((time.time() - start_time) * 1000)
 
@@ -81,9 +89,9 @@ class OpenAIProvider:
         output_tokens = usage.completion_tokens
 
         # Calculate cost
-        cost = (input_tokens / 1_000_000 * input_price_per_million) + (
-            output_tokens / 1_000_000 * output_price_per_million
-        )
+        cost = (
+            input_tokens / 1_000_000 * input_price_per_million
+        ) + (output_tokens / 1_000_000 * output_price_per_million)
 
         content = response.choices[0].message.content
 
@@ -98,10 +106,19 @@ class OpenAIProvider:
 
 
 class GeminiProvider:
-    """Google Gemini API provider."""
+    """Google Gemini API provider using OpenAI-compatible endpoint.
+
+    This provider uses the OpenAI client library pointed at Gemini's OpenAI-compatible
+    endpoint, which provides native support for reasoning_effort without SDK mixing.
+
+    Reference: https://ai.google.dev/gemini-api/docs/openai#python
+    """
 
     def __init__(self, api_key: Optional[str] = None):
-        genai.configure(api_key=api_key or os.getenv("GEMINI_API_KEY"))
+        self.client = OpenAI(
+            api_key=api_key or os.getenv("GEMINI_API_KEY"),
+            base_url="https://generativelanguage.googleapis.com/v1beta/openai/",
+        )
 
     def generate(
         self,
@@ -110,33 +127,52 @@ class GeminiProvider:
         ftp: int,
         input_price_per_million: float,
         output_price_per_million: float,
+        reasoning_effort: Optional[str] = None,
     ) -> ModelResponse:
-        """Generate workout using Gemini API."""
+        """Generate workout using Gemini's OpenAI-compatible API.
+
+        The reasoning_effort parameter is natively supported:
+        - 'low': 1,024 tokens thinking budget
+        - 'medium': 8,192 tokens thinking budget
+        - 'high': 24,576 tokens thinking budget
+        - 'none': Disable thinking (not available for 2.5 Pro)
+        """
         system_prompt = build_system_prompt_generate(ftp)
 
-        model = genai.GenerativeModel(
-            model_id,
-            system_instruction=system_prompt,
-            generation_config={
-                "response_mime_type": "application/json",
-                "response_schema": GEMINI_SCHEMA,
-            },
-        )
-
         start_time = time.time()
-        response = model.generate_content(user_prompt)
+
+        # Build API call parameters
+        api_params = {
+            "model": model_id,
+            "messages": [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt},
+            ],
+            "response_format": {
+                "type": "json_schema",
+                "json_schema": WORKOUT_JSON_SCHEMA,
+            },
+        }
+
+        # Add reasoning_effort if provided (natively supported by Gemini's OpenAI endpoint)
+        if reasoning_effort is not None:
+            api_params["reasoning_effort"] = reasoning_effort
+
+        response = self.client.chat.completions.create(**api_params)
+
         latency_ms = int((time.time() - start_time) * 1000)
 
         # Extract token usage
-        input_tokens = response.usage_metadata.prompt_token_count
-        output_tokens = response.usage_metadata.candidates_token_count
+        usage = response.usage
+        input_tokens = usage.prompt_tokens
+        output_tokens = usage.completion_tokens
 
         # Calculate cost
-        cost = (input_tokens / 1_000_000 * input_price_per_million) + (
-            output_tokens / 1_000_000 * output_price_per_million
-        )
+        cost = (
+            input_tokens / 1_000_000 * input_price_per_million
+        ) + (output_tokens / 1_000_000 * output_price_per_million)
 
-        content = response.text
+        content = response.choices[0].message.content
 
         return ModelResponse(
             content=content,
@@ -152,7 +188,9 @@ class TogetherProvider:
     """Together AI provider for open-source models."""
 
     def __init__(self, api_key: Optional[str] = None):
-        self.client = Together(api_key=api_key or os.getenv("TOGETHER_API_KEY"))
+        self.client = Together(
+            api_key=api_key or os.getenv("TOGETHER_API_KEY")
+        )
 
     def generate(
         self,
@@ -161,24 +199,37 @@ class TogetherProvider:
         ftp: int,
         input_price_per_million: float,
         output_price_per_million: float,
+        reasoning_effort: Optional[str] = None,
     ) -> ModelResponse:
-        """Generate workout using Together AI API."""
+        """Generate workout using Together AI API.
+
+        The reasoning_effort parameter is supported for GPT-OSS models:
+        - 'low': Faster responses for simpler tasks
+        - 'medium': Balanced performance (recommended default)
+        - 'high': Maximum reasoning for complex problems
+        """
         system_prompt = build_system_prompt_generate(ftp)
 
         start_time = time.time()
 
-        response = self.client.chat.completions.create(
-            model=model_id,
-            messages=[
+        # Build API call parameters
+        api_params = {
+            "model": model_id,
+            "messages": [
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_prompt},
             ],
-            response_format={
-                "type": "json_object",
-                # Together AI doesn't support strict schema like OpenAI
-                # but we can request JSON format
+            "response_format": {
+                "type": "json_schema",
+                "json_schema": WORKOUT_JSON_SCHEMA,
             },
-        )
+        }
+
+        # Add reasoning_effort if provided (for GPT-OSS models)
+        if reasoning_effort is not None:
+            api_params["reasoning_effort"] = reasoning_effort
+
+        response = self.client.chat.completions.create(**api_params)
 
         latency_ms = int((time.time() - start_time) * 1000)
 
@@ -188,9 +239,9 @@ class TogetherProvider:
         output_tokens = usage.completion_tokens
 
         # Calculate cost
-        cost = (input_tokens / 1_000_000 * input_price_per_million) + (
-            output_tokens / 1_000_000 * output_price_per_million
-        )
+        cost = (
+            input_tokens / 1_000_000 * input_price_per_million
+        ) + (output_tokens / 1_000_000 * output_price_per_million)
 
         content = response.choices[0].message.content
 

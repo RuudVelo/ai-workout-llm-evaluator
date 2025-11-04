@@ -18,6 +18,9 @@ poetry.lock
 # Results
 results/
 
+# Logs
+logs/
+
 # IDE
 .vscode/
 .idea/

@@ -4,6 +4,7 @@ Main runner to execute prompts across all configured models.
 
 import json
 import yaml
+import logging
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, Any, List
@@ -11,6 +12,35 @@ import traceback
 
 from model_providers import get_provider, ModelResponse
 from evaluator import WorkoutEvaluator
+
+
+def setup_logging(log_file: Path) -> logging.Logger:
+    """Setup logging to both file and console."""
+    log_file.parent.mkdir(parents=True, exist_ok=True)
+
+    # Create logger
+    logger = logging.getLogger("evaluation_runner")
+    logger.setLevel(logging.INFO)
+
+    # Remove existing handlers to avoid duplicates
+    logger.handlers = []
+
+    # File handler
+    file_handler = logging.FileHandler(log_file)
+    file_handler.setLevel(logging.INFO)
+    file_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+    file_handler.setFormatter(file_formatter)
+
+    # Console handler
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.INFO)
+    console_formatter = logging.Formatter('%(message)s')
+    console_handler.setFormatter(console_formatter)
+
+    logger.addHandler(file_handler)
+    logger.addHandler(console_handler)
+
+    return logger
 
 
 class EvalRunner:
@@ -23,11 +53,21 @@ class EvalRunner:
         # Load configurations
         self.models_config = self._load_yaml(self.config_dir / "models.yaml")
         self.prompts_config = self._load_yaml(self.config_dir / "prompts.yaml")
+        self.gt_config = self._load_yaml(self.config_dir / "ground_truth.yaml")
+
+        # Get reference model info (used to skip it during evaluation)
+        ref_model = self.gt_config["reference_model"]
+        self.reference_provider = ref_model["provider"]
+        self.reference_model_id = ref_model["model_id"]
 
         # Create timestamped results directory
         self.run_timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         self.run_dir = self.results_dir / f"run_{self.run_timestamp}"
         self.run_dir.mkdir(parents=True, exist_ok=True)
+
+        # Setup logging to file in run directory
+        log_file = self.run_dir / f"evaluation_{self.run_timestamp}.log"
+        self.logger = setup_logging(log_file)
 
     def _load_yaml(self, path: Path) -> Dict[str, Any]:
         """Load YAML configuration file."""
@@ -53,10 +93,15 @@ class EvalRunner:
         prompt_id = prompt_config["id"]
         user_prompt = prompt_config["user_prompt"]
 
-        print(f"  Running {display_name} on prompt: {prompt_id}")
+        self.logger.info(f"  Running {display_name} on prompt: {prompt_id}")
 
-        # Track cumulative cost across all attempts
+        # Track cumulative metrics across all attempts
         total_cost_all_attempts = 0.0
+        total_input_cost_all_attempts = 0.0
+        total_output_cost_all_attempts = 0.0
+        total_latency_all_attempts = 0
+        total_input_tokens_all_attempts = 0
+        total_output_tokens_all_attempts = 0
         all_attempts_metadata = []
 
         for attempt in range(max_retries):
@@ -74,6 +119,19 @@ class EvalRunner:
                     output_price_per_million=model_config["pricing"][
                         "output_per_million"
                     ],
+                    reasoning_effort=model_config.get("reasoning_effort"),
+                )
+
+                # Calculate input and output costs for this attempt
+                input_cost = (
+                    response.input_tokens
+                    * model_config["pricing"]["input_per_million"]
+                    / 1_000_000
+                )
+                output_cost = (
+                    response.output_tokens
+                    * model_config["pricing"]["output_per_million"]
+                    / 1_000_000
                 )
 
                 # Try to parse JSON response
@@ -93,6 +151,14 @@ class EvalRunner:
                     validation_result = evaluator.evaluate(parsed_json)
                     validation_passed = validation_result["all_passed"]
 
+                # Track this attempt's metrics
+                total_cost_all_attempts += response.cost
+                total_input_cost_all_attempts += input_cost
+                total_output_cost_all_attempts += output_cost
+                total_latency_all_attempts += response.latency_ms
+                total_input_tokens_all_attempts += response.input_tokens
+                total_output_tokens_all_attempts += response.output_tokens
+
                 # Track this attempt's metadata
                 attempt_metadata = {
                     "attempt": attempt + 1,
@@ -103,6 +169,8 @@ class EvalRunner:
                         "total": response.total_tokens,
                     },
                     "cost": round(response.cost, 6),
+                    "input_cost": round(input_cost, 6),
+                    "output_cost": round(output_cost, 6),
                     "parse_error": parse_error,
                     "validation_passed": validation_passed,
                 }
@@ -115,13 +183,12 @@ class EvalRunner:
                         "overall_score"
                     ]
 
-                total_cost_all_attempts += response.cost
                 all_attempts_metadata.append(attempt_metadata)
 
                 # Retry logic: retry on parse error OR validation failure (Option B)
                 if parse_error is not None:
                     if attempt < max_retries - 1:
-                        print(
+                        self.logger.info(
                             f"    Attempt {attempt + 1}: JSON parse error, retrying..."
                         )
                         continue
@@ -129,13 +196,13 @@ class EvalRunner:
 
                 elif not validation_passed:
                     if attempt < max_retries - 1:
-                        print(
+                        self.logger.info(
                             f"    Attempt {attempt + 1}: Validation failed "
                             f"(pass rate: {validation_result['pass_rate']}%), retrying..."
                         )
                         continue
                     # Last attempt, will return with validation failure (Option B2: accept but flag)
-                    print(
+                    self.logger.warning(
                         f"    ⚠ Validation failed after {max_retries} attempts "
                         f"(pass rate: {validation_result['pass_rate']}%), recording with flag"
                     )
@@ -152,15 +219,21 @@ class EvalRunner:
                     },
                     "ftp": ftp,
                     "timestamp": datetime.now().isoformat(),
-                    "latency_ms": response.latency_ms,
-                    "tokens": {
-                        "input": response.input_tokens,
-                        "output": response.output_tokens,
-                        "total": response.total_tokens,
-                    },
-                    "cost": round(response.cost, 6),
                     "attempts": attempt + 1,
+                    "total_latency_all_attempts": total_latency_all_attempts,
+                    "total_tokens_all_attempts": {
+                        "input": total_input_tokens_all_attempts,
+                        "output": total_output_tokens_all_attempts,
+                        "total": total_input_tokens_all_attempts
+                        + total_output_tokens_all_attempts,
+                    },
                     "total_cost_all_attempts": round(total_cost_all_attempts, 6),
+                    "total_input_cost_all_attempts": round(
+                        total_input_cost_all_attempts, 6
+                    ),
+                    "total_output_cost_all_attempts": round(
+                        total_output_cost_all_attempts, 6
+                    ),
                     "all_attempts": all_attempts_metadata,
                     "response": {
                         "raw_content": response.content,
@@ -173,27 +246,27 @@ class EvalRunner:
                 }
 
                 if parse_error is None and validation_passed:
-                    print(
+                    self.logger.info(
                         f"    ✓ Success (attempt {attempt + 1}, {response.latency_ms}ms)"
                     )
                 elif parse_error is None and not validation_passed:
-                    print(
+                    self.logger.warning(
                         f"    ⚠ Validation failed but recorded (attempt {attempt + 1})"
                     )
                 else:
-                    print(f"    ✗ Parse failed after {attempt + 1} attempt(s)")
+                    self.logger.warning(f"    ✗ Parse failed after {attempt + 1} attempt(s)")
 
                 return result
 
             except Exception as e:
                 # Handle errors gracefully
-                print(f"    Attempt {attempt + 1}: Error - {str(e)}")
+                self.logger.info(f"    Attempt {attempt + 1}: Error - {str(e)}")
 
                 if attempt < max_retries - 1:
                     continue
 
                 # All attempts failed
-                print(f"    ✗ Failed after {max_retries} attempt(s)")
+                self.logger.warning(f"    ✗ Failed after {max_retries} attempt(s)")
 
                 return {
                     "prompt_id": prompt_id,
@@ -207,7 +280,20 @@ class EvalRunner:
                     "ftp": ftp,
                     "timestamp": datetime.now().isoformat(),
                     "attempts": attempt + 1,
+                    "total_latency_all_attempts": total_latency_all_attempts,
+                    "total_tokens_all_attempts": {
+                        "input": total_input_tokens_all_attempts,
+                        "output": total_output_tokens_all_attempts,
+                        "total": total_input_tokens_all_attempts
+                        + total_output_tokens_all_attempts,
+                    },
                     "total_cost_all_attempts": round(total_cost_all_attempts, 6),
+                    "total_input_cost_all_attempts": round(
+                        total_input_cost_all_attempts, 6
+                    ),
+                    "total_output_cost_all_attempts": round(
+                        total_output_cost_all_attempts, 6
+                    ),
                     "all_attempts": all_attempts_metadata,
                     "error": str(e),
                     "traceback": traceback.format_exc(),
@@ -220,7 +306,20 @@ class EvalRunner:
             "prompt_id": prompt_id,
             "error": "Maximum retries exceeded without success",
             "attempts": max_retries,
+            "total_latency_all_attempts": total_latency_all_attempts,
+            "total_tokens_all_attempts": {
+                "input": total_input_tokens_all_attempts,
+                "output": total_output_tokens_all_attempts,
+                "total": total_input_tokens_all_attempts
+                + total_output_tokens_all_attempts,
+            },
             "total_cost_all_attempts": round(total_cost_all_attempts, 6),
+            "total_input_cost_all_attempts": round(
+                total_input_cost_all_attempts, 6
+            ),
+            "total_output_cost_all_attempts": round(
+                total_output_cost_all_attempts, 6
+            ),
             "success": False,
             "validation_failed": False,
         }
@@ -235,6 +334,15 @@ class EvalRunner:
         prompts = self.prompts_config["prompts"]
         models = self.models_config["models"]
 
+        # Filter out ground truth reference model (to avoid duplicate generation/cost)
+        original_model_count = len(models)
+        models = [
+            m for m in models
+            if not (m["provider"] == self.reference_provider
+                    and m["model_id"] == self.reference_model_id)
+        ]
+        skipped_reference_model = original_model_count > len(models)
+
         # Apply filters if provided
         if model_filter:
             models = [m for m in models if m["model_id"] in model_filter]
@@ -242,19 +350,23 @@ class EvalRunner:
         if prompt_filter:
             prompts = [p for p in prompts if p["id"] in prompt_filter]
 
-        print(f"\n{'=' * 80}")
-        print(f"Starting evaluation run: {self.run_timestamp}")
-        print(f"FTP: {ftp}W")
-        print(f"Models: {len(models)}")
-        print(f"Prompts: {len(prompts)}")
-        print(f"Total evaluations: {len(models) * len(prompts)}")
-        print(f"{'=' * 80}\n")
+        self.logger.info(f"\n{'=' * 80}")
+        self.logger.info(f"Starting evaluation run: {self.run_timestamp}")
+        self.logger.info(f"FTP: {ftp}W")
+        if skipped_reference_model:
+            self.logger.info(f"⚠ Skipping ground truth reference model: {self.reference_provider}/{self.reference_model_id}")
+            self.logger.info(f"  (Already generated via ground_truth_generator.py)")
+        self.logger.info(f"Models to evaluate: {len(models)}")
+        self.logger.info(f"Prompts: {len(prompts)}")
+        self.logger.info(f"Total evaluations: {len(models) * len(prompts)}")
+        self.logger.info(f"Results will be saved to: {self.run_dir}")
+        self.logger.info(f"{'=' * 80}\n")
 
         all_results = []
 
         # Run each model against each prompt
         for model_config in models:
-            print(f"\n{model_config['display_name']}:")
+            self.logger.info(f"\n{model_config['display_name']}:")
 
             for prompt_config in prompts:
                 result = self.run_single_evaluation(model_config, prompt_config, ftp)
@@ -266,9 +378,14 @@ class EvalRunner:
                 self._save_json(result, result_path)
 
         # Calculate costs
-        total_cost_successful_only = sum(r.get("cost", 0) for r in all_results)
+        # For successful attempts, get cost from last attempt in all_attempts array
+        total_cost_successful_only = sum(
+            r.get("all_attempts", [{}])[-1].get("cost", 0)
+            if r.get("all_attempts") else 0
+            for r in all_results
+        )
         total_cost_including_retries = sum(
-            r.get("total_cost_all_attempts", r.get("cost", 0)) for r in all_results
+            r.get("total_cost_all_attempts", 0) for r in all_results
         )
 
         # Calculate validation metrics
@@ -316,31 +433,31 @@ class EvalRunner:
         summary_path = self.run_dir / "summary.json"
         self._save_json(summary, summary_path)
 
-        print(f"\n{'=' * 80}")
-        print("Evaluation complete!")
-        print(f"Total evaluations: {summary['total_evaluations']}")
-        print(f"  ✓ Successful (passed validation): {summary['successful']}")
-        print(f"  ⚠ Validation failed: {summary['validation_failed']}")
-        print(f"  ✗ Parse failed: {summary['parse_failed']}")
-        print(f"\nValidation metrics:")
-        print(
+        self.logger.info(f"\n{'=' * 80}")
+        self.logger.info("Evaluation complete!")
+        self.logger.info(f"Total evaluations: {summary['total_evaluations']}")
+        self.logger.info(f"  ✓ Successful (passed validation): {summary['successful']}")
+        self.logger.info(f"  ⚠ Validation failed: {summary['validation_failed']}")
+        self.logger.info(f"  ✗ Parse failed: {summary['parse_failed']}")
+        self.logger.info(f"\nValidation metrics:")
+        self.logger.info(
             f"  Average pass rate: {summary['validation_metrics']['average_pass_rate']:.2f}%"
         )
-        print(f"\nCost analysis:")
-        print(
+        self.logger.info(f"\nCost analysis:")
+        self.logger.info(
             f"  Total attempts: {summary['total_attempts']} "
             f"(avg: {summary['total_attempts'] / summary['total_evaluations']:.2f} per eval)"
         )
-        print(f"  Total cost (successful attempts): ${summary['total_cost']:.4f}")
-        print(f"  Total cost (all attempts): ${summary['total_cost_all_attempts']:.4f}")
+        self.logger.info(f"  Total cost (successful attempts): ${summary['total_cost']:.4f}")
+        self.logger.info(f"  Total cost (all attempts): ${summary['total_cost_all_attempts']:.4f}")
         if summary["total_cost_all_attempts"] > summary["total_cost"]:
             overhead = summary["total_cost_all_attempts"] - summary["total_cost"]
-            print(
+            self.logger.info(
                 f"  → Retry overhead: ${overhead:.4f} "
                 f"({(overhead / summary['total_cost_all_attempts'] * 100):.1f}% of total cost)"
             )
-        print(f"\nResults saved to: {self.run_dir}")
-        print(f"{'=' * 80}\n")
+        self.logger.info(f"\nResults saved to: {self.run_dir}")
+        self.logger.info(f"{'=' * 80}\n")
 
         return summary
 

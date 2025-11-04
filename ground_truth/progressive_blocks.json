@@ -8,44 +8,37 @@
     "model_id": "gpt-4o",
     "display_name": "GPT-4o"
   },
-  "generated_at": "2025-11-03T15:46:41.696880",
+  "generated_at": "2025-11-04T11:09:44.596385",
   "generation_metadata": {
-    "latency_ms": 10869,
-    "tokens": {
+    "attempts": 1,
+    "total_latency_all_attempts": 11498,
+    "total_tokens_all_attempts": {
       "input": 1004,
-      "output": 653,
-      "total": 1657
+      "output": 680,
+      "total": 1684
     },
-    "cost": 0.00787,
-    "attempts": 2,
-    "total_cost_all_attempts": 0.015244,
+    "total_cost_all_attempts": 0.008105,
+    "total_input_cost_all_attempts": 0.002189,
+    "total_output_cost_all_attempts": 0.005916,
     "all_attempts": [
       {
         "attempt": 1,
-        "latency_ms": 12525,
+        "latency_ms": 11498,
         "tokens": {
           "input": 1004,
-          "output": 596,
-          "total": 1600
+          "output": 680,
+          "total": 1684
         },
-        "cost": 0.007374
-      },
-      {
-        "attempt": 2,
-        "latency_ms": 10869,
-        "tokens": {
-          "input": 1004,
-          "output": 653,
-          "total": 1657
-        },
-        "cost": 0.00787
+        "cost": 0.008105,
+        "input_cost": 0.002189,
+        "output_cost": 0.005916
       }
     ]
   },
   "workout": {
-    "name": "Z2-Z3 Interval Workout",
-    "description": "This workout focuses on endurance and tempo training with a warmup, main set of Zone 2 and Zone 3 intervals, recovery, and cooldown.",
-    "workout_duration": 3600,
+    "name": "Warmup, Z2/Z3 Intervals, Cooldown",
+    "description": "This workout includes a gradual warmup, followed by two main work intervals in Zone 2 and Zone 3 with a recovery period in between, and concludes with a cooldown phase to promote recovery.",
+    "workout_duration": 3300,
     "intervals": [
       {
         "segment_number": 1,
@@ -57,7 +50,7 @@
         "zone": 2,
         "perc_ftp": 60,
         "type": "warmup",
-        "notes": "Warmup at 60% FTP to start"
+        "notes": "Warmup starting at 60% FTP."
       },
       {
         "segment_number": 2,
@@ -69,7 +62,7 @@
         "zone": 2,
         "perc_ftp": 65,
         "type": "warmup",
-        "notes": "Warmup at 65% FTP"
+        "notes": "Gradually increasing warmup."
       },
       {
         "segment_number": 3,
@@ -81,7 +74,7 @@
         "zone": 2,
         "perc_ftp": 70,
         "type": "warmup",
-        "notes": "Warmup at 70% FTP"
+        "notes": "Gradually increasing warmup."
       },
       {
         "segment_number": 4,
@@ -93,7 +86,7 @@
         "zone": 2,
         "perc_ftp": 75,
         "type": "warmup",
-        "notes": "Warmup at 75% FTP"
+        "notes": "Gradually increasing warmup."
       },
       {
         "segment_number": 5,
@@ -105,7 +98,7 @@
         "zone": 3,
         "perc_ftp": 80,
         "type": "warmup",
-        "notes": "Warmup at 80% FTP"
+        "notes": "End of warmup at 80% FTP."
       },
       {
         "segment_number": 6,
@@ -117,7 +110,7 @@
         "zone": 2,
         "perc_ftp": 70,
         "type": "interval",
-        "notes": "Zone 2 interval targeting endurance"
+        "notes": "Maintain endurance pace, Zone 2."
       },
       {
         "segment_number": 7,
@@ -129,19 +122,19 @@
         "zone": 1,
         "perc_ftp": 40,
         "type": "recovery",
-        "notes": "Recovery period between intervals"
+        "notes": "Recovery at 40% FTP."
       },
       {
         "segment_number": 8,
         "startTimeSeconds": 1800,
         "endTimeSeconds": 2700,
-        "power": 225,
-        "powerAdjustedUpward": 235,
-        "powerAdjustedDownward": 215,
+        "power": 213,
+        "powerAdjustedUpward": 223,
+        "powerAdjustedDownward": 203,
         "zone": 3,
-        "perc_ftp": 90,
+        "perc_ftp": 85,
         "type": "interval",
-        "notes": "Zone 3 interval for tempo training"
+        "notes": "Increase to Tempo pace, Zone 3."
       },
       {
         "segment_number": 9,
@@ -153,19 +146,19 @@
         "zone": 1,
         "perc_ftp": 40,
         "type": "recovery",
-        "notes": "Recovery after main set"
+        "notes": "Recovery at 40% FTP."
       },
       {
         "segment_number": 10,
         "startTimeSeconds": 3000,
-        "endTimeSeconds": 3600,
-        "power": 125,
-        "powerAdjustedUpward": 135,
-        "powerAdjustedDownward": 115,
-        "zone": 1,
-        "perc_ftp": 50,
+        "endTimeSeconds": 3300,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
         "type": "cooldown",
-        "notes": "Cooldown to aid recovery"
+        "notes": "Cooldown to finish the workout."
       }
     ]
   },
@@ -187,8 +180,8 @@
       {
         "metric": "duration_consistency",
         "passed": true,
-        "declared_duration": 3600,
-        "calculated_duration": 3600,
+        "declared_duration": 3300,
+        "calculated_duration": 3300,
         "difference": 0
       },
       {
@@ -218,5 +211,6 @@
         "invalid_types": []
       }
     ]
-  }
+  },
+  "validation_passed": true
 }

@@ -8,140 +8,97 @@
     "model_id": "gpt-4o",
     "display_name": "GPT-4o"
   },
-  "generated_at": "2025-11-03T15:48:30.075348",
+  "generated_at": "2025-11-04T11:11:12.983143",
   "generation_metadata": {
-    "latency_ms": 10961,
-    "tokens": {
+    "attempts": 1,
+    "total_latency_all_attempts": 8855,
+    "total_tokens_all_attempts": {
       "input": 977,
-      "output": 531,
-      "total": 1508
+      "output": 357,
+      "total": 1334
     },
-    "cost": 0.00675,
-    "attempts": 2,
-    "total_cost_all_attempts": 0.012681,
+    "total_cost_all_attempts": 0.005236,
+    "total_input_cost_all_attempts": 0.00213,
+    "total_output_cost_all_attempts": 0.003106,
     "all_attempts": [
       {
         "attempt": 1,
-        "latency_ms": 10111,
+        "latency_ms": 8855,
         "tokens": {
           "input": 977,
-          "output": 437,
-          "total": 1414
+          "output": 357,
+          "total": 1334
         },
-        "cost": 0.005932
-      },
-      {
-        "attempt": 2,
-        "latency_ms": 10961,
-        "tokens": {
-          "input": 977,
-          "output": 531,
-          "total": 1508
-        },
-        "cost": 0.00675
+        "cost": 0.005236,
+        "input_cost": 0.00213,
+        "output_cost": 0.003106
       }
     ]
   },
   "workout": {
-    "name": "Threshold Challenge",
-    "description": "This 60-minute workout focuses on improving your FTP by maintaining sustained efforts at your threshold power, with active recovery segments in between.",
+    "name": "60 Minute Threshold Workout",
+    "description": "A workout designed to improve lactate threshold by holding power close to FTP for extended periods, enhancing muscular endurance and aerobic capacity.",
     "workout_duration": 3600,
     "intervals": [
       {
         "segment_number": 1,
         "startTimeSeconds": 0,
-        "endTimeSeconds": 300,
+        "endTimeSeconds": 600,
         "power": 150,
         "powerAdjustedUpward": 160,
         "powerAdjustedDownward": 140,
         "zone": 2,
         "perc_ftp": 60,
         "type": "warmup",
-        "notes": "Begin with an easy warm-up to prepare your muscles."
+        "notes": "Warm up slowly increasing cardiovascular effort."
       },
       {
         "segment_number": 2,
-        "startTimeSeconds": 300,
-        "endTimeSeconds": 900,
-        "power": 240,
-        "powerAdjustedUpward": 250,
-        "powerAdjustedDownward": 230,
+        "startTimeSeconds": 600,
+        "endTimeSeconds": 1800,
+        "power": 245,
+        "powerAdjustedUpward": 255,
+        "powerAdjustedDownward": 235,
         "zone": 4,
-        "perc_ftp": 96,
+        "perc_ftp": 98,
         "type": "interval",
-        "notes": "Threshold effort to boost aerobic capacity."
+        "notes": "Long threshold block to build lactate tolerance."
       },
       {
         "segment_number": 3,
-        "startTimeSeconds": 900,
-        "endTimeSeconds": 1200,
-        "power": 150,
-        "powerAdjustedUpward": 160,
-        "powerAdjustedDownward": 140,
-        "zone": 2,
-        "perc_ftp": 60,
+        "startTimeSeconds": 1800,
+        "endTimeSeconds": 2100,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
         "type": "recovery",
-        "notes": "Active recovery to clear lactate."
+        "notes": "Recovery to clear lactate."
       },
       {
         "segment_number": 4,
-        "startTimeSeconds": 1200,
-        "endTimeSeconds": 1800,
-        "power": 240,
-        "powerAdjustedUpward": 250,
-        "powerAdjustedDownward": 230,
+        "startTimeSeconds": 2100,
+        "endTimeSeconds": 3300,
+        "power": 245,
+        "powerAdjustedUpward": 255,
+        "powerAdjustedDownward": 235,
         "zone": 4,
-        "perc_ftp": 96,
+        "perc_ftp": 98,
         "type": "interval",
-        "notes": "Another threshold effort."
+        "notes": "Long threshold block to mimic race conditions."
       },
       {
         "segment_number": 5,
-        "startTimeSeconds": 1800,
-        "endTimeSeconds": 2100,
-        "power": 150,
-        "powerAdjustedUpward": 160,
-        "powerAdjustedDownward": 140,
-        "zone": 2,
-        "perc_ftp": 60,
-        "type": "recovery",
-        "notes": "Active recovery period."
-      },
-      {
-        "segment_number": 6,
-        "startTimeSeconds": 2100,
-        "endTimeSeconds": 2700,
-        "power": 240,
-        "powerAdjustedUpward": 250,
-        "powerAdjustedDownward": 230,
-        "zone": 4,
-        "perc_ftp": 96,
-        "type": "interval",
-        "notes": "Push through with another threshold block."
-      },
-      {
-        "segment_number": 7,
-        "startTimeSeconds": 2700,
-        "endTimeSeconds": 3000,
-        "power": 150,
-        "powerAdjustedUpward": 160,
-        "powerAdjustedDownward": 140,
-        "zone": 2,
-        "perc_ftp": 60,
-        "type": "recovery",
-        "notes": "Recover and prepare for final effort."
-      },
-      {
-        "segment_number": 8,
-        "startTimeSeconds": 3000,
+        "startTimeSeconds": 3300,
         "endTimeSeconds": 3600,
-        "power": 240,
-        "powerAdjustedUpward": 250,
-        "powerAdjustedDownward": 230,
-        "zone": 4,
-        "perc_ftp": 96,
-        "type": "interval",
-        "notes": "Final threshold push to finish strong."
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "cooldown",
+        "notes": "Easy spinning to cooldown and bring heart rate down."
       }
     ]
   },
@@ -194,5 +151,6 @@
         "invalid_types": []
       }
     ]
-  }
+  },
+  "validation_passed": true
 }

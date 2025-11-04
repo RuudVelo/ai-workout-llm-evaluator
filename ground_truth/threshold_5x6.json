@@ -8,34 +8,61 @@
     "model_id": "gpt-4o",
     "display_name": "GPT-4o"
   },
-  "generated_at": "2025-11-03T15:44:50.199430",
+  "generated_at": "2025-11-04T11:08:30.402949",
   "generation_metadata": {
-    "latency_ms": 12168,
-    "tokens": {
-      "input": 1002,
-      "output": 795,
-      "total": 1797
+    "attempts": 3,
+    "total_latency_all_attempts": 29845,
+    "total_tokens_all_attempts": {
+      "input": 3006,
+      "output": 2165,
+      "total": 5171
     },
-    "cost": 0.009101,
-    "attempts": 1,
-    "total_cost_all_attempts": 0.009101,
+    "total_cost_all_attempts": 0.025389,
+    "total_input_cost_all_attempts": 0.006553,
+    "total_output_cost_all_attempts": 0.018835,
     "all_attempts": [
       {
         "attempt": 1,
-        "latency_ms": 12168,
+        "latency_ms": 9813,
         "tokens": {
           "input": 1002,
-          "output": 795,
-          "total": 1797
+          "output": 758,
+          "total": 1760
         },
-        "cost": 0.009101
+        "cost": 0.008779,
+        "input_cost": 0.002184,
+        "output_cost": 0.006595
+      },
+      {
+        "attempt": 2,
+        "latency_ms": 10842,
+        "tokens": {
+          "input": 1002,
+          "output": 703,
+          "total": 1705
+        },
+        "cost": 0.0083,
+        "input_cost": 0.002184,
+        "output_cost": 0.006116
+      },
+      {
+        "attempt": 3,
+        "latency_ms": 9190,
+        "tokens": {
+          "input": 1002,
+          "output": 704,
+          "total": 1706
+        },
+        "cost": 0.008309,
+        "input_cost": 0.002184,
+        "output_cost": 0.006125
       }
     ]
   },
   "workout": {
     "name": "Threshold Intervals",
-    "description": "This workout includes a warmup, threshold intervals to improve power at lactate threshold, and a cooldown.",
-    "workout_duration": 3540,
+    "description": "Warm up with an easy spin followed by threshold intervals to improve aerobic capacity, and finish with a cooldown.",
+    "workout_duration": 3660,
     "intervals": [
       {
         "segment_number": 1,
@@ -47,7 +74,7 @@
         "zone": 2,
         "perc_ftp": 60,
         "type": "warmup",
-        "notes": "Easy spin to gradually increase heart rate and prepare muscles."
+        "notes": "10-minute easy spin as warmup."
       },
       {
         "segment_number": 2,
@@ -59,7 +86,7 @@
         "zone": 4,
         "perc_ftp": 100,
         "type": "interval",
-        "notes": "First threshold interval to increase power at lactate threshold."
+        "notes": "First threshold interval."
       },
       {
         "segment_number": 3,
@@ -71,7 +98,7 @@
         "zone": 1,
         "perc_ftp": 50,
         "type": "recovery",
-        "notes": "Recovery period to allow partial recovery."
+        "notes": "3-minute recovery after first interval."
       },
       {
         "segment_number": 4,
@@ -83,7 +110,7 @@
         "zone": 4,
         "perc_ftp": 100,
         "type": "interval",
-        "notes": "Second threshold interval to boost endurance."
+        "notes": "Second threshold interval."
       },
       {
         "segment_number": 5,
@@ -95,7 +122,7 @@
         "zone": 1,
         "perc_ftp": 50,
         "type": "recovery",
-        "notes": "Recovery period to allow partial recovery."
+        "notes": "3-minute recovery after second interval."
       },
       {
         "segment_number": 6,
@@ -107,7 +134,7 @@
         "zone": 4,
         "perc_ftp": 100,
         "type": "interval",
-        "notes": "Third threshold interval to challenge oxygen uptake."
+        "notes": "Third threshold interval."
       },
       {
         "segment_number": 7,
@@ -119,7 +146,7 @@
         "zone": 1,
         "perc_ftp": 50,
         "type": "recovery",
-        "notes": "Recovery period to allow partial recovery."
+        "notes": "3-minute recovery after third interval."
       },
       {
         "segment_number": 8,
@@ -131,7 +158,7 @@
         "zone": 4,
         "perc_ftp": 100,
         "type": "interval",
-        "notes": "Fourth threshold interval for sustained effort."
+        "notes": "Fourth threshold interval."
       },
       {
         "segment_number": 9,
@@ -143,7 +170,7 @@
         "zone": 1,
         "perc_ftp": 50,
         "type": "recovery",
-        "notes": "Recovery period to allow partial recovery."
+        "notes": "3-minute recovery after fourth interval."
       },
       {
         "segment_number": 10,
@@ -155,31 +182,19 @@
         "zone": 4,
         "perc_ftp": 100,
         "type": "interval",
-        "notes": "Final threshold interval to maximize effort near threshold."
+        "notes": "Fifth and final threshold interval."
       },
       {
         "segment_number": 11,
         "startTimeSeconds": 3120,
-        "endTimeSeconds": 3300,
-        "power": 125,
-        "powerAdjustedUpward": 135,
-        "powerAdjustedDownward": 115,
-        "zone": 1,
-        "perc_ftp": 50,
-        "type": "recovery",
-        "notes": "Recovery period to allow the heart rate to decrease."
-      },
-      {
-        "segment_number": 12,
-        "startTimeSeconds": 3300,
-        "endTimeSeconds": 3540,
+        "endTimeSeconds": 3660,
         "power": 125,
         "powerAdjustedUpward": 135,
         "powerAdjustedDownward": 115,
         "zone": 1,
         "perc_ftp": 50,
         "type": "cooldown",
-        "notes": "Cool down to gradually bring heart rate down and relax muscles."
+        "notes": "10-minute cooldown to finish the workout."
       }
     ]
   },
@@ -201,8 +216,8 @@
       {
         "metric": "duration_consistency",
         "passed": true,
-        "declared_duration": 3540,
-        "calculated_duration": 3540,
+        "declared_duration": 3660,
+        "calculated_duration": 3660,
         "difference": 0
       },
       {
@@ -232,5 +247,6 @@
         "invalid_types": []
       }
     ]
-  }
+  },
+  "validation_passed": true
 }

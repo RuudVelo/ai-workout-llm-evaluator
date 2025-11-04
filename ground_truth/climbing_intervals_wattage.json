@@ -8,54 +8,49 @@
     "model_id": "gpt-4o",
     "display_name": "GPT-4o"
   },
-  "generated_at": "2025-11-03T15:47:31.780449",
+  "generated_at": "2025-11-04T11:10:35.437715",
   "generation_metadata": {
-    "latency_ms": 15922,
-    "tokens": {
-      "input": 1006,
-      "output": 773,
-      "total": 1779
+    "attempts": 2,
+    "total_latency_all_attempts": 23105,
+    "total_tokens_all_attempts": {
+      "input": 2012,
+      "output": 1549,
+      "total": 3561
     },
-    "cost": 0.008918,
-    "attempts": 3,
-    "total_cost_all_attempts": 0.028242,
+    "total_cost_all_attempts": 0.017862,
+    "total_input_cost_all_attempts": 0.004386,
+    "total_output_cost_all_attempts": 0.013476,
     "all_attempts": [
       {
         "attempt": 1,
-        "latency_ms": 14331,
+        "latency_ms": 13495,
         "tokens": {
           "input": 1006,
-          "output": 892,
-          "total": 1898
+          "output": 836,
+          "total": 1842
         },
-        "cost": 0.009953
+        "cost": 0.009466,
+        "input_cost": 0.002193,
+        "output_cost": 0.007273
       },
       {
         "attempt": 2,
-        "latency_ms": 12149,
+        "latency_ms": 9610,
         "tokens": {
           "input": 1006,
-          "output": 825,
-          "total": 1831
+          "output": 713,
+          "total": 1719
         },
-        "cost": 0.009371
-      },
-      {
-        "attempt": 3,
-        "latency_ms": 15922,
-        "tokens": {
-          "input": 1006,
-          "output": 773,
-          "total": 1779
-        },
-        "cost": 0.008918
+        "cost": 0.008396,
+        "input_cost": 0.002193,
+        "output_cost": 0.006203
       }
     ]
   },
   "workout": {
-    "name": "Climbing Intervals",
-    "description": "A structured workout featuring a warm-up, climbing intervals, and cooldown to improve climbing power and endurance.",
-    "workout_duration": 4200,
+    "name": "Climb Intervals",
+    "description": "A workout focusing on building power on hills with interval climbs and active recovery.",
+    "workout_duration": 4500,
     "intervals": [
       {
         "segment_number": 1,
@@ -67,7 +62,7 @@
         "zone": 2,
         "perc_ftp": 60,
         "type": "warmup",
-        "notes": "Warm-up at a steady pace."
+        "notes": "Warm up at 60% FTP."
       },
       {
         "segment_number": 2,
@@ -79,19 +74,19 @@
         "zone": 6,
         "perc_ftp": 126,
         "type": "interval",
-        "notes": "Climbing interval on 3% gradient."
+        "notes": "Interval on a 3% climb."
       },
       {
         "segment_number": 3,
         "startTimeSeconds": 1260,
         "endTimeSeconds": 1440,
-        "power": 138,
-        "powerAdjustedUpward": 148,
-        "powerAdjustedDownward": 128,
+        "power": 100,
+        "powerAdjustedUpward": 110,
+        "powerAdjustedDownward": 90,
         "zone": 1,
-        "perc_ftp": 55,
+        "perc_ftp": 40,
         "type": "recovery",
-        "notes": "Easy spin recovery."
+        "notes": "3min easy spin recovery."
       },
       {
         "segment_number": 4,
@@ -103,19 +98,19 @@
         "zone": 6,
         "perc_ftp": 126,
         "type": "interval",
-        "notes": "Climbing interval on 3% gradient."
+        "notes": "Interval on a 3% climb."
       },
       {
         "segment_number": 5,
         "startTimeSeconds": 1800,
         "endTimeSeconds": 1980,
-        "power": 138,
-        "powerAdjustedUpward": 148,
-        "powerAdjustedDownward": 128,
+        "power": 100,
+        "powerAdjustedUpward": 110,
+        "powerAdjustedDownward": 90,
         "zone": 1,
-        "perc_ftp": 55,
+        "perc_ftp": 40,
         "type": "recovery",
-        "notes": "Easy spin recovery."
+        "notes": "3min easy spin recovery."
       },
       {
         "segment_number": 6,
@@ -127,19 +122,19 @@
         "zone": 6,
         "perc_ftp": 126,
         "type": "interval",
-        "notes": "Climbing interval on 3% gradient."
+        "notes": "Interval on a 3% climb."
       },
       {
         "segment_number": 7,
         "startTimeSeconds": 2340,
         "endTimeSeconds": 2520,
-        "power": 138,
-        "powerAdjustedUpward": 148,
-        "powerAdjustedDownward": 128,
+        "power": 100,
+        "powerAdjustedUpward": 110,
+        "powerAdjustedDownward": 90,
         "zone": 1,
-        "perc_ftp": 55,
+        "perc_ftp": 40,
         "type": "recovery",
-        "notes": "Easy spin recovery."
+        "notes": "3min easy spin recovery."
       },
       {
         "segment_number": 8,
@@ -151,19 +146,19 @@
         "zone": 6,
         "perc_ftp": 126,
         "type": "interval",
-        "notes": "Climbing interval on 3% gradient."
+        "notes": "Interval on a 3% climb."
       },
       {
         "segment_number": 9,
         "startTimeSeconds": 2880,
         "endTimeSeconds": 3060,
-        "power": 138,
-        "powerAdjustedUpward": 148,
-        "powerAdjustedDownward": 128,
+        "power": 100,
+        "powerAdjustedUpward": 110,
+        "powerAdjustedDownward": 90,
         "zone": 1,
-        "perc_ftp": 55,
+        "perc_ftp": 40,
         "type": "recovery",
-        "notes": "Easy spin recovery."
+        "notes": "3min easy spin recovery."
       },
       {
         "segment_number": 10,
@@ -175,31 +170,19 @@
         "zone": 6,
         "perc_ftp": 126,
         "type": "interval",
-        "notes": "Climbing interval on 3% gradient."
+        "notes": "Interval on a 3% climb."
       },
       {
         "segment_number": 11,
         "startTimeSeconds": 3420,
-        "endTimeSeconds": 3600,
-        "power": 138,
-        "powerAdjustedUpward": 148,
-        "powerAdjustedDownward": 128,
-        "zone": 1,
-        "perc_ftp": 55,
-        "type": "recovery",
-        "notes": "Easy spin recovery."
-      },
-      {
-        "segment_number": 12,
-        "startTimeSeconds": 3600,
-        "endTimeSeconds": 4200,
+        "endTimeSeconds": 4500,
         "power": 125,
         "powerAdjustedUpward": 135,
         "powerAdjustedDownward": 115,
         "zone": 1,
         "perc_ftp": 50,
         "type": "cooldown",
-        "notes": "Cooldown at an active recovery pace."
+        "notes": "Cool down at Zone 1."
       }
     ]
   },
@@ -221,8 +204,8 @@
       {
         "metric": "duration_consistency",
         "passed": true,
-        "declared_duration": 4200,
-        "calculated_duration": 4200,
+        "declared_duration": 4500,
+        "calculated_duration": 4500,
         "difference": 0
       },
       {
@@ -252,5 +235,6 @@
         "invalid_types": []
       }
     ]
-  }
+  },
+  "validation_passed": true
 }

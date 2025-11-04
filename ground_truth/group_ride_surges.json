@@ -8,166 +8,169 @@
     "model_id": "gpt-4o",
     "display_name": "GPT-4o"
   },
-  "generated_at": "2025-11-03T15:43:21.612921",
+  "generated_at": "2025-11-04T11:06:07.319985",
   "generation_metadata": {
-    "latency_ms": 11879,
-    "tokens": {
-      "input": 1008,
-      "output": 739,
-      "total": 1747
-    },
-    "cost": 0.008627,
     "attempts": 1,
-    "total_cost_all_attempts": 0.008627,
+    "total_latency_all_attempts": 12024,
+    "total_tokens_all_attempts": {
+      "input": 1008,
+      "output": 750,
+      "total": 1758
+    },
+    "total_cost_all_attempts": 0.008722,
+    "total_input_cost_all_attempts": 0.002197,
+    "total_output_cost_all_attempts": 0.006525,
     "all_attempts": [
       {
         "attempt": 1,
-        "latency_ms": 11879,
+        "latency_ms": 12024,
         "tokens": {
           "input": 1008,
-          "output": 739,
-          "total": 1747
+          "output": 750,
+          "total": 1758
         },
-        "cost": 0.008627
+        "cost": 0.008722,
+        "input_cost": 0.002197,
+        "output_cost": 0.006525
       }
     ]
   },
   "workout": {
-    "name": "Fast Group Ride with Sprints",
-    "description": "A dynamic workout simulating a fast-paced group ride, incorporating surges between Zone 3 and Zone 6 for hill and sprint efforts, bookended by an easy warm-up and cool-down.",
+    "name": "Fast Group Ride Simulation",
+    "description": "Simulate a fast group ride with varying intensity. Begin with an easy warm-up, follow with surging efforts and hill climbs, and end with a cool-down spin.",
     "workout_duration": 3900,
     "intervals": [
       {
         "segment_number": 1,
         "startTimeSeconds": 0,
         "endTimeSeconds": 900,
-        "power": 138,
-        "powerAdjustedUpward": 148,
-        "powerAdjustedDownward": 128,
-        "zone": 1,
-        "perc_ftp": 55,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
         "type": "warmup",
-        "notes": "Start easy to warm up the muscles."
+        "notes": "Warm-up for 15 minutes at an easy endurance pace."
       },
       {
         "segment_number": 2,
         "startTimeSeconds": 900,
         "endTimeSeconds": 1200,
-        "power": 214,
-        "powerAdjustedUpward": 224,
-        "powerAdjustedDownward": 204,
+        "power": 230,
+        "powerAdjustedUpward": 240,
+        "powerAdjustedDownward": 220,
         "zone": 3,
-        "perc_ftp": 86,
+        "perc_ftp": 92,
         "type": "interval",
-        "notes": "Push into Zone 3 to begin the work phase."
+        "notes": "Ride at a tempo pace as the group picks up speed."
       },
       {
         "segment_number": 3,
         "startTimeSeconds": 1200,
         "endTimeSeconds": 1500,
-        "power": 325,
-        "powerAdjustedUpward": 335,
-        "powerAdjustedDownward": 315,
+        "power": 310,
+        "powerAdjustedUpward": 320,
+        "powerAdjustedDownward": 300,
         "zone": 6,
-        "perc_ftp": 130,
+        "perc_ftp": 124,
         "type": "interval",
-        "notes": "Sprint effort for hill or surge."
+        "notes": "Surge on a small hill, pushing anaerobic capacity."
       },
       {
         "segment_number": 4,
         "startTimeSeconds": 1500,
         "endTimeSeconds": 1800,
-        "power": 214,
-        "powerAdjustedUpward": 224,
-        "powerAdjustedDownward": 204,
+        "power": 230,
+        "powerAdjustedUpward": 240,
+        "powerAdjustedDownward": 220,
         "zone": 3,
-        "perc_ftp": 86,
+        "perc_ftp": 92,
         "type": "interval",
-        "notes": "Return to Zone 3 effort."
+        "notes": "Recovery to a steady tempo pace."
       },
       {
         "segment_number": 5,
         "startTimeSeconds": 1800,
         "endTimeSeconds": 2100,
-        "power": 325,
-        "powerAdjustedUpward": 335,
-        "powerAdjustedDownward": 315,
-        "zone": 6,
-        "perc_ftp": 130,
+        "power": 270,
+        "powerAdjustedUpward": 280,
+        "powerAdjustedDownward": 260,
+        "zone": 5,
+        "perc_ftp": 108,
         "type": "interval",
-        "notes": "Another high-intensity surge."
+        "notes": "Increase to VO2 max on a fast section."
       },
       {
         "segment_number": 6,
         "startTimeSeconds": 2100,
         "endTimeSeconds": 2400,
-        "power": 214,
-        "powerAdjustedUpward": 224,
-        "powerAdjustedDownward": 204,
+        "power": 230,
+        "powerAdjustedUpward": 240,
+        "powerAdjustedDownward": 220,
         "zone": 3,
-        "perc_ftp": 86,
+        "perc_ftp": 92,
         "type": "interval",
-        "notes": "Zone 3 effort to recover from the sprint."
+        "notes": "Return to a steady tempo pace."
       },
       {
         "segment_number": 7,
         "startTimeSeconds": 2400,
         "endTimeSeconds": 2700,
-        "power": 325,
-        "powerAdjustedUpward": 335,
-        "powerAdjustedDownward": 315,
+        "power": 330,
+        "powerAdjustedUpward": 340,
+        "powerAdjustedDownward": 320,
         "zone": 6,
-        "perc_ftp": 130,
+        "perc_ftp": 132,
         "type": "interval",
-        "notes": "Push hard for a sprint."
+        "notes": "Push through another sprint effort."
       },
       {
         "segment_number": 8,
         "startTimeSeconds": 2700,
         "endTimeSeconds": 3000,
-        "power": 214,
-        "powerAdjustedUpward": 224,
-        "powerAdjustedDownward": 204,
+        "power": 230,
+        "powerAdjustedUpward": 240,
+        "powerAdjustedDownward": 220,
         "zone": 3,
-        "perc_ftp": 86,
+        "perc_ftp": 92,
         "type": "interval",
-        "notes": "Maintain a steady tempo in Zone 3."
+        "notes": "Steady tempo pace for recovery."
       },
       {
         "segment_number": 9,
         "startTimeSeconds": 3000,
         "endTimeSeconds": 3300,
-        "power": 325,
-        "powerAdjustedUpward": 335,
-        "powerAdjustedDownward": 315,
-        "zone": 6,
-        "perc_ftp": 130,
+        "power": 270,
+        "powerAdjustedUpward": 280,
+        "powerAdjustedDownward": 260,
+        "zone": 5,
+        "perc_ftp": 108,
         "type": "interval",
-        "notes": "Final sprint effort."
+        "notes": "Another fast surge, VO2 max level."
       },
       {
         "segment_number": 10,
         "startTimeSeconds": 3300,
         "endTimeSeconds": 3600,
-        "power": 214,
-        "powerAdjustedUpward": 224,
-        "powerAdjustedDownward": 204,
+        "power": 230,
+        "powerAdjustedUpward": 240,
+        "powerAdjustedDownward": 220,
         "zone": 3,
-        "perc_ftp": 86,
+        "perc_ftp": 92,
         "type": "interval",
-        "notes": "Recover in Zone 3 post-sprint."
+        "notes": "Regroup and maintain a tempo pace."
       },
       {
         "segment_number": 11,
         "startTimeSeconds": 3600,
         "endTimeSeconds": 3900,
-        "power": 138,
-        "powerAdjustedUpward": 148,
-        "powerAdjustedDownward": 128,
+        "power": 130,
+        "powerAdjustedUpward": 140,
+        "powerAdjustedDownward": 120,
         "zone": 1,
-        "perc_ftp": 55,
+        "perc_ftp": 52,
         "type": "cooldown",
-        "notes": "Spin home to cool down."
+        "notes": "Cool down with an easy spin for 10 minutes."
       }
     ]
   },
@@ -220,5 +223,6 @@
         "invalid_types": []
       }
     ]
-  }
+  },
+  "validation_passed": true
 }

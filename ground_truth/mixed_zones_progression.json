@@ -8,78 +8,73 @@
     "model_id": "gpt-4o",
     "display_name": "GPT-4o"
   },
-  "generated_at": "2025-11-03T15:43:09.712287",
+  "generated_at": "2025-11-04T11:05:55.268508",
   "generation_metadata": {
-    "latency_ms": 11672,
-    "tokens": {
-      "input": 1006,
-      "output": 557,
-      "total": 1563
+    "attempts": 2,
+    "total_latency_all_attempts": 19621,
+    "total_tokens_all_attempts": {
+      "input": 2012,
+      "output": 1171,
+      "total": 3183
     },
-    "cost": 0.007039,
-    "attempts": 3,
-    "total_cost_all_attempts": 0.021613,
+    "total_cost_all_attempts": 0.014574,
+    "total_input_cost_all_attempts": 0.004386,
+    "total_output_cost_all_attempts": 0.010188,
     "all_attempts": [
       {
         "attempt": 1,
-        "latency_ms": 10781,
+        "latency_ms": 9706,
         "tokens": {
           "input": 1006,
-          "output": 612,
-          "total": 1618
+          "output": 596,
+          "total": 1602
         },
-        "cost": 0.007517
+        "cost": 0.007378,
+        "input_cost": 0.002193,
+        "output_cost": 0.005185
       },
       {
         "attempt": 2,
-        "latency_ms": 3953,
+        "latency_ms": 9915,
         "tokens": {
           "input": 1006,
-          "output": 559,
-          "total": 1565
+          "output": 575,
+          "total": 1581
         },
-        "cost": 0.007056
-      },
-      {
-        "attempt": 3,
-        "latency_ms": 11672,
-        "tokens": {
-          "input": 1006,
-          "output": 557,
-          "total": 1563
-        },
-        "cost": 0.007039
+        "cost": 0.007196,
+        "input_cost": 0.002193,
+        "output_cost": 0.005003
       }
     ]
   },
   "workout": {
-    "name": "Endurance Workout with VO\u2082max Efforts",
-    "description": "A workout comprising endurance, tempo, and VO\u2082max intervals, finishing with recovery.",
-    "workout_duration": 4500,
+    "name": "45/20 Endurance & VO2 Max Blast",
+    "description": "This workout focuses on building endurance with Zone 2 efforts, increasing aerobic capacity with Zone 3 tempo, and boosting VO2 max with short intense Zone 5 intervals. It concludes with Zone 1 recovery to aid in recovery.",
+    "workout_duration": 5700,
     "intervals": [
       {
         "segment_number": 1,
         "startTimeSeconds": 0,
         "endTimeSeconds": 2700,
-        "power": 175,
-        "powerAdjustedUpward": 185,
-        "powerAdjustedDownward": 165,
+        "power": 164,
+        "powerAdjustedUpward": 174,
+        "powerAdjustedDownward": 154,
         "zone": 2,
-        "perc_ftp": 70,
+        "perc_ftp": 66,
         "type": "interval",
-        "notes": "Z2 endurance effort to build aerobic capacity."
+        "notes": "45 minutes at Zone 2 endurance pace."
       },
       {
         "segment_number": 2,
         "startTimeSeconds": 2700,
         "endTimeSeconds": 3900,
-        "power": 225,
-        "powerAdjustedUpward": 235,
-        "powerAdjustedDownward": 215,
+        "power": 214,
+        "powerAdjustedUpward": 224,
+        "powerAdjustedDownward": 204,
         "zone": 3,
-        "perc_ftp": 90,
+        "perc_ftp": 86,
         "type": "interval",
-        "notes": "Z3 tempo effort to enhance sustained power."
+        "notes": "20 minutes at Zone 3 tempo pace."
       },
       {
         "segment_number": 3,
@@ -91,7 +86,7 @@
         "zone": 5,
         "perc_ftp": 110,
         "type": "interval",
-        "notes": "Z5 VO\u2082max interval to increase maximum oxygen uptake."
+        "notes": "2 minutes VO2 max effort."
       },
       {
         "segment_number": 4,
@@ -103,7 +98,7 @@
         "zone": 1,
         "perc_ftp": 50,
         "type": "recovery",
-        "notes": "Rest period between VO\u2082max intervals."
+        "notes": "2 minutes recovery after VO2 max effort."
       },
       {
         "segment_number": 5,
@@ -115,7 +110,7 @@
         "zone": 5,
         "perc_ftp": 110,
         "type": "interval",
-        "notes": "Z5 VO\u2082max interval to increase maximum oxygen uptake."
+        "notes": "2 minutes VO2 max effort."
       },
       {
         "segment_number": 6,
@@ -127,7 +122,7 @@
         "zone": 1,
         "perc_ftp": 50,
         "type": "recovery",
-        "notes": "Rest period between VO\u2082max intervals."
+        "notes": "2 minutes recovery after VO2 max effort."
       },
       {
         "segment_number": 7,
@@ -139,26 +134,26 @@
         "zone": 5,
         "perc_ftp": 110,
         "type": "interval",
-        "notes": "Z5 VO\u2082max interval to increase maximum oxygen uptake."
+        "notes": "2 minutes VO2 max effort."
       },
       {
         "segment_number": 8,
         "startTimeSeconds": 4500,
-        "endTimeSeconds": 5100,
-        "power": 100,
-        "powerAdjustedUpward": 110,
-        "powerAdjustedDownward": 90,
+        "endTimeSeconds": 5700,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
         "zone": 1,
-        "perc_ftp": 40,
+        "perc_ftp": 50,
         "type": "recovery",
-        "notes": "Cool down with Z1 effort for recovery."
+        "notes": "10 minutes Zone 1 recovery to cool down."
       }
     ]
   },
   "validation_results": {
-    "overall_score": "7/8",
-    "pass_rate": 87.5,
-    "all_passed": false,
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
     "metrics": [
       {
         "metric": "schema_validation",
@@ -172,10 +167,10 @@
       },
       {
         "metric": "duration_consistency",
-        "passed": false,
-        "declared_duration": 4500,
-        "calculated_duration": 5100,
-        "difference": 600
+        "passed": true,
+        "declared_duration": 5700,
+        "calculated_duration": 5700,
+        "difference": 0
       },
       {
         "metric": "time_continuity",
@@ -204,5 +199,6 @@
         "invalid_types": []
       }
     ]
-  }
+  },
+  "validation_passed": true
 }

@@ -4,12 +4,43 @@ Ground truth generator - creates reference workouts using a strong LLM.
 
 import json
 import yaml
+import logging
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, Any, Optional
 
 from model_providers import get_provider
 from evaluator import WorkoutEvaluator
+
+
+def setup_logging(log_dir: Path, run_name: str) -> logging.Logger:
+    """Setup logging to both file and console."""
+    log_dir.mkdir(parents=True, exist_ok=True)
+    log_file = log_dir / f"{run_name}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
+
+    # Create logger
+    logger = logging.getLogger(run_name)
+    logger.setLevel(logging.INFO)
+
+    # Remove existing handlers to avoid duplicates
+    logger.handlers = []
+
+    # File handler
+    file_handler = logging.FileHandler(log_file)
+    file_handler.setLevel(logging.INFO)
+    file_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+    file_handler.setFormatter(file_formatter)
+
+    # Console handler
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.INFO)
+    console_formatter = logging.Formatter('%(message)s')
+    console_handler.setFormatter(console_formatter)
+
+    logger.addHandler(file_handler)
+    logger.addHandler(console_handler)
+
+    return logger
 
 
 class GroundTruthGenerator:
@@ -19,10 +50,15 @@ class GroundTruthGenerator:
         self,
         config_dir: str = "config",
         ground_truth_dir: str = "ground_truth",
+        log_dir: str = "logs",
     ):
         self.config_dir = Path(config_dir)
         self.ground_truth_dir = Path(ground_truth_dir)
         self.ground_truth_dir.mkdir(parents=True, exist_ok=True)
+
+        # Setup logging
+        self.log_dir = Path(log_dir)
+        self.logger = setup_logging(self.log_dir, "ground_truth_generation")
 
         # Load configurations
         self.gt_config = self._load_yaml(self.config_dir / "ground_truth.yaml")
@@ -65,7 +101,7 @@ class GroundTruthGenerator:
         prompt_id = prompt_config["id"]
         user_prompt = prompt_config["user_prompt"]
 
-        print(f"  Generating ground truth for: {prompt_id}")
+        self.logger.info(f"  Generating ground truth for: {prompt_id}")
 
         provider_name = self.reference_model["provider"]
         model_id = self.reference_model["model_id"]
@@ -74,8 +110,13 @@ class GroundTruthGenerator:
         max_retries = self.gt_config["generation"].get("max_retries", 3)
         validate = self.gt_config["generation"].get("validate_before_saving", True)
 
-        # Track cumulative cost across all attempts
+        # Track cumulative metrics across all attempts
         total_cost_all_attempts = 0.0
+        total_input_cost_all_attempts = 0.0
+        total_output_cost_all_attempts = 0.0
+        total_latency_all_attempts = 0
+        total_input_tokens_all_attempts = 0
+        total_output_tokens_all_attempts = 0
         all_attempts_metadata = []
 
         for attempt in range(max_retries):
@@ -92,10 +133,29 @@ class GroundTruthGenerator:
                     output_price_per_million=self.reference_model["pricing"][
                         "output_per_million"
                     ],
+                    reasoning_effort=self.reference_model.get("reasoning_effort"),
                 )
 
-                # Track this attempt's cost
+                # Calculate input and output costs for this attempt
+                input_cost = (
+                    response.input_tokens
+                    * self.reference_model["pricing"]["input_per_million"]
+                    / 1_000_000
+                )
+                output_cost = (
+                    response.output_tokens
+                    * self.reference_model["pricing"]["output_per_million"]
+                    / 1_000_000
+                )
+
+                # Track this attempt's metrics
                 total_cost_all_attempts += response.cost
+                total_input_cost_all_attempts += input_cost
+                total_output_cost_all_attempts += output_cost
+                total_latency_all_attempts += response.latency_ms
+                total_input_tokens_all_attempts += response.input_tokens
+                total_output_tokens_all_attempts += response.output_tokens
+
                 all_attempts_metadata.append(
                     {
                         "attempt": attempt + 1,
@@ -106,17 +166,60 @@ class GroundTruthGenerator:
                             "total": response.total_tokens,
                         },
                         "cost": round(response.cost, 6),
+                        "input_cost": round(input_cost, 6),
+                        "output_cost": round(output_cost, 6),
                     }
                 )
 
                 # Parse JSON
+                parse_error = None
+                workout = None
                 try:
                     workout = json.loads(response.content)
                 except json.JSONDecodeError as e:
-                    print(f"    Attempt {attempt + 1}: JSON parse error - {str(e)}")
+                    parse_error = str(e)
+                    self.logger.info(f"    Attempt {attempt + 1}: JSON parse error - {str(e)}")
                     if attempt < max_retries - 1:
                         continue
-                    raise
+                    # Last attempt with parse error - still save the result
+                    self.logger.warning(f"    ⚠ Parse failed after {max_retries} attempts, recording with error")
+
+                    # Build ground truth object with parse error
+                    ground_truth = {
+                        "prompt_id": prompt_id,
+                        "prompt_description": prompt_config["description"],
+                        "user_prompt": user_prompt,
+                        "ftp": ftp,
+                        "reference_model": {
+                            "provider": provider_name,
+                            "model_id": model_id,
+                            "display_name": display_name,
+                        },
+                        "generated_at": datetime.now().isoformat(),
+                        "generation_metadata": {
+                            "attempts": attempt + 1,
+                            "total_latency_all_attempts": total_latency_all_attempts,
+                            "total_tokens_all_attempts": {
+                                "input": total_input_tokens_all_attempts,
+                                "output": total_output_tokens_all_attempts,
+                                "total": total_input_tokens_all_attempts
+                                + total_output_tokens_all_attempts,
+                            },
+                            "total_cost_all_attempts": round(total_cost_all_attempts, 6),
+                            "total_input_cost_all_attempts": round(
+                                total_input_cost_all_attempts, 6
+                            ),
+                            "total_output_cost_all_attempts": round(
+                                total_output_cost_all_attempts, 6
+                            ),
+                            "all_attempts": all_attempts_metadata,
+                        },
+                        "parse_error": parse_error,
+                        "raw_response": response.content,
+                        "validation_passed": False,
+                        "workout": None,
+                    }
+                    return ground_truth
 
                 # Validate if requested
                 if validate:
@@ -124,21 +227,22 @@ class GroundTruthGenerator:
                     evaluation = evaluator.evaluate(workout)
 
                     if not evaluation["all_passed"]:
-                        print(
+                        self.logger.info(
                             f"    Attempt {attempt + 1}: Validation failed "
                             f"(pass rate: {evaluation['pass_rate']}%)"
                         )
                         if attempt < max_retries - 1:
-                            print("    Retrying...")
+                            self.logger.info("    Retrying...")
                             continue
                         else:
-                            # Fail properly instead of accepting invalid workout
-                            raise ValueError(
-                                f"Ground truth validation failed after {max_retries} attempts. "
-                                f"Pass rate: {evaluation['pass_rate']}%"
+                            # Last attempt with validation failure - still save the result
+                            self.logger.warning(
+                                f"    ⚠ Validation failed after {max_retries} attempts "
+                                f"(pass rate: {evaluation['pass_rate']}%), recording with flag"
                             )
+                            # Continue to build ground truth object with validation failure flag
 
-                # Success! Build ground truth object
+                # Build ground truth object (either success or failed validation on last attempt)
                 ground_truth = {
                     "prompt_id": prompt_id,
                     "prompt_description": prompt_config["description"],
@@ -151,15 +255,21 @@ class GroundTruthGenerator:
                     },
                     "generated_at": datetime.now().isoformat(),
                     "generation_metadata": {
-                        "latency_ms": response.latency_ms,
-                        "tokens": {
-                            "input": response.input_tokens,
-                            "output": response.output_tokens,
-                            "total": response.total_tokens,
-                        },
-                        "cost": round(response.cost, 6),
                         "attempts": attempt + 1,
+                        "total_latency_all_attempts": total_latency_all_attempts,
+                        "total_tokens_all_attempts": {
+                            "input": total_input_tokens_all_attempts,
+                            "output": total_output_tokens_all_attempts,
+                            "total": total_input_tokens_all_attempts
+                            + total_output_tokens_all_attempts,
+                        },
                         "total_cost_all_attempts": round(total_cost_all_attempts, 6),
+                        "total_input_cost_all_attempts": round(
+                            total_input_cost_all_attempts, 6
+                        ),
+                        "total_output_cost_all_attempts": round(
+                            total_output_cost_all_attempts, 6
+                        ),
                         "all_attempts": all_attempts_metadata,
                     },
                     "workout": workout,
@@ -167,22 +277,75 @@ class GroundTruthGenerator:
 
                 if validate:
                     ground_truth["validation_results"] = evaluation
+                    ground_truth["validation_passed"] = evaluation["all_passed"]
+                else:
+                    ground_truth["validation_passed"] = None
 
-                print(
-                    f"    ✓ Generated successfully "
-                    f"(attempt {attempt + 1}, {response.latency_ms}ms)"
-                )
+                if validate and not evaluation["all_passed"]:
+                    self.logger.warning(
+                        f"    ⚠ Generated with validation failure "
+                        f"(attempt {attempt + 1}, pass rate: {evaluation['pass_rate']}%)"
+                    )
+                else:
+                    self.logger.info(
+                        f"    ✓ Generated successfully "
+                        f"(attempt {attempt + 1}, {response.latency_ms}ms)"
+                    )
                 return ground_truth
 
             except Exception as e:
-                print(f"    Attempt {attempt + 1}: Error - {str(e)}")
-                if attempt < max_retries - 1:
-                    continue
-                raise
+                self.logger.info(f"    Attempt {attempt + 1}: Error - {str(e)}")
 
-        raise RuntimeError(
-            f"Failed to generate ground truth after {max_retries} attempts"
-        )
+                # Track this attempt even if it errored
+                if attempt >= max_retries - 1:
+                    # Last attempt with exception - still save the result
+                    self.logger.warning(f"    ⚠ Generation failed after {max_retries} attempts, recording with error")
+
+                    # Build ground truth object with error
+                    ground_truth = {
+                        "prompt_id": prompt_id,
+                        "prompt_description": prompt_config["description"],
+                        "user_prompt": user_prompt,
+                        "ftp": ftp,
+                        "reference_model": {
+                            "provider": provider_name,
+                            "model_id": model_id,
+                            "display_name": display_name,
+                        },
+                        "generated_at": datetime.now().isoformat(),
+                        "generation_metadata": {
+                            "attempts": attempt + 1,
+                            "total_latency_all_attempts": total_latency_all_attempts,
+                            "total_tokens_all_attempts": {
+                                "input": total_input_tokens_all_attempts,
+                                "output": total_output_tokens_all_attempts,
+                                "total": total_input_tokens_all_attempts
+                                + total_output_tokens_all_attempts,
+                            },
+                            "total_cost_all_attempts": round(total_cost_all_attempts, 6),
+                            "total_input_cost_all_attempts": round(
+                                total_input_cost_all_attempts, 6
+                            ),
+                            "total_output_cost_all_attempts": round(
+                                total_output_cost_all_attempts, 6
+                            ),
+                            "all_attempts": all_attempts_metadata,
+                        },
+                        "error": str(e),
+                        "validation_passed": False,
+                        "workout": None,
+                    }
+                    return ground_truth
+
+                # Not last attempt, continue retrying
+                continue
+
+        # Should never reach here, but just in case
+        return {
+            "prompt_id": prompt_id,
+            "error": "Maximum retries exceeded without success",
+            "validation_passed": False,
+        }
 
     def generate_all(self, prompt_filter: list = None, force: bool = False):
         """Generate ground truth for all prompts."""
@@ -197,20 +360,21 @@ class GroundTruthGenerator:
             "overwrite_existing", False
         )
 
-        print(f"\n{'=' * 80}")
-        print("Ground Truth Generation")
-        print(
+        self.logger.info(f"\n{'=' * 80}")
+        self.logger.info("Ground Truth Generation")
+        self.logger.info(
             f"Reference Model: {self.reference_model['display_name']} "
             f"({self.reference_model['provider']}/{self.reference_model['model_id']})"
         )
-        print(f"FTP: {ftp}W")
-        print(f"Prompts: {len(prompts)}")
-        print(f"Overwrite existing: {overwrite}")
-        print(f"{'=' * 80}\n")
+        self.logger.info(f"FTP: {ftp}W")
+        self.logger.info(f"Prompts: {len(prompts)}")
+        self.logger.info(f"Overwrite existing: {overwrite}")
+        self.logger.info(f"Logs will be saved to: {self.log_dir}")
+        self.logger.info(f"{'=' * 80}\n")
 
         generated = 0
         skipped = 0
-        failed = 0
+        generated_with_errors = 0
 
         for prompt_config in prompts:
             prompt_id = prompt_config["id"]
@@ -218,31 +382,32 @@ class GroundTruthGenerator:
 
             # Check if already exists
             if gt_file.exists() and not overwrite:
-                print(f"  Skipping {prompt_id} (already exists)")
+                self.logger.info(f"  Skipping {prompt_id} (already exists)")
                 skipped += 1
                 continue
 
-            try:
-                ground_truth = self.generate_ground_truth(prompt_config, ftp)
-                self._save_json(ground_truth, gt_file)
+            # Always generate and save - generate_ground_truth now returns a result even on failure
+            ground_truth = self.generate_ground_truth(prompt_config, ftp)
+            self._save_json(ground_truth, gt_file)
+
+            # Check if it was successful or had errors/validation failures
+            if ground_truth.get("validation_passed") is False or ground_truth.get("error") or ground_truth.get("parse_error"):
+                generated_with_errors += 1
+            else:
                 generated += 1
 
-            except Exception as e:
-                print(f"  ✗ Failed to generate {prompt_id}: {str(e)}")
-                failed += 1
-
-        print(f"\n{'=' * 80}")
-        print("Ground Truth Generation Complete!")
-        print(f"Generated: {generated}")
-        print(f"Skipped: {skipped}")
-        print(f"Failed: {failed}")
-        print(f"Ground truth saved to: {self.ground_truth_dir}")
-        print(f"{'=' * 80}\n")
+        self.logger.info(f"\n{'=' * 80}")
+        self.logger.info("Ground Truth Generation Complete!")
+        self.logger.info(f"Generated successfully: {generated}")
+        self.logger.info(f"Generated with errors/validation failures: {generated_with_errors}")
+        self.logger.info(f"Skipped: {skipped}")
+        self.logger.info(f"Ground truth saved to: {self.ground_truth_dir}")
+        self.logger.info(f"{'=' * 80}\n")
 
         return {
             "generated": generated,
+            "generated_with_errors": generated_with_errors,
             "skipped": skipped,
-            "failed": failed,
         }
 
     def validate_ground_truth(self, prompt_id: str = None):
@@ -252,7 +417,7 @@ class GroundTruthGenerator:
         else:
             files = list(self.ground_truth_dir.glob("*.json"))
 
-        print(f"\nValidating {len(files)} ground truth file(s)...\n")
+        self.logger.info(f"\nValidating {len(files)} ground truth file(s)...\n")
 
         results = []
         for gt_file in files:
@@ -267,7 +432,7 @@ class GroundTruthGenerator:
             evaluation = evaluator.evaluate(workout)
 
             status = "✓ PASS" if evaluation["all_passed"] else "✗ FAIL"
-            print(f"  {status} {prompt_id} " f"(pass rate: {evaluation['pass_rate']}%)")
+            self.logger.info(f"  {status} {prompt_id} " f"(pass rate: {evaluation['pass_rate']}%)")
 
             results.append(
                 {
@@ -278,9 +443,9 @@ class GroundTruthGenerator:
                 }
             )
 
-        print("\nValidation complete!")
+        self.logger.info("\nValidation complete!")
         passed = sum(1 for r in results if r["all_passed"])
-        print(f"Passed: {passed}/{len(results)}")
+        self.logger.info(f"Passed: {passed}/{len(results)}")
 
         return results
 
