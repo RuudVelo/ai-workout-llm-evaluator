@@ -1,0 +1,212 @@
+{
+  "prompt_id": "endurance_65_sprints",
+  "prompt_description": "Endurance ride with short sprints",
+  "user_prompt": "A 60-minute endurance ride at around 65% of FTP, kept cadence between 85 and 95 rpm, and threw in a few short 10-second sprints just to wake up the legs.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-03T15:41:30.076578",
+  "generation_metadata": {
+    "latency_ms": 14664,
+    "tokens": {
+      "input": 1011,
+      "output": 699,
+      "total": 1710
+    },
+    "cost": 0.008285,
+    "attempts": 1,
+    "total_cost_all_attempts": 0.008285,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 14664,
+        "tokens": {
+          "input": 1011,
+          "output": 699,
+          "total": 1710
+        },
+        "cost": 0.008285
+      }
+    ]
+  },
+  "workout": {
+    "name": "Endurance Ride with Leg Sprints",
+    "description": "A 60-minute endurance ride at 65% of FTP with short sprints to activate the legs. Great for building stamina and waking up the muscles.",
+    "workout_duration": 3600,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 600,
+        "power": 163,
+        "powerAdjustedUpward": 173,
+        "powerAdjustedDownward": 153,
+        "zone": 2,
+        "perc_ftp": 65,
+        "type": "warmup",
+        "notes": "Start with a steady pace at 65% FTP to get warmed up."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 600,
+        "endTimeSeconds": 1200,
+        "power": 163,
+        "powerAdjustedUpward": 173,
+        "powerAdjustedDownward": 153,
+        "zone": 2,
+        "perc_ftp": 65,
+        "type": "interval",
+        "notes": "Maintain endurance pace at 65% of FTP. Focus on a cadence between 85-95 rpm."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 1200,
+        "endTimeSeconds": 1210,
+        "power": 400,
+        "powerAdjustedUpward": 410,
+        "powerAdjustedDownward": 390,
+        "zone": 7,
+        "perc_ftp": 160,
+        "type": "interval",
+        "notes": "10-second sprint to activate the legs."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 1210,
+        "endTimeSeconds": 1800,
+        "power": 163,
+        "powerAdjustedUpward": 173,
+        "powerAdjustedDownward": 153,
+        "zone": 2,
+        "perc_ftp": 65,
+        "type": "interval",
+        "notes": "Return to endurance pace and maintain cadence."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 1800,
+        "endTimeSeconds": 1810,
+        "power": 400,
+        "powerAdjustedUpward": 410,
+        "powerAdjustedDownward": 390,
+        "zone": 7,
+        "perc_ftp": 160,
+        "type": "interval",
+        "notes": "10-second sprint to wake up the legs."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 1810,
+        "endTimeSeconds": 2400,
+        "power": 163,
+        "powerAdjustedUpward": 173,
+        "powerAdjustedDownward": 153,
+        "zone": 2,
+        "perc_ftp": 65,
+        "type": "interval",
+        "notes": "Resume steady endurance pace after sprint."
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 2400,
+        "endTimeSeconds": 2410,
+        "power": 400,
+        "powerAdjustedUpward": 410,
+        "powerAdjustedDownward": 390,
+        "zone": 7,
+        "perc_ftp": 160,
+        "type": "interval",
+        "notes": "Short sprint to activate muscles."
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 2410,
+        "endTimeSeconds": 3000,
+        "power": 163,
+        "powerAdjustedUpward": 173,
+        "powerAdjustedDownward": 153,
+        "zone": 2,
+        "perc_ftp": 65,
+        "type": "interval",
+        "notes": "Back to endurance pace with cadence focus."
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 3000,
+        "endTimeSeconds": 3010,
+        "power": 400,
+        "powerAdjustedUpward": 410,
+        "powerAdjustedDownward": 390,
+        "zone": 7,
+        "perc_ftp": 160,
+        "type": "interval",
+        "notes": "Final 10-second sprint for leg activation."
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 3010,
+        "endTimeSeconds": 3600,
+        "power": 163,
+        "powerAdjustedUpward": 173,
+        "powerAdjustedDownward": 153,
+        "zone": 2,
+        "perc_ftp": 65,
+        "type": "cooldown",
+        "notes": "Cool down at endurance pace, allowing the heart rate to lower."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 3600,
+        "calculated_duration": 3600,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  }
+}

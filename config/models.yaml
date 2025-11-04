@@ -1,0 +1,75 @@
+models:
+  # OpenAI Models
+  - provider: openai
+    model_id: gpt-4o
+    display_name: "GPT-4o"
+    supports_structured_output: true
+    pricing:
+      input_per_million: 2.18
+      output_per_million: 8.70
+
+  - provider: openai
+    model_id: gpt-4o-mini
+    display_name: "GPT-4o Mini"
+    supports_structured_output: true
+    pricing:
+      input_per_million: 0.131
+      output_per_million: 0.522
+
+  - provider: openai
+    model_id: gpt-5-nano
+    display_name: "GPT-5 Nano"
+    supports_structured_output: true
+    pricing:
+      input_per_million: 0.043
+      output_per_million: 0.35
+
+  # Google Gemini Models
+  # - provider: gemini
+  #   model_id: gemini-2.5-pro
+  #   display_name: "Gemini 2.5 Pro"
+  #   supports_structured_output: true
+  #   pricing:
+  #     input_per_million: 1.09
+  #     output_per_million: 8.69
+
+  - provider: gemini
+    model_id: gemini-2.5-flash  
+    display_name: "Gemini 2.5 Flash"
+    supports_structured_output: true
+    pricing:
+      input_per_million: 0.26
+      output_per_million: 2.17
+
+  - provider: gemini
+    model_id: gemini-2.5-flash-lite
+    display_name: "Gemini 2.5 Flash Lite"
+    supports_structured_output: true
+    pricing:
+      input_per_million: 0.087  
+      output_per_million: 0.348  
+
+  # Together AI Models (Open Source)
+  - provider: together
+    model_id: meta-llama/Llama-3.3-70B-Instruct-Turbo
+    display_name: "Llama 3.3 70B Instruct"
+    supports_structured_output: true
+    pricing:
+      input_per_million: 0.766
+      output_per_million: 0.766
+
+  - provider: together
+    model_id: Qwen/Qwen2.5-72B-Instruct-Turbo
+    display_name: "Qwen 2.5 72B Instruct"
+    supports_structured_output: true
+    pricing:
+      input_per_million: 1.044
+      output_per_million: 1.044
+
+  - provider: together
+    model_id: meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo
+    display_name: "Llama 3.1 8B Instruct"
+    supports_structured_output: true
+    pricing:
+      input_per_million: 0.157
+      output_per_million: 0.157

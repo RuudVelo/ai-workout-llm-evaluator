@@ -1,0 +1,152 @@
+{
+  "prompt_id": "two_hour_tempo_climbing",
+  "prompt_description": "Long ride with tempo and climbing",
+  "user_prompt": "Two-hour ride, steady tempo for the first hour, moderate climbing in the second, staying below threshold.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-03T15:42:43.237046",
+  "generation_metadata": {
+    "latency_ms": 13807,
+    "tokens": {
+      "input": 990,
+      "output": 386,
+      "total": 1376
+    },
+    "cost": 0.005516,
+    "attempts": 1,
+    "total_cost_all_attempts": 0.005516,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 13807,
+        "tokens": {
+          "input": 990,
+          "output": 386,
+          "total": 1376
+        },
+        "cost": 0.005516
+      }
+    ]
+  },
+  "workout": {
+    "name": "Tempo and Climb Ride",
+    "description": "A structured two-hour ride with a steady tempo pace for the first hour followed by moderate climbing efforts in the second hour, staying below threshold to build endurance and strength.",
+    "workout_duration": 7200,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 3600,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "interval",
+        "notes": "Steady tempo riding at 80% FTP to build endurance."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 3600,
+        "endTimeSeconds": 4500,
+        "power": 220,
+        "powerAdjustedUpward": 230,
+        "powerAdjustedDownward": 210,
+        "zone": 3,
+        "perc_ftp": 88,
+        "type": "interval",
+        "notes": "Moderate climbing effort with a focus on sustaining power below threshold."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 4500,
+        "endTimeSeconds": 5400,
+        "power": 220,
+        "powerAdjustedUpward": 230,
+        "powerAdjustedDownward": 210,
+        "zone": 3,
+        "perc_ftp": 88,
+        "type": "interval",
+        "notes": "Continue moderate climb, maintaining consistent power below threshold."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 5400,
+        "endTimeSeconds": 6300,
+        "power": 220,
+        "powerAdjustedUpward": 230,
+        "powerAdjustedDownward": 210,
+        "zone": 3,
+        "perc_ftp": 88,
+        "type": "interval",
+        "notes": "Moderate climbing to sustain effort with good form."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 6300,
+        "endTimeSeconds": 7200,
+        "power": 220,
+        "powerAdjustedUpward": 230,
+        "powerAdjustedDownward": 210,
+        "zone": 3,
+        "perc_ftp": 88,
+        "type": "interval",
+        "notes": "Final moderate climbing interval to end the workout, focusing on smooth power delivery."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 7200,
+        "calculated_duration": 7200,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  }
+}

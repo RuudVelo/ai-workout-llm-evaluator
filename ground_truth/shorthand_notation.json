@@ -1,0 +1,248 @@
+{
+  "prompt_id": "shorthand_notation",
+  "prompt_description": "Workout using shorthand notation",
+  "user_prompt": "WU 10min @150W, 6\u00d75min @300W with 3 min rec @120W, cd 20 min @Z1.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-03T15:44:25.636124",
+  "generation_metadata": {
+    "latency_ms": 12183,
+    "tokens": {
+      "input": 1002,
+      "output": 855,
+      "total": 1857
+    },
+    "cost": 0.009623,
+    "attempts": 1,
+    "total_cost_all_attempts": 0.009623,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 12183,
+        "tokens": {
+          "input": 1002,
+          "output": 855,
+          "total": 1857
+        },
+        "cost": 0.009623
+      }
+    ]
+  },
+  "workout": {
+    "name": "High-Intensity Interval Session",
+    "description": "This workout focuses on enhancing VO2 Max through repeated high-intensity intervals, beneficial for improving endurance and aerobic capacity.",
+    "workout_duration": 4500,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 600,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "warmup",
+        "notes": "Warm-up at 60% FTP."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 600,
+        "endTimeSeconds": 900,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "High-intensity interval at 120% FTP."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 900,
+        "endTimeSeconds": 1080,
+        "power": 120,
+        "powerAdjustedUpward": 130,
+        "powerAdjustedDownward": 110,
+        "zone": 1,
+        "perc_ftp": 48,
+        "type": "rest",
+        "notes": "Recovery at 48% FTP."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 1080,
+        "endTimeSeconds": 1380,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "High-intensity interval at 120% FTP."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 1380,
+        "endTimeSeconds": 1560,
+        "power": 120,
+        "powerAdjustedUpward": 130,
+        "powerAdjustedDownward": 110,
+        "zone": 1,
+        "perc_ftp": 48,
+        "type": "rest",
+        "notes": "Recovery at 48% FTP."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 1560,
+        "endTimeSeconds": 1860,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "High-intensity interval at 120% FTP."
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 1860,
+        "endTimeSeconds": 2040,
+        "power": 120,
+        "powerAdjustedUpward": 130,
+        "powerAdjustedDownward": 110,
+        "zone": 1,
+        "perc_ftp": 48,
+        "type": "rest",
+        "notes": "Recovery at 48% FTP."
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 2040,
+        "endTimeSeconds": 2340,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "High-intensity interval at 120% FTP."
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 2340,
+        "endTimeSeconds": 2520,
+        "power": 120,
+        "powerAdjustedUpward": 130,
+        "powerAdjustedDownward": 110,
+        "zone": 1,
+        "perc_ftp": 48,
+        "type": "rest",
+        "notes": "Recovery at 48% FTP."
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 2520,
+        "endTimeSeconds": 2820,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "High-intensity interval at 120% FTP."
+      },
+      {
+        "segment_number": 11,
+        "startTimeSeconds": 2820,
+        "endTimeSeconds": 3000,
+        "power": 120,
+        "powerAdjustedUpward": 130,
+        "powerAdjustedDownward": 110,
+        "zone": 1,
+        "perc_ftp": 48,
+        "type": "rest",
+        "notes": "Recovery at 48% FTP."
+      },
+      {
+        "segment_number": 12,
+        "startTimeSeconds": 3000,
+        "endTimeSeconds": 3300,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "High-intensity interval at 120% FTP."
+      },
+      {
+        "segment_number": 13,
+        "startTimeSeconds": 3300,
+        "endTimeSeconds": 4500,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "cooldown",
+        "notes": "Cool down in Zone 1."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 4500,
+        "calculated_duration": 4500,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,292 @@
+{
+  "prompt_id": "tempo_sprints_combo",
+  "prompt_description": "Tempo work combined with sprint intervals",
+  "user_prompt": "5-minute warmup, main set of 20 minutes steady Z3, followed by 6x20-second sprints with 40 seconds rest, cooldown 10 minutes.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-03T15:46:18.257736",
+  "generation_metadata": {
+    "latency_ms": 12881,
+    "tokens": {
+      "input": 1004,
+      "output": 958,
+      "total": 1962
+    },
+    "cost": 0.010523,
+    "attempts": 3,
+    "total_cost_all_attempts": 0.033092,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 18674,
+        "tokens": {
+          "input": 1004,
+          "output": 1215,
+          "total": 2219
+        },
+        "cost": 0.012759
+      },
+      {
+        "attempt": 2,
+        "latency_ms": 11754,
+        "tokens": {
+          "input": 1004,
+          "output": 876,
+          "total": 1880
+        },
+        "cost": 0.00981
+      },
+      {
+        "attempt": 3,
+        "latency_ms": 12881,
+        "tokens": {
+          "input": 1004,
+          "output": 958,
+          "total": 1962
+        },
+        "cost": 0.010523
+      }
+    ]
+  },
+  "workout": {
+    "name": "Zone 3 with Sprints",
+    "description": "A structured workout with a warm-up, a steady Zone 3 effort, short sprints, and a cooldown to improve endurance and anaerobic capacity.",
+    "workout_duration": 3000,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 300,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "warmup",
+        "notes": "Ramp up warm-up starting at 60% FTP."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 300,
+        "endTimeSeconds": 1500,
+        "power": 214,
+        "powerAdjustedUpward": 224,
+        "powerAdjustedDownward": 204,
+        "zone": 3,
+        "perc_ftp": 86,
+        "type": "interval",
+        "notes": "20 minutes steady effort in Zone 3."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 1500,
+        "endTimeSeconds": 1520,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Sprint interval 1."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 1520,
+        "endTimeSeconds": 1560,
+        "power": 0,
+        "powerAdjustedUpward": 10,
+        "powerAdjustedDownward": 0,
+        "zone": 1,
+        "perc_ftp": 0,
+        "type": "rest",
+        "notes": "Recovery after Sprint 1."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 1560,
+        "endTimeSeconds": 1580,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Sprint interval 2."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 1580,
+        "endTimeSeconds": 1620,
+        "power": 0,
+        "powerAdjustedUpward": 10,
+        "powerAdjustedDownward": 0,
+        "zone": 1,
+        "perc_ftp": 0,
+        "type": "rest",
+        "notes": "Recovery after Sprint 2."
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 1620,
+        "endTimeSeconds": 1640,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Sprint interval 3."
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 1640,
+        "endTimeSeconds": 1680,
+        "power": 0,
+        "powerAdjustedUpward": 10,
+        "powerAdjustedDownward": 0,
+        "zone": 1,
+        "perc_ftp": 0,
+        "type": "rest",
+        "notes": "Recovery after Sprint 3."
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 1680,
+        "endTimeSeconds": 1700,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Sprint interval 4."
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 1700,
+        "endTimeSeconds": 1740,
+        "power": 0,
+        "powerAdjustedUpward": 10,
+        "powerAdjustedDownward": 0,
+        "zone": 1,
+        "perc_ftp": 0,
+        "type": "rest",
+        "notes": "Recovery after Sprint 4."
+      },
+      {
+        "segment_number": 11,
+        "startTimeSeconds": 1740,
+        "endTimeSeconds": 1760,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Sprint interval 5."
+      },
+      {
+        "segment_number": 12,
+        "startTimeSeconds": 1760,
+        "endTimeSeconds": 1800,
+        "power": 0,
+        "powerAdjustedUpward": 10,
+        "powerAdjustedDownward": 0,
+        "zone": 1,
+        "perc_ftp": 0,
+        "type": "rest",
+        "notes": "Recovery after Sprint 5."
+      },
+      {
+        "segment_number": 13,
+        "startTimeSeconds": 1800,
+        "endTimeSeconds": 1820,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Sprint interval 6."
+      },
+      {
+        "segment_number": 14,
+        "startTimeSeconds": 1820,
+        "endTimeSeconds": 1860,
+        "power": 0,
+        "powerAdjustedUpward": 10,
+        "powerAdjustedDownward": 0,
+        "zone": 1,
+        "perc_ftp": 0,
+        "type": "rest",
+        "notes": "Recovery after Sprint 6."
+      },
+      {
+        "segment_number": 15,
+        "startTimeSeconds": 1860,
+        "endTimeSeconds": 2460,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "cooldown",
+        "notes": "10-minute cooldown at 60% FTP."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "7/8",
+    "pass_rate": 87.5,
+    "all_passed": false,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 3000,
+        "calculated_duration": 2460,
+        "difference": 540
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  }
+}

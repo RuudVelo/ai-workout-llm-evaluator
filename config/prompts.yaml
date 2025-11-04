@@ -1,0 +1,97 @@
+ftp: 250  # Default FTP for all prompts (watts)
+
+prompts:
+  - id: endurance_65_sprints
+    description: "Endurance ride with short sprints"
+    user_prompt: "A 60-minute endurance ride at around 65% of FTP, kept cadence between 85 and 95 rpm, and threw in a few short 10-second sprints just to wake up the legs."
+
+  - id: threshold_intervals_3x10
+    description: "Classic threshold intervals with warmup/cooldown"
+    user_prompt: "60min total — 15min warm-up, 3x10min @ 90% FTP with 5min easy between, 10min cool-down."
+
+  - id: threshold_4x8_detailed
+    description: "Threshold intervals with detailed instructions"
+    user_prompt: "Start with 20 minutes of easy spinning, then complete 4 intervals of 8 minutes at threshold power with 4 minutes recovery between each. Finish with 10 minutes of light spinning."
+
+  - id: two_hour_tempo_climbing
+    description: "Long ride with tempo and climbing"
+    user_prompt: "Two-hour ride, steady tempo for the first hour, moderate climbing in the second, staying below threshold."
+
+  - id: mixed_zones_progression
+    description: "Progressive workout through multiple zones"
+    user_prompt: "Z2 endurance for 45 minutes, Z3 tempo for 20 minutes, 3x2min Z5 VO₂max efforts, finish with 10min Z1 recovery."
+
+  - id: group_ride_surges
+    description: "Variable intensity group ride simulation"
+    user_prompt: "Fast group ride — started easy for 15 min, then about 40 min of surging between Z3 and Z6 depending on hills and sprints, then 10 min spin home."
+
+  - id: zwift_intervals_sprints
+    description: "Zwift-style workout with intervals and sprints"
+    user_prompt: "Zwift workout: 5min warmup ramp, 3x12min at 95% FTP with 5min recoveries, then 4x30sec sprints at 150% FTP, 5min cooldown."
+
+  - id: shorthand_notation
+    description: "Workout using shorthand notation"
+    user_prompt: "WU 10min @150W, 6×5min @300W with 3 min rec @120W, cd 20 min @Z1."
+
+  - id: simple_tempo_block
+    description: "Simple tempo block workout"
+    user_prompt: "10-minute warmup, then main set of 40 minutes at tempo, then cooldown 10 minutes."
+
+  - id: threshold_5x6
+    description: "Threshold intervals 5x6 minutes"
+    user_prompt: "10-minute easy spin warmup, then main set of 5x6-minute threshold intervals with 3 minutes recovery between each, finishing with 10-minute cooldown."
+
+  - id: ramping_intervals
+    description: "Intervals ramping from 85% to 100% FTP"
+    user_prompt: "10-minute warmup, main set of 4x10-minute intervals ramping from 85% to 100% FTP with 3 minutes recovery at Z1, ending with 15 minutes easy spinning."
+
+  - id: tempo_sprints_combo
+    description: "Tempo work combined with sprint intervals"
+    user_prompt: "5-minute warmup, main set of 20 minutes steady Z3, followed by 6x20-second sprints with 40 seconds rest, cooldown 10 minutes."
+
+  - id: progressive_blocks
+    description: "Progressive Z2 to Z3 blocks"
+    user_prompt: "Warmup 10 minutes, main set first block 15 minutes Z2, second block 15 minutes Z3, 5-minute recovery between, 10-minute cooldown."
+
+  - id: threshold_sprints_shorthand
+    description: "Threshold work with sprint finisher (shorthand)"
+    user_prompt: "WU 10min @60% FTP, 3x12min @95% FTP (5min @Z1 rec), 5x30s @150% FTP / 30s easy, 10min CD."
+
+  - id: climbing_intervals_wattage
+    description: "Climbing intervals with specific wattage"
+    user_prompt: "WU 15min @150W, 5x6min @310→320W on 3% climb / 3min easy spin, CD 10min Z1."
+
+  - id: progressive_ftp_percentage
+    description: "Progressive intervals by FTP percentage"
+    user_prompt: "WU 10min Z2, 4x10min progressing 85→100% FTP (3min Z1 between), CD 15min easy."
+
+  - id: simple_threshold_60min
+    description: "Simple threshold workout request"
+    user_prompt: "Create a 60 minute threshold workout."
+
+  - id: low_cadence_strength
+    description: "Low cadence strength intervals"
+    user_prompt: |
+      Warmup
+      - 20m 60% 90-100rpm
+
+      Main set 6x
+      - 4m 100% 40-50 rpm, power is less important than getting the torque
+      - 5m recovery at 40%
+
+      Cooldown
+      - 20m 60% 90-100rpm
+
+  - id: complex_progressive_blocks
+    description: "Complex workout with multiple progressive blocks"
+    user_prompt: |
+      5min from 30 to 70% FTP
+      20sec @ 80% FTP
+      20sec @ 100% FTP
+      20sec @ 120% FTP
+      3min @ 50% FTP
+      3min @ 110% FTP
+      2min @ 120% FTP
+      6min @ 50% FTP
+      20min free ride
+      5min from 50 to 30% FTP

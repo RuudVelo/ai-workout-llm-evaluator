@@ -1,0 +1,208 @@
+{
+  "prompt_id": "mixed_zones_progression",
+  "prompt_description": "Progressive workout through multiple zones",
+  "user_prompt": "Z2 endurance for 45 minutes, Z3 tempo for 20 minutes, 3x2min Z5 VO\u2082max efforts, finish with 10min Z1 recovery.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-03T15:43:09.712287",
+  "generation_metadata": {
+    "latency_ms": 11672,
+    "tokens": {
+      "input": 1006,
+      "output": 557,
+      "total": 1563
+    },
+    "cost": 0.007039,
+    "attempts": 3,
+    "total_cost_all_attempts": 0.021613,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 10781,
+        "tokens": {
+          "input": 1006,
+          "output": 612,
+          "total": 1618
+        },
+        "cost": 0.007517
+      },
+      {
+        "attempt": 2,
+        "latency_ms": 3953,
+        "tokens": {
+          "input": 1006,
+          "output": 559,
+          "total": 1565
+        },
+        "cost": 0.007056
+      },
+      {
+        "attempt": 3,
+        "latency_ms": 11672,
+        "tokens": {
+          "input": 1006,
+          "output": 557,
+          "total": 1563
+        },
+        "cost": 0.007039
+      }
+    ]
+  },
+  "workout": {
+    "name": "Endurance Workout with VO\u2082max Efforts",
+    "description": "A workout comprising endurance, tempo, and VO\u2082max intervals, finishing with recovery.",
+    "workout_duration": 4500,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 2700,
+        "power": 175,
+        "powerAdjustedUpward": 185,
+        "powerAdjustedDownward": 165,
+        "zone": 2,
+        "perc_ftp": 70,
+        "type": "interval",
+        "notes": "Z2 endurance effort to build aerobic capacity."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 2700,
+        "endTimeSeconds": 3900,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 3,
+        "perc_ftp": 90,
+        "type": "interval",
+        "notes": "Z3 tempo effort to enhance sustained power."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 3900,
+        "endTimeSeconds": 4020,
+        "power": 275,
+        "powerAdjustedUpward": 285,
+        "powerAdjustedDownward": 265,
+        "zone": 5,
+        "perc_ftp": 110,
+        "type": "interval",
+        "notes": "Z5 VO\u2082max interval to increase maximum oxygen uptake."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 4020,
+        "endTimeSeconds": 4140,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Rest period between VO\u2082max intervals."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 4140,
+        "endTimeSeconds": 4260,
+        "power": 275,
+        "powerAdjustedUpward": 285,
+        "powerAdjustedDownward": 265,
+        "zone": 5,
+        "perc_ftp": 110,
+        "type": "interval",
+        "notes": "Z5 VO\u2082max interval to increase maximum oxygen uptake."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 4260,
+        "endTimeSeconds": 4380,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Rest period between VO\u2082max intervals."
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 4380,
+        "endTimeSeconds": 4500,
+        "power": 275,
+        "powerAdjustedUpward": 285,
+        "powerAdjustedDownward": 265,
+        "zone": 5,
+        "perc_ftp": 110,
+        "type": "interval",
+        "notes": "Z5 VO\u2082max interval to increase maximum oxygen uptake."
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 4500,
+        "endTimeSeconds": 5100,
+        "power": 100,
+        "powerAdjustedUpward": 110,
+        "powerAdjustedDownward": 90,
+        "zone": 1,
+        "perc_ftp": 40,
+        "type": "recovery",
+        "notes": "Cool down with Z1 effort for recovery."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "7/8",
+    "pass_rate": 87.5,
+    "all_passed": false,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 4500,
+        "calculated_duration": 5100,
+        "difference": 600
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  }
+}

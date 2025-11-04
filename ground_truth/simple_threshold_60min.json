@@ -1,0 +1,198 @@
+{
+  "prompt_id": "simple_threshold_60min",
+  "prompt_description": "Simple threshold workout request",
+  "user_prompt": "Create a 60 minute threshold workout.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-03T15:48:30.075348",
+  "generation_metadata": {
+    "latency_ms": 10961,
+    "tokens": {
+      "input": 977,
+      "output": 531,
+      "total": 1508
+    },
+    "cost": 0.00675,
+    "attempts": 2,
+    "total_cost_all_attempts": 0.012681,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 10111,
+        "tokens": {
+          "input": 977,
+          "output": 437,
+          "total": 1414
+        },
+        "cost": 0.005932
+      },
+      {
+        "attempt": 2,
+        "latency_ms": 10961,
+        "tokens": {
+          "input": 977,
+          "output": 531,
+          "total": 1508
+        },
+        "cost": 0.00675
+      }
+    ]
+  },
+  "workout": {
+    "name": "Threshold Challenge",
+    "description": "This 60-minute workout focuses on improving your FTP by maintaining sustained efforts at your threshold power, with active recovery segments in between.",
+    "workout_duration": 3600,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 300,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "warmup",
+        "notes": "Begin with an easy warm-up to prepare your muscles."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 300,
+        "endTimeSeconds": 900,
+        "power": 240,
+        "powerAdjustedUpward": 250,
+        "powerAdjustedDownward": 230,
+        "zone": 4,
+        "perc_ftp": 96,
+        "type": "interval",
+        "notes": "Threshold effort to boost aerobic capacity."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 900,
+        "endTimeSeconds": 1200,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "recovery",
+        "notes": "Active recovery to clear lactate."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 1200,
+        "endTimeSeconds": 1800,
+        "power": 240,
+        "powerAdjustedUpward": 250,
+        "powerAdjustedDownward": 230,
+        "zone": 4,
+        "perc_ftp": 96,
+        "type": "interval",
+        "notes": "Another threshold effort."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 1800,
+        "endTimeSeconds": 2100,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "recovery",
+        "notes": "Active recovery period."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 2100,
+        "endTimeSeconds": 2700,
+        "power": 240,
+        "powerAdjustedUpward": 250,
+        "powerAdjustedDownward": 230,
+        "zone": 4,
+        "perc_ftp": 96,
+        "type": "interval",
+        "notes": "Push through with another threshold block."
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 2700,
+        "endTimeSeconds": 3000,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "recovery",
+        "notes": "Recover and prepare for final effort."
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 3000,
+        "endTimeSeconds": 3600,
+        "power": 240,
+        "powerAdjustedUpward": 250,
+        "powerAdjustedDownward": 230,
+        "zone": 4,
+        "perc_ftp": 96,
+        "type": "interval",
+        "notes": "Final threshold push to finish strong."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 3600,
+        "calculated_duration": 3600,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  }
+}

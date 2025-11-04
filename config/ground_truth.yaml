@@ -1,0 +1,29 @@
+# Ground Truth Generation Configuration
+# This defines which model to use as the "reference" for creating ground truth workouts
+
+reference_model:
+  provider: openai
+  model_id: gpt-4o
+  display_name: "GPT-4o (Reference)"
+
+  # Alternative options:
+  # provider: gemini
+  # model_id: gemini-1.5-pro
+
+  # provider: openai
+  # model_id: gpt-4-turbo
+
+# Generation settings
+generation:
+  # Number of attempts if generation fails
+  max_retries: 3
+
+  # Whether to overwrite existing ground truth files
+  overwrite_existing: false
+
+  # Whether to validate ground truth before saving
+  validate_before_saving: true
+
+# Optional: Manually curated ground truth files take precedence
+# If a ground truth file already exists for a prompt_id, it won't be regenerated
+# unless overwrite_existing is true

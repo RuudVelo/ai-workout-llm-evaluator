@@ -1,0 +1,256 @@
+{
+  "prompt_id": "climbing_intervals_wattage",
+  "prompt_description": "Climbing intervals with specific wattage",
+  "user_prompt": "WU 15min @150W, 5x6min @310\u2192320W on 3% climb / 3min easy spin, CD 10min Z1.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-03T15:47:31.780449",
+  "generation_metadata": {
+    "latency_ms": 15922,
+    "tokens": {
+      "input": 1006,
+      "output": 773,
+      "total": 1779
+    },
+    "cost": 0.008918,
+    "attempts": 3,
+    "total_cost_all_attempts": 0.028242,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 14331,
+        "tokens": {
+          "input": 1006,
+          "output": 892,
+          "total": 1898
+        },
+        "cost": 0.009953
+      },
+      {
+        "attempt": 2,
+        "latency_ms": 12149,
+        "tokens": {
+          "input": 1006,
+          "output": 825,
+          "total": 1831
+        },
+        "cost": 0.009371
+      },
+      {
+        "attempt": 3,
+        "latency_ms": 15922,
+        "tokens": {
+          "input": 1006,
+          "output": 773,
+          "total": 1779
+        },
+        "cost": 0.008918
+      }
+    ]
+  },
+  "workout": {
+    "name": "Climbing Intervals",
+    "description": "A structured workout featuring a warm-up, climbing intervals, and cooldown to improve climbing power and endurance.",
+    "workout_duration": 4200,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 900,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "warmup",
+        "notes": "Warm-up at a steady pace."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 900,
+        "endTimeSeconds": 1260,
+        "power": 315,
+        "powerAdjustedUpward": 325,
+        "powerAdjustedDownward": 305,
+        "zone": 6,
+        "perc_ftp": 126,
+        "type": "interval",
+        "notes": "Climbing interval on 3% gradient."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 1260,
+        "endTimeSeconds": 1440,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "recovery",
+        "notes": "Easy spin recovery."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 1440,
+        "endTimeSeconds": 1800,
+        "power": 315,
+        "powerAdjustedUpward": 325,
+        "powerAdjustedDownward": 305,
+        "zone": 6,
+        "perc_ftp": 126,
+        "type": "interval",
+        "notes": "Climbing interval on 3% gradient."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 1800,
+        "endTimeSeconds": 1980,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "recovery",
+        "notes": "Easy spin recovery."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 1980,
+        "endTimeSeconds": 2340,
+        "power": 315,
+        "powerAdjustedUpward": 325,
+        "powerAdjustedDownward": 305,
+        "zone": 6,
+        "perc_ftp": 126,
+        "type": "interval",
+        "notes": "Climbing interval on 3% gradient."
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 2340,
+        "endTimeSeconds": 2520,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "recovery",
+        "notes": "Easy spin recovery."
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 2520,
+        "endTimeSeconds": 2880,
+        "power": 315,
+        "powerAdjustedUpward": 325,
+        "powerAdjustedDownward": 305,
+        "zone": 6,
+        "perc_ftp": 126,
+        "type": "interval",
+        "notes": "Climbing interval on 3% gradient."
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 2880,
+        "endTimeSeconds": 3060,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "recovery",
+        "notes": "Easy spin recovery."
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 3060,
+        "endTimeSeconds": 3420,
+        "power": 315,
+        "powerAdjustedUpward": 325,
+        "powerAdjustedDownward": 305,
+        "zone": 6,
+        "perc_ftp": 126,
+        "type": "interval",
+        "notes": "Climbing interval on 3% gradient."
+      },
+      {
+        "segment_number": 11,
+        "startTimeSeconds": 3420,
+        "endTimeSeconds": 3600,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "recovery",
+        "notes": "Easy spin recovery."
+      },
+      {
+        "segment_number": 12,
+        "startTimeSeconds": 3600,
+        "endTimeSeconds": 4200,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "cooldown",
+        "notes": "Cooldown at an active recovery pace."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 4200,
+        "calculated_duration": 4200,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  }
+}
