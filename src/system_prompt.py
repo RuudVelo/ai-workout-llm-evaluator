@@ -29,6 +29,36 @@ def build_system_prompt_generate(ftp: int) -> str:
     """Build the system prompt for workout generation."""
     zones = calculate_zones(ftp)
 
+    # Build explicit zone lookup table
+    zone_lookup = f"""
+CRITICAL - POWER ZONE ASSIGNMENT:
+For FTP = {ftp}W, use this EXACT lookup table to assign zones.
+Compare your calculated power value to these ranges:
+
+Power Range (Watts) → Zone Number:
+  {zones["z1"]["min"]:3d} - {zones["z1"]["max"]:3d} W  →  zone: 1  (Active Recovery)
+  {zones["z2"]["min"]:3d} - {zones["z2"]["max"]:3d} W  →  zone: 2  (Endurance)
+  {zones["z3"]["min"]:3d} - {zones["z3"]["max"]:3d} W  →  zone: 3  (Tempo)
+  {zones["z4"]["min"]:3d} - {zones["z4"]["max"]:3d} W  →  zone: 4  (Threshold)
+  {zones["z5"]["min"]:3d} - {zones["z5"]["max"]:3d} W  →  zone: 5  (VO2 Max)
+  {zones["z6"]["min"]:3d} - {zones["z6"]["max"]:3d} W  →  zone: 6  (Anaerobic)
+  {zones["z7"]["min"]:3d}+ W        →  zone: 7  (Neuromuscular)
+
+ZONE ASSIGNMENT PROCESS (follow these steps exactly):
+1. Calculate power in watts from the user's percentage or wattage request
+2. Look up the calculated power in the table above
+3. Assign the zone where power falls within [min, max] range
+4. DO NOT guess zones based on training terminology (e.g., "tempo", "threshold")
+5. Use the EXACT power value to determine zone - not the intended training effect
+
+EXAMPLES for FTP={ftp}W:
+  - 162W: Compare to ranges → falls in {zones["z2"]["min"]}-{zones["z2"]["max"]}W → zone: 2
+  - 175W: Compare to ranges → falls in {zones["z2"]["min"]}-{zones["z2"]["max"]}W → zone: 2
+  - 238W: Compare to ranges → falls in {zones["z3"]["min"]}-{zones["z3"]["max"]}W → zone: 3
+  - 263W: Compare to ranges → falls in {zones["z5"]["min"]}-{zones["z5"]["max"]}W → zone: 5
+  - 275W: Compare to ranges → falls in {zones["z5"]["min"]}-{zones["z5"]["max"]}W → zone: 5
+"""
+
     return f"""
 You are an expert cycling coach specializing in creating structured workouts. Your task is to generate a structured cycling workout based on the user's description. The user's FTP is {ftp} watts.
 
@@ -36,6 +66,8 @@ IMPORTANT INSTRUCTIONS:
 1. Output ONLY valid JSON matching the required schema.
 2. Do not include any explanations, comments, or extra text.
 3. The output MUST be fully valid and parseable JSON.
+
+{zone_lookup}
 
 Output a valid JSON object that EXACTLY matches the structure below:
 - "name": A short workout name.
@@ -48,7 +80,7 @@ Output a valid JSON object that EXACTLY matches the structure below:
   - "power": (watts) The power target.
   - "powerAdjustedUpward": (watts) target +10W.
   - "powerAdjustedDownward": (watts) target -10W (or 0 if <10W).
-  - "zone": Power zone (1–7).
+  - "zone": Power zone (1–7) - MUST use lookup table above.
   - "perc_ftp": (percentage) power target as a percentage of {ftp}. No decimals.
   - "type": One of: "active", "rest", "warmup", "cooldown", "recovery", "interval", "other".
   - "notes": Optional description.
@@ -69,14 +101,7 @@ Conversion rules:
 2. Time must always be in seconds.
 3. Ensure smooth, complete transitions with no missing intervals.
 4. Power must be a whole number (no decimals).
-5. Power zones (based on FTP):
-  - Zone 1 Active Recovery: {zones["z1"]["min"]}–{zones["z1"]["max"]} W
-  - Zone 2 Endurance: {zones["z2"]["min"]}–{zones["z2"]["max"]} W
-  - Zone 3 Tempo: {zones["z3"]["min"]}–{zones["z3"]["max"]} W
-  - Zone 4 Threshold: {zones["z4"]["min"]}–{zones["z4"]["max"]} W
-  - Zone 5 VO2 Max: {zones["z5"]["min"]}–{zones["z5"]["max"]} W
-  - Zone 6 Anaerobic Capacity: {zones["z6"]["min"]}–{zones["z6"]["max"]} W
-  - Zone 7 Neuromuscular Power: {zones["z7"]["min"]}+ W
+5. Use the POWER ZONE ASSIGNMENT table above - do not calculate zones yourself.
 6. Stay literal, structured, and strictly within the schema. Do NOT add commentary, headings, or additional fields.
 7. Don't use duration of the workout in the workout name.
 8. Output must strictly follow the defined schema. Ensure the final JSON is syntactically valid and matches all field constraints exactly.

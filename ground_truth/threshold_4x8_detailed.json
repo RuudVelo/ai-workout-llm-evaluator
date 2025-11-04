@@ -8,48 +8,48 @@
     "model_id": "gpt-4o",
     "display_name": "GPT-4o"
   },
-  "generated_at": "2025-11-04T11:05:31.469678",
+  "generated_at": "2025-11-04T14:39:47.643674",
   "generation_metadata": {
     "attempts": 1,
-    "total_latency_all_attempts": 10580,
+    "total_latency_all_attempts": 10231,
     "total_tokens_all_attempts": {
-      "input": 1007,
-      "output": 589,
-      "total": 1596
+      "input": 1315,
+      "output": 646,
+      "total": 1961
     },
-    "total_cost_all_attempts": 0.00732,
-    "total_input_cost_all_attempts": 0.002195,
-    "total_output_cost_all_attempts": 0.005124,
+    "total_cost_all_attempts": 0.008487,
+    "total_input_cost_all_attempts": 0.002867,
+    "total_output_cost_all_attempts": 0.00562,
     "all_attempts": [
       {
         "attempt": 1,
-        "latency_ms": 10580,
+        "latency_ms": 10231,
         "tokens": {
-          "input": 1007,
-          "output": 589,
-          "total": 1596
+          "input": 1315,
+          "output": 646,
+          "total": 1961
         },
-        "cost": 0.00732,
-        "input_cost": 0.002195,
-        "output_cost": 0.005124
+        "cost": 0.008487,
+        "input_cost": 0.002867,
+        "output_cost": 0.00562
       }
     ]
   },
   "workout": {
     "name": "Threshold Intervals",
-    "description": "This workout includes easy spinning, followed by threshold power intervals to improve aerobic capacity, and ends with a light cooldown spin.",
-    "workout_duration": 4200,
+    "description": "Structured workout starting with easy spinning, followed by threshold intervals, and ending with light spinning.",
+    "workout_duration": 4480,
     "intervals": [
       {
         "segment_number": 1,
         "startTimeSeconds": 0,
         "endTimeSeconds": 1200,
-        "power": 125,
-        "powerAdjustedUpward": 135,
-        "powerAdjustedDownward": 115,
+        "power": 130,
+        "powerAdjustedUpward": 140,
+        "powerAdjustedDownward": 120,
         "zone": 1,
-        "perc_ftp": 50,
-        "type": "recovery",
+        "perc_ftp": 52,
+        "type": "warmup",
         "notes": "20 minutes of easy spinning to warm up."
       },
       {
@@ -62,19 +62,19 @@
         "zone": 4,
         "perc_ftp": 100,
         "type": "interval",
-        "notes": "8 minutes at threshold power."
+        "notes": "First interval at threshold power."
       },
       {
         "segment_number": 3,
         "startTimeSeconds": 1680,
         "endTimeSeconds": 1920,
-        "power": 125,
-        "powerAdjustedUpward": 135,
-        "powerAdjustedDownward": 115,
+        "power": 130,
+        "powerAdjustedUpward": 140,
+        "powerAdjustedDownward": 120,
         "zone": 1,
-        "perc_ftp": 50,
+        "perc_ftp": 52,
         "type": "recovery",
-        "notes": "4 minutes recovery."
+        "notes": "Recovery after first interval."
       },
       {
         "segment_number": 4,
@@ -86,19 +86,19 @@
         "zone": 4,
         "perc_ftp": 100,
         "type": "interval",
-        "notes": "8 minutes at threshold power."
+        "notes": "Second interval at threshold power."
       },
       {
         "segment_number": 5,
         "startTimeSeconds": 2400,
         "endTimeSeconds": 2640,
-        "power": 125,
-        "powerAdjustedUpward": 135,
-        "powerAdjustedDownward": 115,
+        "power": 130,
+        "powerAdjustedUpward": 140,
+        "powerAdjustedDownward": 120,
         "zone": 1,
-        "perc_ftp": 50,
+        "perc_ftp": 52,
         "type": "recovery",
-        "notes": "4 minutes recovery."
+        "notes": "Recovery after second interval."
       },
       {
         "segment_number": 6,
@@ -110,19 +110,19 @@
         "zone": 4,
         "perc_ftp": 100,
         "type": "interval",
-        "notes": "8 minutes at threshold power."
+        "notes": "Third interval at threshold power."
       },
       {
         "segment_number": 7,
         "startTimeSeconds": 3120,
         "endTimeSeconds": 3360,
-        "power": 125,
-        "powerAdjustedUpward": 135,
-        "powerAdjustedDownward": 115,
+        "power": 130,
+        "powerAdjustedUpward": 140,
+        "powerAdjustedDownward": 120,
         "zone": 1,
-        "perc_ftp": 50,
+        "perc_ftp": 52,
         "type": "recovery",
-        "notes": "4 minutes recovery."
+        "notes": "Recovery after third interval."
       },
       {
         "segment_number": 8,
@@ -134,12 +134,24 @@
         "zone": 4,
         "perc_ftp": 100,
         "type": "interval",
-        "notes": "8 minutes at threshold power."
+        "notes": "Fourth interval at threshold power."
       },
       {
         "segment_number": 9,
         "startTimeSeconds": 3840,
-        "endTimeSeconds": 4200,
+        "endTimeSeconds": 4080,
+        "power": 130,
+        "powerAdjustedUpward": 140,
+        "powerAdjustedDownward": 120,
+        "zone": 1,
+        "perc_ftp": 52,
+        "type": "recovery",
+        "notes": "Recovery after fourth interval."
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 4080,
+        "endTimeSeconds": 4480,
         "power": 125,
         "powerAdjustedUpward": 135,
         "powerAdjustedDownward": 115,
@@ -168,8 +180,8 @@
       {
         "metric": "duration_consistency",
         "passed": true,
-        "declared_duration": 4200,
-        "calculated_duration": 4200,
+        "declared_duration": 4480,
+        "calculated_duration": 4480,
         "difference": 0
       },
       {
