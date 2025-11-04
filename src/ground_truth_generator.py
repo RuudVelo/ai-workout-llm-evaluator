@@ -25,15 +25,9 @@ class GroundTruthGenerator:
         self.ground_truth_dir.mkdir(parents=True, exist_ok=True)
 
         # Load configurations
-        self.gt_config = self._load_yaml(
-            self.config_dir / "ground_truth.yaml"
-        )
-        self.prompts_config = self._load_yaml(
-            self.config_dir / "prompts.yaml"
-        )
-        self.models_config = self._load_yaml(
-            self.config_dir / "models.yaml"
-        )
+        self.gt_config = self._load_yaml(self.config_dir / "ground_truth.yaml")
+        self.prompts_config = self._load_yaml(self.config_dir / "prompts.yaml")
+        self.models_config = self._load_yaml(self.config_dir / "models.yaml")
 
         # Get reference model config
         ref_model = self.gt_config["reference_model"]
@@ -52,15 +46,10 @@ class GroundTruthGenerator:
         with open(path, "r") as f:
             return yaml.safe_load(f)
 
-    def _find_model_config(
-        self, provider: str, model_id: str
-    ) -> Optional[Dict]:
+    def _find_model_config(self, provider: str, model_id: str) -> Optional[Dict]:
         """Find model configuration in models.yaml."""
         for model in self.models_config["models"]:
-            if (
-                model["provider"] == provider
-                and model["model_id"] == model_id
-            ):
+            if model["provider"] == provider and model["model_id"] == model_id:
                 return model
         return None
 
@@ -82,12 +71,8 @@ class GroundTruthGenerator:
         model_id = self.reference_model["model_id"]
         display_name = self.reference_model["display_name"]
 
-        max_retries = self.gt_config["generation"].get(
-            "max_retries", 3
-        )
-        validate = self.gt_config["generation"].get(
-            "validate_before_saving", True
-        )
+        max_retries = self.gt_config["generation"].get("max_retries", 3)
+        validate = self.gt_config["generation"].get("validate_before_saving", True)
 
         # Track cumulative cost across all attempts
         total_cost_all_attempts = 0.0
@@ -101,12 +86,12 @@ class GroundTruthGenerator:
                     model_id=model_id,
                     user_prompt=user_prompt,
                     ftp=ftp,
-                    input_price_per_million=self.reference_model[
-                        "pricing"
-                    ]["input_per_million"],
-                    output_price_per_million=self.reference_model[
-                        "pricing"
-                    ]["output_per_million"],
+                    input_price_per_million=self.reference_model["pricing"][
+                        "input_per_million"
+                    ],
+                    output_price_per_million=self.reference_model["pricing"][
+                        "output_per_million"
+                    ],
                 )
 
                 # Track this attempt's cost
@@ -128,9 +113,7 @@ class GroundTruthGenerator:
                 try:
                     workout = json.loads(response.content)
                 except json.JSONDecodeError as e:
-                    print(
-                        f"    Attempt {attempt + 1}: JSON parse error - {str(e)}"
-                    )
+                    print(f"    Attempt {attempt + 1}: JSON parse error - {str(e)}")
                     if attempt < max_retries - 1:
                         continue
                     raise
@@ -158,9 +141,7 @@ class GroundTruthGenerator:
                 # Success! Build ground truth object
                 ground_truth = {
                     "prompt_id": prompt_id,
-                    "prompt_description": prompt_config[
-                        "description"
-                    ],
+                    "prompt_description": prompt_config["description"],
                     "user_prompt": user_prompt,
                     "ftp": ftp,
                     "reference_model": {
@@ -178,9 +159,7 @@ class GroundTruthGenerator:
                         },
                         "cost": round(response.cost, 6),
                         "attempts": attempt + 1,
-                        "total_cost_all_attempts": round(
-                            total_cost_all_attempts, 6
-                        ),
+                        "total_cost_all_attempts": round(total_cost_all_attempts, 6),
                         "all_attempts": all_attempts_metadata,
                     },
                     "workout": workout,
@@ -205,9 +184,7 @@ class GroundTruthGenerator:
             f"Failed to generate ground truth after {max_retries} attempts"
         )
 
-    def generate_all(
-        self, prompt_filter: list = None, force: bool = False
-    ):
+    def generate_all(self, prompt_filter: list = None, force: bool = False):
         """Generate ground truth for all prompts."""
         ftp = self.prompts_config["ftp"]
         prompts = self.prompts_config["prompts"]
@@ -246,9 +223,7 @@ class GroundTruthGenerator:
                 continue
 
             try:
-                ground_truth = self.generate_ground_truth(
-                    prompt_config, ftp
-                )
+                ground_truth = self.generate_ground_truth(prompt_config, ftp)
                 self._save_json(ground_truth, gt_file)
                 generated += 1
 
@@ -291,13 +266,8 @@ class GroundTruthGenerator:
             evaluator = WorkoutEvaluator(ftp)
             evaluation = evaluator.evaluate(workout)
 
-            status = (
-                "✓ PASS" if evaluation["all_passed"] else "✗ FAIL"
-            )
-            print(
-                f"  {status} {prompt_id} "
-                f"(pass rate: {evaluation['pass_rate']}%)"
-            )
+            status = "✓ PASS" if evaluation["all_passed"] else "✗ FAIL"
+            print(f"  {status} {prompt_id} " f"(pass rate: {evaluation['pass_rate']}%)")
 
             results.append(
                 {
@@ -343,9 +313,7 @@ def main():
     generator = GroundTruthGenerator()
 
     if args.action == "generate":
-        generator.generate_all(
-            prompt_filter=args.prompts, force=args.force
-        )
+        generator.generate_all(prompt_filter=args.prompts, force=args.force)
     elif args.action == "validate":
         if args.prompts:
             for prompt_id in args.prompts:

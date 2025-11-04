@@ -2,14 +2,15 @@
 Comparison metrics for evaluating generated workouts against ground truth.
 """
 
-from typing import Dict, Any, List
-import json
+from typing import Dict, Any
 
 
 class WorkoutComparator:
     """Compares generated workouts to ground truth references."""
 
-    def __init__(self, ground_truth: Dict[str, Any], generated: Dict[str, Any]):
+    def __init__(
+        self, ground_truth: Dict[str, Any], generated: Dict[str, Any]
+    ):
         self.gt = ground_truth
         self.gen = generated
 
@@ -74,7 +75,10 @@ class WorkoutComparator:
         missing_critical = []
 
         for ctype in critical_types:
-            if gt_types.get(ctype, 0) > 0 and gen_types.get(ctype, 0) == 0:
+            if (
+                gt_types.get(ctype, 0) > 0
+                and gen_types.get(ctype, 0) == 0
+            ):
                 missing_critical.append(ctype)
 
         return {
@@ -95,9 +99,9 @@ class WorkoutComparator:
             zone_time = {i: 0 for i in range(1, 8)}
             for interval in intervals:
                 zone = interval.get("zone", 0)
-                duration = interval.get("endTimeSeconds", 0) - interval.get(
-                    "startTimeSeconds", 0
-                )
+                duration = interval.get(
+                    "endTimeSeconds", 0
+                ) - interval.get("startTimeSeconds", 0)
                 if 1 <= zone <= 7:
                     zone_time[zone] += duration
             return zone_time
@@ -110,12 +114,18 @@ class WorkoutComparator:
         gen_total = sum(gen_zone_time.values())
 
         gt_zone_pct = (
-            {z: round((t / gt_total) * 100, 1) for z, t in gt_zone_time.items()}
+            {
+                z: round((t / gt_total) * 100, 1)
+                for z, t in gt_zone_time.items()
+            }
             if gt_total > 0
             else {}
         )
         gen_zone_pct = (
-            {z: round((t / gen_total) * 100, 1) for z, t in gen_zone_time.items()}
+            {
+                z: round((t / gen_total) * 100, 1)
+                for z, t in gen_zone_time.items()
+            }
             if gen_total > 0
             else {}
         )
@@ -178,11 +188,15 @@ class WorkoutComparator:
         # Check if basic pattern matches (warmup at start, cooldown at end)
         has_warmup_start = (
             len(gt_structure) > 0 and gt_structure[0] == "warmup"
-        ) and (len(gen_structure) > 0 and gen_structure[0] == "warmup")
+        ) and (
+            len(gen_structure) > 0 and gen_structure[0] == "warmup"
+        )
 
         has_cooldown_end = (
             len(gt_structure) > 0 and gt_structure[-1] == "cooldown"
-        ) and (len(gen_structure) > 0 and gen_structure[-1] == "cooldown")
+        ) and (
+            len(gen_structure) > 0 and gen_structure[-1] == "cooldown"
+        )
 
         structure_similarity = has_warmup_start and has_cooldown_end
 
@@ -207,13 +221,17 @@ class WorkoutComparator:
 
             for interval in intervals:
                 power = interval.get("power", 0)
-                duration = interval.get("endTimeSeconds", 0) - interval.get(
-                    "startTimeSeconds", 0
-                )
+                duration = interval.get(
+                    "endTimeSeconds", 0
+                ) - interval.get("startTimeSeconds", 0)
                 total_power_time += power * duration
                 total_time += duration
 
-            return round(total_power_time / total_time) if total_time > 0 else 0
+            return (
+                round(total_power_time / total_time)
+                if total_time > 0
+                else 0
+            )
 
         gt_avg = calculate_avg_power(gt_intervals)
         gen_avg = calculate_avg_power(gen_intervals)
@@ -241,12 +259,16 @@ class WorkoutComparator:
             self.compare_average_power(),
         ]
 
-        passed_count = sum(1 for m in metrics if m.get("passed", False))
+        passed_count = sum(
+            1 for m in metrics if m.get("passed", False)
+        )
         total_count = len(metrics)
 
         return {
             "comparison_score": f"{passed_count}/{total_count}",
-            "similarity_percentage": round((passed_count / total_count) * 100, 2),
+            "similarity_percentage": round(
+                (passed_count / total_count) * 100, 2
+            ),
             "all_passed": passed_count == total_count,
             "metrics": metrics,
         }
@@ -257,5 +279,7 @@ def compare_to_ground_truth(
     generated_workout: Dict[str, Any],
 ) -> Dict[str, Any]:
     """Compare a generated workout to its ground truth."""
-    comparator = WorkoutComparator(ground_truth_workout, generated_workout)
+    comparator = WorkoutComparator(
+        ground_truth_workout, generated_workout
+    )
     return comparator.compare_all()

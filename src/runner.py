@@ -16,19 +16,13 @@ from evaluator import WorkoutEvaluator
 class EvalRunner:
     """Runs evaluation prompts across multiple models."""
 
-    def __init__(
-        self, config_dir: str = "config", results_dir: str = "results"
-    ):
+    def __init__(self, config_dir: str = "config", results_dir: str = "results"):
         self.config_dir = Path(config_dir)
         self.results_dir = Path(results_dir)
 
         # Load configurations
-        self.models_config = self._load_yaml(
-            self.config_dir / "models.yaml"
-        )
-        self.prompts_config = self._load_yaml(
-            self.config_dir / "prompts.yaml"
-        )
+        self.models_config = self._load_yaml(self.config_dir / "models.yaml")
+        self.prompts_config = self._load_yaml(self.config_dir / "prompts.yaml")
 
         # Create timestamped results directory
         self.run_timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -114,8 +108,12 @@ class EvalRunner:
                 }
 
                 if validation_result:
-                    attempt_metadata["validation_pass_rate"] = validation_result["pass_rate"]
-                    attempt_metadata["validation_score"] = validation_result["overall_score"]
+                    attempt_metadata["validation_pass_rate"] = validation_result[
+                        "pass_rate"
+                    ]
+                    attempt_metadata["validation_score"] = validation_result[
+                        "overall_score"
+                    ]
 
                 total_cost_all_attempts += response.cost
                 all_attempts_metadata.append(attempt_metadata)
@@ -145,9 +143,7 @@ class EvalRunner:
                 # Build result (either success or failed validation on last attempt)
                 result = {
                     "prompt_id": prompt_id,
-                    "prompt_description": prompt_config[
-                        "description"
-                    ],
+                    "prompt_description": prompt_config["description"],
                     "user_prompt": user_prompt,
                     "model": {
                         "provider": provider_name,
@@ -164,9 +160,7 @@ class EvalRunner:
                     },
                     "cost": round(response.cost, 6),
                     "attempts": attempt + 1,
-                    "total_cost_all_attempts": round(
-                        total_cost_all_attempts, 6
-                    ),
+                    "total_cost_all_attempts": round(total_cost_all_attempts, 6),
                     "all_attempts": all_attempts_metadata,
                     "response": {
                         "raw_content": response.content,
@@ -187,9 +181,7 @@ class EvalRunner:
                         f"    ⚠ Validation failed but recorded (attempt {attempt + 1})"
                     )
                 else:
-                    print(
-                        f"    ✗ Parse failed after {attempt + 1} attempt(s)"
-                    )
+                    print(f"    ✗ Parse failed after {attempt + 1} attempt(s)")
 
                 return result
 
@@ -205,9 +197,7 @@ class EvalRunner:
 
                 return {
                     "prompt_id": prompt_id,
-                    "prompt_description": prompt_config[
-                        "description"
-                    ],
+                    "prompt_description": prompt_config["description"],
                     "user_prompt": user_prompt,
                     "model": {
                         "provider": provider_name,
@@ -217,9 +207,7 @@ class EvalRunner:
                     "ftp": ftp,
                     "timestamp": datetime.now().isoformat(),
                     "attempts": attempt + 1,
-                    "total_cost_all_attempts": round(
-                        total_cost_all_attempts, 6
-                    ),
+                    "total_cost_all_attempts": round(total_cost_all_attempts, 6),
                     "all_attempts": all_attempts_metadata,
                     "error": str(e),
                     "traceback": traceback.format_exc(),
@@ -232,9 +220,7 @@ class EvalRunner:
             "prompt_id": prompt_id,
             "error": "Maximum retries exceeded without success",
             "attempts": max_retries,
-            "total_cost_all_attempts": round(
-                total_cost_all_attempts, 6
-            ),
+            "total_cost_all_attempts": round(total_cost_all_attempts, 6),
             "success": False,
             "validation_failed": False,
         }
@@ -251,9 +237,7 @@ class EvalRunner:
 
         # Apply filters if provided
         if model_filter:
-            models = [
-                m for m in models if m["model_id"] in model_filter
-            ]
+            models = [m for m in models if m["model_id"] in model_filter]
 
         if prompt_filter:
             prompts = [p for p in prompts if p["id"] in prompt_filter]
@@ -273,9 +257,7 @@ class EvalRunner:
             print(f"\n{model_config['display_name']}:")
 
             for prompt_config in prompts:
-                result = self.run_single_evaluation(
-                    model_config, prompt_config, ftp
-                )
+                result = self.run_single_evaluation(model_config, prompt_config, ftp)
                 all_results.append(result)
 
                 # Save individual result
@@ -284,19 +266,19 @@ class EvalRunner:
                 self._save_json(result, result_path)
 
         # Calculate costs
-        total_cost_successful_only = sum(
-            r.get("cost", 0) for r in all_results
-        )
+        total_cost_successful_only = sum(r.get("cost", 0) for r in all_results)
         total_cost_including_retries = sum(
-            r.get("total_cost_all_attempts", r.get("cost", 0))
-            for r in all_results
+            r.get("total_cost_all_attempts", r.get("cost", 0)) for r in all_results
         )
 
         # Calculate validation metrics
         successful_results = [r for r in all_results if r.get("success", False)]
-        validation_failed_results = [r for r in all_results if r.get("validation_failed", False)]
+        validation_failed_results = [
+            r for r in all_results if r.get("validation_failed", False)
+        ]
         parse_failed_results = [
-            r for r in all_results
+            r
+            for r in all_results
             if not r.get("success", False) and not r.get("validation_failed", False)
         ]
 
@@ -308,24 +290,25 @@ class EvalRunner:
             "successful": len(successful_results),
             "validation_failed": len(validation_failed_results),
             "parse_failed": len(parse_failed_results),
-            "total_attempts": sum(
-                r.get("attempts", 1) for r in all_results
-            ),
+            "total_attempts": sum(r.get("attempts", 1) for r in all_results),
             "total_cost": round(total_cost_successful_only, 4),
-            "total_cost_all_attempts": round(
-                total_cost_including_retries, 4
-            ),
+            "total_cost_all_attempts": round(total_cost_including_retries, 4),
             "validation_metrics": {
                 "successful_validations": len(successful_results),
                 "failed_validations": len(validation_failed_results),
-                "average_pass_rate": round(
-                    sum(
-                        r.get("validation", {}).get("pass_rate", 0)
-                        for r in all_results
-                        if r.get("validation")
-                    ) / len([r for r in all_results if r.get("validation")]),
-                    2
-                ) if any(r.get("validation") for r in all_results) else 0,
+                "average_pass_rate": (
+                    round(
+                        sum(
+                            r.get("validation", {}).get("pass_rate", 0)
+                            for r in all_results
+                            if r.get("validation")
+                        )
+                        / len([r for r in all_results if r.get("validation")]),
+                        2,
+                    )
+                    if any(r.get("validation") for r in all_results)
+                    else 0
+                ),
             },
             "results": all_results,
         }
@@ -335,42 +318,23 @@ class EvalRunner:
 
         print(f"\n{'=' * 80}")
         print("Evaluation complete!")
-        print(
-            f"Total evaluations: {summary['total_evaluations']}"
-        )
-        print(
-            f"  ✓ Successful (passed validation): {summary['successful']}"
-        )
-        print(
-            f"  ⚠ Validation failed: {summary['validation_failed']}"
-        )
-        print(
-            f"  ✗ Parse failed: {summary['parse_failed']}"
-        )
-        print(
-            f"\nValidation metrics:"
-        )
+        print(f"Total evaluations: {summary['total_evaluations']}")
+        print(f"  ✓ Successful (passed validation): {summary['successful']}")
+        print(f"  ⚠ Validation failed: {summary['validation_failed']}")
+        print(f"  ✗ Parse failed: {summary['parse_failed']}")
+        print(f"\nValidation metrics:")
         print(
             f"  Average pass rate: {summary['validation_metrics']['average_pass_rate']:.2f}%"
         )
-        print(
-            f"\nCost analysis:"
-        )
+        print(f"\nCost analysis:")
         print(
             f"  Total attempts: {summary['total_attempts']} "
             f"(avg: {summary['total_attempts'] / summary['total_evaluations']:.2f} per eval)"
         )
-        print(
-            f"  Total cost (successful attempts): ${summary['total_cost']:.4f}"
-        )
-        print(
-            f"  Total cost (all attempts): ${summary['total_cost_all_attempts']:.4f}"
-        )
+        print(f"  Total cost (successful attempts): ${summary['total_cost']:.4f}")
+        print(f"  Total cost (all attempts): ${summary['total_cost_all_attempts']:.4f}")
         if summary["total_cost_all_attempts"] > summary["total_cost"]:
-            overhead = (
-                summary["total_cost_all_attempts"]
-                - summary["total_cost"]
-            )
+            overhead = summary["total_cost_all_attempts"] - summary["total_cost"]
             print(
                 f"  → Retry overhead: ${overhead:.4f} "
                 f"({(overhead / summary['total_cost_all_attempts'] * 100):.1f}% of total cost)"

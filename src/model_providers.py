@@ -46,9 +46,7 @@ class OpenAIProvider:
     """OpenAI API provider with structured output support."""
 
     def __init__(self, api_key: Optional[str] = None):
-        self.client = OpenAI(
-            api_key=api_key or os.getenv("OPENAI_API_KEY")
-        )
+        self.client = OpenAI(api_key=api_key or os.getenv("OPENAI_API_KEY"))
 
     def generate(
         self,
@@ -83,9 +81,9 @@ class OpenAIProvider:
         output_tokens = usage.completion_tokens
 
         # Calculate cost
-        cost = (
-            input_tokens / 1_000_000 * input_price_per_million
-        ) + (output_tokens / 1_000_000 * output_price_per_million)
+        cost = (input_tokens / 1_000_000 * input_price_per_million) + (
+            output_tokens / 1_000_000 * output_price_per_million
+        )
 
         content = response.choices[0].message.content
 
@@ -103,9 +101,7 @@ class GeminiProvider:
     """Google Gemini API provider."""
 
     def __init__(self, api_key: Optional[str] = None):
-        genai.configure(
-            api_key=api_key or os.getenv("GEMINI_API_KEY")
-        )
+        genai.configure(api_key=api_key or os.getenv("GEMINI_API_KEY"))
 
     def generate(
         self,
@@ -136,9 +132,9 @@ class GeminiProvider:
         output_tokens = response.usage_metadata.candidates_token_count
 
         # Calculate cost
-        cost = (
-            input_tokens / 1_000_000 * input_price_per_million
-        ) + (output_tokens / 1_000_000 * output_price_per_million)
+        cost = (input_tokens / 1_000_000 * input_price_per_million) + (
+            output_tokens / 1_000_000 * output_price_per_million
+        )
 
         content = response.text
 
@@ -156,9 +152,7 @@ class TogetherProvider:
     """Together AI provider for open-source models."""
 
     def __init__(self, api_key: Optional[str] = None):
-        self.client = Together(
-            api_key=api_key or os.getenv("TOGETHER_API_KEY")
-        )
+        self.client = Together(api_key=api_key or os.getenv("TOGETHER_API_KEY"))
 
     def generate(
         self,
@@ -194,9 +188,9 @@ class TogetherProvider:
         output_tokens = usage.completion_tokens
 
         # Calculate cost
-        cost = (
-            input_tokens / 1_000_000 * input_price_per_million
-        ) + (output_tokens / 1_000_000 * output_price_per_million)
+        cost = (input_tokens / 1_000_000 * input_price_per_million) + (
+            output_tokens / 1_000_000 * output_price_per_million
+        )
 
         content = response.choices[0].message.content
 

@@ -17,9 +17,7 @@ class WorkoutEvaluator:
         self.ftp = ftp
         self.zones = calculate_zones(ftp)
 
-    def validate_schema(
-        self, workout: Dict[str, Any]
-    ) -> Dict[str, Any]:
+    def validate_schema(self, workout: Dict[str, Any]) -> Dict[str, Any]:
         """Validate workout matches the expected JSON schema."""
         result = {
             "metric": "schema_validation",
@@ -39,9 +37,7 @@ class WorkoutEvaluator:
 
         return result
 
-    def validate_required_fields(
-        self, workout: Dict[str, Any]
-    ) -> Dict[str, Any]:
+    def validate_required_fields(self, workout: Dict[str, Any]) -> Dict[str, Any]:
         """Check all required fields are present."""
         result = {
             "metric": "required_fields",
@@ -78,16 +74,12 @@ class WorkoutEvaluator:
             for idx, interval in enumerate(workout["intervals"]):
                 for field in required_interval_fields:
                     if field not in interval:
-                        result["missing_fields"].append(
-                            f"intervals[{idx}].{field}"
-                        )
+                        result["missing_fields"].append(f"intervals[{idx}].{field}")
                         result["passed"] = False
 
         return result
 
-    def validate_duration_consistency(
-        self, workout: Dict[str, Any]
-    ) -> Dict[str, Any]:
+    def validate_duration_consistency(self, workout: Dict[str, Any]) -> Dict[str, Any]:
         """Validate that total duration matches sum of intervals."""
         result = {
             "metric": "duration_consistency",
@@ -97,13 +89,8 @@ class WorkoutEvaluator:
             "difference": None,
         }
 
-        if (
-            "workout_duration" not in workout
-            or "intervals" not in workout
-        ):
-            result["errors"] = [
-                "Missing workout_duration or intervals"
-            ]
+        if "workout_duration" not in workout or "intervals" not in workout:
+            result["errors"] = ["Missing workout_duration or intervals"]
             return result
 
         declared_duration = workout["workout_duration"]
@@ -112,9 +99,7 @@ class WorkoutEvaluator:
         # Calculate from intervals
         if workout["intervals"]:
             last_interval = workout["intervals"][-1]
-            calculated_duration = last_interval.get(
-                "endTimeSeconds", 0
-            )
+            calculated_duration = last_interval.get("endTimeSeconds", 0)
             result["calculated_duration"] = calculated_duration
 
             difference = abs(declared_duration - calculated_duration)
@@ -129,9 +114,7 @@ class WorkoutEvaluator:
 
         return result
 
-    def validate_time_continuity(
-        self, workout: Dict[str, Any]
-    ) -> Dict[str, Any]:
+    def validate_time_continuity(self, workout: Dict[str, Any]) -> Dict[str, Any]:
         """Validate no gaps or overlaps between intervals."""
         result = {
             "metric": "time_continuity",
@@ -145,9 +128,7 @@ class WorkoutEvaluator:
             result["errors"] = ["No intervals"]
             return result
 
-        intervals = sorted(
-            workout["intervals"], key=lambda x: x["startTimeSeconds"]
-        )
+        intervals = sorted(workout["intervals"], key=lambda x: x["startTimeSeconds"])
 
         # Check first interval starts at 0
         if intervals[0]["startTimeSeconds"] != 0:
@@ -190,9 +171,7 @@ class WorkoutEvaluator:
 
         return result
 
-    def validate_power_zones(
-        self, workout: Dict[str, Any]
-    ) -> Dict[str, Any]:
+    def validate_power_zones(self, workout: Dict[str, Any]) -> Dict[str, Any]:
         """Validate power values match declared zones."""
         result = {
             "metric": "power_zone_accuracy",
@@ -216,7 +195,11 @@ class WorkoutEvaluator:
                 zone_key = f"z{zone_num}"
                 zone_range = self.zones[zone_key]
                 # Expand boundaries slightly for tolerance
-                if (zone_range["min"] - tolerance) <= power <= (zone_range["max"] + tolerance):
+                if (
+                    (zone_range["min"] - tolerance)
+                    <= power
+                    <= (zone_range["max"] + tolerance)
+                ):
                     actual_zone = zone_num
                     break
 
@@ -225,7 +208,11 @@ class WorkoutEvaluator:
                 zone_key = f"z{declared_zone}"
                 zone_range = self.zones[zone_key]
                 # Check if power is within tolerance of declared zone
-                if (zone_range["min"] - tolerance) <= power <= (zone_range["max"] + tolerance):
+                if (
+                    (zone_range["min"] - tolerance)
+                    <= power
+                    <= (zone_range["max"] + tolerance)
+                ):
                     # Accept the declared zone even if actual_zone differs
                     continue
 
@@ -233,9 +220,7 @@ class WorkoutEvaluator:
             if actual_zone != declared_zone:
                 result["mismatches"].append(
                     {
-                        "segment_number": interval.get(
-                            "segment_number"
-                        ),
+                        "segment_number": interval.get("segment_number"),
                         "power": power,
                         "declared_zone": declared_zone,
                         "actual_zone": actual_zone,
@@ -245,9 +230,7 @@ class WorkoutEvaluator:
 
         return result
 
-    def validate_ftp_percentages(
-        self, workout: Dict[str, Any]
-    ) -> Dict[str, Any]:
+    def validate_ftp_percentages(self, workout: Dict[str, Any]) -> Dict[str, Any]:
         """Validate perc_ftp calculations are correct."""
         result = {
             "metric": "ftp_percentage_accuracy",
@@ -270,9 +253,7 @@ class WorkoutEvaluator:
             if abs(actual_perc - declared_perc) > 1:
                 result["mismatches"].append(
                     {
-                        "segment_number": interval.get(
-                            "segment_number"
-                        ),
+                        "segment_number": interval.get("segment_number"),
                         "power": power,
                         "declared_perc_ftp": declared_perc,
                         "calculated_perc_ftp": actual_perc,
@@ -283,9 +264,7 @@ class WorkoutEvaluator:
 
         return result
 
-    def validate_power_adjustments(
-        self, workout: Dict[str, Any]
-    ) -> Dict[str, Any]:
+    def validate_power_adjustments(self, workout: Dict[str, Any]) -> Dict[str, Any]:
         """Validate powerAdjustedUpward and powerAdjustedDownward."""
         result = {
             "metric": "power_adjustment_accuracy",
@@ -308,15 +287,19 @@ class WorkoutEvaluator:
             # These are derived fields and minor variations are acceptable
             tolerance = 2
 
-            upward_diff = abs(upward - expected_upward) if upward is not None else float('inf')
-            downward_diff = abs(downward - expected_downward) if downward is not None else float('inf')
+            upward_diff = (
+                abs(upward - expected_upward) if upward is not None else float("inf")
+            )
+            downward_diff = (
+                abs(downward - expected_downward)
+                if downward is not None
+                else float("inf")
+            )
 
             if upward_diff > tolerance or downward_diff > tolerance:
                 result["mismatches"].append(
                     {
-                        "segment_number": interval.get(
-                            "segment_number"
-                        ),
+                        "segment_number": interval.get("segment_number"),
                         "power": power,
                         "upward": {
                             "expected": expected_upward,
@@ -326,7 +309,9 @@ class WorkoutEvaluator:
                         "downward": {
                             "expected": expected_downward,
                             "actual": downward,
-                            "difference": downward_diff if downward is not None else None,
+                            "difference": (
+                                downward_diff if downward is not None else None
+                            ),
                         },
                     }
                 )
@@ -334,9 +319,7 @@ class WorkoutEvaluator:
 
         return result
 
-    def validate_segment_types(
-        self, workout: Dict[str, Any]
-    ) -> Dict[str, Any]:
+    def validate_segment_types(self, workout: Dict[str, Any]) -> Dict[str, Any]:
         """Validate segment types use only allowed enum values."""
         result = {
             "metric": "segment_type_validity",
@@ -362,9 +345,7 @@ class WorkoutEvaluator:
             if segment_type not in allowed_types:
                 result["invalid_types"].append(
                     {
-                        "segment_number": interval.get(
-                            "segment_number"
-                        ),
+                        "segment_number": interval.get("segment_number"),
                         "invalid_type": segment_type,
                     }
                 )
@@ -385,9 +366,7 @@ class WorkoutEvaluator:
             self.validate_segment_types(workout),
         ]
 
-        passed_count = sum(
-            1 for m in metrics if m.get("passed", False)
-        )
+        passed_count = sum(1 for m in metrics if m.get("passed", False))
         total_count = len(metrics)
 
         return {
@@ -434,9 +413,7 @@ def evaluate_result_file(
             with open(gt_file, "r") as f:
                 ground_truth = json.load(f)
 
-            comparison = compare_to_ground_truth(
-                ground_truth["workout"], workout
-            )
+            comparison = compare_to_ground_truth(ground_truth["workout"], workout)
             eval_result["ground_truth_comparison"] = comparison
         else:
             eval_result["ground_truth_comparison"] = {
@@ -465,30 +442,22 @@ def evaluate_run_directory(
     # Evaluate each result file
     evaluations = []
     for result_file in run_dir.glob("*.json"):
-        if (
-            result_file.name == "summary.json"
-            or result_file.name.startswith("evaluation_")
+        if result_file.name == "summary.json" or result_file.name.startswith(
+            "evaluation_"
         ):
             continue
 
-        evaluation = evaluate_result_file(
-            result_file, ftp, ground_truth_dir
-        )
+        evaluation = evaluate_result_file(result_file, ftp, ground_truth_dir)
         evaluations.append(evaluation)
 
     # Calculate aggregate metrics
-    valid_evals = [
-        e
-        for e in evaluations
-        if not e.get("evaluation_skipped", False)
-    ]
+    valid_evals = [e for e in evaluations if not e.get("evaluation_skipped", False)]
 
     # Calculate ground truth metrics if available
     gt_comparisons = [
         e.get("ground_truth_comparison")
         for e in valid_evals
-        if e.get("ground_truth_comparison", {}).get("all_passed")
-        is not None
+        if e.get("ground_truth_comparison", {}).get("all_passed") is not None
     ]
 
     aggregate = {
@@ -502,8 +471,7 @@ def evaluate_run_directory(
             ),
             "average_pass_rate": (
                 round(
-                    sum(e.get("pass_rate", 0) for e in valid_evals)
-                    / len(valid_evals),
+                    sum(e.get("pass_rate", 0) for e in valid_evals) / len(valid_evals),
                     2,
                 )
                 if valid_evals
@@ -518,16 +486,11 @@ def evaluate_run_directory(
         aggregate["ground_truth_comparison"] = {
             "available": len(gt_comparisons),
             "all_passed_count": sum(
-                1
-                for c in gt_comparisons
-                if c.get("all_passed", False)
+                1 for c in gt_comparisons if c.get("all_passed", False)
             ),
             "average_similarity": (
                 round(
-                    sum(
-                        c.get("similarity_percentage", 0)
-                        for c in gt_comparisons
-                    )
+                    sum(c.get("similarity_percentage", 0) for c in gt_comparisons)
                     / len(gt_comparisons),
                     2,
                 )
@@ -558,9 +521,7 @@ def evaluate_run_directory(
         print(
             f"    Perfect matches: {gt_summary['all_passed_count']}/{gt_summary['available']}"
         )
-        print(
-            f"    Average similarity: {gt_summary['average_similarity']}%"
-        )
+        print(f"    Average similarity: {gt_summary['average_similarity']}%")
 
     print(f"\nReport saved to: {eval_report_path}")
 
@@ -570,9 +531,7 @@ def evaluate_run_directory(
 if __name__ == "__main__":
     import argparse
 
-    parser = argparse.ArgumentParser(
-        description="Evaluate workout generation results"
-    )
+    parser = argparse.ArgumentParser(description="Evaluate workout generation results")
     parser.add_argument(
         "run_directory",
         type=str,
@@ -593,8 +552,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     run_dir = Path(args.run_directory)
-    ground_truth_dir = (
-        None if args.no_ground_truth else Path(args.ground_truth)
-    )
+    ground_truth_dir = None if args.no_ground_truth else Path(args.ground_truth)
 
     evaluate_run_directory(run_dir, ground_truth_dir)
