@@ -53,7 +53,11 @@ class GroundTruthGenerator:
         log_dir: str = "logs",
     ):
         self.config_dir = Path(config_dir)
-        self.ground_truth_dir = Path(ground_truth_dir)
+        self.ground_truth_base_dir = Path(ground_truth_dir)
+
+        # Create timestamped run directory
+        self.run_timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        self.ground_truth_dir = self.ground_truth_base_dir / f"run_{self.run_timestamp}"
         self.ground_truth_dir.mkdir(parents=True, exist_ok=True)
 
         # Setup logging
@@ -369,6 +373,7 @@ class GroundTruthGenerator:
         self.logger.info(f"FTP: {ftp}W")
         self.logger.info(f"Prompts: {len(prompts)}")
         self.logger.info(f"Overwrite existing: {overwrite}")
+        self.logger.info(f"Run directory: {self.ground_truth_dir}")
         self.logger.info(f"Logs will be saved to: {self.log_dir}")
         self.logger.info(f"{'=' * 80}\n")
 

@@ -1,0 +1,638 @@
+{
+  "metadata": {
+    "generated_at": "2025-11-04T14:51:18.197766",
+    "ground_truth_dir": "ground_truth",
+    "total_files_analyzed": 19
+  },
+  "validation_analysis": {
+    "total_files": 19,
+    "passed_all_validations": 13,
+    "pass_all_rate": 68.42105263157895,
+    "validation_scores": [
+      {
+        "file": "climbing_intervals_wattage.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "complex_progressive_blocks.json",
+        "passed": 7,
+        "total": 8,
+        "pass_rate": 87.5
+      },
+      {
+        "file": "endurance_65_sprints.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "group_ride_surges.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "low_cadence_strength.json",
+        "passed": 7,
+        "total": 8,
+        "pass_rate": 87.5
+      },
+      {
+        "file": "mixed_zones_progression.json",
+        "passed": 7,
+        "total": 8,
+        "pass_rate": 87.5
+      },
+      {
+        "file": "progressive_blocks.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "progressive_ftp_percentage.json",
+        "passed": 6,
+        "total": 8,
+        "pass_rate": 75.0
+      },
+      {
+        "file": "ramping_intervals.json",
+        "passed": 7,
+        "total": 8,
+        "pass_rate": 87.5
+      },
+      {
+        "file": "shorthand_notation.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "simple_tempo_block.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "simple_threshold_60min.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "tempo_sprints_combo.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "threshold_4x8_detailed.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "threshold_5x6.json",
+        "passed": 7,
+        "total": 8,
+        "pass_rate": 87.5
+      },
+      {
+        "file": "threshold_intervals_3x10.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "threshold_sprints_shorthand.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "two_hour_tempo_climbing.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "zwift_intervals_sprints.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      }
+    ],
+    "failed_metrics": {
+      "duration_consistency": 6,
+      "power_zone_accuracy": 1
+    },
+    "average_pass_rate": 95.39473684210526
+  },
+  "workout_characteristics": {
+    "duration_stats": {
+      "min": 2400,
+      "max": 7200,
+      "avg": 4341.8421052631575,
+      "distribution": {
+        "4080": 1,
+        "4020": 1,
+        "3600": 4,
+        "3900": 1,
+        "5760": 1,
+        "4500": 2,
+        "3300": 1,
+        "4935": 1,
+        "5400": 1,
+        "2400": 1,
+        "4480": 1,
+        "4440": 1,
+        "4980": 1,
+        "7200": 1,
+        "4200": 1
+      }
+    },
+    "interval_stats": {
+      "min": 5,
+      "max": 25,
+      "avg": 12.157894736842104
+    },
+    "segment_type_distribution": {
+      "warmup": 35,
+      "interval": 110,
+      "recovery": 52,
+      "cooldown": 22,
+      "other": 1,
+      "rest": 11
+    },
+    "zone_time_distribution": {
+      "1": 23170,
+      "2": 20740,
+      "3": 21260,
+      "4": 8720,
+      "5": 680,
+      "6": 4950,
+      "7": 20
+    }
+  },
+  "per_file_analysis": [
+    {
+      "file": "climbing_intervals_wattage.json",
+      "prompt_id": "climbing_intervals_wattage",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 4080,
+      "intervals": 12,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 2,
+      "latency_ms": 30898,
+      "latency_sec": 30.898,
+      "cost": 0.02038,
+      "input_tokens": 2628,
+      "output_tokens": 1684,
+      "total_tokens": 4312
+    },
+    {
+      "file": "endurance_65_sprints.json",
+      "prompt_id": "endurance_65_sprints",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 3600,
+      "intervals": 5,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 1,
+      "latency_ms": 7151,
+      "latency_sec": 7.151,
+      "cost": 0.006068,
+      "input_tokens": 1319,
+      "output_tokens": 367,
+      "total_tokens": 1686
+    },
+    {
+      "file": "group_ride_surges.json",
+      "prompt_id": "group_ride_surges",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 3900,
+      "intervals": 11,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 1,
+      "latency_ms": 11310,
+      "latency_sec": 11.31,
+      "cost": 0.009411,
+      "input_tokens": 1316,
+      "output_tokens": 752,
+      "total_tokens": 2068
+    },
+    {
+      "file": "progressive_blocks.json",
+      "prompt_id": "progressive_blocks",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 3300,
+      "intervals": 8,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 1,
+      "latency_ms": 10042,
+      "latency_sec": 10.042,
+      "cost": 0.007663,
+      "input_tokens": 1312,
+      "output_tokens": 552,
+      "total_tokens": 1864
+    },
+    {
+      "file": "shorthand_notation.json",
+      "prompt_id": "shorthand_notation",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 4500,
+      "intervals": 14,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 1,
+      "latency_ms": 14036,
+      "latency_sec": 14.036,
+      "cost": 0.011077,
+      "input_tokens": 1310,
+      "output_tokens": 945,
+      "total_tokens": 2255
+    },
+    {
+      "file": "simple_tempo_block.json",
+      "prompt_id": "simple_tempo_block",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 3600,
+      "intervals": 11,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 3,
+      "latency_ms": 35951,
+      "latency_sec": 35.951,
+      "cost": 0.024845,
+      "input_tokens": 3894,
+      "output_tokens": 1880,
+      "total_tokens": 5774
+    },
+    {
+      "file": "simple_threshold_60min.json",
+      "prompt_id": "simple_threshold_60min",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 3600,
+      "intervals": 9,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 1,
+      "latency_ms": 10786,
+      "latency_sec": 10.786,
+      "cost": 0.007986,
+      "input_tokens": 1285,
+      "output_tokens": 596,
+      "total_tokens": 1881
+    },
+    {
+      "file": "tempo_sprints_combo.json",
+      "prompt_id": "tempo_sprints_combo",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 2400,
+      "intervals": 19,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 1,
+      "latency_ms": 24674,
+      "latency_sec": 24.674,
+      "cost": 0.013048,
+      "input_tokens": 1312,
+      "output_tokens": 1171,
+      "total_tokens": 2483
+    },
+    {
+      "file": "threshold_4x8_detailed.json",
+      "prompt_id": "threshold_4x8_detailed",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 4480,
+      "intervals": 10,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 1,
+      "latency_ms": 10231,
+      "latency_sec": 10.231,
+      "cost": 0.008487,
+      "input_tokens": 1315,
+      "output_tokens": 646,
+      "total_tokens": 1961
+    },
+    {
+      "file": "threshold_intervals_3x10.json",
+      "prompt_id": "threshold_intervals_3x10",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 3600,
+      "intervals": 9,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 1,
+      "latency_ms": 11936,
+      "latency_sec": 11.936,
+      "cost": 0.008119,
+      "input_tokens": 1310,
+      "output_tokens": 605,
+      "total_tokens": 1915
+    },
+    {
+      "file": "threshold_sprints_shorthand.json",
+      "prompt_id": "threshold_sprints_shorthand",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 4980,
+      "intervals": 17,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 2,
+      "latency_ms": 35957,
+      "latency_sec": 35.957,
+      "cost": 0.02543,
+      "input_tokens": 2646,
+      "output_tokens": 2260,
+      "total_tokens": 4906
+    },
+    {
+      "file": "two_hour_tempo_climbing.json",
+      "prompt_id": "two_hour_tempo_climbing",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 7200,
+      "intervals": 5,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 2,
+      "latency_ms": 14612,
+      "latency_sec": 14.612,
+      "cost": 0.012106,
+      "input_tokens": 2596,
+      "output_tokens": 741,
+      "total_tokens": 3337
+    },
+    {
+      "file": "zwift_intervals_sprints.json",
+      "prompt_id": "zwift_intervals_sprints",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 4200,
+      "intervals": 20,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 2,
+      "latency_ms": 43922,
+      "latency_sec": 43.922,
+      "cost": 0.028219,
+      "input_tokens": 2648,
+      "output_tokens": 2580,
+      "total_tokens": 5228
+    },
+    {
+      "file": "complex_progressive_blocks.json",
+      "prompt_id": "complex_progressive_blocks",
+      "validation_score": "7/8",
+      "pass_rate": 87.5,
+      "duration": 4020,
+      "intervals": 13,
+      "issues_count": 1,
+      "all_passed": false,
+      "attempts": 3,
+      "latency_ms": 50476,
+      "latency_sec": 50.476,
+      "cost": 0.035934,
+      "input_tokens": 4080,
+      "output_tokens": 3108,
+      "total_tokens": 7188
+    },
+    {
+      "file": "low_cadence_strength.json",
+      "prompt_id": "low_cadence_strength",
+      "validation_score": "7/8",
+      "pass_rate": 87.5,
+      "duration": 5760,
+      "intervals": 14,
+      "issues_count": 1,
+      "all_passed": false,
+      "attempts": 3,
+      "latency_ms": 53324,
+      "latency_sec": 53.324,
+      "cost": 0.034835,
+      "input_tokens": 4035,
+      "output_tokens": 2993,
+      "total_tokens": 7028
+    },
+    {
+      "file": "mixed_zones_progression.json",
+      "prompt_id": "mixed_zones_progression",
+      "validation_score": "7/8",
+      "pass_rate": 87.5,
+      "duration": 4500,
+      "intervals": 8,
+      "issues_count": 1,
+      "all_passed": false,
+      "attempts": 3,
+      "latency_ms": 34460,
+      "latency_sec": 34.46,
+      "cost": 0.023305,
+      "input_tokens": 3942,
+      "output_tokens": 1691,
+      "total_tokens": 5633
+    },
+    {
+      "file": "ramping_intervals.json",
+      "prompt_id": "ramping_intervals",
+      "validation_score": "7/8",
+      "pass_rate": 87.5,
+      "duration": 5400,
+      "intervals": 25,
+      "issues_count": 1,
+      "all_passed": false,
+      "attempts": 3,
+      "latency_ms": 113237,
+      "latency_sec": 113.237,
+      "cost": 0.034387,
+      "input_tokens": 3957,
+      "output_tokens": 2961,
+      "total_tokens": 6918
+    },
+    {
+      "file": "threshold_5x6.json",
+      "prompt_id": "threshold_5x6",
+      "validation_score": "7/8",
+      "pass_rate": 87.5,
+      "duration": 4440,
+      "intervals": 12,
+      "issues_count": 1,
+      "all_passed": false,
+      "attempts": 3,
+      "latency_ms": 76383,
+      "latency_sec": 76.383,
+      "cost": 0.029456,
+      "input_tokens": 3930,
+      "output_tokens": 2401,
+      "total_tokens": 6331
+    },
+    {
+      "file": "progressive_ftp_percentage.json",
+      "prompt_id": "progressive_ftp_percentage",
+      "validation_score": "6/8",
+      "pass_rate": 75.0,
+      "duration": 4935,
+      "intervals": 9,
+      "issues_count": 2,
+      "all_passed": false,
+      "attempts": 3,
+      "latency_ms": 35274,
+      "latency_sec": 35.274,
+      "cost": 0.024351,
+      "input_tokens": 3927,
+      "output_tokens": 1815,
+      "total_tokens": 5742
+    }
+  ],
+  "detailed_issues": [
+    {
+      "file": "complex_progressive_blocks.json",
+      "prompt_id": "complex_progressive_blocks",
+      "metric": "duration_consistency",
+      "details": "Duration mismatch: declared 4020s, calculated 2880s (diff: 1140s)",
+      "raw_metric": {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 4020,
+        "calculated_duration": 2880,
+        "difference": 1140
+      }
+    },
+    {
+      "file": "low_cadence_strength.json",
+      "prompt_id": "low_cadence_strength",
+      "metric": "duration_consistency",
+      "details": "Duration mismatch: declared 5760s, calculated 5640s (diff: 120s)",
+      "raw_metric": {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 5760,
+        "calculated_duration": 5640,
+        "difference": 120
+      }
+    },
+    {
+      "file": "mixed_zones_progression.json",
+      "prompt_id": "mixed_zones_progression",
+      "metric": "duration_consistency",
+      "details": "Duration mismatch: declared 4500s, calculated 5100s (diff: 600s)",
+      "raw_metric": {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 4500,
+        "calculated_duration": 5100,
+        "difference": 600
+      }
+    },
+    {
+      "file": "progressive_ftp_percentage.json",
+      "prompt_id": "progressive_ftp_percentage",
+      "metric": "duration_consistency",
+      "details": "Duration mismatch: declared 4935s, calculated 5340s (diff: 405s)",
+      "raw_metric": {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 4935,
+        "calculated_duration": 5340,
+        "difference": 405
+      }
+    },
+    {
+      "file": "progressive_ftp_percentage.json",
+      "prompt_id": "progressive_ftp_percentage",
+      "metric": "power_zone_accuracy",
+      "details": "1 mismatch(es) found\n  - Segment 4: Power 225W declared as Zone 4, actually Zone 3",
+      "raw_metric": {
+        "metric": "power_zone_accuracy",
+        "passed": false,
+        "mismatches": [
+          {
+            "segment_number": 4,
+            "power": 225,
+            "declared_zone": 4,
+            "actual_zone": 3
+          }
+        ]
+      }
+    },
+    {
+      "file": "ramping_intervals.json",
+      "prompt_id": "ramping_intervals",
+      "metric": "duration_consistency",
+      "details": "Duration mismatch: declared 5400s, calculated 3240s (diff: 2160s)",
+      "raw_metric": {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 5400,
+        "calculated_duration": 3240,
+        "difference": 2160
+      }
+    },
+    {
+      "file": "threshold_5x6.json",
+      "prompt_id": "threshold_5x6",
+      "metric": "duration_consistency",
+      "details": "Duration mismatch: declared 4440s, calculated 3900s (diff: 540s)",
+      "raw_metric": {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 4440,
+        "calculated_duration": 3900,
+        "difference": 540
+      }
+    }
+  ],
+  "generation_metadata": {
+    "total_tokens": 78510,
+    "total_input_tokens": 48762,
+    "total_output_tokens": 29748,
+    "avg_tokens_per_workout": 4132.105263157895,
+    "avg_input_tokens_per_workout": 2566.4210526315787,
+    "avg_output_tokens_per_workout": 1565.6842105263158,
+    "min_input_tokens": 1285,
+    "max_input_tokens": 4080,
+    "min_output_tokens": 367,
+    "max_output_tokens": 3108,
+    "total_cost": 0.365107,
+    "total_input_cost": 0.10629999999999999,
+    "total_output_cost": 0.258807,
+    "avg_cost_per_workout": 0.01921615789473684,
+    "avg_input_cost_per_workout": 0.005594736842105263,
+    "avg_output_cost_per_workout": 0.01362142105263158,
+    "min_cost": 0.006068,
+    "max_cost": 0.035934,
+    "total_latency_ms": 624660,
+    "total_latency_seconds": 624.66,
+    "avg_latency_ms": 32876.84210526316,
+    "avg_latency_seconds": 32.87684210526316,
+    "min_latency_ms": 7151,
+    "max_latency_ms": 113237,
+    "attempt_distribution": {
+      "1": 8,
+      "2": 4,
+      "3": 7
+    },
+    "model_usage": {
+      "GPT-4o": 19
+    },
+    "total_attempts": 6
+  },
+  "load_issues": []
+}

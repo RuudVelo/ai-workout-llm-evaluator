@@ -27,3 +27,13 @@ generation:
 # Optional: Manually curated ground truth files take precedence
 # If a ground truth file already exists for a prompt_id, it won't be regenerated
 # unless overwrite_existing is true
+
+# Evaluation settings - specify which run directories to use
+evaluation:
+  # Which ground truth run to evaluate/use for quality assessment
+  # Example: "run_20251104_145118" or "latest" to use the most recent run
+  ground_truth_run: "latest"
+
+  # Which evaluation results run to use for model comparisons (for future use)
+  # Example: "run_20251104_150000" or "latest" to use the most recent run
+  evaluation_results_run: "latest"

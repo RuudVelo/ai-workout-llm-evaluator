@@ -120,6 +120,7 @@ class EvalRunner:
                         "output_per_million"
                     ],
                     reasoning_effort=model_config.get("reasoning_effort"),
+                    temperature=model_config.get("temperature"),
                 )
 
                 # Calculate input and output costs for this attempt

@@ -3,6 +3,8 @@ models:
   - provider: openai
     model_id: gpt-4o
     display_name: "GPT-4o"
+    temperature: 0.0 # optional, default is 0.0
+    #reasoning_effort: low  # Options: low, medium, high (GPT-5 models only)
     supports_structured_output: true
     pricing:
       input_per_million: 2.18
@@ -11,6 +13,7 @@ models:
   # - provider: openai
   #   model_id: gpt-4o-mini
   #   display_name: "GPT-4o Mini"
+  #   temperature: 0.0 # optional, default is 0.0
   #   supports_structured_output: true
   #   pricing:
   #     input_per_million: 0.131

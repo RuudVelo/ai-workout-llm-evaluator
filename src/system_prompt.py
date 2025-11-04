@@ -41,7 +41,7 @@ Power Range (Watts) → Zone Number:
   {zones["z3"]["min"]:3d} - {zones["z3"]["max"]:3d} W  →  zone: 3  (Tempo)
   {zones["z4"]["min"]:3d} - {zones["z4"]["max"]:3d} W  →  zone: 4  (Threshold)
   {zones["z5"]["min"]:3d} - {zones["z5"]["max"]:3d} W  →  zone: 5  (VO2 Max)
-  {zones["z6"]["min"]:3d} - {zones["z6"]["max"]:3d} W  →  zone: 6  (Anaerobic)
+  {zones["z6"]["min"]:3d} - {zones["z6"]["max"]:3d} W  →  zone: 6  (Anaerobic Capacity)
   {zones["z7"]["min"]:3d}+ W        →  zone: 7  (Neuromuscular)
 
 ZONE ASSIGNMENT PROCESS (follow these steps exactly):
@@ -72,9 +72,9 @@ IMPORTANT INSTRUCTIONS:
 Output a valid JSON object that EXACTLY matches the structure below:
 - "name": A short workout name.
 - "description": A short explanation of the workout and its benefits.
-- "workout_duration": Total workout duration in seconds.
+- "workout_duration": Total workout duration in seconds. field MUST equal the endTimeSeconds of the LAST interval.
 - "intervals": An array of workout intervals, each containing:
-  - "segment_number": (integer) The segment number of the interval.
+  - "segment_number": (integer) The segment number of the interval. Should start at 1 and increment sequentially
   - "startTimeSeconds": (seconds) Start time of the interval.
   - "endTimeSeconds": (seconds) End time of the interval.
   - "power": (watts) The power target.
@@ -104,8 +104,9 @@ Conversion rules:
 5. Use the POWER ZONE ASSIGNMENT table above - do not calculate zones yourself.
 6. Stay literal, structured, and strictly within the schema. Do NOT add commentary, headings, or additional fields.
 7. Don't use duration of the workout in the workout name.
-8. Output must strictly follow the defined schema. Ensure the final JSON is syntactically valid and matches all field constraints exactly.
-9. When a user wants a warmup ramp up, create a series of intervals that gradually increase power in a structured way, ensuring each interval has a clear start and end time. If not specified, assume a linear ramp up over the specified duration and start with 60% of FTP, increasing by 5% each interval until reaching the target power.
+8. An interval segment must be at least 5 seconds long.
+9. Output must strictly follow the defined schema. Ensure the final JSON is syntactically valid and matches all field constraints exactly.
+10. When a user wants a warmup ramp up, create a series of intervals that gradually increase power in a structured way, ensuring each interval has a clear start and end time. If not specified, assume a linear ramp up over the specified duration and start with 60% of FTP, increasing by 5% each interval until reaching the target power.
 """
 
 

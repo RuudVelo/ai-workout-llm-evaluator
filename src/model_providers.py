@@ -56,6 +56,7 @@ class OpenAIProvider:
         input_price_per_million: float,
         output_price_per_million: float,
         reasoning_effort: Optional[str] = None,
+        temperature: Optional[float] = None,
     ) -> ModelResponse:
         """Generate workout using OpenAI API with structured output."""
         system_prompt = build_system_prompt_generate(ftp)
@@ -78,6 +79,10 @@ class OpenAIProvider:
         # Add reasoning_effort if provided (for GPT-5 models)
         if reasoning_effort is not None:
             api_params["reasoning_effort"] = reasoning_effort
+
+        # Add temperature if provided
+        if temperature is not None:
+            api_params["temperature"] = temperature
 
         response = self.client.chat.completions.create(**api_params)
 
@@ -128,6 +133,7 @@ class GeminiProvider:
         input_price_per_million: float,
         output_price_per_million: float,
         reasoning_effort: Optional[str] = None,
+        temperature: Optional[float] = None,
     ) -> ModelResponse:
         """Generate workout using Gemini's OpenAI-compatible API.
 
@@ -157,6 +163,10 @@ class GeminiProvider:
         # Add reasoning_effort if provided (natively supported by Gemini's OpenAI endpoint)
         if reasoning_effort is not None:
             api_params["reasoning_effort"] = reasoning_effort
+
+        # Add temperature if provided
+        if temperature is not None:
+            api_params["temperature"] = temperature
 
         response = self.client.chat.completions.create(**api_params)
 
@@ -200,6 +210,7 @@ class TogetherProvider:
         input_price_per_million: float,
         output_price_per_million: float,
         reasoning_effort: Optional[str] = None,
+        temperature: Optional[float] = None,
     ) -> ModelResponse:
         """Generate workout using Together AI API.
 
@@ -228,6 +239,10 @@ class TogetherProvider:
         # Add reasoning_effort if provided (for GPT-OSS models)
         if reasoning_effort is not None:
             api_params["reasoning_effort"] = reasoning_effort
+
+        # Add temperature if provided
+        if temperature is not None:
+            api_params["temperature"] = temperature
 
         response = self.client.chat.completions.create(**api_params)
 

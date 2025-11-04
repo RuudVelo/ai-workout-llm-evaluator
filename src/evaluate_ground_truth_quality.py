@@ -6,18 +6,65 @@ Analyzes ground truth workout JSON files and generates comprehensive quality rep
 in HTML, Markdown, and JSON formats.
 
 Usage:
-    python src/evaluate_ground_truth_quality.py <ground_truth_folder>
+    python src/evaluate_ground_truth_quality.py [ground_truth_folder]
 
 Example:
-    python src/evaluate_ground_truth_quality.py ground_truth/
+    python src/evaluate_ground_truth_quality.py ground_truth/run_20251104_145118
+    python src/evaluate_ground_truth_quality.py  # Uses config to determine which run to evaluate
 """
 
 import json
 import sys
+import yaml
 from pathlib import Path
-from typing import Dict, List, Any
+from typing import Dict, List, Any, Optional
 from datetime import datetime
 from collections import Counter, defaultdict
+
+
+def resolve_ground_truth_run(
+    base_dir: Path, run_specifier: Optional[str] = None
+) -> Path:
+    """
+    Resolve which ground truth run directory to use.
+
+    Args:
+        base_dir: Base ground truth directory (e.g., "ground_truth/")
+        run_specifier: Either:
+            - None: Use config to determine which run
+            - "latest": Use the most recent run directory
+            - "run_YYYYMMDD_HHMMSS": Use a specific run directory
+
+    Returns:
+        Path to the resolved run directory
+    """
+    # If run_specifier is a full path that exists, use it
+    if run_specifier and Path(run_specifier).exists():
+        return Path(run_specifier)
+
+    # If it looks like a run directory name, combine with base_dir
+    if run_specifier and run_specifier.startswith("run_"):
+        run_path = base_dir / run_specifier
+        if run_path.exists():
+            return run_path
+        else:
+            raise ValueError(f"Specified run directory not found: {run_path}")
+
+    # Handle "latest" or None (load from config)
+    if run_specifier == "latest" or run_specifier is None:
+        # Find all run directories
+        run_dirs = sorted(base_dir.glob("run_*"), reverse=True)
+        if not run_dirs:
+            raise ValueError(f"No run directories found in {base_dir}")
+        return run_dirs[0]
+
+    raise ValueError(f"Invalid run specifier: {run_specifier}")
+
+
+def load_config(config_path: Path = Path("config/ground_truth.yaml")) -> Dict[str, Any]:
+    """Load ground truth configuration."""
+    with open(config_path, "r") as f:
+        return yaml.safe_load(f)
 
 
 class GroundTruthQualityEvaluator:
@@ -1194,13 +1241,25 @@ class GroundTruthQualityEvaluator:
 
 def main():
     """Main entry point."""
-    if len(sys.argv) < 2:
-        print("Usage: python src/evaluate_ground_truth_quality.py <ground_truth_folder>")
-        print("\nExample:")
-        print("  python src/evaluate_ground_truth_quality.py ground_truth/")
-        sys.exit(1)
-
-    ground_truth_dir = Path(sys.argv[1])
+    # Determine ground truth directory
+    if len(sys.argv) >= 2:
+        # User specified a directory
+        ground_truth_dir = Path(sys.argv[1])
+    else:
+        # Use config to determine which run to evaluate
+        try:
+            config = load_config()
+            run_specifier = config.get("evaluation", {}).get("ground_truth_run", "latest")
+            print(f"Using ground_truth_run from config: {run_specifier}")
+            ground_truth_dir = resolve_ground_truth_run(Path("ground_truth"), run_specifier)
+            print(f"Resolved to: {ground_truth_dir}")
+        except Exception as e:
+            print(f"Error resolving ground truth directory from config: {e}")
+            print("\nUsage: python src/evaluate_ground_truth_quality.py [ground_truth_folder]")
+            print("\nExamples:")
+            print("  python src/evaluate_ground_truth_quality.py ground_truth/run_20251104_145118")
+            print("  python src/evaluate_ground_truth_quality.py  # Uses config")
+            sys.exit(1)
 
     if not ground_truth_dir.exists():
         print(f"Error: Directory not found: {ground_truth_dir}")
