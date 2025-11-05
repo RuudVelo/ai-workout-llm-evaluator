@@ -258,40 +258,17 @@ def main():
         help="Choose a model to compare against ground truth"
     )
 
-    # Add custom CSS for sticky tabs
-    st.markdown("""
-        <style>
-        /* Make tabs sticky */
-        div[data-baseweb="tab-list"] {
-            position: sticky !important;
-            top: 0 !important;
-            z-index: 999 !important;
-            background-color: white !important;
-            padding-top: 1rem !important;
-            padding-bottom: 0.5rem !important;
-        }
+    # Navigation in sidebar
+    st.sidebar.markdown("---")
+    st.sidebar.subheader("Navigation")
+    view_mode = st.sidebar.radio(
+        "Select View",
+        options=["📊 Table Comparison", "📈 Visual Comparison"],
+        help="Choose between aggregate table view or individual workout comparison"
+    )
 
-        /* Alternative selector for tabs container */
-        .stTabs [data-baseweb="tab-list"] {
-            position: sticky !important;
-            top: 0 !important;
-            z-index: 999 !important;
-            background-color: white !important;
-            padding-top: 1rem !important;
-            padding-bottom: 0.5rem !important;
-        }
-
-        /* Ensure tabs stay on top */
-        .stTabs {
-            position: relative !important;
-        }
-        </style>
-    """, unsafe_allow_html=True)
-
-    # Create tabs
-    tab1, tab2 = st.tabs(["📊 Table Comparison", "📈 Visual Comparison"])
-
-    with tab1:
+    # Render content based on selected view
+    if view_mode == "📊 Table Comparison":
         # TABLE COMPARISON TAB
         st.header("Aggregate Model Comparison")
 
@@ -595,8 +572,7 @@ def main():
                 # Display dataframe
                 st.dataframe(df_display_workouts, use_container_width=True, height=600)
 
-    with tab2:
-        # VISUAL COMPARISON TAB (existing functionality)
+    else:  # Visual Comparison view
         render_visual_comparison_tab(ftp, gt_folder, results_folder, selected_workout_desc, workout_options, selected_model)
 
 
