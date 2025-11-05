@@ -1,0 +1,193 @@
+{
+  "prompt_id": "sweet_spot_progression_time_based",
+  "prompt_description": "Sweet spot with time-based progression",
+  "user_prompt": "Start at minute 0:00 with 10min easy. At 10:00 begin first sweet spot block of 15min @ 90% FTP. At 28:00 start 5min recovery. At 33:00 begin second sweet spot block of 20min @ 90% FTP. Finish with cooldown from 53:00-65:00.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-04T16:13:26.902103",
+  "generation_metadata": {
+    "attempts": 3,
+    "total_latency_all_attempts": 32380,
+    "total_tokens_all_attempts": {
+      "input": 4173,
+      "output": 1111,
+      "total": 5284
+    },
+    "total_cost_all_attempts": 0.018763,
+    "total_input_cost_all_attempts": 0.009097,
+    "total_output_cost_all_attempts": 0.009666,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 12712,
+        "tokens": {
+          "input": 1391,
+          "output": 360,
+          "total": 1751
+        },
+        "cost": 0.006164,
+        "input_cost": 0.003032,
+        "output_cost": 0.003132
+      },
+      {
+        "attempt": 2,
+        "latency_ms": 9657,
+        "tokens": {
+          "input": 1391,
+          "output": 356,
+          "total": 1747
+        },
+        "cost": 0.00613,
+        "input_cost": 0.003032,
+        "output_cost": 0.003097
+      },
+      {
+        "attempt": 3,
+        "latency_ms": 10011,
+        "tokens": {
+          "input": 1391,
+          "output": 395,
+          "total": 1786
+        },
+        "cost": 0.006469,
+        "input_cost": 0.003032,
+        "output_cost": 0.003436
+      }
+    ]
+  },
+  "workout": {
+    "name": "Sweet Spot and Recovery Mix",
+    "description": "This workout consists of two sweet spot intervals at 90% of FTP, interspersed with recovery periods and includes a cool down.",
+    "workout_duration": 3900,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 600,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "warmup",
+        "notes": "Warm-up at 60% FTP for 10 minutes to prepare muscles."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 600,
+        "endTimeSeconds": 1800,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 4,
+        "perc_ftp": 90,
+        "type": "interval",
+        "notes": "First sweet spot block at 90% FTP for 15 minutes."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 1800,
+        "endTimeSeconds": 2100,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Recovery period with easy pedaling at 50% FTP for 5 minutes."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 2100,
+        "endTimeSeconds": 3300,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 4,
+        "perc_ftp": 90,
+        "type": "interval",
+        "notes": "Second sweet spot block at 90% FTP for 20 minutes."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 3300,
+        "endTimeSeconds": 3900,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "cooldown",
+        "notes": "Cool-down period at 50% FTP for 10 minutes to aid recovery."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "7/8",
+    "pass_rate": 87.5,
+    "all_passed": false,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 3900,
+        "calculated_duration": 3900,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": false,
+        "mismatches": [
+          {
+            "segment_number": 2,
+            "power": 225,
+            "declared_zone": 4,
+            "actual_zone": 3
+          },
+          {
+            "segment_number": 4,
+            "power": 225,
+            "declared_zone": 4,
+            "actual_zone": 3
+          }
+        ]
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": false
+}

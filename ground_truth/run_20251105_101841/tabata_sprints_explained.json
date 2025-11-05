@@ -1,0 +1,540 @@
+{
+  "prompt_id": "tabata_sprints_explained",
+  "prompt_description": "Tabata protocol sprint intervals",
+  "user_prompt": "15min warmup, then Tabata protocol: 8 rounds of 20 seconds all-out sprint / 10 seconds easy recovery (total 4 minutes), 5min easy, repeat Tabata set one more time, 10min cooldown.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T10:30:24.246388",
+  "generation_metadata": {
+    "attempts": 3,
+    "total_latency_all_attempts": 55467,
+    "total_tokens_all_attempts": {
+      "input": 3255,
+      "output": 6567,
+      "total": 9822
+    },
+    "total_cost_all_attempts": 0.064229,
+    "total_input_cost_all_attempts": 0.007096,
+    "total_output_cost_all_attempts": 0.057133,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 19371,
+        "tokens": {
+          "input": 1085,
+          "output": 2258,
+          "total": 3343
+        },
+        "cost": 0.02201,
+        "input_cost": 0.002365,
+        "output_cost": 0.019645
+      },
+      {
+        "attempt": 2,
+        "latency_ms": 16228,
+        "tokens": {
+          "input": 1085,
+          "output": 2179,
+          "total": 3264
+        },
+        "cost": 0.021323,
+        "input_cost": 0.002365,
+        "output_cost": 0.018957
+      },
+      {
+        "attempt": 3,
+        "latency_ms": 19868,
+        "tokens": {
+          "input": 1085,
+          "output": 2130,
+          "total": 3215
+        },
+        "cost": 0.020896,
+        "input_cost": 0.002365,
+        "output_cost": 0.018531
+      }
+    ]
+  },
+  "workout": {
+    "name": "Modified Tabata with Warmup and Cooldown",
+    "description": "15min warmup, followed by two Tabata sets of 8 rounds (20 sec sprint / 10 sec recovery), separated by 5min easy spin and ending with 10min cooldown.",
+    "workout_duration": 2700,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 900,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "warmup",
+        "notes": "Warmup"
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 900,
+        "endTimeSeconds": 920,
+        "power": 375,
+        "powerAdjustedUpward": 385,
+        "powerAdjustedDownward": 365,
+        "zone": 7,
+        "perc_ftp": 150,
+        "type": "interval",
+        "notes": "Tabata Sprint 1"
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 920,
+        "endTimeSeconds": 930,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Tabata Recovery 1"
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 930,
+        "endTimeSeconds": 950,
+        "power": 375,
+        "powerAdjustedUpward": 385,
+        "powerAdjustedDownward": 365,
+        "zone": 7,
+        "perc_ftp": 150,
+        "type": "interval",
+        "notes": "Tabata Sprint 2"
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 950,
+        "endTimeSeconds": 960,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Tabata Recovery 2"
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 960,
+        "endTimeSeconds": 980,
+        "power": 375,
+        "powerAdjustedUpward": 385,
+        "powerAdjustedDownward": 365,
+        "zone": 7,
+        "perc_ftp": 150,
+        "type": "interval",
+        "notes": "Tabata Sprint 3"
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 980,
+        "endTimeSeconds": 990,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Tabata Recovery 3"
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 990,
+        "endTimeSeconds": 1010,
+        "power": 375,
+        "powerAdjustedUpward": 385,
+        "powerAdjustedDownward": 365,
+        "zone": 7,
+        "perc_ftp": 150,
+        "type": "interval",
+        "notes": "Tabata Sprint 4"
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 1010,
+        "endTimeSeconds": 1020,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Tabata Recovery 4"
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 1020,
+        "endTimeSeconds": 1040,
+        "power": 375,
+        "powerAdjustedUpward": 385,
+        "powerAdjustedDownward": 365,
+        "zone": 7,
+        "perc_ftp": 150,
+        "type": "interval",
+        "notes": "Tabata Sprint 5"
+      },
+      {
+        "segment_number": 11,
+        "startTimeSeconds": 1040,
+        "endTimeSeconds": 1050,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Tabata Recovery 5"
+      },
+      {
+        "segment_number": 12,
+        "startTimeSeconds": 1050,
+        "endTimeSeconds": 1070,
+        "power": 375,
+        "powerAdjustedUpward": 385,
+        "powerAdjustedDownward": 365,
+        "zone": 7,
+        "perc_ftp": 150,
+        "type": "interval",
+        "notes": "Tabata Sprint 6"
+      },
+      {
+        "segment_number": 13,
+        "startTimeSeconds": 1070,
+        "endTimeSeconds": 1080,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Tabata Recovery 6"
+      },
+      {
+        "segment_number": 14,
+        "startTimeSeconds": 1080,
+        "endTimeSeconds": 1100,
+        "power": 375,
+        "powerAdjustedUpward": 385,
+        "powerAdjustedDownward": 365,
+        "zone": 7,
+        "perc_ftp": 150,
+        "type": "interval",
+        "notes": "Tabata Sprint 7"
+      },
+      {
+        "segment_number": 15,
+        "startTimeSeconds": 1100,
+        "endTimeSeconds": 1110,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Tabata Recovery 7"
+      },
+      {
+        "segment_number": 16,
+        "startTimeSeconds": 1110,
+        "endTimeSeconds": 1130,
+        "power": 375,
+        "powerAdjustedUpward": 385,
+        "powerAdjustedDownward": 365,
+        "zone": 7,
+        "perc_ftp": 150,
+        "type": "interval",
+        "notes": "Tabata Sprint 8"
+      },
+      {
+        "segment_number": 17,
+        "startTimeSeconds": 1130,
+        "endTimeSeconds": 1140,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Tabata Recovery 8"
+      },
+      {
+        "segment_number": 18,
+        "startTimeSeconds": 1140,
+        "endTimeSeconds": 1440,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "recovery",
+        "notes": "Recovery phase between Tabata sets"
+      },
+      {
+        "segment_number": 19,
+        "startTimeSeconds": 1440,
+        "endTimeSeconds": 1460,
+        "power": 375,
+        "powerAdjustedUpward": 385,
+        "powerAdjustedDownward": 365,
+        "zone": 7,
+        "perc_ftp": 150,
+        "type": "interval",
+        "notes": "Tabata Sprint 1 Repeat"
+      },
+      {
+        "segment_number": 20,
+        "startTimeSeconds": 1460,
+        "endTimeSeconds": 1470,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Tabata Recovery 1 Repeat"
+      },
+      {
+        "segment_number": 21,
+        "startTimeSeconds": 1470,
+        "endTimeSeconds": 1490,
+        "power": 375,
+        "powerAdjustedUpward": 385,
+        "powerAdjustedDownward": 365,
+        "zone": 7,
+        "perc_ftp": 150,
+        "type": "interval",
+        "notes": "Tabata Sprint 2 Repeat"
+      },
+      {
+        "segment_number": 22,
+        "startTimeSeconds": 1490,
+        "endTimeSeconds": 1500,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Tabata Recovery 2 Repeat"
+      },
+      {
+        "segment_number": 23,
+        "startTimeSeconds": 1500,
+        "endTimeSeconds": 1520,
+        "power": 375,
+        "powerAdjustedUpward": 385,
+        "powerAdjustedDownward": 365,
+        "zone": 7,
+        "perc_ftp": 150,
+        "type": "interval",
+        "notes": "Tabata Sprint 3 Repeat"
+      },
+      {
+        "segment_number": 24,
+        "startTimeSeconds": 1520,
+        "endTimeSeconds": 1530,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Tabata Recovery 3 Repeat"
+      },
+      {
+        "segment_number": 25,
+        "startTimeSeconds": 1530,
+        "endTimeSeconds": 1550,
+        "power": 375,
+        "powerAdjustedUpward": 385,
+        "powerAdjustedDownward": 365,
+        "zone": 7,
+        "perc_ftp": 150,
+        "type": "interval",
+        "notes": "Tabata Sprint 4 Repeat"
+      },
+      {
+        "segment_number": 26,
+        "startTimeSeconds": 1550,
+        "endTimeSeconds": 1560,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Tabata Recovery 4 Repeat"
+      },
+      {
+        "segment_number": 27,
+        "startTimeSeconds": 1560,
+        "endTimeSeconds": 1580,
+        "power": 375,
+        "powerAdjustedUpward": 385,
+        "powerAdjustedDownward": 365,
+        "zone": 7,
+        "perc_ftp": 150,
+        "type": "interval",
+        "notes": "Tabata Sprint 5 Repeat"
+      },
+      {
+        "segment_number": 28,
+        "startTimeSeconds": 1580,
+        "endTimeSeconds": 1590,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Tabata Recovery 5 Repeat"
+      },
+      {
+        "segment_number": 29,
+        "startTimeSeconds": 1590,
+        "endTimeSeconds": 1610,
+        "power": 375,
+        "powerAdjustedUpward": 385,
+        "powerAdjustedDownward": 365,
+        "zone": 7,
+        "perc_ftp": 150,
+        "type": "interval",
+        "notes": "Tabata Sprint 6 Repeat"
+      },
+      {
+        "segment_number": 30,
+        "startTimeSeconds": 1610,
+        "endTimeSeconds": 1620,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Tabata Recovery 6 Repeat"
+      },
+      {
+        "segment_number": 31,
+        "startTimeSeconds": 1620,
+        "endTimeSeconds": 1640,
+        "power": 375,
+        "powerAdjustedUpward": 385,
+        "powerAdjustedDownward": 365,
+        "zone": 7,
+        "perc_ftp": 150,
+        "type": "interval",
+        "notes": "Tabata Sprint 7 Repeat"
+      },
+      {
+        "segment_number": 32,
+        "startTimeSeconds": 1640,
+        "endTimeSeconds": 1650,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Tabata Recovery 7 Repeat"
+      },
+      {
+        "segment_number": 33,
+        "startTimeSeconds": 1650,
+        "endTimeSeconds": 1670,
+        "power": 375,
+        "powerAdjustedUpward": 385,
+        "powerAdjustedDownward": 365,
+        "zone": 7,
+        "perc_ftp": 150,
+        "type": "interval",
+        "notes": "Tabata Sprint 8 Repeat"
+      },
+      {
+        "segment_number": 34,
+        "startTimeSeconds": 1670,
+        "endTimeSeconds": 1680,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Tabata Recovery 8 Repeat"
+      },
+      {
+        "segment_number": 35,
+        "startTimeSeconds": 1680,
+        "endTimeSeconds": 2280,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "cooldown",
+        "notes": "Cooldown"
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "7/8",
+    "pass_rate": 87.5,
+    "all_passed": false,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 2700,
+        "calculated_duration": 2280,
+        "difference": 420
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": false
+}

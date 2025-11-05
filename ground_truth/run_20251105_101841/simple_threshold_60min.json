@@ -1,0 +1,240 @@
+{
+  "prompt_id": "simple_threshold_60min",
+  "prompt_description": "Simple threshold workout request",
+  "user_prompt": "Create a 60 minute threshold workout.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T10:25:24.773608",
+  "generation_metadata": {
+    "attempts": 3,
+    "total_latency_all_attempts": 21096,
+    "total_tokens_all_attempts": {
+      "input": 3129,
+      "output": 1647,
+      "total": 4776
+    },
+    "total_cost_all_attempts": 0.02115,
+    "total_input_cost_all_attempts": 0.006821,
+    "total_output_cost_all_attempts": 0.014329,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 9179,
+        "tokens": {
+          "input": 1043,
+          "output": 859,
+          "total": 1902
+        },
+        "cost": 0.009747,
+        "input_cost": 0.002274,
+        "output_cost": 0.007473
+      },
+      {
+        "attempt": 2,
+        "latency_ms": 2939,
+        "tokens": {
+          "input": 1043,
+          "output": 165,
+          "total": 1208
+        },
+        "cost": 0.003709,
+        "input_cost": 0.002274,
+        "output_cost": 0.001435
+      },
+      {
+        "attempt": 3,
+        "latency_ms": 8978,
+        "tokens": {
+          "input": 1043,
+          "output": 623,
+          "total": 1666
+        },
+        "cost": 0.007694,
+        "input_cost": 0.002274,
+        "output_cost": 0.00542
+      }
+    ]
+  },
+  "workout": {
+    "name": "Hour of Power",
+    "description": "60 min continuous at ~95\u2013100% FTP with 10\u201315 second bursts every 2\u20133 minutes at 110\u2013120% FTP.",
+    "workout_duration": 3600,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 120,
+        "power": 238,
+        "powerAdjustedUpward": 248,
+        "powerAdjustedDownward": 228,
+        "zone": 4,
+        "perc_ftp": 95,
+        "type": "warmup",
+        "notes": "Warm-up into threshold"
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 120,
+        "endTimeSeconds": 2700,
+        "power": 250,
+        "powerAdjustedUpward": 260,
+        "powerAdjustedDownward": 240,
+        "zone": 4,
+        "perc_ftp": 100,
+        "type": "interval",
+        "notes": "Sustain threshold effort with periodic bursts"
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 2700,
+        "endTimeSeconds": 2715,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 6,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Power burst"
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 2715,
+        "endTimeSeconds": 2880,
+        "power": 250,
+        "powerAdjustedUpward": 260,
+        "powerAdjustedDownward": 240,
+        "zone": 4,
+        "perc_ftp": 100,
+        "type": "active",
+        "notes": "Return to threshold"
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 2880,
+        "endTimeSeconds": 2895,
+        "power": 275,
+        "powerAdjustedUpward": 285,
+        "powerAdjustedDownward": 265,
+        "zone": 5,
+        "perc_ftp": 110,
+        "type": "interval",
+        "notes": "Power burst"
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 2895,
+        "endTimeSeconds": 3000,
+        "power": 250,
+        "powerAdjustedUpward": 260,
+        "powerAdjustedDownward": 240,
+        "zone": 4,
+        "perc_ftp": 100,
+        "type": "active",
+        "notes": "Return to threshold"
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 3000,
+        "endTimeSeconds": 3015,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 6,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Power burst"
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 3015,
+        "endTimeSeconds": 3450,
+        "power": 250,
+        "powerAdjustedUpward": 260,
+        "powerAdjustedDownward": 240,
+        "zone": 4,
+        "perc_ftp": 100,
+        "type": "active",
+        "notes": "Return to threshold"
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 3450,
+        "endTimeSeconds": 3465,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 6,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Power burst"
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 3465,
+        "endTimeSeconds": 3600,
+        "power": 238,
+        "powerAdjustedUpward": 248,
+        "powerAdjustedDownward": 228,
+        "zone": 4,
+        "perc_ftp": 95,
+        "type": "cooldown",
+        "notes": "Cool down from threshold"
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 3600,
+        "calculated_duration": 3600,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}

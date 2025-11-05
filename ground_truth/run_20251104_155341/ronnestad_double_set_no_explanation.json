@@ -1,0 +1,336 @@
+{
+  "prompt_id": "ronnestad_double_set_no_explanation",
+  "prompt_description": "Double Ronnestad sets with sweet spot between",
+  "user_prompt": "20min WU, 2 Ronnestad sets with 5 mins at 150W in between. Then 15min CD.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-04T16:47:26.618409",
+  "generation_metadata": {
+    "attempts": 3,
+    "total_latency_all_attempts": 199361,
+    "total_tokens_all_attempts": {
+      "input": 4026,
+      "output": 4803,
+      "total": 8829
+    },
+    "total_cost_all_attempts": 0.050563,
+    "total_input_cost_all_attempts": 0.008777,
+    "total_output_cost_all_attempts": 0.041786,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 21638,
+        "tokens": {
+          "input": 1342,
+          "output": 1422,
+          "total": 2764
+        },
+        "cost": 0.015297,
+        "input_cost": 0.002926,
+        "output_cost": 0.012371
+      },
+      {
+        "attempt": 2,
+        "latency_ms": 149578,
+        "tokens": {
+          "input": 1342,
+          "output": 2229,
+          "total": 3571
+        },
+        "cost": 0.022318,
+        "input_cost": 0.002926,
+        "output_cost": 0.019392
+      },
+      {
+        "attempt": 3,
+        "latency_ms": 28145,
+        "tokens": {
+          "input": 1342,
+          "output": 1152,
+          "total": 2494
+        },
+        "cost": 0.012948,
+        "input_cost": 0.002926,
+        "output_cost": 0.010022
+      }
+    ]
+  },
+  "workout": {
+    "name": "Ronnestad Sets Routine",
+    "description": "A structured workout containing Ronnestad sets with recovery and cool down phases, designed to improve VO2 max and endurance.",
+    "workout_duration": 4500,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 240,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "warmup",
+        "notes": "Warm-up at 60% FTP."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 240,
+        "endTimeSeconds": 480,
+        "power": 163,
+        "powerAdjustedUpward": 173,
+        "powerAdjustedDownward": 153,
+        "zone": 2,
+        "perc_ftp": 65,
+        "type": "warmup",
+        "notes": "Gradually increasing warm-up."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 480,
+        "endTimeSeconds": 720,
+        "power": 175,
+        "powerAdjustedUpward": 185,
+        "powerAdjustedDownward": 165,
+        "zone": 2,
+        "perc_ftp": 70,
+        "type": "warmup",
+        "notes": "Increasing to 70% FTP."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 720,
+        "endTimeSeconds": 960,
+        "power": 188,
+        "powerAdjustedUpward": 198,
+        "powerAdjustedDownward": 178,
+        "zone": 2,
+        "perc_ftp": 75,
+        "type": "warmup",
+        "notes": "Warm-up continuation at 75% FTP."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 960,
+        "endTimeSeconds": 1200,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "warmup",
+        "notes": "Finish warm-up at 80% FTP."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 1200,
+        "endTimeSeconds": 1260,
+        "power": 315,
+        "powerAdjustedUpward": 325,
+        "powerAdjustedDownward": 305,
+        "zone": 6,
+        "perc_ftp": 126,
+        "type": "interval",
+        "notes": "Ronnestad set - high intensity."
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 1260,
+        "endTimeSeconds": 1320,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "recovery",
+        "notes": "Recovery between intense efforts."
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 1320,
+        "endTimeSeconds": 1380,
+        "power": 315,
+        "powerAdjustedUpward": 325,
+        "powerAdjustedDownward": 305,
+        "zone": 6,
+        "perc_ftp": 126,
+        "type": "interval",
+        "notes": "Ronnestad set - high intensity."
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 1380,
+        "endTimeSeconds": 1440,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "recovery",
+        "notes": "Recovery between intense efforts."
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 1440,
+        "endTimeSeconds": 1500,
+        "power": 315,
+        "powerAdjustedUpward": 325,
+        "powerAdjustedDownward": 305,
+        "zone": 6,
+        "perc_ftp": 126,
+        "type": "interval",
+        "notes": "Ronnestad set - high intensity."
+      },
+      {
+        "segment_number": 11,
+        "startTimeSeconds": 1500,
+        "endTimeSeconds": 1800,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "recovery",
+        "notes": "Recovery interval."
+      },
+      {
+        "segment_number": 12,
+        "startTimeSeconds": 1800,
+        "endTimeSeconds": 1860,
+        "power": 315,
+        "powerAdjustedUpward": 325,
+        "powerAdjustedDownward": 305,
+        "zone": 6,
+        "perc_ftp": 126,
+        "type": "interval",
+        "notes": "Ronnestad set 2 - high intensity."
+      },
+      {
+        "segment_number": 13,
+        "startTimeSeconds": 1860,
+        "endTimeSeconds": 1920,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "recovery",
+        "notes": "Recovery between intense efforts."
+      },
+      {
+        "segment_number": 14,
+        "startTimeSeconds": 1920,
+        "endTimeSeconds": 1980,
+        "power": 315,
+        "powerAdjustedUpward": 325,
+        "powerAdjustedDownward": 305,
+        "zone": 6,
+        "perc_ftp": 126,
+        "type": "interval",
+        "notes": "Ronnestad set 2 - high intensity."
+      },
+      {
+        "segment_number": 15,
+        "startTimeSeconds": 1980,
+        "endTimeSeconds": 2040,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "recovery",
+        "notes": "Recovery between intense efforts."
+      },
+      {
+        "segment_number": 16,
+        "startTimeSeconds": 2040,
+        "endTimeSeconds": 2100,
+        "power": 315,
+        "powerAdjustedUpward": 325,
+        "powerAdjustedDownward": 305,
+        "zone": 6,
+        "perc_ftp": 126,
+        "type": "interval",
+        "notes": "Ronnestad set 2 - high intensity."
+      },
+      {
+        "segment_number": 17,
+        "startTimeSeconds": 2100,
+        "endTimeSeconds": 2400,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "recovery",
+        "notes": "Recovery before cooldown."
+      },
+      {
+        "segment_number": 18,
+        "startTimeSeconds": 2400,
+        "endTimeSeconds": 3300,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "cooldown",
+        "notes": "Cooldown at 50% FTP to aid recovery."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "7/8",
+    "pass_rate": 87.5,
+    "all_passed": false,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 4500,
+        "calculated_duration": 3300,
+        "difference": 1200
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": false
+}

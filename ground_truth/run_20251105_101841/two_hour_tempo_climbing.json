@@ -1,0 +1,156 @@
+{
+  "prompt_id": "two_hour_tempo_climbing",
+  "prompt_description": "Long ride with tempo and climbing",
+  "user_prompt": "Two-hour ride, steady tempo for the first hour, moderate climbing in the second, staying below threshold.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T10:19:43.416756",
+  "generation_metadata": {
+    "attempts": 1,
+    "total_latency_all_attempts": 4470,
+    "total_tokens_all_attempts": {
+      "input": 1056,
+      "output": 346,
+      "total": 1402
+    },
+    "total_cost_all_attempts": 0.005312,
+    "total_input_cost_all_attempts": 0.002302,
+    "total_output_cost_all_attempts": 0.00301,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 4470,
+        "tokens": {
+          "input": 1056,
+          "output": 346,
+          "total": 1402
+        },
+        "cost": 0.005312,
+        "input_cost": 0.002302,
+        "output_cost": 0.00301
+      }
+    ]
+  },
+  "workout": {
+    "name": "Steady Tempo with Moderate Climbing",
+    "description": "A two-hour ride with a steady tempo for the first hour and moderate climbing for the second hour, staying below threshold.",
+    "workout_duration": 7200,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 3600,
+        "power": 188,
+        "powerAdjustedUpward": 198,
+        "powerAdjustedDownward": 178,
+        "zone": 2,
+        "perc_ftp": 75,
+        "type": "active",
+        "notes": "Steady tempo for the first hour."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 3600,
+        "endTimeSeconds": 4500,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 3,
+        "perc_ftp": 90,
+        "type": "active",
+        "notes": "Moderate climbing, staying below threshold."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 4500,
+        "endTimeSeconds": 5400,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 3,
+        "perc_ftp": 90,
+        "type": "active",
+        "notes": "Continue moderate climbing."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 5400,
+        "endTimeSeconds": 6300,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 3,
+        "perc_ftp": 90,
+        "type": "active",
+        "notes": "Continue moderate climbing."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 6300,
+        "endTimeSeconds": 7200,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 3,
+        "perc_ftp": 90,
+        "type": "active",
+        "notes": "Continue moderate climbing."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 7200,
+        "calculated_duration": 7200,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}

@@ -1,0 +1,277 @@
+{
+  "prompt_id": "fractional_vo2max_efforts",
+  "prompt_description": "VO2max efforts using fractional time",
+  "user_prompt": "10-minute warmup, then 4x90 seconds @ 120% FTP with 90 seconds recovery at 50% FTP, 10-minute cooldown.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T10:29:28.707275",
+  "generation_metadata": {
+    "attempts": 3,
+    "total_latency_all_attempts": 20989,
+    "total_tokens_all_attempts": {
+      "input": 3201,
+      "output": 1936,
+      "total": 5137
+    },
+    "total_cost_all_attempts": 0.023821,
+    "total_input_cost_all_attempts": 0.006978,
+    "total_output_cost_all_attempts": 0.016843,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 7757,
+        "tokens": {
+          "input": 1067,
+          "output": 691,
+          "total": 1758
+        },
+        "cost": 0.008338,
+        "input_cost": 0.002326,
+        "output_cost": 0.006012
+      },
+      {
+        "attempt": 2,
+        "latency_ms": 6490,
+        "tokens": {
+          "input": 1067,
+          "output": 605,
+          "total": 1672
+        },
+        "cost": 0.00759,
+        "input_cost": 0.002326,
+        "output_cost": 0.005263
+      },
+      {
+        "attempt": 3,
+        "latency_ms": 6742,
+        "tokens": {
+          "input": 1067,
+          "output": 640,
+          "total": 1707
+        },
+        "cost": 0.007894,
+        "input_cost": 0.002326,
+        "output_cost": 0.005568
+      }
+    ]
+  },
+  "workout": {
+    "name": "Interval Workout with Warmup and Cooldown",
+    "description": "10-minute warmup, 4x90 seconds intervals at 120% FTP with 90 seconds recovery at 50% FTP, and 10-minute cooldown.",
+    "workout_duration": 2520,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 600,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "warmup",
+        "notes": "Warmup phase easing into workout."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 600,
+        "endTimeSeconds": 690,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "High intensity effort."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 690,
+        "endTimeSeconds": 780,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Recovery between intervals."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 780,
+        "endTimeSeconds": 870,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "High intensity effort."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 870,
+        "endTimeSeconds": 960,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Recovery between intervals."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 960,
+        "endTimeSeconds": 1050,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "High intensity effort."
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 1050,
+        "endTimeSeconds": 1140,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Recovery between intervals."
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 1140,
+        "endTimeSeconds": 1230,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "High intensity effort."
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 1230,
+        "endTimeSeconds": 1320,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Final recovery before cooldown."
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 1320,
+        "endTimeSeconds": 1920,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "cooldown",
+        "notes": "Cooldown to finish the workout."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "6/8",
+    "pass_rate": 75.0,
+    "all_passed": false,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 2520,
+        "calculated_duration": 1920,
+        "difference": 600
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": false,
+        "mismatches": [
+          {
+            "segment_number": 1,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 3,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 5,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 7,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 9,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 10,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          }
+        ]
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": false
+}

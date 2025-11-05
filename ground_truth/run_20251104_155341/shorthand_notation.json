@@ -1,0 +1,252 @@
+{
+  "prompt_id": "shorthand_notation",
+  "prompt_description": "Workout using shorthand notation",
+  "user_prompt": "WU 10min @150W, 6\u00d75min @300W with 3 min rec @120W, cd 20 min @Z1.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-04T15:56:42.890388",
+  "generation_metadata": {
+    "attempts": 1,
+    "total_latency_all_attempts": 10143,
+    "total_tokens_all_attempts": {
+      "input": 1347,
+      "output": 854,
+      "total": 2201
+    },
+    "total_cost_all_attempts": 0.010366,
+    "total_input_cost_all_attempts": 0.002936,
+    "total_output_cost_all_attempts": 0.00743,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 10143,
+        "tokens": {
+          "input": 1347,
+          "output": 854,
+          "total": 2201
+        },
+        "cost": 0.010366,
+        "input_cost": 0.002936,
+        "output_cost": 0.00743
+      }
+    ]
+  },
+  "workout": {
+    "name": "VO2 Max Intervals",
+    "description": "This workout focuses on improving VO2 max with repeated high-intensity efforts, interspersed with recovery periods. It begins with a warm-up, followed by intervals, and ends with a cool-down.",
+    "workout_duration": 4800,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 600,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "warmup",
+        "notes": "Warm-up to prepare for intervals."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 600,
+        "endTimeSeconds": 900,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 6,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "High-intensity interval 1."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 900,
+        "endTimeSeconds": 1080,
+        "power": 120,
+        "powerAdjustedUpward": 130,
+        "powerAdjustedDownward": 110,
+        "zone": 1,
+        "perc_ftp": 48,
+        "type": "recovery",
+        "notes": "Recovery after interval 1."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 1080,
+        "endTimeSeconds": 1380,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 6,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "High-intensity interval 2."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 1380,
+        "endTimeSeconds": 1560,
+        "power": 120,
+        "powerAdjustedUpward": 130,
+        "powerAdjustedDownward": 110,
+        "zone": 1,
+        "perc_ftp": 48,
+        "type": "recovery",
+        "notes": "Recovery after interval 2."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 1560,
+        "endTimeSeconds": 1860,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 6,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "High-intensity interval 3."
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 1860,
+        "endTimeSeconds": 2040,
+        "power": 120,
+        "powerAdjustedUpward": 130,
+        "powerAdjustedDownward": 110,
+        "zone": 1,
+        "perc_ftp": 48,
+        "type": "recovery",
+        "notes": "Recovery after interval 3."
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 2040,
+        "endTimeSeconds": 2340,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 6,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "High-intensity interval 4."
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 2340,
+        "endTimeSeconds": 2520,
+        "power": 120,
+        "powerAdjustedUpward": 130,
+        "powerAdjustedDownward": 110,
+        "zone": 1,
+        "perc_ftp": 48,
+        "type": "recovery",
+        "notes": "Recovery after interval 4."
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 2520,
+        "endTimeSeconds": 2820,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 6,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "High-intensity interval 5."
+      },
+      {
+        "segment_number": 11,
+        "startTimeSeconds": 2820,
+        "endTimeSeconds": 3000,
+        "power": 120,
+        "powerAdjustedUpward": 130,
+        "powerAdjustedDownward": 110,
+        "zone": 1,
+        "perc_ftp": 48,
+        "type": "recovery",
+        "notes": "Recovery after interval 5."
+      },
+      {
+        "segment_number": 12,
+        "startTimeSeconds": 3000,
+        "endTimeSeconds": 3300,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 6,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "High-intensity interval 6."
+      },
+      {
+        "segment_number": 13,
+        "startTimeSeconds": 3300,
+        "endTimeSeconds": 4800,
+        "power": 135,
+        "powerAdjustedUpward": 145,
+        "powerAdjustedDownward": 125,
+        "zone": 1,
+        "perc_ftp": 54,
+        "type": "cooldown",
+        "notes": "Cool down to bring heart rate down."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 4800,
+        "calculated_duration": 4800,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}

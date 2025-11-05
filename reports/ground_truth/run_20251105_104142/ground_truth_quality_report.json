@@ -1,0 +1,2124 @@
+{
+  "metadata": {
+    "generated_at": "2025-11-05T10:41:42.151680",
+    "ground_truth_dir": "ground_truth/run_20251105_101841",
+    "total_files_analyzed": 40
+  },
+  "validation_analysis": {
+    "total_files": 40,
+    "passed_all_validations": 20,
+    "pass_all_rate": 50.0,
+    "validation_scores": [
+      {
+        "file": "ascending_descending_pyramid.json",
+        "passed": 6,
+        "total": 8,
+        "pass_rate": 75.0
+      },
+      {
+        "file": "ascending_pyramid_threshold.json",
+        "passed": 6,
+        "total": 8,
+        "pass_rate": 75.0
+      },
+      {
+        "file": "climbing_intervals_wattage.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "descending_pyramid_threshold.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "endurance_65_sprints.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "fartlek.json",
+        "passed": 7,
+        "total": 8,
+        "pass_rate": 87.5
+      },
+      {
+        "file": "fractional_threshold_2to1.json",
+        "passed": 6,
+        "total": 8,
+        "pass_rate": 75.0
+      },
+      {
+        "file": "fractional_vo2max_efforts.json",
+        "passed": 6,
+        "total": 8,
+        "pass_rate": 75.0
+      },
+      {
+        "file": "group_ride_surges.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "low_cadence_strength.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "mixed_tabata_sweet_spot.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "mixed_zones_progression.json",
+        "passed": 6,
+        "total": 8,
+        "pass_rate": 75.0
+      },
+      {
+        "file": "over_under_classic.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "over_under_sweet_spot.json",
+        "passed": 7,
+        "total": 8,
+        "pass_rate": 87.5
+      },
+      {
+        "file": "progressive_blocks.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "progressive_ftp_percentage.json",
+        "passed": 6,
+        "total": 8,
+        "pass_rate": 75.0
+      },
+      {
+        "file": "ramping_intervals.json",
+        "passed": 6,
+        "total": 8,
+        "pass_rate": 75.0
+      },
+      {
+        "file": "ronnestad_different.json",
+        "passed": 6,
+        "total": 8,
+        "pass_rate": 75.0
+      },
+      {
+        "file": "ronnestad_no_explanation.json",
+        "passed": 6,
+        "total": 8,
+        "pass_rate": 75.0
+      },
+      {
+        "file": "ronnestad_tripe_set_no_explanation.json",
+        "passed": 7,
+        "total": 8,
+        "pass_rate": 87.5
+      },
+      {
+        "file": "shorthand_notation.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "simple_tempo_block.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "simple_threshold_60min.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "sweet_spot_2to1_ratio.json",
+        "passed": 6,
+        "total": 8,
+        "pass_rate": 75.0
+      },
+      {
+        "file": "sweet_spot_blocks_2to1_explanation.json",
+        "passed": 7,
+        "total": 8,
+        "pass_rate": 87.5
+      },
+      {
+        "file": "sweet_spot_blocks_no_explanation.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "sweet_spot_progression_time_based.json",
+        "passed": 7,
+        "total": 8,
+        "pass_rate": 87.5
+      },
+      {
+        "file": "tabata_sprints_explained.json",
+        "passed": 7,
+        "total": 8,
+        "pass_rate": 87.5
+      },
+      {
+        "file": "tabata_sprints_no_explanation.json",
+        "passed": 7,
+        "total": 8,
+        "pass_rate": 87.5
+      },
+      {
+        "file": "tempo_sprints_combo.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "tempo_time_window.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "tempo_window_over_under.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "threshold_4x8_detailed.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "threshold_5x6.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "threshold_intervals_3x10.json",
+        "passed": 6,
+        "total": 8,
+        "pass_rate": 75.0
+      },
+      {
+        "file": "threshold_sprints_shorthand.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "two_hour_tempo_climbing.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "warmup_15min.json",
+        "passed": 8,
+        "total": 8,
+        "pass_rate": 100.0
+      },
+      {
+        "file": "zwift_complex_progressive_blocks.json",
+        "passed": 6,
+        "total": 8,
+        "pass_rate": 75.0
+      },
+      {
+        "file": "zwift_intervals_sprints.json",
+        "passed": 6,
+        "total": 8,
+        "pass_rate": 75.0
+      }
+    ],
+    "failed_metrics": {
+      "duration_consistency": 15,
+      "power_zone_accuracy": 18
+    },
+    "average_pass_rate": 89.6875
+  },
+  "workout_characteristics": {
+    "duration_stats": {
+      "min": 1200,
+      "max": 12600,
+      "avg": 4608.5,
+      "distribution": {
+        "4050": 1,
+        "5700": 3,
+        "3570": 1,
+        "3120": 1,
+        "3600": 5,
+        "7200": 3,
+        "2520": 2,
+        "3900": 2,
+        "4740": 2,
+        "5400": 2,
+        "3050": 1,
+        "3300": 2,
+        "6030": 1,
+        "5460": 2,
+        "2940": 1,
+        "4500": 2,
+        "12600": 1,
+        "6600": 2,
+        "2700": 1,
+        "2400": 1,
+        "4320": 1,
+        "4560": 1,
+        "1200": 1,
+        "4260": 1
+      }
+    },
+    "interval_stats": {
+      "min": 3,
+      "max": 55,
+      "avg": 14.225
+    },
+    "segment_type_distribution": {
+      "warmup": 51,
+      "interval": 260,
+      "recovery": 129,
+      "cooldown": 44,
+      "active": 20,
+      "rest": 65
+    },
+    "zone_time_distribution": {
+      "0": 1200,
+      "1": 23895,
+      "2": 65880,
+      "3": 34400,
+      "4": 24530,
+      "5": 2755,
+      "6": 7305,
+      "7": 1770
+    }
+  },
+  "per_file_analysis": [
+    {
+      "file": "climbing_intervals_wattage.json",
+      "prompt_id": "climbing_intervals_wattage",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 3570,
+      "intervals": 11,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 2,
+      "latency_ms": 18013,
+      "latency_sec": 18.013,
+      "cost": 0.017593,
+      "input_tokens": 2144,
+      "output_tokens": 1485,
+      "total_tokens": 3629
+    },
+    {
+      "file": "descending_pyramid_threshold.json",
+      "prompt_id": "descending_pyramid_threshold",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 3120,
+      "intervals": 9,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 2,
+      "latency_ms": 13268,
+      "latency_sec": 13.268,
+      "cost": 0.015131,
+      "input_tokens": 2148,
+      "output_tokens": 1201,
+      "total_tokens": 3349
+    },
+    {
+      "file": "endurance_65_sprints.json",
+      "prompt_id": "endurance_65_sprints",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 3600,
+      "intervals": 8,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 1,
+      "latency_ms": 24313,
+      "latency_sec": 24.313,
+      "cost": 0.007333,
+      "input_tokens": 1077,
+      "output_tokens": 573,
+      "total_tokens": 1650
+    },
+    {
+      "file": "group_ride_surges.json",
+      "prompt_id": "group_ride_surges",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 3900,
+      "intervals": 11,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 1,
+      "latency_ms": 8193,
+      "latency_sec": 8.193,
+      "cost": 0.008475,
+      "input_tokens": 1074,
+      "output_tokens": 705,
+      "total_tokens": 1779
+    },
+    {
+      "file": "low_cadence_strength.json",
+      "prompt_id": "low_cadence_strength",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 4740,
+      "intervals": 14,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 1,
+      "latency_ms": 15682,
+      "latency_sec": 15.682,
+      "cost": 0.010887,
+      "input_tokens": 1103,
+      "output_tokens": 975,
+      "total_tokens": 2078
+    },
+    {
+      "file": "mixed_tabata_sweet_spot.json",
+      "prompt_id": "mixed_tabata_sweet_spot",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 5400,
+      "intervals": 23,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 2,
+      "latency_ms": 29062,
+      "latency_sec": 29.062,
+      "cost": 0.028938,
+      "input_tokens": 2188,
+      "output_tokens": 2778,
+      "total_tokens": 4966
+    },
+    {
+      "file": "over_under_classic.json",
+      "prompt_id": "over_under_classic",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 2520,
+      "intervals": 16,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 2,
+      "latency_ms": 20193,
+      "latency_sec": 20.193,
+      "cost": 0.023457,
+      "input_tokens": 2148,
+      "output_tokens": 2158,
+      "total_tokens": 4306
+    },
+    {
+      "file": "progressive_blocks.json",
+      "prompt_id": "progressive_blocks",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 3300,
+      "intervals": 5,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 1,
+      "latency_ms": 6668,
+      "latency_sec": 6.668,
+      "cost": 0.005378,
+      "input_tokens": 1070,
+      "output_tokens": 350,
+      "total_tokens": 1420
+    },
+    {
+      "file": "shorthand_notation.json",
+      "prompt_id": "shorthand_notation",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 5400,
+      "intervals": 14,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 2,
+      "latency_ms": 19980,
+      "latency_sec": 19.98,
+      "cost": 0.020499,
+      "input_tokens": 2136,
+      "output_tokens": 1821,
+      "total_tokens": 3957
+    },
+    {
+      "file": "simple_tempo_block.json",
+      "prompt_id": "simple_tempo_block",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 3600,
+      "intervals": 3,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 1,
+      "latency_ms": 3558,
+      "latency_sec": 3.558,
+      "cost": 0.004225,
+      "input_tokens": 1056,
+      "output_tokens": 221,
+      "total_tokens": 1277
+    },
+    {
+      "file": "simple_threshold_60min.json",
+      "prompt_id": "simple_threshold_60min",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 3600,
+      "intervals": 10,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 3,
+      "latency_ms": 21096,
+      "latency_sec": 21.096,
+      "cost": 0.02115,
+      "input_tokens": 3129,
+      "output_tokens": 1647,
+      "total_tokens": 4776
+    },
+    {
+      "file": "sweet_spot_blocks_no_explanation.json",
+      "prompt_id": "sweet_spot_blocks_no_explanation",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 7200,
+      "intervals": 8,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 2,
+      "latency_ms": 14298,
+      "latency_sec": 14.298,
+      "cost": 0.01367,
+      "input_tokens": 2124,
+      "output_tokens": 1039,
+      "total_tokens": 3163
+    },
+    {
+      "file": "tempo_sprints_combo.json",
+      "prompt_id": "tempo_sprints_combo",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 2400,
+      "intervals": 15,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 1,
+      "latency_ms": 9879,
+      "latency_sec": 9.879,
+      "cost": 0.011224,
+      "input_tokens": 1070,
+      "output_tokens": 1022,
+      "total_tokens": 2092
+    },
+    {
+      "file": "tempo_time_window.json",
+      "prompt_id": "tempo_time_window",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 3600,
+      "intervals": 3,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 1,
+      "latency_ms": 3767,
+      "latency_sec": 3.767,
+      "cost": 0.00426,
+      "input_tokens": 1072,
+      "output_tokens": 221,
+      "total_tokens": 1293
+    },
+    {
+      "file": "tempo_window_over_under.json",
+      "prompt_id": "tempo_window_over_under",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 4500,
+      "intervals": 10,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 2,
+      "latency_ms": 22484,
+      "latency_sec": 22.484,
+      "cost": 0.016319,
+      "input_tokens": 2222,
+      "output_tokens": 1319,
+      "total_tokens": 3541
+    },
+    {
+      "file": "threshold_4x8_detailed.json",
+      "prompt_id": "threshold_4x8_detailed",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 5700,
+      "intervals": 9,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 1,
+      "latency_ms": 7181,
+      "latency_sec": 7.181,
+      "cost": 0.007385,
+      "input_tokens": 1073,
+      "output_tokens": 580,
+      "total_tokens": 1653
+    },
+    {
+      "file": "threshold_5x6.json",
+      "prompt_id": "threshold_5x6",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 4320,
+      "intervals": 12,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 2,
+      "latency_ms": 18542,
+      "latency_sec": 18.542,
+      "cost": 0.017445,
+      "input_tokens": 2136,
+      "output_tokens": 1470,
+      "total_tokens": 3606
+    },
+    {
+      "file": "threshold_sprints_shorthand.json",
+      "prompt_id": "threshold_sprints_shorthand",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 4560,
+      "intervals": 18,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 2,
+      "latency_ms": 28366,
+      "latency_sec": 28.366,
+      "cost": 0.024358,
+      "input_tokens": 2162,
+      "output_tokens": 2258,
+      "total_tokens": 4420
+    },
+    {
+      "file": "two_hour_tempo_climbing.json",
+      "prompt_id": "two_hour_tempo_climbing",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 7200,
+      "intervals": 5,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 1,
+      "latency_ms": 4470,
+      "latency_sec": 4.47,
+      "cost": 0.005312,
+      "input_tokens": 1056,
+      "output_tokens": 346,
+      "total_tokens": 1402
+    },
+    {
+      "file": "warmup_15min.json",
+      "prompt_id": "warmup_15min",
+      "validation_score": "8/8",
+      "pass_rate": 100.0,
+      "duration": 1200,
+      "intervals": 7,
+      "issues_count": 0,
+      "all_passed": true,
+      "attempts": 1,
+      "latency_ms": 10250,
+      "latency_sec": 10.25,
+      "cost": 0.00653,
+      "input_tokens": 1048,
+      "output_tokens": 488,
+      "total_tokens": 1536
+    },
+    {
+      "file": "fartlek.json",
+      "prompt_id": "fartlek",
+      "validation_score": "7/8",
+      "pass_rate": 87.5,
+      "duration": 7200,
+      "intervals": 11,
+      "issues_count": 1,
+      "all_passed": false,
+      "attempts": 3,
+      "latency_ms": 45121,
+      "latency_sec": 45.121,
+      "cost": 0.037982,
+      "input_tokens": 3132,
+      "output_tokens": 3581,
+      "total_tokens": 6713
+    },
+    {
+      "file": "over_under_sweet_spot.json",
+      "prompt_id": "over_under_sweet_spot",
+      "validation_score": "7/8",
+      "pass_rate": 87.5,
+      "duration": 3050,
+      "intervals": 16,
+      "issues_count": 1,
+      "all_passed": false,
+      "attempts": 3,
+      "latency_ms": 41771,
+      "latency_sec": 41.771,
+      "cost": 0.031625,
+      "input_tokens": 3225,
+      "output_tokens": 2827,
+      "total_tokens": 6052
+    },
+    {
+      "file": "ronnestad_tripe_set_no_explanation.json",
+      "prompt_id": "ronnestad_tripe_set_no_explanation",
+      "validation_score": "7/8",
+      "pass_rate": 87.5,
+      "duration": 4500,
+      "intervals": 22,
+      "issues_count": 1,
+      "all_passed": false,
+      "attempts": 3,
+      "latency_ms": 107254,
+      "latency_sec": 107.254,
+      "cost": 0.086711,
+      "input_tokens": 3180,
+      "output_tokens": 9170,
+      "total_tokens": 12350
+    },
+    {
+      "file": "sweet_spot_blocks_2to1_explanation.json",
+      "prompt_id": "sweet_spot_blocks_2to1_explanation",
+      "validation_score": "7/8",
+      "pass_rate": 87.5,
+      "duration": 6600,
+      "intervals": 8,
+      "issues_count": 1,
+      "all_passed": false,
+      "attempts": 3,
+      "latency_ms": 20803,
+      "latency_sec": 20.803,
+      "cost": 0.02075,
+      "input_tokens": 3237,
+      "output_tokens": 1574,
+      "total_tokens": 4811
+    },
+    {
+      "file": "sweet_spot_progression_time_based.json",
+      "prompt_id": "sweet_spot_progression_time_based",
+      "validation_score": "7/8",
+      "pass_rate": 87.5,
+      "duration": 3900,
+      "intervals": 5,
+      "issues_count": 1,
+      "all_passed": false,
+      "attempts": 3,
+      "latency_ms": 17653,
+      "latency_sec": 17.653,
+      "cost": 0.015946,
+      "input_tokens": 3336,
+      "output_tokens": 997,
+      "total_tokens": 4333
+    },
+    {
+      "file": "tabata_sprints_explained.json",
+      "prompt_id": "tabata_sprints_explained",
+      "validation_score": "7/8",
+      "pass_rate": 87.5,
+      "duration": 2700,
+      "intervals": 35,
+      "issues_count": 1,
+      "all_passed": false,
+      "attempts": 3,
+      "latency_ms": 55467,
+      "latency_sec": 55.467,
+      "cost": 0.064229,
+      "input_tokens": 3255,
+      "output_tokens": 6567,
+      "total_tokens": 9822
+    },
+    {
+      "file": "tabata_sprints_no_explanation.json",
+      "prompt_id": "tabata_sprints_no_explanation",
+      "validation_score": "7/8",
+      "pass_rate": 87.5,
+      "duration": 3300,
+      "intervals": 46,
+      "issues_count": 1,
+      "all_passed": false,
+      "attempts": 3,
+      "latency_ms": 71450,
+      "latency_sec": 71.45,
+      "cost": 0.08379,
+      "input_tokens": 3177,
+      "output_tokens": 8835,
+      "total_tokens": 12012
+    },
+    {
+      "file": "ascending_descending_pyramid.json",
+      "prompt_id": "ascending_descending_pyramid",
+      "validation_score": "6/8",
+      "pass_rate": 75.0,
+      "duration": 4050,
+      "intervals": 13,
+      "issues_count": 2,
+      "all_passed": false,
+      "attempts": 3,
+      "latency_ms": 31887,
+      "latency_sec": 31.887,
+      "cost": 0.029635,
+      "input_tokens": 3258,
+      "output_tokens": 2590,
+      "total_tokens": 5848
+    },
+    {
+      "file": "ascending_pyramid_threshold.json",
+      "prompt_id": "ascending_pyramid_threshold",
+      "validation_score": "6/8",
+      "pass_rate": 75.0,
+      "duration": 5700,
+      "intervals": 9,
+      "issues_count": 2,
+      "all_passed": false,
+      "attempts": 3,
+      "latency_ms": 22362,
+      "latency_sec": 22.362,
+      "cost": 0.022677,
+      "input_tokens": 3219,
+      "output_tokens": 1800,
+      "total_tokens": 5019
+    },
+    {
+      "file": "fractional_threshold_2to1.json",
+      "prompt_id": "fractional_threshold_2to1",
+      "validation_score": "6/8",
+      "pass_rate": 75.0,
+      "duration": 3600,
+      "intervals": 17,
+      "issues_count": 2,
+      "all_passed": false,
+      "attempts": 3,
+      "latency_ms": 37776,
+      "latency_sec": 37.776,
+      "cost": 0.034982,
+      "input_tokens": 3276,
+      "output_tokens": 3200,
+      "total_tokens": 6476
+    },
+    {
+      "file": "fractional_vo2max_efforts.json",
+      "prompt_id": "fractional_vo2max_efforts",
+      "validation_score": "6/8",
+      "pass_rate": 75.0,
+      "duration": 2520,
+      "intervals": 10,
+      "issues_count": 2,
+      "all_passed": false,
+      "attempts": 3,
+      "latency_ms": 20989,
+      "latency_sec": 20.989,
+      "cost": 0.023821,
+      "input_tokens": 3201,
+      "output_tokens": 1936,
+      "total_tokens": 5137
+    },
+    {
+      "file": "mixed_zones_progression.json",
+      "prompt_id": "mixed_zones_progression",
+      "validation_score": "6/8",
+      "pass_rate": 75.0,
+      "duration": 5700,
+      "intervals": 8,
+      "issues_count": 2,
+      "all_passed": false,
+      "attempts": 3,
+      "latency_ms": 21531,
+      "latency_sec": 21.531,
+      "cost": 0.021261,
+      "input_tokens": 3216,
+      "output_tokens": 1638,
+      "total_tokens": 4854
+    },
+    {
+      "file": "progressive_ftp_percentage.json",
+      "prompt_id": "progressive_ftp_percentage",
+      "validation_score": "6/8",
+      "pass_rate": 75.0,
+      "duration": 6030,
+      "intervals": 9,
+      "issues_count": 2,
+      "all_passed": false,
+      "attempts": 3,
+      "latency_ms": 29062,
+      "latency_sec": 29.062,
+      "cost": 0.023117,
+      "input_tokens": 3201,
+      "output_tokens": 1855,
+      "total_tokens": 5056
+    },
+    {
+      "file": "ramping_intervals.json",
+      "prompt_id": "ramping_intervals",
+      "validation_score": "6/8",
+      "pass_rate": 75.0,
+      "duration": 5460,
+      "intervals": 10,
+      "issues_count": 2,
+      "all_passed": false,
+      "attempts": 3,
+      "latency_ms": 35236,
+      "latency_sec": 35.236,
+      "cost": 0.031638,
+      "input_tokens": 3231,
+      "output_tokens": 2827,
+      "total_tokens": 6058
+    },
+    {
+      "file": "ronnestad_different.json",
+      "prompt_id": "ronnestad_different",
+      "validation_score": "6/8",
+      "pass_rate": 75.0,
+      "duration": 5460,
+      "intervals": 55,
+      "issues_count": 2,
+      "all_passed": false,
+      "attempts": 3,
+      "latency_ms": 74864,
+      "latency_sec": 74.864,
+      "cost": 0.097324,
+      "input_tokens": 3255,
+      "output_tokens": 10371,
+      "total_tokens": 13626
+    },
+    {
+      "file": "ronnestad_no_explanation.json",
+      "prompt_id": "ronnestad_no_explanation",
+      "validation_score": "6/8",
+      "pass_rate": 75.0,
+      "duration": 2940,
+      "intervals": 27,
+      "issues_count": 2,
+      "all_passed": false,
+      "attempts": 3,
+      "latency_ms": 48117,
+      "latency_sec": 48.117,
+      "cost": 0.051041,
+      "input_tokens": 3156,
+      "output_tokens": 5076,
+      "total_tokens": 8232
+    },
+    {
+      "file": "sweet_spot_2to1_ratio.json",
+      "prompt_id": "sweet_spot_2to1_ratio",
+      "validation_score": "6/8",
+      "pass_rate": 75.0,
+      "duration": 12600,
+      "intervals": 10,
+      "issues_count": 2,
+      "all_passed": false,
+      "attempts": 3,
+      "latency_ms": 24752,
+      "latency_sec": 24.752,
+      "cost": 0.025235,
+      "input_tokens": 3219,
+      "output_tokens": 2094,
+      "total_tokens": 5313
+    },
+    {
+      "file": "threshold_intervals_3x10.json",
+      "prompt_id": "threshold_intervals_3x10",
+      "validation_score": "6/8",
+      "pass_rate": 75.0,
+      "duration": 6600,
+      "intervals": 7,
+      "issues_count": 2,
+      "all_passed": false,
+      "attempts": 3,
+      "latency_ms": 25808,
+      "latency_sec": 25.808,
+      "cost": 0.020611,
+      "input_tokens": 3189,
+      "output_tokens": 1570,
+      "total_tokens": 4759
+    },
+    {
+      "file": "zwift_complex_progressive_blocks.json",
+      "prompt_id": "zwift_complex_progressive_blocks",
+      "validation_score": "6/8",
+      "pass_rate": 75.0,
+      "duration": 4260,
+      "intervals": 16,
+      "issues_count": 2,
+      "all_passed": false,
+      "attempts": 3,
+      "latency_ms": 47190,
+      "latency_sec": 47.19,
+      "cost": 0.036222,
+      "input_tokens": 3354,
+      "output_tokens": 3323,
+      "total_tokens": 6677
+    },
+    {
+      "file": "zwift_intervals_sprints.json",
+      "prompt_id": "zwift_intervals_sprints",
+      "validation_score": "6/8",
+      "pass_rate": 75.0,
+      "duration": 4740,
+      "intervals": 24,
+      "issues_count": 2,
+      "all_passed": false,
+      "attempts": 3,
+      "latency_ms": 73425,
+      "latency_sec": 73.425,
+      "cost": 0.03636,
+      "input_tokens": 3246,
+      "output_tokens": 3366,
+      "total_tokens": 6612
+    }
+  ],
+  "detailed_issues": [
+    {
+      "file": "ascending_descending_pyramid.json",
+      "prompt_id": "ascending_descending_pyramid",
+      "metric": "duration_consistency",
+      "details": "Duration mismatch: declared 4050s, calculated 3540s (diff: 510s)",
+      "raw_metric": {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 4050,
+        "calculated_duration": 3540,
+        "difference": 510
+      }
+    },
+    {
+      "file": "ascending_descending_pyramid.json",
+      "prompt_id": "ascending_descending_pyramid",
+      "metric": "power_zone_accuracy",
+      "details": "5 mismatch(es) found\n  - Segment 1: Power 125W declared as Zone 2, actually Zone 1\n  - Segment 2: Power 225W declared as Zone 4, actually Zone 3\n  - Segment 4: Power 225W declared as Zone 4, actually Zone 3",
+      "raw_metric": {
+        "metric": "power_zone_accuracy",
+        "passed": false,
+        "mismatches": [
+          {
+            "segment_number": 1,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 2,
+            "power": 225,
+            "declared_zone": 4,
+            "actual_zone": 3
+          },
+          {
+            "segment_number": 4,
+            "power": 225,
+            "declared_zone": 4,
+            "actual_zone": 3
+          },
+          {
+            "segment_number": 6,
+            "power": 225,
+            "declared_zone": 4,
+            "actual_zone": 3
+          },
+          {
+            "segment_number": 13,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          }
+        ]
+      }
+    },
+    {
+      "file": "ascending_pyramid_threshold.json",
+      "prompt_id": "ascending_pyramid_threshold",
+      "metric": "duration_consistency",
+      "details": "Duration mismatch: declared 5700s, calculated 3240s (diff: 2460s)",
+      "raw_metric": {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 5700,
+        "calculated_duration": 3240,
+        "difference": 2460
+      }
+    },
+    {
+      "file": "ascending_pyramid_threshold.json",
+      "prompt_id": "ascending_pyramid_threshold",
+      "metric": "power_zone_accuracy",
+      "details": "9 mismatch(es) found\n  - Segment 1: Power 125W declared as Zone 2, actually Zone 1\n  - Segment 2: Power 225W declared as Zone 4, actually Zone 3\n  - Segment 3: Power 125W declared as Zone 2, actually Zone 1",
+      "raw_metric": {
+        "metric": "power_zone_accuracy",
+        "passed": false,
+        "mismatches": [
+          {
+            "segment_number": 1,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 2,
+            "power": 225,
+            "declared_zone": 4,
+            "actual_zone": 3
+          },
+          {
+            "segment_number": 3,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 4,
+            "power": 225,
+            "declared_zone": 4,
+            "actual_zone": 3
+          },
+          {
+            "segment_number": 5,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 6,
+            "power": 225,
+            "declared_zone": 4,
+            "actual_zone": 3
+          },
+          {
+            "segment_number": 7,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 8,
+            "power": 225,
+            "declared_zone": 4,
+            "actual_zone": 3
+          },
+          {
+            "segment_number": 9,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          }
+        ]
+      }
+    },
+    {
+      "file": "fartlek.json",
+      "prompt_id": "fartlek",
+      "metric": "power_zone_accuracy",
+      "details": "3 mismatch(es) found\n  - Segment 2: Power 275W declared as Zone 6, actually Zone 5\n  - Segment 6: Power 225W declared as Zone 4, actually Zone 3\n  - Segment 10: Power 275W declared as Zone 6, actually Zone 5",
+      "raw_metric": {
+        "metric": "power_zone_accuracy",
+        "passed": false,
+        "mismatches": [
+          {
+            "segment_number": 2,
+            "power": 275,
+            "declared_zone": 6,
+            "actual_zone": 5
+          },
+          {
+            "segment_number": 6,
+            "power": 225,
+            "declared_zone": 4,
+            "actual_zone": 3
+          },
+          {
+            "segment_number": 10,
+            "power": 275,
+            "declared_zone": 6,
+            "actual_zone": 5
+          }
+        ]
+      }
+    },
+    {
+      "file": "fractional_threshold_2to1.json",
+      "prompt_id": "fractional_threshold_2to1",
+      "metric": "duration_consistency",
+      "details": "Duration mismatch: declared 3600s, calculated 2730s (diff: 870s)",
+      "raw_metric": {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 3600,
+        "calculated_duration": 2730,
+        "difference": 870
+      }
+    },
+    {
+      "file": "fractional_threshold_2to1.json",
+      "prompt_id": "fractional_threshold_2to1",
+      "metric": "power_zone_accuracy",
+      "details": "9 mismatch(es) found\n  - Segment 1: Power 125W declared as Zone 2, actually Zone 1\n  - Segment 3: Power 125W declared as Zone 2, actually Zone 1\n  - Segment 5: Power 125W declared as Zone 2, actually Zone 1",
+      "raw_metric": {
+        "metric": "power_zone_accuracy",
+        "passed": false,
+        "mismatches": [
+          {
+            "segment_number": 1,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 3,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 5,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 7,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 9,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 11,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 13,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 15,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 17,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          }
+        ]
+      }
+    },
+    {
+      "file": "fractional_vo2max_efforts.json",
+      "prompt_id": "fractional_vo2max_efforts",
+      "metric": "duration_consistency",
+      "details": "Duration mismatch: declared 2520s, calculated 1920s (diff: 600s)",
+      "raw_metric": {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 2520,
+        "calculated_duration": 1920,
+        "difference": 600
+      }
+    },
+    {
+      "file": "fractional_vo2max_efforts.json",
+      "prompt_id": "fractional_vo2max_efforts",
+      "metric": "power_zone_accuracy",
+      "details": "6 mismatch(es) found\n  - Segment 1: Power 125W declared as Zone 2, actually Zone 1\n  - Segment 3: Power 125W declared as Zone 2, actually Zone 1\n  - Segment 5: Power 125W declared as Zone 2, actually Zone 1",
+      "raw_metric": {
+        "metric": "power_zone_accuracy",
+        "passed": false,
+        "mismatches": [
+          {
+            "segment_number": 1,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 3,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 5,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 7,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 9,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 10,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          }
+        ]
+      }
+    },
+    {
+      "file": "mixed_zones_progression.json",
+      "prompt_id": "mixed_zones_progression",
+      "metric": "duration_consistency",
+      "details": "Duration mismatch: declared 5700s, calculated 4920s (diff: 780s)",
+      "raw_metric": {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 5700,
+        "calculated_duration": 4920,
+        "difference": 780
+      }
+    },
+    {
+      "file": "mixed_zones_progression.json",
+      "prompt_id": "mixed_zones_progression",
+      "metric": "power_zone_accuracy",
+      "details": "2 mismatch(es) found\n  - Segment 4: Power 125W declared as Zone 2, actually Zone 1\n  - Segment 6: Power 125W declared as Zone 2, actually Zone 1",
+      "raw_metric": {
+        "metric": "power_zone_accuracy",
+        "passed": false,
+        "mismatches": [
+          {
+            "segment_number": 4,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 6,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          }
+        ]
+      }
+    },
+    {
+      "file": "over_under_sweet_spot.json",
+      "prompt_id": "over_under_sweet_spot",
+      "metric": "power_zone_accuracy",
+      "details": "7 mismatch(es) found\n  - Segment 2: Power 230W declared as Zone 4, actually Zone 3\n  - Segment 4: Power 230W declared as Zone 4, actually Zone 3\n  - Segment 6: Power 230W declared as Zone 4, actually Zone 3",
+      "raw_metric": {
+        "metric": "power_zone_accuracy",
+        "passed": false,
+        "mismatches": [
+          {
+            "segment_number": 2,
+            "power": 230,
+            "declared_zone": 4,
+            "actual_zone": 3
+          },
+          {
+            "segment_number": 4,
+            "power": 230,
+            "declared_zone": 4,
+            "actual_zone": 3
+          },
+          {
+            "segment_number": 6,
+            "power": 230,
+            "declared_zone": 4,
+            "actual_zone": 3
+          },
+          {
+            "segment_number": 8,
+            "power": 230,
+            "declared_zone": 4,
+            "actual_zone": 3
+          },
+          {
+            "segment_number": 10,
+            "power": 230,
+            "declared_zone": 4,
+            "actual_zone": 3
+          },
+          {
+            "segment_number": 12,
+            "power": 230,
+            "declared_zone": 4,
+            "actual_zone": 3
+          },
+          {
+            "segment_number": 14,
+            "power": 230,
+            "declared_zone": 4,
+            "actual_zone": 3
+          }
+        ]
+      }
+    },
+    {
+      "file": "progressive_ftp_percentage.json",
+      "prompt_id": "progressive_ftp_percentage",
+      "metric": "duration_consistency",
+      "details": "Duration mismatch: declared 6030s, calculated 4440s (diff: 1590s)",
+      "raw_metric": {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 6030,
+        "calculated_duration": 4440,
+        "difference": 1590
+      }
+    },
+    {
+      "file": "progressive_ftp_percentage.json",
+      "prompt_id": "progressive_ftp_percentage",
+      "metric": "power_zone_accuracy",
+      "details": "2 mismatch(es) found\n  - Segment 2: Power 213W declared as Zone 4, actually Zone 3\n  - Segment 4: Power 225W declared as Zone 4, actually Zone 3",
+      "raw_metric": {
+        "metric": "power_zone_accuracy",
+        "passed": false,
+        "mismatches": [
+          {
+            "segment_number": 2,
+            "power": 213,
+            "declared_zone": 4,
+            "actual_zone": 3
+          },
+          {
+            "segment_number": 4,
+            "power": 225,
+            "declared_zone": 4,
+            "actual_zone": 3
+          }
+        ]
+      }
+    },
+    {
+      "file": "ramping_intervals.json",
+      "prompt_id": "ramping_intervals",
+      "metric": "duration_consistency",
+      "details": "Duration mismatch: declared 5460s, calculated 5100s (diff: 360s)",
+      "raw_metric": {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 5460,
+        "calculated_duration": 5100,
+        "difference": 360
+      }
+    },
+    {
+      "file": "ramping_intervals.json",
+      "prompt_id": "ramping_intervals",
+      "metric": "power_zone_accuracy",
+      "details": "4 mismatch(es) found\n  - Segment 1: Power 125W declared as Zone 2, actually Zone 1\n  - Segment 4: Power 219W declared as Zone 4, actually Zone 3\n  - Segment 6: Power 225W declared as Zone 4, actually Zone 3",
+      "raw_metric": {
+        "metric": "power_zone_accuracy",
+        "passed": false,
+        "mismatches": [
+          {
+            "segment_number": 1,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 4,
+            "power": 219,
+            "declared_zone": 4,
+            "actual_zone": 3
+          },
+          {
+            "segment_number": 6,
+            "power": 225,
+            "declared_zone": 4,
+            "actual_zone": 3
+          },
+          {
+            "segment_number": 10,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          }
+        ]
+      }
+    },
+    {
+      "file": "ronnestad_different.json",
+      "prompt_id": "ronnestad_different",
+      "metric": "duration_consistency",
+      "details": "Duration mismatch: declared 5460s, calculated 2730s (diff: 2730s)",
+      "raw_metric": {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 5460,
+        "calculated_duration": 2730,
+        "difference": 2730
+      }
+    },
+    {
+      "file": "ronnestad_different.json",
+      "prompt_id": "ronnestad_different",
+      "metric": "power_zone_accuracy",
+      "details": "27 mismatch(es) found\n  - Segment 1: Power 125W declared as Zone 2, actually Zone 1\n  - Segment 3: Power 125W declared as Zone 2, actually Zone 1\n  - Segment 5: Power 125W declared as Zone 2, actually Zone 1",
+      "raw_metric": {
+        "metric": "power_zone_accuracy",
+        "passed": false,
+        "mismatches": [
+          {
+            "segment_number": 1,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 3,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 5,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 7,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 9,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 11,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 13,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 15,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 17,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 19,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 21,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 23,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 25,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 27,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 29,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 32,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 34,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 36,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 38,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 40,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 42,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 44,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 46,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 48,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 50,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 52,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 54,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          }
+        ]
+      }
+    },
+    {
+      "file": "ronnestad_no_explanation.json",
+      "prompt_id": "ronnestad_no_explanation",
+      "metric": "duration_consistency",
+      "details": "Duration mismatch: declared 2940s, calculated 2670s (diff: 270s)",
+      "raw_metric": {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 2940,
+        "calculated_duration": 2670,
+        "difference": 270
+      }
+    },
+    {
+      "file": "ronnestad_no_explanation.json",
+      "prompt_id": "ronnestad_no_explanation",
+      "metric": "power_zone_accuracy",
+      "details": "13 mismatch(es) found\n  - Segment 2: Power 313W declared as Zone 7, actually Zone 6\n  - Segment 4: Power 313W declared as Zone 7, actually Zone 6\n  - Segment 6: Power 313W declared as Zone 7, actually Zone 6",
+      "raw_metric": {
+        "metric": "power_zone_accuracy",
+        "passed": false,
+        "mismatches": [
+          {
+            "segment_number": 2,
+            "power": 313,
+            "declared_zone": 7,
+            "actual_zone": 6
+          },
+          {
+            "segment_number": 4,
+            "power": 313,
+            "declared_zone": 7,
+            "actual_zone": 6
+          },
+          {
+            "segment_number": 6,
+            "power": 313,
+            "declared_zone": 7,
+            "actual_zone": 6
+          },
+          {
+            "segment_number": 8,
+            "power": 313,
+            "declared_zone": 7,
+            "actual_zone": 6
+          },
+          {
+            "segment_number": 10,
+            "power": 313,
+            "declared_zone": 7,
+            "actual_zone": 6
+          },
+          {
+            "segment_number": 12,
+            "power": 313,
+            "declared_zone": 7,
+            "actual_zone": 6
+          },
+          {
+            "segment_number": 14,
+            "power": 313,
+            "declared_zone": 7,
+            "actual_zone": 6
+          },
+          {
+            "segment_number": 16,
+            "power": 313,
+            "declared_zone": 7,
+            "actual_zone": 6
+          },
+          {
+            "segment_number": 18,
+            "power": 313,
+            "declared_zone": 7,
+            "actual_zone": 6
+          },
+          {
+            "segment_number": 20,
+            "power": 313,
+            "declared_zone": 7,
+            "actual_zone": 6
+          },
+          {
+            "segment_number": 22,
+            "power": 313,
+            "declared_zone": 7,
+            "actual_zone": 6
+          },
+          {
+            "segment_number": 24,
+            "power": 313,
+            "declared_zone": 7,
+            "actual_zone": 6
+          },
+          {
+            "segment_number": 26,
+            "power": 313,
+            "declared_zone": 7,
+            "actual_zone": 6
+          }
+        ]
+      }
+    },
+    {
+      "file": "ronnestad_tripe_set_no_explanation.json",
+      "prompt_id": "ronnestad_tripe_set_no_explanation",
+      "metric": "duration_consistency",
+      "details": "Duration mismatch: declared 4500s, calculated 3075s (diff: 1425s)",
+      "raw_metric": {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 4500,
+        "calculated_duration": 3075,
+        "difference": 1425
+      }
+    },
+    {
+      "file": "sweet_spot_2to1_ratio.json",
+      "prompt_id": "sweet_spot_2to1_ratio",
+      "metric": "duration_consistency",
+      "details": "Duration mismatch: declared 12600s, calculated 6960s (diff: 5640s)",
+      "raw_metric": {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 12600,
+        "calculated_duration": 6960,
+        "difference": 5640
+      }
+    },
+    {
+      "file": "sweet_spot_2to1_ratio.json",
+      "prompt_id": "sweet_spot_2to1_ratio",
+      "metric": "power_zone_accuracy",
+      "details": "6 mismatch(es) found\n  - Segment 1: Power 125W declared as Zone 2, actually Zone 1\n  - Segment 2: Power 225W declared as Zone 4, actually Zone 3\n  - Segment 4: Power 225W declared as Zone 4, actually Zone 3",
+      "raw_metric": {
+        "metric": "power_zone_accuracy",
+        "passed": false,
+        "mismatches": [
+          {
+            "segment_number": 1,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 2,
+            "power": 225,
+            "declared_zone": 4,
+            "actual_zone": 3
+          },
+          {
+            "segment_number": 4,
+            "power": 225,
+            "declared_zone": 4,
+            "actual_zone": 3
+          },
+          {
+            "segment_number": 6,
+            "power": 225,
+            "declared_zone": 4,
+            "actual_zone": 3
+          },
+          {
+            "segment_number": 8,
+            "power": 225,
+            "declared_zone": 4,
+            "actual_zone": 3
+          },
+          {
+            "segment_number": 10,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          }
+        ]
+      }
+    },
+    {
+      "file": "sweet_spot_blocks_2to1_explanation.json",
+      "prompt_id": "sweet_spot_blocks_2to1_explanation",
+      "metric": "power_zone_accuracy",
+      "details": "5 mismatch(es) found\n  - Segment 1: Power 125W declared as Zone 2, actually Zone 1\n  - Segment 3: Power 125W declared as Zone 2, actually Zone 1\n  - Segment 5: Power 125W declared as Zone 2, actually Zone 1",
+      "raw_metric": {
+        "metric": "power_zone_accuracy",
+        "passed": false,
+        "mismatches": [
+          {
+            "segment_number": 1,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 3,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 5,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 7,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 8,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          }
+        ]
+      }
+    },
+    {
+      "file": "sweet_spot_progression_time_based.json",
+      "prompt_id": "sweet_spot_progression_time_based",
+      "metric": "power_zone_accuracy",
+      "details": "3 mismatch(es) found\n  - Segment 1: Power 125W declared as Zone 2, actually Zone 1\n  - Segment 3: Power 125W declared as Zone 2, actually Zone 1\n  - Segment 5: Power 125W declared as Zone 2, actually Zone 1",
+      "raw_metric": {
+        "metric": "power_zone_accuracy",
+        "passed": false,
+        "mismatches": [
+          {
+            "segment_number": 1,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 3,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 5,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          }
+        ]
+      }
+    },
+    {
+      "file": "tabata_sprints_explained.json",
+      "prompt_id": "tabata_sprints_explained",
+      "metric": "duration_consistency",
+      "details": "Duration mismatch: declared 2700s, calculated 2280s (diff: 420s)",
+      "raw_metric": {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 2700,
+        "calculated_duration": 2280,
+        "difference": 420
+      }
+    },
+    {
+      "file": "tabata_sprints_no_explanation.json",
+      "prompt_id": "tabata_sprints_no_explanation",
+      "metric": "power_zone_accuracy",
+      "details": "2 mismatch(es) found\n  - Segment 16: Power 150W declared as Zone 1, actually Zone 2\n  - Segment 31: Power 150W declared as Zone 1, actually Zone 2",
+      "raw_metric": {
+        "metric": "power_zone_accuracy",
+        "passed": false,
+        "mismatches": [
+          {
+            "segment_number": 16,
+            "power": 150,
+            "declared_zone": 1,
+            "actual_zone": 2
+          },
+          {
+            "segment_number": 31,
+            "power": 150,
+            "declared_zone": 1,
+            "actual_zone": 2
+          }
+        ]
+      }
+    },
+    {
+      "file": "threshold_intervals_3x10.json",
+      "prompt_id": "threshold_intervals_3x10",
+      "metric": "duration_consistency",
+      "details": "Duration mismatch: declared 6600s, calculated 3900s (diff: 2700s)",
+      "raw_metric": {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 6600,
+        "calculated_duration": 3900,
+        "difference": 2700
+      }
+    },
+    {
+      "file": "threshold_intervals_3x10.json",
+      "prompt_id": "threshold_intervals_3x10",
+      "metric": "power_zone_accuracy",
+      "details": "4 mismatch(es) found\n  - Segment 1: Power 125W declared as Zone 2, actually Zone 1\n  - Segment 3: Power 125W declared as Zone 2, actually Zone 1\n  - Segment 5: Power 125W declared as Zone 2, actually Zone 1",
+      "raw_metric": {
+        "metric": "power_zone_accuracy",
+        "passed": false,
+        "mismatches": [
+          {
+            "segment_number": 1,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 3,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 5,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 7,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          }
+        ]
+      }
+    },
+    {
+      "file": "zwift_complex_progressive_blocks.json",
+      "prompt_id": "zwift_complex_progressive_blocks",
+      "metric": "duration_consistency",
+      "details": "Duration mismatch: declared 4260s, calculated 2580s (diff: 1680s)",
+      "raw_metric": {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 4260,
+        "calculated_duration": 2580,
+        "difference": 1680
+      }
+    },
+    {
+      "file": "zwift_complex_progressive_blocks.json",
+      "prompt_id": "zwift_complex_progressive_blocks",
+      "metric": "power_zone_accuracy",
+      "details": "2 mismatch(es) found\n  - Segment 10: Power 275W declared as Zone 4, actually Zone 5\n  - Segment 13: Power 0W declared as Zone 0, actually Zone 1",
+      "raw_metric": {
+        "metric": "power_zone_accuracy",
+        "passed": false,
+        "mismatches": [
+          {
+            "segment_number": 10,
+            "power": 275,
+            "declared_zone": 4,
+            "actual_zone": 5
+          },
+          {
+            "segment_number": 13,
+            "power": 0,
+            "declared_zone": 0,
+            "actual_zone": 1
+          }
+        ]
+      }
+    },
+    {
+      "file": "zwift_intervals_sprints.json",
+      "prompt_id": "zwift_intervals_sprints",
+      "metric": "duration_consistency",
+      "details": "Duration mismatch: declared 4740s, calculated 4170s (diff: 570s)",
+      "raw_metric": {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 4740,
+        "calculated_duration": 4170,
+        "difference": 570
+      }
+    },
+    {
+      "file": "zwift_intervals_sprints.json",
+      "prompt_id": "zwift_intervals_sprints",
+      "metric": "power_zone_accuracy",
+      "details": "4 mismatch(es) found\n  - Segment 1: Power 125W declared as Zone 2, actually Zone 1\n  - Segment 5: Power 175W declared as Zone 3, actually Zone 2\n  - Segment 20: Power 175W declared as Zone 3, actually Zone 2",
+      "raw_metric": {
+        "metric": "power_zone_accuracy",
+        "passed": false,
+        "mismatches": [
+          {
+            "segment_number": 1,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 5,
+            "power": 175,
+            "declared_zone": 3,
+            "actual_zone": 2
+          },
+          {
+            "segment_number": 20,
+            "power": 175,
+            "declared_zone": 3,
+            "actual_zone": 2
+          },
+          {
+            "segment_number": 24,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          }
+        ]
+      }
+    }
+  ],
+  "generation_metadata": {
+    "total_tokens": 195653,
+    "total_input_tokens": 97799,
+    "total_output_tokens": 97854,
+    "avg_tokens_per_workout": 4891.325,
+    "avg_input_tokens_per_workout": 2444.975,
+    "avg_output_tokens_per_workout": 2446.35,
+    "min_input_tokens": 1048,
+    "max_input_tokens": 3354,
+    "min_output_tokens": 221,
+    "max_output_tokens": 10371,
+    "total_cost": 1.0645260000000003,
+    "total_input_cost": 0.21320199999999997,
+    "total_output_cost": 0.8513309999999998,
+    "avg_cost_per_workout": 0.02661315000000001,
+    "avg_input_cost_per_workout": 0.005330049999999999,
+    "avg_output_cost_per_workout": 0.021283274999999997,
+    "min_cost": 0.004225,
+    "max_cost": 0.097324,
+    "total_latency_ms": 1151781,
+    "total_latency_seconds": 1151.781,
+    "avg_latency_ms": 28794.525,
+    "avg_latency_seconds": 28.794525,
+    "min_latency_ms": 3558,
+    "max_latency_ms": 107254,
+    "attempt_distribution": {
+      "1": 10,
+      "2": 9,
+      "3": 21
+    },
+    "model_usage": {
+      "GPT-4o": 40
+    },
+    "total_attempts": 6
+  },
+  "load_issues": []
+}

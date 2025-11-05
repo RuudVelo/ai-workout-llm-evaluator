@@ -1,0 +1,228 @@
+{
+  "prompt_id": "group_ride_surges",
+  "prompt_description": "Variable intensity group ride simulation",
+  "user_prompt": "Fast group ride \u2014 started easy for 15 min, then about 40 min of surging between Z3 and Z6 depending on hills and sprints, then 10 min spin home.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T10:20:13.217450",
+  "generation_metadata": {
+    "attempts": 1,
+    "total_latency_all_attempts": 8193,
+    "total_tokens_all_attempts": {
+      "input": 1074,
+      "output": 705,
+      "total": 1779
+    },
+    "total_cost_all_attempts": 0.008475,
+    "total_input_cost_all_attempts": 0.002341,
+    "total_output_cost_all_attempts": 0.006133,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 8193,
+        "tokens": {
+          "input": 1074,
+          "output": 705,
+          "total": 1779
+        },
+        "cost": 0.008475,
+        "input_cost": 0.002341,
+        "output_cost": 0.006133
+      }
+    ]
+  },
+  "workout": {
+    "name": "Fast Group Ride",
+    "description": "A group ride with a warmup, surges during the main ride, and a cooldown.",
+    "workout_duration": 3900,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 900,
+        "power": 160,
+        "powerAdjustedUpward": 170,
+        "powerAdjustedDownward": 150,
+        "zone": 2,
+        "perc_ftp": 64,
+        "type": "warmup",
+        "notes": "Easy start for the ride."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 900,
+        "endTimeSeconds": 1200,
+        "power": 210,
+        "powerAdjustedUpward": 220,
+        "powerAdjustedDownward": 200,
+        "zone": 3,
+        "perc_ftp": 84,
+        "type": "interval",
+        "notes": "Surging in Zone 3."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 1200,
+        "endTimeSeconds": 1500,
+        "power": 310,
+        "powerAdjustedUpward": 320,
+        "powerAdjustedDownward": 300,
+        "zone": 6,
+        "perc_ftp": 124,
+        "type": "interval",
+        "notes": "Sprint effort in Zone 6 on hills."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 1500,
+        "endTimeSeconds": 1800,
+        "power": 220,
+        "powerAdjustedUpward": 230,
+        "powerAdjustedDownward": 210,
+        "zone": 3,
+        "perc_ftp": 88,
+        "type": "interval",
+        "notes": "Recovery between efforts."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 1800,
+        "endTimeSeconds": 2100,
+        "power": 310,
+        "powerAdjustedUpward": 320,
+        "powerAdjustedDownward": 300,
+        "zone": 6,
+        "perc_ftp": 124,
+        "type": "interval",
+        "notes": "Sprint effort in Zone 6 on hills."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 2100,
+        "endTimeSeconds": 2400,
+        "power": 220,
+        "powerAdjustedUpward": 230,
+        "powerAdjustedDownward": 210,
+        "zone": 3,
+        "perc_ftp": 88,
+        "type": "interval",
+        "notes": "Recovery between efforts."
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 2400,
+        "endTimeSeconds": 2700,
+        "power": 310,
+        "powerAdjustedUpward": 320,
+        "powerAdjustedDownward": 300,
+        "zone": 6,
+        "perc_ftp": 124,
+        "type": "interval",
+        "notes": "Sprint effort in Zone 6 on hills."
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 2700,
+        "endTimeSeconds": 3000,
+        "power": 220,
+        "powerAdjustedUpward": 230,
+        "powerAdjustedDownward": 210,
+        "zone": 3,
+        "perc_ftp": 88,
+        "type": "interval",
+        "notes": "Recovery between efforts."
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 3000,
+        "endTimeSeconds": 3300,
+        "power": 310,
+        "powerAdjustedUpward": 320,
+        "powerAdjustedDownward": 300,
+        "zone": 6,
+        "perc_ftp": 124,
+        "type": "interval",
+        "notes": "Sprint effort in Zone 6 on hills."
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 3300,
+        "endTimeSeconds": 3600,
+        "power": 220,
+        "powerAdjustedUpward": 230,
+        "powerAdjustedDownward": 210,
+        "zone": 3,
+        "perc_ftp": 88,
+        "type": "interval",
+        "notes": "Recovery between efforts."
+      },
+      {
+        "segment_number": 11,
+        "startTimeSeconds": 3600,
+        "endTimeSeconds": 3900,
+        "power": 160,
+        "powerAdjustedUpward": 170,
+        "powerAdjustedDownward": 150,
+        "zone": 2,
+        "perc_ftp": 64,
+        "type": "cooldown",
+        "notes": "Spinning home to cool down."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 3900,
+        "calculated_duration": 3900,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}

@@ -1,0 +1,276 @@
+{
+  "prompt_id": "shorthand_notation",
+  "prompt_description": "Workout using shorthand notation",
+  "user_prompt": "WU 10min @150W, 6\u00d75min @300W with 3 min rec @120W, cd 20 min @Z1.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T10:22:33.953350",
+  "generation_metadata": {
+    "attempts": 2,
+    "total_latency_all_attempts": 19980,
+    "total_tokens_all_attempts": {
+      "input": 2136,
+      "output": 1821,
+      "total": 3957
+    },
+    "total_cost_all_attempts": 0.020499,
+    "total_input_cost_all_attempts": 0.004656,
+    "total_output_cost_all_attempts": 0.015843,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 10563,
+        "tokens": {
+          "input": 1068,
+          "output": 924,
+          "total": 1992
+        },
+        "cost": 0.010367,
+        "input_cost": 0.002328,
+        "output_cost": 0.008039
+      },
+      {
+        "attempt": 2,
+        "latency_ms": 9417,
+        "tokens": {
+          "input": 1068,
+          "output": 897,
+          "total": 1965
+        },
+        "cost": 0.010132,
+        "input_cost": 0.002328,
+        "output_cost": 0.007804
+      }
+    ]
+  },
+  "workout": {
+    "name": "6x5min Intervals with Recovery",
+    "description": "Warm-up followed by 6 high-intensity intervals with active recovery and cooldown.",
+    "workout_duration": 5400,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 600,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "warmup",
+        "notes": "Warm-up at 60% FTP"
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 600,
+        "endTimeSeconds": 900,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 6,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Interval 1 at 120% FTP"
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 900,
+        "endTimeSeconds": 1080,
+        "power": 120,
+        "powerAdjustedUpward": 130,
+        "powerAdjustedDownward": 110,
+        "zone": 1,
+        "perc_ftp": 48,
+        "type": "recovery",
+        "notes": "Recovery at 48% FTP"
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 1080,
+        "endTimeSeconds": 1380,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 6,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Interval 2 at 120% FTP"
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 1380,
+        "endTimeSeconds": 1560,
+        "power": 120,
+        "powerAdjustedUpward": 130,
+        "powerAdjustedDownward": 110,
+        "zone": 1,
+        "perc_ftp": 48,
+        "type": "recovery",
+        "notes": "Recovery at 48% FTP"
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 1560,
+        "endTimeSeconds": 1860,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 6,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Interval 3 at 120% FTP"
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 1860,
+        "endTimeSeconds": 2040,
+        "power": 120,
+        "powerAdjustedUpward": 130,
+        "powerAdjustedDownward": 110,
+        "zone": 1,
+        "perc_ftp": 48,
+        "type": "recovery",
+        "notes": "Recovery at 48% FTP"
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 2040,
+        "endTimeSeconds": 2340,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 6,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Interval 4 at 120% FTP"
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 2340,
+        "endTimeSeconds": 2520,
+        "power": 120,
+        "powerAdjustedUpward": 130,
+        "powerAdjustedDownward": 110,
+        "zone": 1,
+        "perc_ftp": 48,
+        "type": "recovery",
+        "notes": "Recovery at 48% FTP"
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 2520,
+        "endTimeSeconds": 2820,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 6,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Interval 5 at 120% FTP"
+      },
+      {
+        "segment_number": 11,
+        "startTimeSeconds": 2820,
+        "endTimeSeconds": 3000,
+        "power": 120,
+        "powerAdjustedUpward": 130,
+        "powerAdjustedDownward": 110,
+        "zone": 1,
+        "perc_ftp": 48,
+        "type": "recovery",
+        "notes": "Recovery at 48% FTP"
+      },
+      {
+        "segment_number": 12,
+        "startTimeSeconds": 3000,
+        "endTimeSeconds": 3300,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 6,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Interval 6 at 120% FTP"
+      },
+      {
+        "segment_number": 13,
+        "startTimeSeconds": 3300,
+        "endTimeSeconds": 3480,
+        "power": 120,
+        "powerAdjustedUpward": 130,
+        "powerAdjustedDownward": 110,
+        "zone": 1,
+        "perc_ftp": 48,
+        "type": "recovery",
+        "notes": "Recovery at 48% FTP"
+      },
+      {
+        "segment_number": 14,
+        "startTimeSeconds": 3480,
+        "endTimeSeconds": 5400,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "cooldown",
+        "notes": "Cooldown at Zone 1"
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 5400,
+        "calculated_duration": 5400,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}

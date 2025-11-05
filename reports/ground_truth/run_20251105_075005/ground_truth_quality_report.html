@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ground Truth Quality Evaluation Report</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            margin: 0 0 10px 0;
+        }
+        .header p {
+            margin: 5px 0;
+            opacity: 0.9;
+        }
+        .section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            margin-top: 0;
+            color: #333;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .stat-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
+        }
+        .stat-card .label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .stat-card .value {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #667eea;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            user-select: none;
+        }
+        th:hover {
+            background-color: #5568d3;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+        .badge-success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .badge-warning {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        .badge-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .issue-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .issue-box h4 {
+            margin: 0 0 10px 0;
+            color: #856404;
+        }
+        .code {
+            font-family: 'Courier New', monospace;
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .recommendation {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Ground Truth Quality Evaluation Report</h1>
+        <p><strong>Generated:</strong> 2025-11-05T07:50:05.471919</p>
+        <p><strong>Source Directory:</strong> ground_truth/run_20251104_155341</p>
+        <p><strong>Files Analyzed:</strong> 36</p>
+    </div>
+
+    <!-- Executive Summary -->
+    <div class="section">
+        <h2>Executive Summary</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="label">Total Files</div>
+                <div class="value">36</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Passed All Validations</div>
+                <div class="value">22</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Pass Rate</div>
+                <div class="value">61.1%</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Average Score</div>
+                <div class="value">94.1%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Validation Results Overview -->
+    <div class="section">
+        <h2>Validation Results Overview</h2>
+        <p><strong>Files passing all validations:</strong> 22 / 36
+           (61.1%)</p>
+
+        <h3>Common Validation Failures</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Failure Count</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>duration_consistency</td>
+                    <td><span class="badge badge-danger">12</span></td>
+                </tr>
+
+                <tr>
+                    <td>power_zone_accuracy</td>
+                    <td><span class="badge badge-danger">5</span></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Per-File Analysis -->
+    <div class="section">
+        <h2>Per-File Analysis</h2>
+        <p style="font-size: 0.9em; color: #666; margin-bottom: 15px;">
+            💡 <em>Click on column headers to sort the table</em>
+        </p>
+        <div style="overflow-x: auto;">
+            <table id="fileTable" style="min-width: 1400px;">
+                <thead>
+                    <tr>
+                        <th onclick="sortTable(0)">Prompt ID</th>
+                        <th onclick="sortTable(1)">File</th>
+                        <th onclick="sortTable(2)">Score</th>
+                        <th onclick="sortTable(3)">Pass Rate</th>
+                        <th onclick="sortTable(4)">Duration (min)</th>
+                        <th onclick="sortTable(5)">Intervals</th>
+                        <th onclick="sortTable(6)">Attempts</th>
+                        <th onclick="sortTable(7)">Latency (s)</th>
+                        <th onclick="sortTable(8)">Cost</th>
+                        <th onclick="sortTable(9)">Input Tokens</th>
+                        <th onclick="sortTable(10)">Output Tokens</th>
+                        <th onclick="sortTable(11)">Total Tokens</th>
+                        <th onclick="sortTable(12)">Issues</th>
+                        <th onclick="sortTable(13)">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                <tr>
+                    <td>climbing_intervals_wattage</td>
+                    <td><span class="code">climbing_intervals_wattage.json</span></td>
+                    <td>8/8</td>
+                    <td>100.0%</td>
+                    <td>72.0</td>
+                    <td>12</td>
+                    <td>1</td>
+                    <td>17.60</td>
+                    <td>$0.0100</td>
+                    <td>1,351</td>
+                    <td>811</td>
+                    <td>2,162</td>
+                    <td>0</td>
+                    <td><span class="badge badge-success">PASS</span></td>
+                </tr>
+
+                <tr>
+                    <td>descending_pyramid_threshold</td>
+                    <td><span class="code">descending_pyramid_threshold.json</span></td>
+                    <td>8/8</td>
+                    <td>100.0%</td>
+                    <td>69.0</td>
+                    <td>16</td>
+                    <td>2</td>
+                    <td>33.25</td>
+                    <td>$0.0237</td>
+                    <td>2,706</td>
+                    <td>2,045</td>
+                    <td>4,751</td>
+                    <td>0</td>
+                    <td><span class="badge badge-success">PASS</span></td>
+                </tr>
+
+                <tr>
+                    <td>endurance_65_sprints</td>
+                    <td><span class="code">endurance_65_sprints.json</span></td>
+                    <td>8/8</td>
+                    <td>100.0%</td>
+                    <td>60.0</td>
+                    <td>7</td>
+                    <td>1</td>
+                    <td>8.19</td>
+                    <td>$0.0073</td>
+                    <td>1,356</td>
+                    <td>503</td>
+                    <td>1,859</td>
+                    <td>0</td>
+                    <td><span class="badge badge-success">PASS</span></td>
+                </tr>
+
+                <tr>
+                    <td>group_ride_surges</td>
+                    <td><span class="code">group_ride_surges.json</span></td>
+                    <td>8/8</td>
+                    <td>100.0%</td>
+                    <td>65.0</td>
+                    <td>10</td>
+                    <td>1</td>
+                    <td>13.79</td>
+                    <td>$0.0088</td>
+                    <td>1,353</td>
+                    <td>670</td>
+                    <td>2,023</td>
+                    <td>0</td>
+                    <td><span class="badge badge-success">PASS</span></td>
+                </tr>
+
+                <tr>
+                    <td>low_cadence_strength</td>
+                    <td><span class="code">low_cadence_strength.json</span></td>
+                    <td>8/8</td>
+                    <td>100.0%</td>
+                    <td>95.0</td>
+                    <td>20</td>
+                    <td>3</td>
+                    <td>90.81</td>
+                    <td>$0.0475</td>
+                    <td>4,146</td>
+                    <td>4,416</td>
+                    <td>8,562</td>
+                    <td>0</td>
+                    <td><span class="badge badge-success">PASS</span></td>
+                </tr>
+
+                <tr>
+                    <td>mixed_zones_progression</td>
+                    <td><span class="code">mixed_zones_progression.json</span></td>
+                    <td>8/8</td>
+                    <td>100.0%</td>
+                    <td>83.0</td>
+                    <td>8</td>
+                    <td>1</td>
+                    <td>28.45</td>
+                    <td>$0.0081</td>
+                    <td>1,351</td>
+                    <td>589</td>
+                    <td>1,940</td>
+                    <td>0</td>
+                    <td><span class="badge badge-success">PASS</span></td>
+                </tr>
+
+                <tr>
+                    <td>over_under_classic</td>
+                    <td><span class="code">over_under_classic.json</span></td>
+                    <td>8/8</td>
+                    <td>100.0%</td>
+                    <td>38.0</td>
+                    <td>23</td>
+                    <td>3</td>
+                    <td>85.66</td>
+                    <td>$0.0479</td>
+                    <td>4,059</td>
+                    <td>4,494</td>
+                    <td>8,553</td>
+                    <td>0</td>
+                    <td><span class="badge badge-success">PASS</span></td>
+                </tr>
+
+                <tr>
+                    <td>progressive_blocks</td>
+                    <td><span class="code">progressive_blocks.json</span></td>
+                    <td>8/8</td>
+                    <td>100.0%</td>
+                    <td>55.0</td>
+                    <td>8</td>
+                    <td>1</td>
+                    <td>10.82</td>
+                    <td>$0.0077</td>
+                    <td>1,349</td>
+                    <td>550</td>
+                    <td>1,899</td>
+                    <td>0</td>
+                    <td><span class="badge badge-success">PASS</span></td>
+                </tr>
+
+                <tr>
+                    <td>progressive_ftp_percentage</td>
+                    <td><span class="code">progressive_ftp_percentage.json</span></td>
+                    <td>8/8</td>
+                    <td>100.0%</td>
+                    <td>75.0</td>
+                    <td>9</td>
+                    <td>2</td>
+                    <td>49.42</td>
+                    <td>$0.0174</td>
+                    <td>2,692</td>
+                    <td>1,322</td>
+                    <td>4,014</td>
+                    <td>0</td>
+                    <td><span class="badge badge-success">PASS</span></td>
+                </tr>
+
+                <tr>
+                    <td>ramping_intervals</td>
+                    <td><span class="code">ramping_intervals.json</span></td>
+                    <td>8/8</td>
+                    <td>100.0%</td>
+                    <td>85.0</td>
+                    <td>10</td>
+                    <td>3</td>
+                    <td>42.34</td>
+                    <td>$0.0285</td>
+                    <td>4,068</td>
+                    <td>2,258</td>
+                    <td>6,326</td>
+                    <td>0</td>
+                    <td><span class="badge badge-success">PASS</span></td>
+                </tr>
+
+                <tr>
+                    <td>ronnestad_anaerobic</td>
+                    <td><span class="code">ronnestad_anaerobic.json</span></td>
+                    <td>8/8</td>
+                    <td>100.0%</td>
+                    <td>114.0</td>
+                    <td>52</td>
+                    <td>2</td>
+                    <td>122.44</td>
+                    <td>$0.0550</td>
+                    <td>2,728</td>
+                    <td>5,638</td>
+                    <td>8,366</td>
+                    <td>0</td>
+                    <td><span class="badge badge-success">PASS</span></td>
+                </tr>
+
+                <tr>
+                    <td>shorthand_notation</td>
+                    <td><span class="code">shorthand_notation.json</span></td>
+                    <td>8/8</td>
+                    <td>100.0%</td>
+                    <td>80.0</td>
+                    <td>13</td>
+                    <td>1</td>
+                    <td>10.14</td>
+                    <td>$0.0104</td>
+                    <td>1,347</td>
+                    <td>854</td>
+                    <td>2,201</td>
+                    <td>0</td>
+                    <td><span class="badge badge-success">PASS</span></td>
+                </tr>
+
+                <tr>
+                    <td>simple_tempo_block</td>
+                    <td><span class="code">simple_tempo_block.json</span></td>
+                    <td>8/8</td>
+                    <td>100.0%</td>
+                    <td>60.0</td>
+                    <td>15</td>
+                    <td>1</td>
+                    <td>23.97</td>
+                    <td>$0.0117</td>
+                    <td>1,335</td>
+                    <td>1,007</td>
+                    <td>2,342</td>
+                    <td>0</td>
+                    <td><span class="badge badge-success">PASS</span></td>
+                </tr>
+
+                <tr>
+                    <td>simple_threshold_60min</td>
+                    <td><span class="code">simple_threshold_60min.json</span></td>
+                    <td>8/8</td>
+                    <td>100.0%</td>
+                    <td>60.0</td>
+                    <td>9</td>
+                    <td>1</td>
+                    <td>20.14</td>
+                    <td>$0.0082</td>
+                    <td>1,322</td>
+                    <td>612</td>
+                    <td>1,934</td>
+                    <td>0</td>
+                    <td><span class="badge badge-success">PASS</span></td>
+                </tr>
+
+                <tr>
+                    <td>sweet_spot_2to1_ratio</td>
+                    <td><span class="code">sweet_spot_2to1_ratio.json</span></td>
+                    <td>8/8</td>
+                    <td>100.0%</td>
+                    <td>118.0</td>
+                    <td>16</td>
+                    <td>1</td>
+                    <td>24.61</td>
+                    <td>$0.0121</td>
+                    <td>1,352</td>
+                    <td>1,056</td>
+                    <td>2,408</td>
+                    <td>0</td>
+                    <td><span class="badge badge-success">PASS</span></td>
+                </tr>
+
+                <tr>
+                    <td>sweet_spot_blocks_2to1</td>
+                    <td><span class="code">sweet_spot_blocks_2to1.json</span></td>
+                    <td>8/8</td>
+                    <td>100.0%</td>
+                    <td>100.0</td>
+                    <td>14</td>
+                    <td>2</td>
+                    <td>37.54</td>
+                    <td>$0.0204</td>
+                    <td>2,716</td>
+                    <td>1,660</td>
+                    <td>4,376</td>
+                    <td>0</td>
+                    <td><span class="badge badge-success">PASS</span></td>
+                </tr>
+
+                <tr>
+                    <td>tempo_time_window</td>
+                    <td><span class="code">tempo_time_window.json</span></td>
+                    <td>8/8</td>
+                    <td>100.0%</td>
+                    <td>60.0</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>6.39</td>
+                    <td>$0.0051</td>
+                    <td>1,351</td>
+                    <td>242</td>
+                    <td>1,593</td>
+                    <td>0</td>
+                    <td><span class="badge badge-success">PASS</span></td>
+                </tr>
+
+                <tr>
+                    <td>tempo_window_over_under</td>
+                    <td><span class="code">tempo_window_over_under.json</span></td>
+                    <td>8/8</td>
+                    <td>100.0%</td>
+                    <td>75.0</td>
+                    <td>14</td>
+                    <td>1</td>
+                    <td>18.51</td>
+                    <td>$0.0112</td>
+                    <td>1,390</td>
+                    <td>943</td>
+                    <td>2,333</td>
+                    <td>0</td>
+                    <td><span class="badge badge-success">PASS</span></td>
+                </tr>
+
+                <tr>
+                    <td>threshold_4x8_detailed</td>
+                    <td><span class="code">threshold_4x8_detailed.json</span></td>
+                    <td>8/8</td>
+                    <td>100.0%</td>
+                    <td>79.3</td>
+                    <td>9</td>
+                    <td>1</td>
+                    <td>10.52</td>
+                    <td>$0.0082</td>
+                    <td>1,352</td>
+                    <td>607</td>
+                    <td>1,959</td>
+                    <td>0</td>
+                    <td><span class="badge badge-success">PASS</span></td>
+                </tr>
+
+                <tr>
+                    <td>threshold_5x6</td>
+                    <td><span class="code">threshold_5x6.json</span></td>
+                    <td>8/8</td>
+                    <td>100.0%</td>
+                    <td>80.0</td>
+                    <td>11</td>
+                    <td>1</td>
+                    <td>10.49</td>
+                    <td>$0.0090</td>
+                    <td>1,347</td>
+                    <td>694</td>
+                    <td>2,041</td>
+                    <td>0</td>
+                    <td><span class="badge badge-success">PASS</span></td>
+                </tr>
+
+                <tr>
+                    <td>two_hour_tempo_climbing</td>
+                    <td><span class="code">two_hour_tempo_climbing.json</span></td>
+                    <td>8/8</td>
+                    <td>100.0%</td>
+                    <td>120.0</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>3.87</td>
+                    <td>$0.0050</td>
+                    <td>1,335</td>
+                    <td>239</td>
+                    <td>1,574</td>
+                    <td>0</td>
+                    <td><span class="badge badge-success">PASS</span></td>
+                </tr>
+
+                <tr>
+                    <td>zwift_intervals_sprints</td>
+                    <td><span class="code">zwift_intervals_sprints.json</span></td>
+                    <td>8/8</td>
+                    <td>100.0%</td>
+                    <td>61.0</td>
+                    <td>16</td>
+                    <td>3</td>
+                    <td>62.20</td>
+                    <td>$0.0398</td>
+                    <td>4,083</td>
+                    <td>3,549</td>
+                    <td>7,632</td>
+                    <td>0</td>
+                    <td><span class="badge badge-success">PASS</span></td>
+                </tr>
+
+                <tr>
+                    <td>ascending_descending_pyramid</td>
+                    <td><span class="code">ascending_descending_pyramid.json</span></td>
+                    <td>7/8</td>
+                    <td>87.5%</td>
+                    <td>91.0</td>
+                    <td>18</td>
+                    <td>3</td>
+                    <td>67.21</td>
+                    <td>$0.0406</td>
+                    <td>4,095</td>
+                    <td>3,642</td>
+                    <td>7,737</td>
+                    <td>1</td>
+                    <td><span class="badge badge-warning">ISSUES</span></td>
+                </tr>
+
+                <tr>
+                    <td>fractional_threshold_2to1</td>
+                    <td><span class="code">fractional_threshold_2to1.json</span></td>
+                    <td>7/8</td>
+                    <td>87.5%</td>
+                    <td>56.0</td>
+                    <td>25</td>
+                    <td>3</td>
+                    <td>78.88</td>
+                    <td>$0.0464</td>
+                    <td>4,113</td>
+                    <td>4,304</td>
+                    <td>8,417</td>
+                    <td>1</td>
+                    <td><span class="badge badge-warning">ISSUES</span></td>
+                </tr>
+
+                <tr>
+                    <td>fractional_vo2max_efforts</td>
+                    <td><span class="code">fractional_vo2max_efforts.json</span></td>
+                    <td>7/8</td>
+                    <td>87.5%</td>
+                    <td>36.0</td>
+                    <td>20</td>
+                    <td>3</td>
+                    <td>74.03</td>
+                    <td>$0.0405</td>
+                    <td>4,038</td>
+                    <td>3,643</td>
+                    <td>7,681</td>
+                    <td>1</td>
+                    <td><span class="badge badge-warning">ISSUES</span></td>
+                </tr>
+
+                <tr>
+                    <td>mixed_tabata_sweet_spot</td>
+                    <td><span class="code">mixed_tabata_sweet_spot.json</span></td>
+                    <td>7/8</td>
+                    <td>87.5%</td>
+                    <td>120.0</td>
+                    <td>28</td>
+                    <td>3</td>
+                    <td>1062.46</td>
+                    <td>$0.0520</td>
+                    <td>4,119</td>
+                    <td>4,947</td>
+                    <td>9,066</td>
+                    <td>1</td>
+                    <td><span class="badge badge-warning">ISSUES</span></td>
+                </tr>
+
+                <tr>
+                    <td>over_under_sweet_spot</td>
+                    <td><span class="code">over_under_sweet_spot.json</span></td>
+                    <td>7/8</td>
+                    <td>87.5%</td>
+                    <td>64.0</td>
+                    <td>19</td>
+                    <td>3</td>
+                    <td>66.93</td>
+                    <td>$0.0426</td>
+                    <td>4,062</td>
+                    <td>3,878</td>
+                    <td>7,940</td>
+                    <td>1</td>
+                    <td><span class="badge badge-warning">ISSUES</span></td>
+                </tr>
+
+                <tr>
+                    <td>ronnestad_double_set_no_explanation</td>
+                    <td><span class="code">ronnestad_double_set_no_explanation.json</span></td>
+                    <td>7/8</td>
+                    <td>87.5%</td>
+                    <td>75.0</td>
+                    <td>18</td>
+                    <td>3</td>
+                    <td>199.36</td>
+                    <td>$0.0506</td>
+                    <td>4,026</td>
+                    <td>4,803</td>
+                    <td>8,829</td>
+                    <td>1</td>
+                    <td><span class="badge badge-warning">ISSUES</span></td>
+                </tr>
+
+                <tr>
+                    <td>sweet_spot_progression_time_based</td>
+                    <td><span class="code">sweet_spot_progression_time_based.json</span></td>
+                    <td>7/8</td>
+                    <td>87.5%</td>
+                    <td>65.0</td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>32.38</td>
+                    <td>$0.0188</td>
+                    <td>4,173</td>
+                    <td>1,111</td>
+                    <td>5,284</td>
+                    <td>1</td>
+                    <td><span class="badge badge-warning">ISSUES</span></td>
+                </tr>
+
+                <tr>
+                    <td>tabata_sprints</td>
+                    <td><span class="code">tabata_sprints.json</span></td>
+                    <td>7/8</td>
+                    <td>87.5%</td>
+                    <td>45.0</td>
+                    <td>33</td>
+                    <td>3</td>
+                    <td>107.29</td>
+                    <td>$0.0667</td>
+                    <td>4,092</td>
+                    <td>6,637</td>
+                    <td>10,729</td>
+                    <td>1</td>
+                    <td><span class="badge badge-warning">ISSUES</span></td>
+                </tr>
+
+                <tr>
+                    <td>tempo_sprints_combo</td>
+                    <td><span class="code">tempo_sprints_combo.json</span></td>
+                    <td>7/8</td>
+                    <td>87.5%</td>
+                    <td>50.0</td>
+                    <td>19</td>
+                    <td>3</td>
+                    <td>50.28</td>
+                    <td>$0.0405</td>
+                    <td>4,047</td>
+                    <td>3,636</td>
+                    <td>7,683</td>
+                    <td>1</td>
+                    <td><span class="badge badge-warning">ISSUES</span></td>
+                </tr>
+
+                <tr>
+                    <td>threshold_intervals_3x10</td>
+                    <td><span class="code">threshold_intervals_3x10.json</span></td>
+                    <td>7/8</td>
+                    <td>87.5%</td>
+                    <td>60.0</td>
+                    <td>12</td>
+                    <td>3</td>
+                    <td>44.09</td>
+                    <td>$0.0287</td>
+                    <td>4,041</td>
+                    <td>2,285</td>
+                    <td>6,326</td>
+                    <td>1</td>
+                    <td><span class="badge badge-warning">ISSUES</span></td>
+                </tr>
+
+                <tr>
+                    <td>threshold_sprints_shorthand</td>
+                    <td><span class="code">threshold_sprints_shorthand.json</span></td>
+                    <td>7/8</td>
+                    <td>87.5%</td>
+                    <td>88.3</td>
+                    <td>17</td>
+                    <td>3</td>
+                    <td>57.60</td>
+                    <td>$0.0390</td>
+                    <td>4,080</td>
+                    <td>3,466</td>
+                    <td>7,546</td>
+                    <td>1</td>
+                    <td><span class="badge badge-warning">ISSUES</span></td>
+                </tr>
+
+                <tr>
+                    <td>ascending_pyramid_threshold</td>
+                    <td><span class="code">ascending_pyramid_threshold.json</span></td>
+                    <td>6/8</td>
+                    <td>75.0%</td>
+                    <td>67.0</td>
+                    <td>14</td>
+                    <td>3</td>
+                    <td>57.28</td>
+                    <td>$0.0316</td>
+                    <td>4,056</td>
+                    <td>2,616</td>
+                    <td>6,672</td>
+                    <td>2</td>
+                    <td><span class="badge badge-warning">ISSUES</span></td>
+                </tr>
+
+                <tr>
+                    <td>complex_progressive_blocks</td>
+                    <td><span class="code">complex_progressive_blocks.json</span></td>
+                    <td>6/8</td>
+                    <td>75.0%</td>
+                    <td>67.0</td>
+                    <td>18</td>
+                    <td>3</td>
+                    <td>73.30</td>
+                    <td>$0.0392</td>
+                    <td>4,191</td>
+                    <td>3,461</td>
+                    <td>7,652</td>
+                    <td>2</td>
+                    <td><span class="badge badge-warning">ISSUES</span></td>
+                </tr>
+
+                <tr>
+                    <td>ronnestad_double_set</td>
+                    <td><span class="code">ronnestad_double_set.json</span></td>
+                    <td>6/8</td>
+                    <td>75.0%</td>
+                    <td>87.0</td>
+                    <td>61</td>
+                    <td>3</td>
+                    <td>539.83</td>
+                    <td>$0.1156</td>
+                    <td>4,167</td>
+                    <td>12,243</td>
+                    <td>16,410</td>
+                    <td>2</td>
+                    <td><span class="badge badge-warning">ISSUES</span></td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Quality Metrics Deep Dive -->
+    <div class="section">
+        <h2>Quality Metrics Deep Dive</h2>
+
+        <h3>Workout Characteristics</h3>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="label">Avg Duration</div>
+                <div class="value">74 min</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Avg Intervals</div>
+                <div class="value">16.8</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Min Duration</div>
+                <div class="value">36 min</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Max Duration</div>
+                <div class="value">120 min</div>
+            </div>
+        </div>
+
+        <h3>Segment Type Distribution</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Segment Type</th>
+                    <th>Count</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>interval</td>
+                    <td>248</td>
+                </tr>
+
+                <tr>
+                    <td>recovery</td>
+                    <td>172</td>
+                </tr>
+
+                <tr>
+                    <td>warmup</td>
+                    <td>124</td>
+                </tr>
+
+                <tr>
+                    <td>cooldown</td>
+                    <td>58</td>
+                </tr>
+
+                <tr>
+                    <td>active</td>
+                    <td>2</td>
+                </tr>
+
+                <tr>
+                    <td>rest</td>
+                    <td>1</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <h3>Power Zone Time Distribution</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Zone</th>
+                    <th>Total Time (min)</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>Zone 1</td>
+                    <td>694.0</td>
+                </tr>
+
+                <tr>
+                    <td>Zone 2</td>
+                    <td>597.1</td>
+                </tr>
+
+                <tr>
+                    <td>Zone 3</td>
+                    <td>738.5</td>
+                </tr>
+
+                <tr>
+                    <td>Zone 4</td>
+                    <td>232.8</td>
+                </tr>
+
+                <tr>
+                    <td>Zone 5</td>
+                    <td>146.8</td>
+                </tr>
+
+                <tr>
+                    <td>Zone 6</td>
+                    <td>75.7</td>
+                </tr>
+
+                <tr>
+                    <td>Zone 7</td>
+                    <td>17.2</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Issues & Anomalies -->
+    <div class="section">
+        <h2>Issues & Anomalies</h2>
+<p>Found <strong>17</strong> validation issues across the ground truth files:</p>
+        <div class="issue-box">
+            <h4>duration_consistency</h4>
+            <p><strong>File:</strong> <span class="code">ascending_descending_pyramid.json</span></p>
+            <p><strong>Prompt ID:</strong> ascending_descending_pyramid</p>
+            <p><strong>Details:</strong> Duration mismatch: declared 5460s, calculated 3660s (diff: 1800s)</p>
+        </div>
+
+        <div class="issue-box">
+            <h4>duration_consistency</h4>
+            <p><strong>File:</strong> <span class="code">ascending_pyramid_threshold.json</span></p>
+            <p><strong>Prompt ID:</strong> ascending_pyramid_threshold</p>
+            <p><strong>Details:</strong> Duration mismatch: declared 4020s, calculated 3420s (diff: 600s)</p>
+        </div>
+
+        <div class="issue-box">
+            <h4>power_zone_accuracy</h4>
+            <p><strong>File:</strong> <span class="code">ascending_pyramid_threshold.json</span></p>
+            <p><strong>Prompt ID:</strong> ascending_pyramid_threshold</p>
+            <p><strong>Details:</strong> 4 mismatch(es) found<br>  - Segment 7: Power 225W declared as Zone 4, actually Zone 3<br>  - Segment 9: Power 225W declared as Zone 4, actually Zone 3<br>  - Segment 11: Power 225W declared as Zone 4, actually Zone 3</p>
+        </div>
+
+        <div class="issue-box">
+            <h4>duration_consistency</h4>
+            <p><strong>File:</strong> <span class="code">complex_progressive_blocks.json</span></p>
+            <p><strong>Prompt ID:</strong> complex_progressive_blocks</p>
+            <p><strong>Details:</strong> Duration mismatch: declared 4020s, calculated 3000s (diff: 1020s)</p>
+        </div>
+
+        <div class="issue-box">
+            <h4>power_zone_accuracy</h4>
+            <p><strong>File:</strong> <span class="code">complex_progressive_blocks.json</span></p>
+            <p><strong>Prompt ID:</strong> complex_progressive_blocks</p>
+            <p><strong>Details:</strong> 1 mismatch(es) found<br>  - Segment 2: Power 163W declared as Zone 3, actually Zone 2</p>
+        </div>
+
+        <div class="issue-box">
+            <h4>duration_consistency</h4>
+            <p><strong>File:</strong> <span class="code">fractional_threshold_2to1.json</span></p>
+            <p><strong>Prompt ID:</strong> fractional_threshold_2to1</p>
+            <p><strong>Details:</strong> Duration mismatch: declared 3360s, calculated 2535s (diff: 825s)</p>
+        </div>
+
+        <div class="issue-box">
+            <h4>power_zone_accuracy</h4>
+            <p><strong>File:</strong> <span class="code">fractional_vo2max_efforts.json</span></p>
+            <p><strong>Prompt ID:</strong> fractional_vo2max_efforts</p>
+            <p><strong>Details:</strong> 3 mismatch(es) found<br>  - Segment 1: Power 150W declared as Zone 3, actually Zone 2<br>  - Segment 2: Power 163W declared as Zone 3, actually Zone 2<br>  - Segment 14: Power 150W declared as Zone 3, actually Zone 2</p>
+        </div>
+
+        <div class="issue-box">
+            <h4>duration_consistency</h4>
+            <p><strong>File:</strong> <span class="code">mixed_tabata_sweet_spot.json</span></p>
+            <p><strong>Prompt ID:</strong> mixed_tabata_sweet_spot</p>
+            <p><strong>Details:</strong> Duration mismatch: declared 7200s, calculated 5220s (diff: 1980s)</p>
+        </div>
+
+        <div class="issue-box">
+            <h4>duration_consistency</h4>
+            <p><strong>File:</strong> <span class="code">over_under_sweet_spot.json</span></p>
+            <p><strong>Prompt ID:</strong> over_under_sweet_spot</p>
+            <p><strong>Details:</strong> Duration mismatch: declared 3840s, calculated 3480s (diff: 360s)</p>
+        </div>
+
+        <div class="issue-box">
+            <h4>duration_consistency</h4>
+            <p><strong>File:</strong> <span class="code">ronnestad_double_set.json</span></p>
+            <p><strong>Prompt ID:</strong> ronnestad_double_set</p>
+            <p><strong>Details:</strong> Duration mismatch: declared 5220s, calculated 3480s (diff: 1740s)</p>
+        </div>
+
+        <div class="issue-box">
+            <h4>power_zone_accuracy</h4>
+            <p><strong>File:</strong> <span class="code">ronnestad_double_set.json</span></p>
+            <p><strong>Prompt ID:</strong> ronnestad_double_set</p>
+            <p><strong>Details:</strong> 1 mismatch(es) found<br>  - Segment 33: Power 225W declared as Zone 4, actually Zone 3</p>
+        </div>
+
+        <div class="issue-box">
+            <h4>duration_consistency</h4>
+            <p><strong>File:</strong> <span class="code">ronnestad_double_set_no_explanation.json</span></p>
+            <p><strong>Prompt ID:</strong> ronnestad_double_set_no_explanation</p>
+            <p><strong>Details:</strong> Duration mismatch: declared 4500s, calculated 3300s (diff: 1200s)</p>
+        </div>
+
+        <div class="issue-box">
+            <h4>power_zone_accuracy</h4>
+            <p><strong>File:</strong> <span class="code">sweet_spot_progression_time_based.json</span></p>
+            <p><strong>Prompt ID:</strong> sweet_spot_progression_time_based</p>
+            <p><strong>Details:</strong> 2 mismatch(es) found<br>  - Segment 2: Power 225W declared as Zone 4, actually Zone 3<br>  - Segment 4: Power 225W declared as Zone 4, actually Zone 3</p>
+        </div>
+
+        <div class="issue-box">
+            <h4>duration_consistency</h4>
+            <p><strong>File:</strong> <span class="code">tabata_sprints.json</span></p>
+            <p><strong>Prompt ID:</strong> tabata_sprints</p>
+            <p><strong>Details:</strong> Duration mismatch: declared 2700s, calculated 1920s (diff: 780s)</p>
+        </div>
+
+        <div class="issue-box">
+            <h4>duration_consistency</h4>
+            <p><strong>File:</strong> <span class="code">tempo_sprints_combo.json</span></p>
+            <p><strong>Prompt ID:</strong> tempo_sprints_combo</p>
+            <p><strong>Details:</strong> Duration mismatch: declared 3000s, calculated 2460s (diff: 540s)</p>
+        </div>
+
+        <div class="issue-box">
+            <h4>duration_consistency</h4>
+            <p><strong>File:</strong> <span class="code">threshold_intervals_3x10.json</span></p>
+            <p><strong>Prompt ID:</strong> threshold_intervals_3x10</p>
+            <p><strong>Details:</strong> Duration mismatch: declared 3600s, calculated 4800s (diff: 1200s)</p>
+        </div>
+
+        <div class="issue-box">
+            <h4>duration_consistency</h4>
+            <p><strong>File:</strong> <span class="code">threshold_sprints_shorthand.json</span></p>
+            <p><strong>Prompt ID:</strong> threshold_sprints_shorthand</p>
+            <p><strong>Details:</strong> Duration mismatch: declared 5300s, calculated 4530s (diff: 770s)</p>
+        </div>
+
+    </div>
+
+    <!-- Statistical Summary -->
+    <div class="section">
+        <h2>Statistical Summary</h2>
+
+        <h3>Generation Performance Overview</h3>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="label">Total Tokens</div>
+                <div class="value">198,820</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Total Cost</div>
+                <div class="value">$1.0556</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Total Latency</div>
+                <div class="value">3242.1s</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Avg Latency</div>
+                <div class="value">90.06s</div>
+            </div>
+        </div>
+
+        <h3>Token Statistics</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Input Tokens</th>
+                    <th>Output Tokens</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td>103,389</td>
+                    <td>95,431</td>
+                    <td>198,820</td>
+                </tr>
+                <tr>
+                    <td><strong>Average per Workout</strong></td>
+                    <td>2872</td>
+                    <td>2651</td>
+                    <td>5523</td>
+                </tr>
+                <tr>
+                    <td><strong>Min</strong></td>
+                    <td>1,322</td>
+                    <td>239</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td><strong>Max</strong></td>
+                    <td>4,191</td>
+                    <td>12,243</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Cost Breakdown</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Input Cost</th>
+                    <th>Output Cost</th>
+                    <th>Total Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td>$0.2254</td>
+                    <td>$0.8302</td>
+                    <td>$1.0556</td>
+                </tr>
+                <tr>
+                    <td><strong>Average per Workout</strong></td>
+                    <td>$0.0063</td>
+                    <td>$0.0231</td>
+                    <td>$0.0293</td>
+                </tr>
+                <tr>
+                    <td><strong>Min per Workout</strong></td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>$0.0050</td>
+                </tr>
+                <tr>
+                    <td><strong>Max per Workout</strong></td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>$0.1156</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Latency Statistics</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Latency (ms)</th>
+                    <th>Latency (seconds)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td>3,242,062</td>
+                    <td>3242.06</td>
+                </tr>
+                <tr>
+                    <td><strong>Average</strong></td>
+                    <td>90057</td>
+                    <td>90.06</td>
+                </tr>
+                <tr>
+                    <td><strong>Min</strong></td>
+                    <td>3,872</td>
+                    <td>3.87</td>
+                </tr>
+                <tr>
+                    <td><strong>Max</strong></td>
+                    <td>1,062,459</td>
+                    <td>1062.46</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Attempt Distribution</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Attempts</th>
+                    <th>Number of Workouts</th>
+                    <th>Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>1</td>
+                    <td>14</td>
+                    <td>38.9%</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>11.1%</td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>18</td>
+                    <td>50.0%</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <h3>Model Usage</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Usage Count</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>GPT-4o</td>
+                    <td>36</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Recommendations -->
+    <div class="section">
+        <h2>Recommendations</h2>
+
+        <div class="recommendation">
+            <h3>Files Requiring Attention</h3>
+            <p>The following 14 file(s) have validation issues that should be reviewed:</p>
+            <ul>
+                <li><span class='code'>ascending_descending_pyramid.json</span> - Score: 7/8 (1 issue(s))</li>
+                <li><span class='code'>fractional_threshold_2to1.json</span> - Score: 7/8 (1 issue(s))</li>
+                <li><span class='code'>fractional_vo2max_efforts.json</span> - Score: 7/8 (1 issue(s))</li>
+                <li><span class='code'>mixed_tabata_sweet_spot.json</span> - Score: 7/8 (1 issue(s))</li>
+                <li><span class='code'>over_under_sweet_spot.json</span> - Score: 7/8 (1 issue(s))</li>
+                <li><span class='code'>ronnestad_double_set_no_explanation.json</span> - Score: 7/8 (1 issue(s))</li>
+                <li><span class='code'>sweet_spot_progression_time_based.json</span> - Score: 7/8 (1 issue(s))</li>
+                <li><span class='code'>tabata_sprints.json</span> - Score: 7/8 (1 issue(s))</li>
+                <li><span class='code'>tempo_sprints_combo.json</span> - Score: 7/8 (1 issue(s))</li>
+                <li><span class='code'>threshold_intervals_3x10.json</span> - Score: 7/8 (1 issue(s))</li>
+                <li><span class='code'>threshold_sprints_shorthand.json</span> - Score: 7/8 (1 issue(s))</li>
+                <li><span class='code'>ascending_pyramid_threshold.json</span> - Score: 6/8 (2 issue(s))</li>
+                <li><span class='code'>complex_progressive_blocks.json</span> - Score: 6/8 (2 issue(s))</li>
+                <li><span class='code'>ronnestad_double_set.json</span> - Score: 6/8 (2 issue(s))</li>
+
+            </ul>
+        </div>
+
+        <div class="recommendation">
+            <h3>General Recommendations</h3>
+            <ul>
+                <li>Regularly review validation failures to maintain data quality</li>
+                <li>Consider adding more diverse workout types to improve test coverage</li>
+                <li>Ensure power zone calculations are accurate (most common failure point)</li>
+                <li>Verify time continuity in complex workout structures</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        function sortTable(columnIndex) {
+            const table = document.getElementById("fileTable");
+            const tbody = table.querySelector("tbody");
+            const rows = Array.from(tbody.querySelectorAll("tr"));
+
+            const isNumeric = columnIndex >= 2 && columnIndex <= 6;
+
+            rows.sort((a, b) => {
+                let aVal = a.children[columnIndex].textContent.trim();
+                let bVal = b.children[columnIndex].textContent.trim();
+
+                if (isNumeric) {
+                    aVal = parseFloat(aVal) || 0;
+                    bVal = parseFloat(bVal) || 0;
+                    return bVal - aVal;
+                } else {
+                    return aVal.localeCompare(bVal);
+                }
+            });
+
+            rows.forEach(row => tbody.appendChild(row));
+        }
+    </script>
+</body>
+</html>

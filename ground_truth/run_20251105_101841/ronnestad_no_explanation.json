@@ -1,0 +1,523 @@
+{
+  "prompt_id": "ronnestad_no_explanation",
+  "prompt_description": "Double Ronnestad sets with sweet spot between",
+  "user_prompt": "20min WU, 1 Ronnestad. Then 15min CD.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T10:34:07.999225",
+  "generation_metadata": {
+    "attempts": 3,
+    "total_latency_all_attempts": 48117,
+    "total_tokens_all_attempts": {
+      "input": 3156,
+      "output": 5076,
+      "total": 8232
+    },
+    "total_cost_all_attempts": 0.051041,
+    "total_input_cost_all_attempts": 0.00688,
+    "total_output_cost_all_attempts": 0.044161,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 14467,
+        "tokens": {
+          "input": 1052,
+          "output": 1505,
+          "total": 2557
+        },
+        "cost": 0.015387,
+        "input_cost": 0.002293,
+        "output_cost": 0.013093
+      },
+      {
+        "attempt": 2,
+        "latency_ms": 16067,
+        "tokens": {
+          "input": 1052,
+          "output": 1830,
+          "total": 2882
+        },
+        "cost": 0.018214,
+        "input_cost": 0.002293,
+        "output_cost": 0.015921
+      },
+      {
+        "attempt": 3,
+        "latency_ms": 17583,
+        "tokens": {
+          "input": 1052,
+          "output": 1741,
+          "total": 2793
+        },
+        "cost": 0.01744,
+        "input_cost": 0.002293,
+        "output_cost": 0.015147
+      }
+    ]
+  },
+  "workout": {
+    "name": "Ronnestad Session with Warmup and Cooldown",
+    "description": "A structured workout featuring a 20-minute warmup, one Ronnestad block, and a 15-minute cooldown.",
+    "workout_duration": 2940,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 1200,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "warmup",
+        "notes": "Warmup to prepare for the main set."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 1200,
+        "endTimeSeconds": 1230,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 7,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Ronnestad interval 1, high intensity."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 1230,
+        "endTimeSeconds": 1245,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Recovery after interval 1."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 1245,
+        "endTimeSeconds": 1275,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 7,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Ronnestad interval 2, high intensity."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 1275,
+        "endTimeSeconds": 1290,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Recovery after interval 2."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 1290,
+        "endTimeSeconds": 1320,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 7,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Ronnestad interval 3, high intensity."
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 1320,
+        "endTimeSeconds": 1335,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Recovery after interval 3."
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 1335,
+        "endTimeSeconds": 1365,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 7,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Ronnestad interval 4, high intensity."
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 1365,
+        "endTimeSeconds": 1380,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Recovery after interval 4."
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 1380,
+        "endTimeSeconds": 1410,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 7,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Ronnestad interval 5, high intensity."
+      },
+      {
+        "segment_number": 11,
+        "startTimeSeconds": 1410,
+        "endTimeSeconds": 1425,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Recovery after interval 5."
+      },
+      {
+        "segment_number": 12,
+        "startTimeSeconds": 1425,
+        "endTimeSeconds": 1455,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 7,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Ronnestad interval 6, high intensity."
+      },
+      {
+        "segment_number": 13,
+        "startTimeSeconds": 1455,
+        "endTimeSeconds": 1470,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Recovery after interval 6."
+      },
+      {
+        "segment_number": 14,
+        "startTimeSeconds": 1470,
+        "endTimeSeconds": 1500,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 7,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Ronnestad interval 7, high intensity."
+      },
+      {
+        "segment_number": 15,
+        "startTimeSeconds": 1500,
+        "endTimeSeconds": 1515,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Recovery after interval 7."
+      },
+      {
+        "segment_number": 16,
+        "startTimeSeconds": 1515,
+        "endTimeSeconds": 1545,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 7,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Ronnestad interval 8, high intensity."
+      },
+      {
+        "segment_number": 17,
+        "startTimeSeconds": 1545,
+        "endTimeSeconds": 1560,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Recovery after interval 8."
+      },
+      {
+        "segment_number": 18,
+        "startTimeSeconds": 1560,
+        "endTimeSeconds": 1590,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 7,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Ronnestad interval 9, high intensity."
+      },
+      {
+        "segment_number": 19,
+        "startTimeSeconds": 1590,
+        "endTimeSeconds": 1605,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Recovery after interval 9."
+      },
+      {
+        "segment_number": 20,
+        "startTimeSeconds": 1605,
+        "endTimeSeconds": 1635,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 7,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Ronnestad interval 10, high intensity."
+      },
+      {
+        "segment_number": 21,
+        "startTimeSeconds": 1635,
+        "endTimeSeconds": 1650,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Recovery after interval 10."
+      },
+      {
+        "segment_number": 22,
+        "startTimeSeconds": 1650,
+        "endTimeSeconds": 1680,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 7,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Ronnestad interval 11, high intensity."
+      },
+      {
+        "segment_number": 23,
+        "startTimeSeconds": 1680,
+        "endTimeSeconds": 1695,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Recovery after interval 11."
+      },
+      {
+        "segment_number": 24,
+        "startTimeSeconds": 1695,
+        "endTimeSeconds": 1725,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 7,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Ronnestad interval 12, high intensity."
+      },
+      {
+        "segment_number": 25,
+        "startTimeSeconds": 1725,
+        "endTimeSeconds": 1740,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Recovery after interval 12."
+      },
+      {
+        "segment_number": 26,
+        "startTimeSeconds": 1740,
+        "endTimeSeconds": 1770,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 7,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Final Ronnestad interval, high intensity."
+      },
+      {
+        "segment_number": 27,
+        "startTimeSeconds": 1770,
+        "endTimeSeconds": 2670,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "cooldown",
+        "notes": "Cooldown to ease down post-workout."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "6/8",
+    "pass_rate": 75.0,
+    "all_passed": false,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 2940,
+        "calculated_duration": 2670,
+        "difference": 270
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": false,
+        "mismatches": [
+          {
+            "segment_number": 2,
+            "power": 313,
+            "declared_zone": 7,
+            "actual_zone": 6
+          },
+          {
+            "segment_number": 4,
+            "power": 313,
+            "declared_zone": 7,
+            "actual_zone": 6
+          },
+          {
+            "segment_number": 6,
+            "power": 313,
+            "declared_zone": 7,
+            "actual_zone": 6
+          },
+          {
+            "segment_number": 8,
+            "power": 313,
+            "declared_zone": 7,
+            "actual_zone": 6
+          },
+          {
+            "segment_number": 10,
+            "power": 313,
+            "declared_zone": 7,
+            "actual_zone": 6
+          },
+          {
+            "segment_number": 12,
+            "power": 313,
+            "declared_zone": 7,
+            "actual_zone": 6
+          },
+          {
+            "segment_number": 14,
+            "power": 313,
+            "declared_zone": 7,
+            "actual_zone": 6
+          },
+          {
+            "segment_number": 16,
+            "power": 313,
+            "declared_zone": 7,
+            "actual_zone": 6
+          },
+          {
+            "segment_number": 18,
+            "power": 313,
+            "declared_zone": 7,
+            "actual_zone": 6
+          },
+          {
+            "segment_number": 20,
+            "power": 313,
+            "declared_zone": 7,
+            "actual_zone": 6
+          },
+          {
+            "segment_number": 22,
+            "power": 313,
+            "declared_zone": 7,
+            "actual_zone": 6
+          },
+          {
+            "segment_number": 24,
+            "power": 313,
+            "declared_zone": 7,
+            "actual_zone": 6
+          },
+          {
+            "segment_number": 26,
+            "power": 313,
+            "declared_zone": 7,
+            "actual_zone": 6
+          }
+        ]
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": false
+}

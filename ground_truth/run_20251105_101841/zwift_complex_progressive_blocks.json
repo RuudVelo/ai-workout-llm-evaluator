@@ -1,0 +1,325 @@
+{
+  "prompt_id": "zwift_complex_progressive_blocks",
+  "prompt_description": "Complex workout with multiple progressive blocks",
+  "user_prompt": "5min from 30 to 70% FTP\n20sec @ 80% FTP\n20sec @ 100% FTP\n20sec @ 120% FTP\n3min @ 50% FTP\n3min @ 110% FTP\n2min @ 120% FTP\n6min @ 50% FTP\n20min free ride\n5min from 50 to 30% FTP\n",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T10:22:13.933651",
+  "generation_metadata": {
+    "attempts": 3,
+    "total_latency_all_attempts": 47190,
+    "total_tokens_all_attempts": {
+      "input": 3354,
+      "output": 3323,
+      "total": 6677
+    },
+    "total_cost_all_attempts": 0.036222,
+    "total_input_cost_all_attempts": 0.007312,
+    "total_output_cost_all_attempts": 0.02891,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 16289,
+        "tokens": {
+          "input": 1118,
+          "output": 1117,
+          "total": 2235
+        },
+        "cost": 0.012155,
+        "input_cost": 0.002437,
+        "output_cost": 0.009718
+      },
+      {
+        "attempt": 2,
+        "latency_ms": 15149,
+        "tokens": {
+          "input": 1118,
+          "output": 1283,
+          "total": 2401
+        },
+        "cost": 0.013599,
+        "input_cost": 0.002437,
+        "output_cost": 0.011162
+      },
+      {
+        "attempt": 3,
+        "latency_ms": 15752,
+        "tokens": {
+          "input": 1118,
+          "output": 923,
+          "total": 2041
+        },
+        "cost": 0.010467,
+        "input_cost": 0.002437,
+        "output_cost": 0.00803
+      }
+    ]
+  },
+  "workout": {
+    "name": "Custom Ramp & Intervals Session",
+    "description": "A mixed session with ramps, short intervals, and free ride block.",
+    "workout_duration": 4260,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 60,
+        "power": 75,
+        "powerAdjustedUpward": 85,
+        "powerAdjustedDownward": 65,
+        "zone": 1,
+        "perc_ftp": 30,
+        "type": "warmup",
+        "notes": "Ramp start"
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 60,
+        "endTimeSeconds": 120,
+        "power": 100,
+        "powerAdjustedUpward": 110,
+        "powerAdjustedDownward": 90,
+        "zone": 1,
+        "perc_ftp": 40,
+        "type": "warmup",
+        "notes": "Ramp progress"
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 120,
+        "endTimeSeconds": 180,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "warmup",
+        "notes": "Ramp progress"
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 180,
+        "endTimeSeconds": 240,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "warmup",
+        "notes": "Ramp progress"
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 240,
+        "endTimeSeconds": 300,
+        "power": 175,
+        "powerAdjustedUpward": 185,
+        "powerAdjustedDownward": 165,
+        "zone": 2,
+        "perc_ftp": 70,
+        "type": "warmup",
+        "notes": "Ramp progress"
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 300,
+        "endTimeSeconds": 320,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "interval",
+        "notes": "Short interval"
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 320,
+        "endTimeSeconds": 340,
+        "power": 250,
+        "powerAdjustedUpward": 260,
+        "powerAdjustedDownward": 240,
+        "zone": 4,
+        "perc_ftp": 100,
+        "type": "interval",
+        "notes": "Short interval"
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 340,
+        "endTimeSeconds": 360,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Short interval"
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 360,
+        "endTimeSeconds": 540,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Recovery block"
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 540,
+        "endTimeSeconds": 720,
+        "power": 275,
+        "powerAdjustedUpward": 285,
+        "powerAdjustedDownward": 265,
+        "zone": 4,
+        "perc_ftp": 110,
+        "type": "interval",
+        "notes": "Moderate interval"
+      },
+      {
+        "segment_number": 11,
+        "startTimeSeconds": 720,
+        "endTimeSeconds": 840,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Moderate interval"
+      },
+      {
+        "segment_number": 12,
+        "startTimeSeconds": 840,
+        "endTimeSeconds": 1200,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Recovery block"
+      },
+      {
+        "segment_number": 13,
+        "startTimeSeconds": 1200,
+        "endTimeSeconds": 2400,
+        "power": 0,
+        "powerAdjustedUpward": 10,
+        "powerAdjustedDownward": 0,
+        "zone": 0,
+        "perc_ftp": 0,
+        "type": "active",
+        "notes": "Free ride"
+      },
+      {
+        "segment_number": 14,
+        "startTimeSeconds": 2400,
+        "endTimeSeconds": 2460,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "cooldown",
+        "notes": "Cooldown start"
+      },
+      {
+        "segment_number": 15,
+        "startTimeSeconds": 2460,
+        "endTimeSeconds": 2520,
+        "power": 100,
+        "powerAdjustedUpward": 110,
+        "powerAdjustedDownward": 90,
+        "zone": 1,
+        "perc_ftp": 40,
+        "type": "cooldown",
+        "notes": "Cooldown progress"
+      },
+      {
+        "segment_number": 16,
+        "startTimeSeconds": 2520,
+        "endTimeSeconds": 2580,
+        "power": 75,
+        "powerAdjustedUpward": 85,
+        "powerAdjustedDownward": 65,
+        "zone": 1,
+        "perc_ftp": 30,
+        "type": "cooldown",
+        "notes": "Cooldown end"
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "6/8",
+    "pass_rate": 75.0,
+    "all_passed": false,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 4260,
+        "calculated_duration": 2580,
+        "difference": 1680
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": false,
+        "mismatches": [
+          {
+            "segment_number": 10,
+            "power": 275,
+            "declared_zone": 4,
+            "actual_zone": 5
+          },
+          {
+            "segment_number": 13,
+            "power": 0,
+            "declared_zone": 0,
+            "actual_zone": 1
+          }
+        ]
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": false
+}

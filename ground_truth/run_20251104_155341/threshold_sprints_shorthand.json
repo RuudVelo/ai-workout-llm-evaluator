@@ -1,0 +1,324 @@
+{
+  "prompt_id": "threshold_sprints_shorthand",
+  "prompt_description": "Threshold work with sprint finisher (shorthand)",
+  "user_prompt": "WU 10min @60% FTP, 3x12min @95% FTP (5min @Z1 rec), 5x30s @150% FTP / 30s easy, 10min CD.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-04T15:59:58.652335",
+  "generation_metadata": {
+    "attempts": 3,
+    "total_latency_all_attempts": 57601,
+    "total_tokens_all_attempts": {
+      "input": 4080,
+      "output": 3466,
+      "total": 7546
+    },
+    "total_cost_all_attempts": 0.039049,
+    "total_input_cost_all_attempts": 0.008894,
+    "total_output_cost_all_attempts": 0.030154,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 18205,
+        "tokens": {
+          "input": 1360,
+          "output": 1132,
+          "total": 2492
+        },
+        "cost": 0.012813,
+        "input_cost": 0.002965,
+        "output_cost": 0.009848
+      },
+      {
+        "attempt": 2,
+        "latency_ms": 25174,
+        "tokens": {
+          "input": 1360,
+          "output": 1178,
+          "total": 2538
+        },
+        "cost": 0.013213,
+        "input_cost": 0.002965,
+        "output_cost": 0.010249
+      },
+      {
+        "attempt": 3,
+        "latency_ms": 14222,
+        "tokens": {
+          "input": 1360,
+          "output": 1156,
+          "total": 2516
+        },
+        "cost": 0.013022,
+        "input_cost": 0.002965,
+        "output_cost": 0.010057
+      }
+    ]
+  },
+  "workout": {
+    "name": "Structured Cycling Interval Session",
+    "description": "This workout includes a structured warm-up, three threshold intervals to build sustainable power, short high-intensity efforts to improve peak power, and a cooldown to assist recovery.",
+    "workout_duration": 5300,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 600,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "warmup",
+        "notes": "Warm-up at 60% of FTP to prepare the body for more intense efforts."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 600,
+        "endTimeSeconds": 1320,
+        "power": 238,
+        "powerAdjustedUpward": 248,
+        "powerAdjustedDownward": 228,
+        "zone": 3,
+        "perc_ftp": 95,
+        "type": "interval",
+        "notes": "First threshold interval at 95% of FTP to build sustainable power."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 1320,
+        "endTimeSeconds": 1620,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "recovery",
+        "notes": "Recover at Zone 1 power."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 1620,
+        "endTimeSeconds": 2340,
+        "power": 238,
+        "powerAdjustedUpward": 248,
+        "powerAdjustedDownward": 228,
+        "zone": 3,
+        "perc_ftp": 95,
+        "type": "interval",
+        "notes": "Second threshold interval at 95% of FTP to build sustainable power."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 2340,
+        "endTimeSeconds": 2640,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "recovery",
+        "notes": "Recover at Zone 1 power."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 2640,
+        "endTimeSeconds": 3360,
+        "power": 238,
+        "powerAdjustedUpward": 248,
+        "powerAdjustedDownward": 228,
+        "zone": 3,
+        "perc_ftp": 95,
+        "type": "interval",
+        "notes": "Third threshold interval at 95% of FTP to build sustainable power."
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 3360,
+        "endTimeSeconds": 3660,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "recovery",
+        "notes": "Recover at Zone 1 power."
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 3660,
+        "endTimeSeconds": 3690,
+        "power": 375,
+        "powerAdjustedUpward": 385,
+        "powerAdjustedDownward": 365,
+        "zone": 6,
+        "perc_ftp": 150,
+        "type": "interval",
+        "notes": "High-intensity interval at 150% of FTP to improve peak power."
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 3690,
+        "endTimeSeconds": 3720,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "recovery",
+        "notes": "Easy recovery."
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 3720,
+        "endTimeSeconds": 3750,
+        "power": 375,
+        "powerAdjustedUpward": 385,
+        "powerAdjustedDownward": 365,
+        "zone": 6,
+        "perc_ftp": 150,
+        "type": "interval",
+        "notes": "High-intensity interval at 150% of FTP to improve peak power."
+      },
+      {
+        "segment_number": 11,
+        "startTimeSeconds": 3750,
+        "endTimeSeconds": 3780,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "recovery",
+        "notes": "Easy recovery."
+      },
+      {
+        "segment_number": 12,
+        "startTimeSeconds": 3780,
+        "endTimeSeconds": 3810,
+        "power": 375,
+        "powerAdjustedUpward": 385,
+        "powerAdjustedDownward": 365,
+        "zone": 6,
+        "perc_ftp": 150,
+        "type": "interval",
+        "notes": "High-intensity interval at 150% of FTP to improve peak power."
+      },
+      {
+        "segment_number": 13,
+        "startTimeSeconds": 3810,
+        "endTimeSeconds": 3840,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "recovery",
+        "notes": "Easy recovery."
+      },
+      {
+        "segment_number": 14,
+        "startTimeSeconds": 3840,
+        "endTimeSeconds": 3870,
+        "power": 375,
+        "powerAdjustedUpward": 385,
+        "powerAdjustedDownward": 365,
+        "zone": 6,
+        "perc_ftp": 150,
+        "type": "interval",
+        "notes": "High-intensity interval at 150% of FTP to improve peak power."
+      },
+      {
+        "segment_number": 15,
+        "startTimeSeconds": 3870,
+        "endTimeSeconds": 3900,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "recovery",
+        "notes": "Easy recovery."
+      },
+      {
+        "segment_number": 16,
+        "startTimeSeconds": 3900,
+        "endTimeSeconds": 3930,
+        "power": 375,
+        "powerAdjustedUpward": 385,
+        "powerAdjustedDownward": 365,
+        "zone": 6,
+        "perc_ftp": 150,
+        "type": "interval",
+        "notes": "High-intensity interval at 150% of FTP to improve peak power."
+      },
+      {
+        "segment_number": 17,
+        "startTimeSeconds": 3930,
+        "endTimeSeconds": 4530,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "cooldown",
+        "notes": "Cooldown to help recover after high-intensity efforts."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "7/8",
+    "pass_rate": 87.5,
+    "all_passed": false,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 5300,
+        "calculated_duration": 4530,
+        "difference": 770
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": false
+}

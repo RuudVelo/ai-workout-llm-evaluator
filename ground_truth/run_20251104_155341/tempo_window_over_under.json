@@ -1,0 +1,264 @@
+{
+  "prompt_id": "tempo_window_over_under",
+  "prompt_description": "Tempo time window with over/under finish",
+  "user_prompt": "75min total. From 0:00-15:00 easy warmup. From 15:00-50:00 steady tempo @ 78% FTP. From 50:00-62:00 over/under: 4x(2min @ 105% / 1min @ 95%). From 62:00-75:00 cooldown.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-04T16:47:45.154827",
+  "generation_metadata": {
+    "attempts": 1,
+    "total_latency_all_attempts": 18513,
+    "total_tokens_all_attempts": {
+      "input": 1390,
+      "output": 943,
+      "total": 2333
+    },
+    "total_cost_all_attempts": 0.011234,
+    "total_input_cost_all_attempts": 0.00303,
+    "total_output_cost_all_attempts": 0.008204,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 18513,
+        "tokens": {
+          "input": 1390,
+          "output": 943,
+          "total": 2333
+        },
+        "cost": 0.011234,
+        "input_cost": 0.00303,
+        "output_cost": 0.008204
+      }
+    ]
+  },
+  "workout": {
+    "name": "Structured Cycling Session",
+    "description": "This workout includes an easy warmup, a steady tempo ride, followed by over/under intervals, and ends with a cooldown. It aims to improve endurance and power output.",
+    "workout_duration": 4500,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 150,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "warmup",
+        "notes": "Begin with an easy warmup at 60% FTP."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 150,
+        "endTimeSeconds": 300,
+        "power": 162,
+        "powerAdjustedUpward": 172,
+        "powerAdjustedDownward": 152,
+        "zone": 2,
+        "perc_ftp": 65,
+        "type": "warmup",
+        "notes": "Continue warming up and gradually increasing power."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 300,
+        "endTimeSeconds": 450,
+        "power": 175,
+        "powerAdjustedUpward": 185,
+        "powerAdjustedDownward": 165,
+        "zone": 2,
+        "perc_ftp": 70,
+        "type": "warmup",
+        "notes": "Further increase to 70% FTP."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 450,
+        "endTimeSeconds": 900,
+        "power": 188,
+        "powerAdjustedUpward": 198,
+        "powerAdjustedDownward": 178,
+        "zone": 2,
+        "perc_ftp": 75,
+        "type": "warmup",
+        "notes": "Finish warmup at 75% FTP."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 900,
+        "endTimeSeconds": 3000,
+        "power": 195,
+        "powerAdjustedUpward": 205,
+        "powerAdjustedDownward": 185,
+        "zone": 3,
+        "perc_ftp": 78,
+        "type": "interval",
+        "notes": "Steady tempo ride at 78% FTP to build endurance."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 3000,
+        "endTimeSeconds": 3120,
+        "power": 263,
+        "powerAdjustedUpward": 273,
+        "powerAdjustedDownward": 253,
+        "zone": 5,
+        "perc_ftp": 105,
+        "type": "interval",
+        "notes": "First over segment at 105% FTP."
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 3120,
+        "endTimeSeconds": 3180,
+        "power": 238,
+        "powerAdjustedUpward": 248,
+        "powerAdjustedDownward": 228,
+        "zone": 3,
+        "perc_ftp": 95,
+        "type": "interval",
+        "notes": "First under segment at 95% FTP."
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 3180,
+        "endTimeSeconds": 3300,
+        "power": 263,
+        "powerAdjustedUpward": 273,
+        "powerAdjustedDownward": 253,
+        "zone": 5,
+        "perc_ftp": 105,
+        "type": "interval",
+        "notes": "Second over segment at 105% FTP."
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 3300,
+        "endTimeSeconds": 3360,
+        "power": 238,
+        "powerAdjustedUpward": 248,
+        "powerAdjustedDownward": 228,
+        "zone": 3,
+        "perc_ftp": 95,
+        "type": "interval",
+        "notes": "Second under segment at 95% FTP."
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 3360,
+        "endTimeSeconds": 3480,
+        "power": 263,
+        "powerAdjustedUpward": 273,
+        "powerAdjustedDownward": 253,
+        "zone": 5,
+        "perc_ftp": 105,
+        "type": "interval",
+        "notes": "Third over segment at 105% FTP."
+      },
+      {
+        "segment_number": 11,
+        "startTimeSeconds": 3480,
+        "endTimeSeconds": 3540,
+        "power": 238,
+        "powerAdjustedUpward": 248,
+        "powerAdjustedDownward": 228,
+        "zone": 3,
+        "perc_ftp": 95,
+        "type": "interval",
+        "notes": "Third under segment at 95% FTP."
+      },
+      {
+        "segment_number": 12,
+        "startTimeSeconds": 3540,
+        "endTimeSeconds": 3660,
+        "power": 263,
+        "powerAdjustedUpward": 273,
+        "powerAdjustedDownward": 253,
+        "zone": 5,
+        "perc_ftp": 105,
+        "type": "interval",
+        "notes": "Fourth over segment at 105% FTP."
+      },
+      {
+        "segment_number": 13,
+        "startTimeSeconds": 3660,
+        "endTimeSeconds": 3720,
+        "power": 238,
+        "powerAdjustedUpward": 248,
+        "powerAdjustedDownward": 228,
+        "zone": 3,
+        "perc_ftp": 95,
+        "type": "interval",
+        "notes": "Fourth under segment at 95% FTP."
+      },
+      {
+        "segment_number": 14,
+        "startTimeSeconds": 3720,
+        "endTimeSeconds": 4500,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "cooldown",
+        "notes": "Finish with a cooldown at 60% FTP to aid recovery."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 4500,
+        "calculated_duration": 4500,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}

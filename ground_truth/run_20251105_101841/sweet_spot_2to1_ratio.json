@@ -1,0 +1,277 @@
+{
+  "prompt_id": "sweet_spot_2to1_ratio",
+  "prompt_description": "Sweet spot using strict 2:1 ratio",
+  "user_prompt": "Warmup 10 minutes. Main set: 4x16min @ 90% FTP with 8min recovery (2:1 work to rest). Cooldown 10 minutes.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T10:29:07.658491",
+  "generation_metadata": {
+    "attempts": 3,
+    "total_latency_all_attempts": 24752,
+    "total_tokens_all_attempts": {
+      "input": 3219,
+      "output": 2094,
+      "total": 5313
+    },
+    "total_cost_all_attempts": 0.025235,
+    "total_input_cost_all_attempts": 0.007017,
+    "total_output_cost_all_attempts": 0.018218,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 6642,
+        "tokens": {
+          "input": 1073,
+          "output": 687,
+          "total": 1760
+        },
+        "cost": 0.008316,
+        "input_cost": 0.002339,
+        "output_cost": 0.005977
+      },
+      {
+        "attempt": 2,
+        "latency_ms": 9617,
+        "tokens": {
+          "input": 1073,
+          "output": 698,
+          "total": 1771
+        },
+        "cost": 0.008412,
+        "input_cost": 0.002339,
+        "output_cost": 0.006073
+      },
+      {
+        "attempt": 3,
+        "latency_ms": 8493,
+        "tokens": {
+          "input": 1073,
+          "output": 709,
+          "total": 1782
+        },
+        "cost": 0.008507,
+        "input_cost": 0.002339,
+        "output_cost": 0.006168
+      }
+    ]
+  },
+  "workout": {
+    "name": "Warmup + Seiler 4x16 + Cooldown",
+    "description": "A structured workout consisting of a warmup, four 16-minute intervals at 90% FTP, each followed by an 8-minute recovery, and a cooldown session.",
+    "workout_duration": 12600,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 600,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "warmup",
+        "notes": "Easy warmup to get ready for the workout."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 600,
+        "endTimeSeconds": 1560,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 4,
+        "perc_ftp": 90,
+        "type": "interval",
+        "notes": "Maintain steady strong effort at 90% of FTP."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 1560,
+        "endTimeSeconds": 2040,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "recovery",
+        "notes": "Recover with easy spinning to prepare for the next interval."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 2040,
+        "endTimeSeconds": 3000,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 4,
+        "perc_ftp": 90,
+        "type": "interval",
+        "notes": "Maintain steady strong effort at 90% of FTP."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 3000,
+        "endTimeSeconds": 3480,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "recovery",
+        "notes": "Recover with easy spinning to prepare for the next interval."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 3480,
+        "endTimeSeconds": 4440,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 4,
+        "perc_ftp": 90,
+        "type": "interval",
+        "notes": "Maintain steady strong effort at 90% of FTP."
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 4440,
+        "endTimeSeconds": 4920,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "recovery",
+        "notes": "Recover with easy spinning to prepare for the next interval."
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 4920,
+        "endTimeSeconds": 5880,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 4,
+        "perc_ftp": 90,
+        "type": "interval",
+        "notes": "Maintain steady strong effort at 90% of FTP."
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 5880,
+        "endTimeSeconds": 6360,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "recovery",
+        "notes": "Last recovery before cooldown."
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 6360,
+        "endTimeSeconds": 6960,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "cooldown",
+        "notes": "Easy cooldown to bring heart rate down and recover."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "6/8",
+    "pass_rate": 75.0,
+    "all_passed": false,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 12600,
+        "calculated_duration": 6960,
+        "difference": 5640
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": false,
+        "mismatches": [
+          {
+            "segment_number": 1,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 2,
+            "power": 225,
+            "declared_zone": 4,
+            "actual_zone": 3
+          },
+          {
+            "segment_number": 4,
+            "power": 225,
+            "declared_zone": 4,
+            "actual_zone": 3
+          },
+          {
+            "segment_number": 6,
+            "power": 225,
+            "declared_zone": 4,
+            "actual_zone": 3
+          },
+          {
+            "segment_number": 8,
+            "power": 225,
+            "declared_zone": 4,
+            "actual_zone": 3
+          },
+          {
+            "segment_number": 10,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          }
+        ]
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": false
+}

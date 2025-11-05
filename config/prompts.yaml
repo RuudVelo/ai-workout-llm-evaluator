@@ -7,7 +7,7 @@ prompts:
 
   - id: threshold_intervals_3x10
     description: "Classic threshold intervals with warmup/cooldown"
-    user_prompt: "60min total — 15min warm-up, 3x10min @ 90% FTP with 5min easy between, 10min cool-down."
+    user_prompt: "15min warm-up, 3x10min @ 90% FTP with 5min easy between, 10min cool-down."
 
   - id: threshold_4x8_detailed
     description: "Threshold intervals with detailed instructions"
@@ -28,6 +28,20 @@ prompts:
   - id: zwift_intervals_sprints
     description: "Zwift-style workout with intervals and sprints"
     user_prompt: "Zwift workout: 5min warmup ramp, 3x12min at 95% FTP with 5min recoveries, then 4x30sec sprints at 150% FTP, 5min cooldown."
+
+  - id: zwift_complex_progressive_blocks
+    description: "Complex workout with multiple progressive blocks"
+    user_prompt: |
+      5min from 30 to 70% FTP
+      20sec @ 80% FTP
+      20sec @ 100% FTP
+      20sec @ 120% FTP
+      3min @ 50% FTP
+      3min @ 110% FTP
+      2min @ 120% FTP
+      6min @ 50% FTP
+      20min free ride
+      5min from 50 to 30% FTP
 
   - id: shorthand_notation
     description: "Workout using shorthand notation"
@@ -69,6 +83,14 @@ prompts:
     description: "Simple threshold workout request"
     user_prompt: "Create a 60 minute threshold workout."
 
+  - id: warmup_15min
+    description: "15 min WU"
+    user_prompt: "Create a warm-up for which I can do before my time trial"
+
+  - id: fartlek
+    description: "Fartlek 2 hours"
+    user_prompt: "Create a 2 hour fartlek workout."
+
   - id: low_cadence_strength
     description: "Low cadence strength intervals"
     user_prompt: |
@@ -82,20 +104,6 @@ prompts:
       Cooldown
       - 20m 60% 90-100rpm
 
-  - id: complex_progressive_blocks
-    description: "Complex workout with multiple progressive blocks"
-    user_prompt: |
-      5min from 30 to 70% FTP
-      20sec @ 80% FTP
-      20sec @ 100% FTP
-      20sec @ 120% FTP
-      3min @ 50% FTP
-      3min @ 110% FTP
-      2min @ 120% FTP
-      6min @ 50% FTP
-      20min free ride
-      5min from 50 to 30% FTP
-
   - id: over_under_classic
     description: "Classic over/under intervals"
     user_prompt: "10-minute warmup, then 8x(2min @ 105% FTP / 1min @ 95% FTP) continuous without rest between, finish with 10-minute cooldown."
@@ -103,6 +111,10 @@ prompts:
   - id: ascending_pyramid_threshold
     description: "Ascending pyramid at threshold"
     user_prompt: "15min warmup, then ascending ladder: 3-4-5-6min @ 90% FTP with 2-minute easy recovery between each interval, 15min cooldown."
+
+  - id: ascending_descending_pyramid
+    description: "Combined ascending and descending pyramid"
+    user_prompt: "10min warmup, ascending: 3-4-5min @ 90% FTP with 2min recovery, then descending: 5-4-3min @ 95% FTP with 2min recovery, 15min cooldown."
 
   - id: descending_pyramid_threshold
     description: "Descending pyramid at high threshold"
@@ -112,21 +124,45 @@ prompts:
     description: "Tempo block using time markers"
     user_prompt: "60-minute ride. Easy spinning for first 15 minutes. From 15:00-45:00, maintain tempo at 80% FTP. Last 15 minutes easy cooldown."
 
-  - id: sweet_spot_blocks_2to1
+  - id: sweet_spot_blocks_2to1_explanation
     description: "Sweet spot intervals with 2:1 work to rest"
     user_prompt: "Warmup 10min, main set 3x20min sweet spot (88-93% FTP) with 10min easy recovery between using 2:1 work-to-rest ratio, cooldown 10min."
+
+  - id: sweet_spot_blocks_no_explanation
+    description: "Sweet spot intervals simple"
+    user_prompt: "Warmup 10min, main set 3x20min sweet spot with 10min easy recovery, cooldown 20min."
+
+  - id: sweet_spot_2to1_ratio
+    description: "Sweet spot using strict 2:1 ratio"
+    user_prompt: "Warmup 10 minutes. Main set: 4x16min @ 90% FTP with 8min recovery (2:1 work to rest). Cooldown 10 minutes."
 
   - id: fractional_vo2max_efforts
     description: "VO2max efforts using fractional time"
     user_prompt: "10-minute warmup, then 4x90 seconds @ 120% FTP with 90 seconds recovery at 50% FTP, 10-minute cooldown."
 
-  - id: tabata_sprints
+  - id: tabata_sprints_explained
     description: "Tabata protocol sprint intervals"
     user_prompt: "15min warmup, then Tabata protocol: 8 rounds of 20 seconds all-out sprint / 10 seconds easy recovery (total 4 minutes), 5min easy, repeat Tabata set one more time, 10min cooldown."
 
-  - id: ronnestad_anaerobic
+  - id: tabata_sprints_no_explanation
+    description: "Tabata protocol not explained"
+    user_prompt: "15min warmup, then 3 Tabata sets with 5min easy in between, 10min cooldown."
+
+  - id: mixed_tabata_sweet_spot
+    description: "Tabata followed by sweet spot"
+    user_prompt: "15min WU, Tabata: 8×20sec all-out / 10sec easy, 10min Z2 recovery, then 2x15min sweet spot @ 88% FTP with 7.5min recovery (2:1 ratio), 10min CD."
+
+  - id: ronnestad_different
     description: "Ronnestad intervals for anaerobic capacity"
     user_prompt: "20min warmup, main set Ronnestad intervals: 13x30 seconds @ 200-250% FTP with 15 seconds active recovery at 50% FTP, 3min easy, repeat set again, 15min cooldown."
+
+  - id: ronnestad_no_explanation
+    description: "Double Ronnestad sets with sweet spot between"
+    user_prompt: "20min WU, 1 Ronnestad. Then 15min CD."
+
+  - id: ronnestad_tripe_set_no_explanation
+    description: "Double Ronnestad sets with sweet spot between"
+    user_prompt: "20min WU, 3 Ronnestad sets with 5 min of recovery in between, 15min CD."
 
   - id: sweet_spot_progression_time_based
     description: "Sweet spot with time-based progression"
@@ -136,29 +172,9 @@ prompts:
     description: "Over/under in sweet spot range"
     user_prompt: "WU 15min, 6x(3min @ 92% FTP / 2min @ 88% FTP) continuous over/under in sweet spot zone, CD 10min."
 
-  - id: ascending_descending_pyramid
-    description: "Combined ascending and descending pyramid"
-    user_prompt: "10min warmup, ascending: 3-4-5min @ 90% FTP with 2min recovery, then descending: 5-4-3min @ 95% FTP with 2min recovery, 15min cooldown."
-
-  - id: sweet_spot_2to1_ratio
-    description: "Sweet spot using strict 2:1 ratio"
-    user_prompt: "Warmup 10 minutes. Main set: 4x16min @ 90% FTP with 8min recovery (2:1 work to rest). Cooldown 10 minutes."
-
-  - id: mixed_tabata_sweet_spot
-    description: "Tabata followed by sweet spot"
-    user_prompt: "15min WU, Tabata: 8×20sec all-out / 10sec easy, 10min Z2 recovery, then 2x15min sweet spot @ 88% FTP with 7.5min recovery (2:1 ratio), 10min CD."
-
   - id: fractional_threshold_2to1
     description: "Fractional time threshold with 2:1 ratio"
     user_prompt: "10min warmup, 5x90 seconds @ 105% FTP with 45 seconds easy (2:1 work-to-rest), 5min recovery, then 3x2.5min @ 100% FTP with 75 seconds recovery, 10min cooldown."
-
-  - id: ronnestad_double_set
-    description: "Double Ronnestad sets with sweet spot between"
-    user_prompt: "20min WU, Ronnestad set 1: 13×30s @ 220% FTP / 15s @ 50% FTP, 10min sweet spot @ 90% FTP, Ronnestad set 2: 13×30s @ 220% FTP / 15s @ 50% FTP, 15min CD."
-
-  - id: ronnestad_double_set_no_explanation
-    description: "Double Ronnestad sets with sweet spot between"
-    user_prompt: "20min WU, 2 Ronnestad sets with 5 mins at 150W in between. Then 15min CD."
 
   - id: tempo_window_over_under
     description: "Tempo time window with over/under finish"

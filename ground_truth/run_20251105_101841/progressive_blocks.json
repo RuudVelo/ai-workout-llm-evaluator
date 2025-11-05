@@ -1,0 +1,156 @@
+{
+  "prompt_id": "progressive_blocks",
+  "prompt_description": "Progressive Z2 to Z3 blocks",
+  "user_prompt": "Warmup 10 minutes, main set first block 15 minutes Z2, second block 15 minutes Z3, 5-minute recovery between, 10-minute cooldown.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T10:23:48.016610",
+  "generation_metadata": {
+    "attempts": 1,
+    "total_latency_all_attempts": 6668,
+    "total_tokens_all_attempts": {
+      "input": 1070,
+      "output": 350,
+      "total": 1420
+    },
+    "total_cost_all_attempts": 0.005378,
+    "total_input_cost_all_attempts": 0.002333,
+    "total_output_cost_all_attempts": 0.003045,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 6668,
+        "tokens": {
+          "input": 1070,
+          "output": 350,
+          "total": 1420
+        },
+        "cost": 0.005378,
+        "input_cost": 0.002333,
+        "output_cost": 0.003045
+      }
+    ]
+  },
+  "workout": {
+    "name": "Structured Zone Workout",
+    "description": "Warm-up, followed by Zone 2 and Zone 3 blocks with recovery between, ending with a cooldown.",
+    "workout_duration": 3300,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 600,
+        "power": 188,
+        "powerAdjustedUpward": 198,
+        "powerAdjustedDownward": 178,
+        "zone": 2,
+        "perc_ftp": 75,
+        "type": "warmup",
+        "notes": "Warm up in Zone 2."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 600,
+        "endTimeSeconds": 1500,
+        "power": 188,
+        "powerAdjustedUpward": 198,
+        "powerAdjustedDownward": 178,
+        "zone": 2,
+        "perc_ftp": 75,
+        "type": "interval",
+        "notes": "Sustain effort in Zone 2."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 1500,
+        "endTimeSeconds": 2400,
+        "power": 238,
+        "powerAdjustedUpward": 248,
+        "powerAdjustedDownward": 228,
+        "zone": 3,
+        "perc_ftp": 95,
+        "type": "interval",
+        "notes": "Sustain effort in Zone 3."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 2400,
+        "endTimeSeconds": 2700,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "recovery",
+        "notes": "Recover in low Zone 2."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 2700,
+        "endTimeSeconds": 3300,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "cooldown",
+        "notes": "Cooldown in low Zone 2."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 3300,
+        "calculated_duration": 3300,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}

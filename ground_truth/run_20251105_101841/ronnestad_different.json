@@ -1,0 +1,943 @@
+{
+  "prompt_id": "ronnestad_different",
+  "prompt_description": "Ronnestad intervals for anaerobic capacity",
+  "user_prompt": "20min warmup, main set Ronnestad intervals: 13x30 seconds @ 200-250% FTP with 15 seconds active recovery at 50% FTP, 3min easy, repeat set again, 15min cooldown.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T10:33:19.817341",
+  "generation_metadata": {
+    "attempts": 3,
+    "total_latency_all_attempts": 74864,
+    "total_tokens_all_attempts": {
+      "input": 3255,
+      "output": 10371,
+      "total": 13626
+    },
+    "total_cost_all_attempts": 0.097324,
+    "total_input_cost_all_attempts": 0.007096,
+    "total_output_cost_all_attempts": 0.090228,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 22051,
+        "tokens": {
+          "input": 1085,
+          "output": 3454,
+          "total": 4539
+        },
+        "cost": 0.032415,
+        "input_cost": 0.002365,
+        "output_cost": 0.03005
+      },
+      {
+        "attempt": 2,
+        "latency_ms": 27888,
+        "tokens": {
+          "input": 1085,
+          "output": 3691,
+          "total": 4776
+        },
+        "cost": 0.034477,
+        "input_cost": 0.002365,
+        "output_cost": 0.032112
+      },
+      {
+        "attempt": 3,
+        "latency_ms": 24925,
+        "tokens": {
+          "input": 1085,
+          "output": 3226,
+          "total": 4311
+        },
+        "cost": 0.030432,
+        "input_cost": 0.002365,
+        "output_cost": 0.028066
+      }
+    ]
+  },
+  "workout": {
+    "name": "Ronnestad Intervals with Warmup and Cooldown",
+    "description": "This workout includes a warm-up, two sets of Ronnestad intervals with a break in between, followed by a cool-down.",
+    "workout_duration": 5460,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 1200,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "warmup",
+        "notes": "Warm up steadily before main sets."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 1200,
+        "endTimeSeconds": 1230,
+        "power": 500,
+        "powerAdjustedUpward": 510,
+        "powerAdjustedDownward": 490,
+        "zone": 7,
+        "perc_ftp": 200,
+        "type": "interval",
+        "notes": "Burst effort."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 1230,
+        "endTimeSeconds": 1245,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Active recovery."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 1245,
+        "endTimeSeconds": 1275,
+        "power": 500,
+        "powerAdjustedUpward": 510,
+        "powerAdjustedDownward": 490,
+        "zone": 7,
+        "perc_ftp": 200,
+        "type": "interval",
+        "notes": "Burst effort."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 1275,
+        "endTimeSeconds": 1290,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Active recovery."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 1290,
+        "endTimeSeconds": 1320,
+        "power": 500,
+        "powerAdjustedUpward": 510,
+        "powerAdjustedDownward": 490,
+        "zone": 7,
+        "perc_ftp": 200,
+        "type": "interval",
+        "notes": "Burst effort."
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 1320,
+        "endTimeSeconds": 1335,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Active recovery."
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 1335,
+        "endTimeSeconds": 1365,
+        "power": 500,
+        "powerAdjustedUpward": 510,
+        "powerAdjustedDownward": 490,
+        "zone": 7,
+        "perc_ftp": 200,
+        "type": "interval",
+        "notes": "Burst effort."
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 1365,
+        "endTimeSeconds": 1380,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Active recovery."
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 1380,
+        "endTimeSeconds": 1410,
+        "power": 500,
+        "powerAdjustedUpward": 510,
+        "powerAdjustedDownward": 490,
+        "zone": 7,
+        "perc_ftp": 200,
+        "type": "interval",
+        "notes": "Burst effort."
+      },
+      {
+        "segment_number": 11,
+        "startTimeSeconds": 1410,
+        "endTimeSeconds": 1425,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Active recovery."
+      },
+      {
+        "segment_number": 12,
+        "startTimeSeconds": 1425,
+        "endTimeSeconds": 1455,
+        "power": 500,
+        "powerAdjustedUpward": 510,
+        "powerAdjustedDownward": 490,
+        "zone": 7,
+        "perc_ftp": 200,
+        "type": "interval",
+        "notes": "Burst effort."
+      },
+      {
+        "segment_number": 13,
+        "startTimeSeconds": 1455,
+        "endTimeSeconds": 1470,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Active recovery."
+      },
+      {
+        "segment_number": 14,
+        "startTimeSeconds": 1470,
+        "endTimeSeconds": 1500,
+        "power": 500,
+        "powerAdjustedUpward": 510,
+        "powerAdjustedDownward": 490,
+        "zone": 7,
+        "perc_ftp": 200,
+        "type": "interval",
+        "notes": "Burst effort."
+      },
+      {
+        "segment_number": 15,
+        "startTimeSeconds": 1500,
+        "endTimeSeconds": 1515,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Active recovery."
+      },
+      {
+        "segment_number": 16,
+        "startTimeSeconds": 1515,
+        "endTimeSeconds": 1545,
+        "power": 500,
+        "powerAdjustedUpward": 510,
+        "powerAdjustedDownward": 490,
+        "zone": 7,
+        "perc_ftp": 200,
+        "type": "interval",
+        "notes": "Burst effort."
+      },
+      {
+        "segment_number": 17,
+        "startTimeSeconds": 1545,
+        "endTimeSeconds": 1560,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Active recovery."
+      },
+      {
+        "segment_number": 18,
+        "startTimeSeconds": 1560,
+        "endTimeSeconds": 1590,
+        "power": 500,
+        "powerAdjustedUpward": 510,
+        "powerAdjustedDownward": 490,
+        "zone": 7,
+        "perc_ftp": 200,
+        "type": "interval",
+        "notes": "Burst effort."
+      },
+      {
+        "segment_number": 19,
+        "startTimeSeconds": 1590,
+        "endTimeSeconds": 1605,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Active recovery."
+      },
+      {
+        "segment_number": 20,
+        "startTimeSeconds": 1605,
+        "endTimeSeconds": 1635,
+        "power": 500,
+        "powerAdjustedUpward": 510,
+        "powerAdjustedDownward": 490,
+        "zone": 7,
+        "perc_ftp": 200,
+        "type": "interval",
+        "notes": "Burst effort."
+      },
+      {
+        "segment_number": 21,
+        "startTimeSeconds": 1635,
+        "endTimeSeconds": 1650,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Active recovery."
+      },
+      {
+        "segment_number": 22,
+        "startTimeSeconds": 1650,
+        "endTimeSeconds": 1680,
+        "power": 500,
+        "powerAdjustedUpward": 510,
+        "powerAdjustedDownward": 490,
+        "zone": 7,
+        "perc_ftp": 200,
+        "type": "interval",
+        "notes": "Burst effort."
+      },
+      {
+        "segment_number": 23,
+        "startTimeSeconds": 1680,
+        "endTimeSeconds": 1695,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Active recovery."
+      },
+      {
+        "segment_number": 24,
+        "startTimeSeconds": 1695,
+        "endTimeSeconds": 1725,
+        "power": 500,
+        "powerAdjustedUpward": 510,
+        "powerAdjustedDownward": 490,
+        "zone": 7,
+        "perc_ftp": 200,
+        "type": "interval",
+        "notes": "Burst effort."
+      },
+      {
+        "segment_number": 25,
+        "startTimeSeconds": 1725,
+        "endTimeSeconds": 1740,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Active recovery."
+      },
+      {
+        "segment_number": 26,
+        "startTimeSeconds": 1740,
+        "endTimeSeconds": 1770,
+        "power": 500,
+        "powerAdjustedUpward": 510,
+        "powerAdjustedDownward": 490,
+        "zone": 7,
+        "perc_ftp": 200,
+        "type": "interval",
+        "notes": "Burst effort."
+      },
+      {
+        "segment_number": 27,
+        "startTimeSeconds": 1770,
+        "endTimeSeconds": 1785,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Active recovery."
+      },
+      {
+        "segment_number": 28,
+        "startTimeSeconds": 1785,
+        "endTimeSeconds": 1815,
+        "power": 500,
+        "powerAdjustedUpward": 510,
+        "powerAdjustedDownward": 490,
+        "zone": 7,
+        "perc_ftp": 200,
+        "type": "interval",
+        "notes": "Burst effort."
+      },
+      {
+        "segment_number": 29,
+        "startTimeSeconds": 1815,
+        "endTimeSeconds": 1830,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Active recovery."
+      },
+      {
+        "segment_number": 30,
+        "startTimeSeconds": 1830,
+        "endTimeSeconds": 2010,
+        "power": 75,
+        "powerAdjustedUpward": 85,
+        "powerAdjustedDownward": 65,
+        "zone": 1,
+        "perc_ftp": 30,
+        "type": "rest",
+        "notes": "Recover before next set."
+      },
+      {
+        "segment_number": 31,
+        "startTimeSeconds": 2010,
+        "endTimeSeconds": 2040,
+        "power": 500,
+        "powerAdjustedUpward": 510,
+        "powerAdjustedDownward": 490,
+        "zone": 7,
+        "perc_ftp": 200,
+        "type": "interval",
+        "notes": "Burst effort."
+      },
+      {
+        "segment_number": 32,
+        "startTimeSeconds": 2040,
+        "endTimeSeconds": 2055,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Active recovery."
+      },
+      {
+        "segment_number": 33,
+        "startTimeSeconds": 2055,
+        "endTimeSeconds": 2085,
+        "power": 500,
+        "powerAdjustedUpward": 510,
+        "powerAdjustedDownward": 490,
+        "zone": 7,
+        "perc_ftp": 200,
+        "type": "interval",
+        "notes": "Burst effort."
+      },
+      {
+        "segment_number": 34,
+        "startTimeSeconds": 2085,
+        "endTimeSeconds": 2100,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Active recovery."
+      },
+      {
+        "segment_number": 35,
+        "startTimeSeconds": 2100,
+        "endTimeSeconds": 2130,
+        "power": 500,
+        "powerAdjustedUpward": 510,
+        "powerAdjustedDownward": 490,
+        "zone": 7,
+        "perc_ftp": 200,
+        "type": "interval",
+        "notes": "Burst effort."
+      },
+      {
+        "segment_number": 36,
+        "startTimeSeconds": 2130,
+        "endTimeSeconds": 2145,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Active recovery."
+      },
+      {
+        "segment_number": 37,
+        "startTimeSeconds": 2145,
+        "endTimeSeconds": 2175,
+        "power": 500,
+        "powerAdjustedUpward": 510,
+        "powerAdjustedDownward": 490,
+        "zone": 7,
+        "perc_ftp": 200,
+        "type": "interval",
+        "notes": "Burst effort."
+      },
+      {
+        "segment_number": 38,
+        "startTimeSeconds": 2175,
+        "endTimeSeconds": 2190,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Active recovery."
+      },
+      {
+        "segment_number": 39,
+        "startTimeSeconds": 2190,
+        "endTimeSeconds": 2220,
+        "power": 500,
+        "powerAdjustedUpward": 510,
+        "powerAdjustedDownward": 490,
+        "zone": 7,
+        "perc_ftp": 200,
+        "type": "interval",
+        "notes": "Burst effort."
+      },
+      {
+        "segment_number": 40,
+        "startTimeSeconds": 2220,
+        "endTimeSeconds": 2235,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Active recovery."
+      },
+      {
+        "segment_number": 41,
+        "startTimeSeconds": 2235,
+        "endTimeSeconds": 2265,
+        "power": 500,
+        "powerAdjustedUpward": 510,
+        "powerAdjustedDownward": 490,
+        "zone": 7,
+        "perc_ftp": 200,
+        "type": "interval",
+        "notes": "Burst effort."
+      },
+      {
+        "segment_number": 42,
+        "startTimeSeconds": 2265,
+        "endTimeSeconds": 2280,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Active recovery."
+      },
+      {
+        "segment_number": 43,
+        "startTimeSeconds": 2280,
+        "endTimeSeconds": 2310,
+        "power": 500,
+        "powerAdjustedUpward": 510,
+        "powerAdjustedDownward": 490,
+        "zone": 7,
+        "perc_ftp": 200,
+        "type": "interval",
+        "notes": "Burst effort."
+      },
+      {
+        "segment_number": 44,
+        "startTimeSeconds": 2310,
+        "endTimeSeconds": 2325,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Active recovery."
+      },
+      {
+        "segment_number": 45,
+        "startTimeSeconds": 2325,
+        "endTimeSeconds": 2355,
+        "power": 500,
+        "powerAdjustedUpward": 510,
+        "powerAdjustedDownward": 490,
+        "zone": 7,
+        "perc_ftp": 200,
+        "type": "interval",
+        "notes": "Burst effort."
+      },
+      {
+        "segment_number": 46,
+        "startTimeSeconds": 2355,
+        "endTimeSeconds": 2370,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Active recovery."
+      },
+      {
+        "segment_number": 47,
+        "startTimeSeconds": 2370,
+        "endTimeSeconds": 2400,
+        "power": 500,
+        "powerAdjustedUpward": 510,
+        "powerAdjustedDownward": 490,
+        "zone": 7,
+        "perc_ftp": 200,
+        "type": "interval",
+        "notes": "Burst effort."
+      },
+      {
+        "segment_number": 48,
+        "startTimeSeconds": 2400,
+        "endTimeSeconds": 2415,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Active recovery."
+      },
+      {
+        "segment_number": 49,
+        "startTimeSeconds": 2415,
+        "endTimeSeconds": 2445,
+        "power": 500,
+        "powerAdjustedUpward": 510,
+        "powerAdjustedDownward": 490,
+        "zone": 7,
+        "perc_ftp": 200,
+        "type": "interval",
+        "notes": "Burst effort."
+      },
+      {
+        "segment_number": 50,
+        "startTimeSeconds": 2445,
+        "endTimeSeconds": 2460,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Active recovery."
+      },
+      {
+        "segment_number": 51,
+        "startTimeSeconds": 2460,
+        "endTimeSeconds": 2490,
+        "power": 500,
+        "powerAdjustedUpward": 510,
+        "powerAdjustedDownward": 490,
+        "zone": 7,
+        "perc_ftp": 200,
+        "type": "interval",
+        "notes": "Burst effort."
+      },
+      {
+        "segment_number": 52,
+        "startTimeSeconds": 2490,
+        "endTimeSeconds": 2505,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Active recovery."
+      },
+      {
+        "segment_number": 53,
+        "startTimeSeconds": 2505,
+        "endTimeSeconds": 2535,
+        "power": 500,
+        "powerAdjustedUpward": 510,
+        "powerAdjustedDownward": 490,
+        "zone": 7,
+        "perc_ftp": 200,
+        "type": "interval",
+        "notes": "Burst effort."
+      },
+      {
+        "segment_number": 54,
+        "startTimeSeconds": 2535,
+        "endTimeSeconds": 2550,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 2,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Active recovery."
+      },
+      {
+        "segment_number": 55,
+        "startTimeSeconds": 2550,
+        "endTimeSeconds": 2730,
+        "power": 75,
+        "powerAdjustedUpward": 85,
+        "powerAdjustedDownward": 65,
+        "zone": 1,
+        "perc_ftp": 30,
+        "type": "cooldown",
+        "notes": "Cool down to finish workout."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "6/8",
+    "pass_rate": 75.0,
+    "all_passed": false,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 5460,
+        "calculated_duration": 2730,
+        "difference": 2730
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": false,
+        "mismatches": [
+          {
+            "segment_number": 1,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 3,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 5,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 7,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 9,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 11,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 13,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 15,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 17,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 19,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 21,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 23,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 25,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 27,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 29,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 32,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 34,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 36,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 38,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 40,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 42,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 44,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 46,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 48,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 50,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 52,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          },
+          {
+            "segment_number": 54,
+            "power": 125,
+            "declared_zone": 2,
+            "actual_zone": 1
+          }
+        ]
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": false
+}

@@ -1,0 +1,516 @@
+{
+  "prompt_id": "tabata_sprints",
+  "prompt_description": "Tabata protocol sprint intervals",
+  "user_prompt": "15min warmup, then Tabata protocol: 8 rounds of 20 seconds all-out sprint / 10 seconds easy recovery (total 4 minutes), 5min easy, repeat Tabata set one more time, 10min cooldown.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-04T16:10:51.977418",
+  "generation_metadata": {
+    "attempts": 3,
+    "total_latency_all_attempts": 107290,
+    "total_tokens_all_attempts": {
+      "input": 4092,
+      "output": 6637,
+      "total": 10729
+    },
+    "total_cost_all_attempts": 0.066662,
+    "total_input_cost_all_attempts": 0.008921,
+    "total_output_cost_all_attempts": 0.057742,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 37187,
+        "tokens": {
+          "input": 1364,
+          "output": 2480,
+          "total": 3844
+        },
+        "cost": 0.02455,
+        "input_cost": 0.002974,
+        "output_cost": 0.021576
+      },
+      {
+        "attempt": 2,
+        "latency_ms": 33872,
+        "tokens": {
+          "input": 1364,
+          "output": 2168,
+          "total": 3532
+        },
+        "cost": 0.021835,
+        "input_cost": 0.002974,
+        "output_cost": 0.018862
+      },
+      {
+        "attempt": 3,
+        "latency_ms": 36231,
+        "tokens": {
+          "input": 1364,
+          "output": 1989,
+          "total": 3353
+        },
+        "cost": 0.020278,
+        "input_cost": 0.002974,
+        "output_cost": 0.017304
+      }
+    ]
+  },
+  "workout": {
+    "name": "Tabata High Intensity Intervals",
+    "description": "This workout includes a warmup, two sets of Tabata intervals, and a cooldown. It aims to improve both anaerobic and aerobic fitness by incorporating short, intense bursts of exercise followed by active recovery.",
+    "workout_duration": 2700,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 300,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "warmup",
+        "notes": "Gradual ramp-up to 65% of FTP."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 300,
+        "endTimeSeconds": 600,
+        "power": 163,
+        "powerAdjustedUpward": 173,
+        "powerAdjustedDownward": 153,
+        "zone": 2,
+        "perc_ftp": 65,
+        "type": "warmup",
+        "notes": "Continue ramp-up to 70% of FTP."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 600,
+        "endTimeSeconds": 900,
+        "power": 175,
+        "powerAdjustedUpward": 185,
+        "powerAdjustedDownward": 165,
+        "zone": 2,
+        "perc_ftp": 70,
+        "type": "warmup",
+        "notes": "Finish warmup at 70% of FTP."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 900,
+        "endTimeSeconds": 920,
+        "power": 400,
+        "powerAdjustedUpward": 410,
+        "powerAdjustedDownward": 390,
+        "zone": 7,
+        "perc_ftp": 160,
+        "type": "interval",
+        "notes": "All-out sprint."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 920,
+        "endTimeSeconds": 930,
+        "power": 100,
+        "powerAdjustedUpward": 110,
+        "powerAdjustedDownward": 90,
+        "zone": 1,
+        "perc_ftp": 40,
+        "type": "recovery",
+        "notes": "Easy recovery."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 930,
+        "endTimeSeconds": 950,
+        "power": 400,
+        "powerAdjustedUpward": 410,
+        "powerAdjustedDownward": 390,
+        "zone": 7,
+        "perc_ftp": 160,
+        "type": "interval",
+        "notes": "All-out sprint."
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 950,
+        "endTimeSeconds": 960,
+        "power": 100,
+        "powerAdjustedUpward": 110,
+        "powerAdjustedDownward": 90,
+        "zone": 1,
+        "perc_ftp": 40,
+        "type": "recovery",
+        "notes": "Easy recovery."
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 960,
+        "endTimeSeconds": 980,
+        "power": 400,
+        "powerAdjustedUpward": 410,
+        "powerAdjustedDownward": 390,
+        "zone": 7,
+        "perc_ftp": 160,
+        "type": "interval",
+        "notes": "All-out sprint."
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 980,
+        "endTimeSeconds": 990,
+        "power": 100,
+        "powerAdjustedUpward": 110,
+        "powerAdjustedDownward": 90,
+        "zone": 1,
+        "perc_ftp": 40,
+        "type": "recovery",
+        "notes": "Easy recovery."
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 990,
+        "endTimeSeconds": 1010,
+        "power": 400,
+        "powerAdjustedUpward": 410,
+        "powerAdjustedDownward": 390,
+        "zone": 7,
+        "perc_ftp": 160,
+        "type": "interval",
+        "notes": "All-out sprint."
+      },
+      {
+        "segment_number": 11,
+        "startTimeSeconds": 1010,
+        "endTimeSeconds": 1020,
+        "power": 100,
+        "powerAdjustedUpward": 110,
+        "powerAdjustedDownward": 90,
+        "zone": 1,
+        "perc_ftp": 40,
+        "type": "recovery",
+        "notes": "Easy recovery."
+      },
+      {
+        "segment_number": 12,
+        "startTimeSeconds": 1020,
+        "endTimeSeconds": 1040,
+        "power": 400,
+        "powerAdjustedUpward": 410,
+        "powerAdjustedDownward": 390,
+        "zone": 7,
+        "perc_ftp": 160,
+        "type": "interval",
+        "notes": "All-out sprint."
+      },
+      {
+        "segment_number": 13,
+        "startTimeSeconds": 1040,
+        "endTimeSeconds": 1050,
+        "power": 100,
+        "powerAdjustedUpward": 110,
+        "powerAdjustedDownward": 90,
+        "zone": 1,
+        "perc_ftp": 40,
+        "type": "recovery",
+        "notes": "Easy recovery."
+      },
+      {
+        "segment_number": 14,
+        "startTimeSeconds": 1050,
+        "endTimeSeconds": 1070,
+        "power": 400,
+        "powerAdjustedUpward": 410,
+        "powerAdjustedDownward": 390,
+        "zone": 7,
+        "perc_ftp": 160,
+        "type": "interval",
+        "notes": "All-out sprint."
+      },
+      {
+        "segment_number": 15,
+        "startTimeSeconds": 1070,
+        "endTimeSeconds": 1080,
+        "power": 100,
+        "powerAdjustedUpward": 110,
+        "powerAdjustedDownward": 90,
+        "zone": 1,
+        "perc_ftp": 40,
+        "type": "recovery",
+        "notes": "Easy recovery."
+      },
+      {
+        "segment_number": 16,
+        "startTimeSeconds": 1080,
+        "endTimeSeconds": 1100,
+        "power": 400,
+        "powerAdjustedUpward": 410,
+        "powerAdjustedDownward": 390,
+        "zone": 7,
+        "perc_ftp": 160,
+        "type": "interval",
+        "notes": "All-out sprint."
+      },
+      {
+        "segment_number": 17,
+        "startTimeSeconds": 1100,
+        "endTimeSeconds": 1110,
+        "power": 100,
+        "powerAdjustedUpward": 110,
+        "powerAdjustedDownward": 90,
+        "zone": 1,
+        "perc_ftp": 40,
+        "type": "recovery",
+        "notes": "Easy recovery."
+      },
+      {
+        "segment_number": 18,
+        "startTimeSeconds": 1110,
+        "endTimeSeconds": 1410,
+        "power": 175,
+        "powerAdjustedUpward": 185,
+        "powerAdjustedDownward": 165,
+        "zone": 2,
+        "perc_ftp": 70,
+        "type": "recovery",
+        "notes": "Easy spinning for recovery."
+      },
+      {
+        "segment_number": 19,
+        "startTimeSeconds": 1410,
+        "endTimeSeconds": 1430,
+        "power": 400,
+        "powerAdjustedUpward": 410,
+        "powerAdjustedDownward": 390,
+        "zone": 7,
+        "perc_ftp": 160,
+        "type": "interval",
+        "notes": "All-out sprint."
+      },
+      {
+        "segment_number": 20,
+        "startTimeSeconds": 1430,
+        "endTimeSeconds": 1440,
+        "power": 100,
+        "powerAdjustedUpward": 110,
+        "powerAdjustedDownward": 90,
+        "zone": 1,
+        "perc_ftp": 40,
+        "type": "recovery",
+        "notes": "Easy recovery."
+      },
+      {
+        "segment_number": 21,
+        "startTimeSeconds": 1440,
+        "endTimeSeconds": 1460,
+        "power": 400,
+        "powerAdjustedUpward": 410,
+        "powerAdjustedDownward": 390,
+        "zone": 7,
+        "perc_ftp": 160,
+        "type": "interval",
+        "notes": "All-out sprint."
+      },
+      {
+        "segment_number": 22,
+        "startTimeSeconds": 1460,
+        "endTimeSeconds": 1470,
+        "power": 100,
+        "powerAdjustedUpward": 110,
+        "powerAdjustedDownward": 90,
+        "zone": 1,
+        "perc_ftp": 40,
+        "type": "recovery",
+        "notes": "Easy recovery."
+      },
+      {
+        "segment_number": 23,
+        "startTimeSeconds": 1470,
+        "endTimeSeconds": 1490,
+        "power": 400,
+        "powerAdjustedUpward": 410,
+        "powerAdjustedDownward": 390,
+        "zone": 7,
+        "perc_ftp": 160,
+        "type": "interval",
+        "notes": "All-out sprint."
+      },
+      {
+        "segment_number": 24,
+        "startTimeSeconds": 1490,
+        "endTimeSeconds": 1500,
+        "power": 100,
+        "powerAdjustedUpward": 110,
+        "powerAdjustedDownward": 90,
+        "zone": 1,
+        "perc_ftp": 40,
+        "type": "recovery",
+        "notes": "Easy recovery."
+      },
+      {
+        "segment_number": 25,
+        "startTimeSeconds": 1500,
+        "endTimeSeconds": 1520,
+        "power": 400,
+        "powerAdjustedUpward": 410,
+        "powerAdjustedDownward": 390,
+        "zone": 7,
+        "perc_ftp": 160,
+        "type": "interval",
+        "notes": "All-out sprint."
+      },
+      {
+        "segment_number": 26,
+        "startTimeSeconds": 1520,
+        "endTimeSeconds": 1530,
+        "power": 100,
+        "powerAdjustedUpward": 110,
+        "powerAdjustedDownward": 90,
+        "zone": 1,
+        "perc_ftp": 40,
+        "type": "recovery",
+        "notes": "Easy recovery."
+      },
+      {
+        "segment_number": 27,
+        "startTimeSeconds": 1530,
+        "endTimeSeconds": 1550,
+        "power": 400,
+        "powerAdjustedUpward": 410,
+        "powerAdjustedDownward": 390,
+        "zone": 7,
+        "perc_ftp": 160,
+        "type": "interval",
+        "notes": "All-out sprint."
+      },
+      {
+        "segment_number": 28,
+        "startTimeSeconds": 1550,
+        "endTimeSeconds": 1560,
+        "power": 100,
+        "powerAdjustedUpward": 110,
+        "powerAdjustedDownward": 90,
+        "zone": 1,
+        "perc_ftp": 40,
+        "type": "recovery",
+        "notes": "Easy recovery."
+      },
+      {
+        "segment_number": 29,
+        "startTimeSeconds": 1560,
+        "endTimeSeconds": 1580,
+        "power": 400,
+        "powerAdjustedUpward": 410,
+        "powerAdjustedDownward": 390,
+        "zone": 7,
+        "perc_ftp": 160,
+        "type": "interval",
+        "notes": "All-out sprint."
+      },
+      {
+        "segment_number": 30,
+        "startTimeSeconds": 1580,
+        "endTimeSeconds": 1590,
+        "power": 100,
+        "powerAdjustedUpward": 110,
+        "powerAdjustedDownward": 90,
+        "zone": 1,
+        "perc_ftp": 40,
+        "type": "recovery",
+        "notes": "Easy recovery."
+      },
+      {
+        "segment_number": 31,
+        "startTimeSeconds": 1590,
+        "endTimeSeconds": 1610,
+        "power": 400,
+        "powerAdjustedUpward": 410,
+        "powerAdjustedDownward": 390,
+        "zone": 7,
+        "perc_ftp": 160,
+        "type": "interval",
+        "notes": "All-out sprint."
+      },
+      {
+        "segment_number": 32,
+        "startTimeSeconds": 1610,
+        "endTimeSeconds": 1620,
+        "power": 100,
+        "powerAdjustedUpward": 110,
+        "powerAdjustedDownward": 90,
+        "zone": 1,
+        "perc_ftp": 40,
+        "type": "recovery",
+        "notes": "Easy recovery."
+      },
+      {
+        "segment_number": 33,
+        "startTimeSeconds": 1620,
+        "endTimeSeconds": 1920,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "cooldown",
+        "notes": "Gradual cooldown to lower HR."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "7/8",
+    "pass_rate": 87.5,
+    "all_passed": false,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 2700,
+        "calculated_duration": 1920,
+        "difference": 780
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": false
+}

@@ -1,0 +1,240 @@
+{
+  "prompt_id": "climbing_intervals_wattage",
+  "prompt_description": "Climbing intervals with specific wattage",
+  "user_prompt": "WU 15min @150W, 5x6min @310\u2192320W on 3% climb / 3min easy spin, CD 10min Z1.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-04T16:00:16.274066",
+  "generation_metadata": {
+    "attempts": 1,
+    "total_latency_all_attempts": 17603,
+    "total_tokens_all_attempts": {
+      "input": 1351,
+      "output": 811,
+      "total": 2162
+    },
+    "total_cost_all_attempts": 0.010001,
+    "total_input_cost_all_attempts": 0.002945,
+    "total_output_cost_all_attempts": 0.007056,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 17603,
+        "tokens": {
+          "input": 1351,
+          "output": 811,
+          "total": 2162
+        },
+        "cost": 0.010001,
+        "input_cost": 0.002945,
+        "output_cost": 0.007056
+      }
+    ]
+  },
+  "workout": {
+    "name": "Climb Power Intervals",
+    "description": "This workout includes a warm-up, high power climb intervals, and a cool-down. It's designed to increase your climbing power and endurance.",
+    "workout_duration": 4320,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 900,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "warmup",
+        "notes": "Warm up at a steady pace to prepare for the intense interval session."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 900,
+        "endTimeSeconds": 1260,
+        "power": 310,
+        "powerAdjustedUpward": 320,
+        "powerAdjustedDownward": 300,
+        "zone": 6,
+        "perc_ftp": 124,
+        "type": "interval",
+        "notes": "First climb interval. Push hard on a 3% climb."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 1260,
+        "endTimeSeconds": 1440,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "recovery",
+        "notes": "Recover and spin easy."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 1440,
+        "endTimeSeconds": 1800,
+        "power": 310,
+        "powerAdjustedUpward": 320,
+        "powerAdjustedDownward": 300,
+        "zone": 6,
+        "perc_ftp": 124,
+        "type": "interval",
+        "notes": "Second climb interval. Maintain power on the 3% slope."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 1800,
+        "endTimeSeconds": 1980,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "recovery",
+        "notes": "Recover and spin easy."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 1980,
+        "endTimeSeconds": 2340,
+        "power": 310,
+        "powerAdjustedUpward": 320,
+        "powerAdjustedDownward": 300,
+        "zone": 6,
+        "perc_ftp": 124,
+        "type": "interval",
+        "notes": "Third climb interval. Keep focused and strong."
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 2340,
+        "endTimeSeconds": 2520,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "recovery",
+        "notes": "Recover and spin easy."
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 2520,
+        "endTimeSeconds": 2880,
+        "power": 310,
+        "powerAdjustedUpward": 320,
+        "powerAdjustedDownward": 300,
+        "zone": 6,
+        "perc_ftp": 124,
+        "type": "interval",
+        "notes": "Fourth climb interval. Stay consistent with your effort."
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 2880,
+        "endTimeSeconds": 3060,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "recovery",
+        "notes": "Recover and spin easy."
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 3060,
+        "endTimeSeconds": 3420,
+        "power": 310,
+        "powerAdjustedUpward": 320,
+        "powerAdjustedDownward": 300,
+        "zone": 6,
+        "perc_ftp": 124,
+        "type": "interval",
+        "notes": "Fifth and final climb interval. Give it your all on this climb."
+      },
+      {
+        "segment_number": 11,
+        "startTimeSeconds": 3420,
+        "endTimeSeconds": 3600,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "recovery",
+        "notes": "Recover and spin easy."
+      },
+      {
+        "segment_number": 12,
+        "startTimeSeconds": 3600,
+        "endTimeSeconds": 4320,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "cooldown",
+        "notes": "Cool down at a relaxed pace to help recovery."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 4320,
+        "calculated_duration": 4320,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}

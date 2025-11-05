@@ -1,0 +1,192 @@
+{
+  "prompt_id": "progressive_blocks",
+  "prompt_description": "Progressive Z2 to Z3 blocks",
+  "user_prompt": "Warmup 10 minutes, main set first block 15 minutes Z2, second block 15 minutes Z3, 5-minute recovery between, 10-minute cooldown.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-04T15:59:00.998830",
+  "generation_metadata": {
+    "attempts": 1,
+    "total_latency_all_attempts": 10816,
+    "total_tokens_all_attempts": {
+      "input": 1349,
+      "output": 550,
+      "total": 1899
+    },
+    "total_cost_all_attempts": 0.007726,
+    "total_input_cost_all_attempts": 0.002941,
+    "total_output_cost_all_attempts": 0.004785,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 10816,
+        "tokens": {
+          "input": 1349,
+          "output": 550,
+          "total": 1899
+        },
+        "cost": 0.007726,
+        "input_cost": 0.002941,
+        "output_cost": 0.004785
+      }
+    ]
+  },
+  "workout": {
+    "name": "Structured Endurance and Tempo Training",
+    "description": "A cycling workout focusing on gradual warm-up, endurance, tempo training, and cool-down. This session will improve cardiovascular efficiency and muscular endurance.",
+    "workout_duration": 3300,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 120,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "warmup",
+        "notes": "Warm-up at 60% FTP."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 120,
+        "endTimeSeconds": 240,
+        "power": 163,
+        "powerAdjustedUpward": 173,
+        "powerAdjustedDownward": 153,
+        "zone": 2,
+        "perc_ftp": 65,
+        "type": "warmup",
+        "notes": "Continue warming up at 65% FTP."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 240,
+        "endTimeSeconds": 360,
+        "power": 175,
+        "powerAdjustedUpward": 185,
+        "powerAdjustedDownward": 165,
+        "zone": 2,
+        "perc_ftp": 70,
+        "type": "warmup",
+        "notes": "Increase warm-up to 70% FTP."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 360,
+        "endTimeSeconds": 480,
+        "power": 188,
+        "powerAdjustedUpward": 198,
+        "powerAdjustedDownward": 178,
+        "zone": 2,
+        "perc_ftp": 75,
+        "type": "warmup",
+        "notes": "Conclude warm-up at 75% FTP."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 480,
+        "endTimeSeconds": 1320,
+        "power": 163,
+        "powerAdjustedUpward": 173,
+        "powerAdjustedDownward": 153,
+        "zone": 2,
+        "perc_ftp": 65,
+        "type": "interval",
+        "notes": "15-minute Zone 2 endurance block."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 1320,
+        "endTimeSeconds": 1620,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "5-minute recovery at 50% FTP."
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 1620,
+        "endTimeSeconds": 2520,
+        "power": 213,
+        "powerAdjustedUpward": 223,
+        "powerAdjustedDownward": 203,
+        "zone": 3,
+        "perc_ftp": 85,
+        "type": "interval",
+        "notes": "15-minute Zone 3 tempo block."
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 2520,
+        "endTimeSeconds": 3300,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "cooldown",
+        "notes": "Cool-down at 50% FTP."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 3300,
+        "calculated_duration": 3300,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}

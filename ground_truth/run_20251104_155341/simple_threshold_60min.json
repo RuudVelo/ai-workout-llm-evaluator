@@ -1,0 +1,204 @@
+{
+  "prompt_id": "simple_threshold_60min",
+  "prompt_description": "Simple threshold workout request",
+  "user_prompt": "Create a 60 minute threshold workout.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-04T16:01:25.879939",
+  "generation_metadata": {
+    "attempts": 1,
+    "total_latency_all_attempts": 20139,
+    "total_tokens_all_attempts": {
+      "input": 1322,
+      "output": 612,
+      "total": 1934
+    },
+    "total_cost_all_attempts": 0.008206,
+    "total_input_cost_all_attempts": 0.002882,
+    "total_output_cost_all_attempts": 0.005324,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 20139,
+        "tokens": {
+          "input": 1322,
+          "output": 612,
+          "total": 1934
+        },
+        "cost": 0.008206,
+        "input_cost": 0.002882,
+        "output_cost": 0.005324
+      }
+    ]
+  },
+  "workout": {
+    "name": "60 Minute Threshold Focus",
+    "description": "This workout focuses on sustained efforts around your threshold to improve your ability to maintain a high power output for an extended period. It includes warm-up, intervals at threshold power, and cooldown.",
+    "workout_duration": 3600,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 600,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "warmup",
+        "notes": "Warm-up with light intensity to prepare your muscles."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 600,
+        "endTimeSeconds": 1200,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "interval",
+        "notes": "Maintain a steady effort below threshold."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 1200,
+        "endTimeSeconds": 1260,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Short recovery to prepare for threshold blocks."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 1260,
+        "endTimeSeconds": 1860,
+        "power": 250,
+        "powerAdjustedUpward": 260,
+        "powerAdjustedDownward": 240,
+        "zone": 4,
+        "perc_ftp": 100,
+        "type": "interval",
+        "notes": "Hold threshold power for sustained effort."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 1860,
+        "endTimeSeconds": 1920,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Brief recovery."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 1920,
+        "endTimeSeconds": 2520,
+        "power": 250,
+        "powerAdjustedUpward": 260,
+        "powerAdjustedDownward": 240,
+        "zone": 4,
+        "perc_ftp": 100,
+        "type": "interval",
+        "notes": "Continue to push at threshold power."
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 2520,
+        "endTimeSeconds": 2580,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Brief spin at low intensity."
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 2580,
+        "endTimeSeconds": 3180,
+        "power": 250,
+        "powerAdjustedUpward": 260,
+        "powerAdjustedDownward": 240,
+        "zone": 4,
+        "perc_ftp": 100,
+        "type": "interval",
+        "notes": "Final threshold interval, stay focused."
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 3180,
+        "endTimeSeconds": 3600,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "cooldown",
+        "notes": "Cool down with easy pedaling to help recovery."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 3600,
+        "calculated_duration": 3600,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}

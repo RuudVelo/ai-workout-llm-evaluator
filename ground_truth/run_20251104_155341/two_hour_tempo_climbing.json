@@ -1,0 +1,132 @@
+{
+  "prompt_id": "two_hour_tempo_climbing",
+  "prompt_description": "Long ride with tempo and climbing",
+  "user_prompt": "Two-hour ride, steady tempo for the first hour, moderate climbing in the second, staying below threshold.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-04T15:54:48.173702",
+  "generation_metadata": {
+    "attempts": 1,
+    "total_latency_all_attempts": 3872,
+    "total_tokens_all_attempts": {
+      "input": 1335,
+      "output": 239,
+      "total": 1574
+    },
+    "total_cost_all_attempts": 0.00499,
+    "total_input_cost_all_attempts": 0.00291,
+    "total_output_cost_all_attempts": 0.002079,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 3872,
+        "tokens": {
+          "input": 1335,
+          "output": 239,
+          "total": 1574
+        },
+        "cost": 0.00499,
+        "input_cost": 0.00291,
+        "output_cost": 0.002079
+      }
+    ]
+  },
+  "workout": {
+    "name": "Steady Tempo and Climbing Ride",
+    "description": "A two-hour structured workout with a steady tempo pace for the first hour followed by moderate climbing under threshold in the second hour. Enhances endurance and climbing efficiency.",
+    "workout_duration": 7200,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 3600,
+        "power": 213,
+        "powerAdjustedUpward": 223,
+        "powerAdjustedDownward": 203,
+        "zone": 3,
+        "perc_ftp": 85,
+        "type": "interval",
+        "notes": "Steady tempo pace for endurance."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 3600,
+        "endTimeSeconds": 5400,
+        "power": 238,
+        "powerAdjustedUpward": 248,
+        "powerAdjustedDownward": 228,
+        "zone": 3,
+        "perc_ftp": 95,
+        "type": "interval",
+        "notes": "Moderate climbing staying below threshold."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 5400,
+        "endTimeSeconds": 7200,
+        "power": 238,
+        "powerAdjustedUpward": 248,
+        "powerAdjustedDownward": 228,
+        "zone": 3,
+        "perc_ftp": 95,
+        "type": "interval",
+        "notes": "Continue moderate climbing staying below threshold."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 7200,
+        "calculated_duration": 7200,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}

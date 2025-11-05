@@ -1,0 +1,252 @@
+{
+  "prompt_id": "threshold_5x6",
+  "prompt_description": "Threshold intervals 5x6 minutes",
+  "user_prompt": "10-minute easy spin warmup, then main set of 5x6-minute threshold intervals with 3 minutes recovery between each, finishing with 10-minute cooldown.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T10:22:56.118854",
+  "generation_metadata": {
+    "attempts": 2,
+    "total_latency_all_attempts": 18542,
+    "total_tokens_all_attempts": {
+      "input": 2136,
+      "output": 1470,
+      "total": 3606
+    },
+    "total_cost_all_attempts": 0.017445,
+    "total_input_cost_all_attempts": 0.004656,
+    "total_output_cost_all_attempts": 0.012789,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 9085,
+        "tokens": {
+          "input": 1068,
+          "output": 723,
+          "total": 1791
+        },
+        "cost": 0.008618,
+        "input_cost": 0.002328,
+        "output_cost": 0.00629
+      },
+      {
+        "attempt": 2,
+        "latency_ms": 9457,
+        "tokens": {
+          "input": 1068,
+          "output": 747,
+          "total": 1815
+        },
+        "cost": 0.008827,
+        "input_cost": 0.002328,
+        "output_cost": 0.006499
+      }
+    ]
+  },
+  "workout": {
+    "name": "Threshold Interval Workout",
+    "description": "10-minute easy spin warmup, 5x 6-minute threshold intervals with 3 minutes recovery, 10-minute cooldown.",
+    "workout_duration": 4320,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 600,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "warmup",
+        "notes": "Easy Spin Warmup"
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 600,
+        "endTimeSeconds": 960,
+        "power": 250,
+        "powerAdjustedUpward": 260,
+        "powerAdjustedDownward": 240,
+        "zone": 4,
+        "perc_ftp": 100,
+        "type": "interval",
+        "notes": "Threshold Interval 1"
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 960,
+        "endTimeSeconds": 1140,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "recovery",
+        "notes": "Recovery after Interval 1"
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 1140,
+        "endTimeSeconds": 1500,
+        "power": 250,
+        "powerAdjustedUpward": 260,
+        "powerAdjustedDownward": 240,
+        "zone": 4,
+        "perc_ftp": 100,
+        "type": "interval",
+        "notes": "Threshold Interval 2"
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 1500,
+        "endTimeSeconds": 1680,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "recovery",
+        "notes": "Recovery after Interval 2"
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 1680,
+        "endTimeSeconds": 2040,
+        "power": 250,
+        "powerAdjustedUpward": 260,
+        "powerAdjustedDownward": 240,
+        "zone": 4,
+        "perc_ftp": 100,
+        "type": "interval",
+        "notes": "Threshold Interval 3"
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 2040,
+        "endTimeSeconds": 2220,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "recovery",
+        "notes": "Recovery after Interval 3"
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 2220,
+        "endTimeSeconds": 2580,
+        "power": 250,
+        "powerAdjustedUpward": 260,
+        "powerAdjustedDownward": 240,
+        "zone": 4,
+        "perc_ftp": 100,
+        "type": "interval",
+        "notes": "Threshold Interval 4"
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 2580,
+        "endTimeSeconds": 2760,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "recovery",
+        "notes": "Recovery after Interval 4"
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 2760,
+        "endTimeSeconds": 3120,
+        "power": 250,
+        "powerAdjustedUpward": 260,
+        "powerAdjustedDownward": 240,
+        "zone": 4,
+        "perc_ftp": 100,
+        "type": "interval",
+        "notes": "Threshold Interval 5"
+      },
+      {
+        "segment_number": 11,
+        "startTimeSeconds": 3120,
+        "endTimeSeconds": 3300,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "recovery",
+        "notes": "Recovery after Interval 5"
+      },
+      {
+        "segment_number": 12,
+        "startTimeSeconds": 3300,
+        "endTimeSeconds": 4320,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "cooldown",
+        "notes": "Cooldown"
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 4320,
+        "calculated_duration": 4320,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}

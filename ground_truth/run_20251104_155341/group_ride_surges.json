@@ -1,0 +1,216 @@
+{
+  "prompt_id": "group_ride_surges",
+  "prompt_description": "Variable intensity group ride simulation",
+  "user_prompt": "Fast group ride \u2014 started easy for 15 min, then about 40 min of surging between Z3 and Z6 depending on hills and sprints, then 10 min spin home.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-04T15:55:30.454717",
+  "generation_metadata": {
+    "attempts": 1,
+    "total_latency_all_attempts": 13790,
+    "total_tokens_all_attempts": {
+      "input": 1353,
+      "output": 670,
+      "total": 2023
+    },
+    "total_cost_all_attempts": 0.008779,
+    "total_input_cost_all_attempts": 0.00295,
+    "total_output_cost_all_attempts": 0.005829,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 13790,
+        "tokens": {
+          "input": 1353,
+          "output": 670,
+          "total": 2023
+        },
+        "cost": 0.008779,
+        "input_cost": 0.00295,
+        "output_cost": 0.005829
+      }
+    ]
+  },
+  "workout": {
+    "name": "Fast Group Ride Simulation",
+    "description": "A simulated fast group ride with an initial easy pace followed by high-intensity surges and concluding with an easy spin home. This workout is designed to replicate the varying intensity of a group ride, improving adaptation to changes in pace.",
+    "workout_duration": 3900,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 900,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "warmup",
+        "notes": "Start with an easy warm-up pace."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 900,
+        "endTimeSeconds": 1200,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "interval",
+        "notes": "Begin surging with a moderate effort."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 1200,
+        "endTimeSeconds": 1500,
+        "power": 275,
+        "powerAdjustedUpward": 285,
+        "powerAdjustedDownward": 265,
+        "zone": 5,
+        "perc_ftp": 110,
+        "type": "interval",
+        "notes": "Increase intensity for a hill or sprint."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 1500,
+        "endTimeSeconds": 1800,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "interval",
+        "notes": "Return to moderate pace."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 1800,
+        "endTimeSeconds": 2100,
+        "power": 275,
+        "powerAdjustedUpward": 285,
+        "powerAdjustedDownward": 265,
+        "zone": 5,
+        "perc_ftp": 110,
+        "type": "interval",
+        "notes": "Another high intensity surge."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 2100,
+        "endTimeSeconds": 2400,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "interval",
+        "notes": "Moderate pace recovery."
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 2400,
+        "endTimeSeconds": 2700,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Peak effort surge."
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 2700,
+        "endTimeSeconds": 3000,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "interval",
+        "notes": "Recover at a moderate pace."
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 3000,
+        "endTimeSeconds": 3600,
+        "power": 285,
+        "powerAdjustedUpward": 295,
+        "powerAdjustedDownward": 275,
+        "zone": 5,
+        "perc_ftp": 114,
+        "type": "interval",
+        "notes": "Alternate high intensity with hill surges."
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 3600,
+        "endTimeSeconds": 3900,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Cool down with easy spinning."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 3900,
+        "calculated_duration": 3900,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}

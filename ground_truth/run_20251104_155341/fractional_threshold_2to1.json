@@ -1,0 +1,420 @@
+{
+  "prompt_id": "fractional_threshold_2to1",
+  "prompt_description": "Fractional time threshold with 2:1 ratio",
+  "user_prompt": "10min warmup, 5x90 seconds @ 105% FTP with 45 seconds easy (2:1 work-to-rest), 5min recovery, then 3x2.5min @ 100% FTP with 75 seconds recovery, 10min cooldown.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-04T16:35:07.288151",
+  "generation_metadata": {
+    "attempts": 3,
+    "total_latency_all_attempts": 78879,
+    "total_tokens_all_attempts": {
+      "input": 4113,
+      "output": 4304,
+      "total": 8417
+    },
+    "total_cost_all_attempts": 0.046411,
+    "total_input_cost_all_attempts": 0.008966,
+    "total_output_cost_all_attempts": 0.037445,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 23707,
+        "tokens": {
+          "input": 1371,
+          "output": 1362,
+          "total": 2733
+        },
+        "cost": 0.014838,
+        "input_cost": 0.002989,
+        "output_cost": 0.011849
+      },
+      {
+        "attempt": 2,
+        "latency_ms": 26647,
+        "tokens": {
+          "input": 1371,
+          "output": 1326,
+          "total": 2697
+        },
+        "cost": 0.014525,
+        "input_cost": 0.002989,
+        "output_cost": 0.011536
+      },
+      {
+        "attempt": 3,
+        "latency_ms": 28525,
+        "tokens": {
+          "input": 1371,
+          "output": 1616,
+          "total": 2987
+        },
+        "cost": 0.017048,
+        "input_cost": 0.002989,
+        "output_cost": 0.014059
+      }
+    ]
+  },
+  "workout": {
+    "name": "Structured Interval Session",
+    "description": "This workout includes a warmup, intervals at FTP and above, with rest periods for recovery, and concludes with a cooldown. Designed to improve power output and aerobic capacity.",
+    "workout_duration": 3360,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 60,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "warmup",
+        "notes": "Warm-up segment to start easy and prepare the body."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 60,
+        "endTimeSeconds": 120,
+        "power": 162,
+        "powerAdjustedUpward": 172,
+        "powerAdjustedDownward": 152,
+        "zone": 2,
+        "perc_ftp": 65,
+        "type": "warmup",
+        "notes": "Continue warm-up, gradually increasing intensity."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 120,
+        "endTimeSeconds": 180,
+        "power": 175,
+        "powerAdjustedUpward": 185,
+        "powerAdjustedDownward": 165,
+        "zone": 2,
+        "perc_ftp": 70,
+        "type": "warmup",
+        "notes": "Continue warm-up, gradually increasing intensity."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 180,
+        "endTimeSeconds": 240,
+        "power": 188,
+        "powerAdjustedUpward": 198,
+        "powerAdjustedDownward": 178,
+        "zone": 2,
+        "perc_ftp": 75,
+        "type": "warmup",
+        "notes": "Continue warm-up, gradually increasing intensity."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 240,
+        "endTimeSeconds": 300,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "warmup",
+        "notes": "Continue warm-up, gradually increasing intensity."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 300,
+        "endTimeSeconds": 360,
+        "power": 212,
+        "powerAdjustedUpward": 222,
+        "powerAdjustedDownward": 202,
+        "zone": 3,
+        "perc_ftp": 85,
+        "type": "warmup",
+        "notes": "Continue warm-up, gradually increasing intensity."
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 360,
+        "endTimeSeconds": 420,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 3,
+        "perc_ftp": 90,
+        "type": "warmup",
+        "notes": "Continue warm-up, gradually increasing intensity."
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 420,
+        "endTimeSeconds": 480,
+        "power": 238,
+        "powerAdjustedUpward": 248,
+        "powerAdjustedDownward": 228,
+        "zone": 3,
+        "perc_ftp": 95,
+        "type": "warmup",
+        "notes": "Complete warm-up reaching higher endurance intensity."
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 480,
+        "endTimeSeconds": 540,
+        "power": 262,
+        "powerAdjustedUpward": 272,
+        "powerAdjustedDownward": 252,
+        "zone": 4,
+        "perc_ftp": 105,
+        "type": "interval",
+        "notes": "Interval 1: Work segment at 105% FTP."
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 540,
+        "endTimeSeconds": 585,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Rest 1: Easy pedaling."
+      },
+      {
+        "segment_number": 11,
+        "startTimeSeconds": 585,
+        "endTimeSeconds": 645,
+        "power": 262,
+        "powerAdjustedUpward": 272,
+        "powerAdjustedDownward": 252,
+        "zone": 4,
+        "perc_ftp": 105,
+        "type": "interval",
+        "notes": "Interval 2: Work segment at 105% FTP."
+      },
+      {
+        "segment_number": 12,
+        "startTimeSeconds": 645,
+        "endTimeSeconds": 690,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Rest 2: Easy pedaling."
+      },
+      {
+        "segment_number": 13,
+        "startTimeSeconds": 690,
+        "endTimeSeconds": 750,
+        "power": 262,
+        "powerAdjustedUpward": 272,
+        "powerAdjustedDownward": 252,
+        "zone": 4,
+        "perc_ftp": 105,
+        "type": "interval",
+        "notes": "Interval 3: Work segment at 105% FTP."
+      },
+      {
+        "segment_number": 14,
+        "startTimeSeconds": 750,
+        "endTimeSeconds": 795,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Rest 3: Easy pedaling."
+      },
+      {
+        "segment_number": 15,
+        "startTimeSeconds": 795,
+        "endTimeSeconds": 855,
+        "power": 262,
+        "powerAdjustedUpward": 272,
+        "powerAdjustedDownward": 252,
+        "zone": 4,
+        "perc_ftp": 105,
+        "type": "interval",
+        "notes": "Interval 4: Work segment at 105% FTP."
+      },
+      {
+        "segment_number": 16,
+        "startTimeSeconds": 855,
+        "endTimeSeconds": 900,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Rest 4: Easy pedaling."
+      },
+      {
+        "segment_number": 17,
+        "startTimeSeconds": 900,
+        "endTimeSeconds": 960,
+        "power": 262,
+        "powerAdjustedUpward": 272,
+        "powerAdjustedDownward": 252,
+        "zone": 4,
+        "perc_ftp": 105,
+        "type": "interval",
+        "notes": "Interval 5: Work segment at 105% FTP."
+      },
+      {
+        "segment_number": 18,
+        "startTimeSeconds": 960,
+        "endTimeSeconds": 1260,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Recovery block, long easy pedaling to lower heart rate."
+      },
+      {
+        "segment_number": 19,
+        "startTimeSeconds": 1260,
+        "endTimeSeconds": 1410,
+        "power": 250,
+        "powerAdjustedUpward": 260,
+        "powerAdjustedDownward": 240,
+        "zone": 4,
+        "perc_ftp": 100,
+        "type": "interval",
+        "notes": "Interval 1: Work segment at 100% FTP."
+      },
+      {
+        "segment_number": 20,
+        "startTimeSeconds": 1410,
+        "endTimeSeconds": 1485,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "recovery",
+        "notes": "Recovery segment after work interval."
+      },
+      {
+        "segment_number": 21,
+        "startTimeSeconds": 1485,
+        "endTimeSeconds": 1635,
+        "power": 250,
+        "powerAdjustedUpward": 260,
+        "powerAdjustedDownward": 240,
+        "zone": 4,
+        "perc_ftp": 100,
+        "type": "interval",
+        "notes": "Interval 2: Longer effort at FTP."
+      },
+      {
+        "segment_number": 22,
+        "startTimeSeconds": 1635,
+        "endTimeSeconds": 1710,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "recovery",
+        "notes": "Recovery segment after work interval."
+      },
+      {
+        "segment_number": 23,
+        "startTimeSeconds": 1710,
+        "endTimeSeconds": 1860,
+        "power": 250,
+        "powerAdjustedUpward": 260,
+        "powerAdjustedDownward": 240,
+        "zone": 4,
+        "perc_ftp": 100,
+        "type": "interval",
+        "notes": "Interval 3: Maintain FTP power."
+      },
+      {
+        "segment_number": 24,
+        "startTimeSeconds": 1860,
+        "endTimeSeconds": 1935,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "recovery",
+        "notes": "Recovery after interval block."
+      },
+      {
+        "segment_number": 25,
+        "startTimeSeconds": 1935,
+        "endTimeSeconds": 2535,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "cooldown",
+        "notes": "Cooldown: Gradually bring heart rate down and promote recovery."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "7/8",
+    "pass_rate": 87.5,
+    "all_passed": false,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": false,
+        "declared_duration": 3360,
+        "calculated_duration": 2535,
+        "difference": 825
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": false
+}

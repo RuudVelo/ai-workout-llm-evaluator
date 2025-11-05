@@ -1,0 +1,180 @@
+{
+  "prompt_id": "warmup_15min",
+  "prompt_description": "15 min WU",
+  "user_prompt": "Create a warm-up for which I can do before my time trial",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T10:25:35.043425",
+  "generation_metadata": {
+    "attempts": 1,
+    "total_latency_all_attempts": 10250,
+    "total_tokens_all_attempts": {
+      "input": 1048,
+      "output": 488,
+      "total": 1536
+    },
+    "total_cost_all_attempts": 0.00653,
+    "total_input_cost_all_attempts": 0.002285,
+    "total_output_cost_all_attempts": 0.004246,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 10250,
+        "tokens": {
+          "input": 1048,
+          "output": 488,
+          "total": 1536
+        },
+        "cost": 0.00653,
+        "input_cost": 0.002285,
+        "output_cost": 0.004246
+      }
+    ]
+  },
+  "workout": {
+    "name": "Time Trial Warm-up",
+    "description": "A structured warm-up routine designed to prepare for a time trial with gradual power increases and a short burst.",
+    "workout_duration": 1200,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 300,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "warmup",
+        "notes": "Begin with an easy spin to get the muscles activated."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 300,
+        "endTimeSeconds": 600,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "warmup",
+        "notes": "Gradually increase effort to a comfortable endurance pace."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 600,
+        "endTimeSeconds": 750,
+        "power": 175,
+        "powerAdjustedUpward": 185,
+        "powerAdjustedDownward": 165,
+        "zone": 2,
+        "perc_ftp": 70,
+        "type": "warmup",
+        "notes": "Further increase the intensity, preparing the body for higher efforts."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 750,
+        "endTimeSeconds": 900,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "warmup",
+        "notes": "Reach moderate pace, holding it steady."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 900,
+        "endTimeSeconds": 1050,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 3,
+        "perc_ftp": 90,
+        "type": "warmup",
+        "notes": "Steadily build up to threshold level."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 1050,
+        "endTimeSeconds": 1080,
+        "power": 275,
+        "powerAdjustedUpward": 285,
+        "powerAdjustedDownward": 265,
+        "zone": 5,
+        "perc_ftp": 110,
+        "type": "warmup",
+        "notes": "Short burst beyond threshold to prime the system."
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 1080,
+        "endTimeSeconds": 1200,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "cooldown",
+        "notes": "Cool down and recover before starting the time trial."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 1200,
+        "calculated_duration": 1200,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}

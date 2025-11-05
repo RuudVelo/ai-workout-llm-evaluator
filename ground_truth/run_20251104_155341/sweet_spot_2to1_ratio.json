@@ -1,0 +1,288 @@
+{
+  "prompt_id": "sweet_spot_2to1_ratio",
+  "prompt_description": "Sweet spot using strict 2:1 ratio",
+  "user_prompt": "Warmup 10 minutes. Main set: 4x16min @ 90% FTP with 8min recovery (2:1 work to rest). Cooldown 10 minutes.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-04T16:16:05.806843",
+  "generation_metadata": {
+    "attempts": 1,
+    "total_latency_all_attempts": 24609,
+    "total_tokens_all_attempts": {
+      "input": 1352,
+      "output": 1056,
+      "total": 2408
+    },
+    "total_cost_all_attempts": 0.012135,
+    "total_input_cost_all_attempts": 0.002947,
+    "total_output_cost_all_attempts": 0.009187,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 24609,
+        "tokens": {
+          "input": 1352,
+          "output": 1056,
+          "total": 2408
+        },
+        "cost": 0.012135,
+        "input_cost": 0.002947,
+        "output_cost": 0.009187
+      }
+    ]
+  },
+  "workout": {
+    "name": "90% FTP Repeats",
+    "description": "This workout consists of a warm-up, followed by intervals at 90% of FTP with a 2:1 work-to-rest ratio, designed to build sustained power, and then a cooldown.",
+    "workout_duration": 7080,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 120,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "warmup",
+        "notes": "Warmup ramp at 60% of FTP."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 120,
+        "endTimeSeconds": 240,
+        "power": 162,
+        "powerAdjustedUpward": 172,
+        "powerAdjustedDownward": 152,
+        "zone": 2,
+        "perc_ftp": 65,
+        "type": "warmup",
+        "notes": "Warmup ramp increasing."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 240,
+        "endTimeSeconds": 360,
+        "power": 175,
+        "powerAdjustedUpward": 185,
+        "powerAdjustedDownward": 165,
+        "zone": 2,
+        "perc_ftp": 70,
+        "type": "warmup",
+        "notes": "Warmup ramp increasing."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 360,
+        "endTimeSeconds": 480,
+        "power": 188,
+        "powerAdjustedUpward": 198,
+        "powerAdjustedDownward": 178,
+        "zone": 2,
+        "perc_ftp": 75,
+        "type": "warmup",
+        "notes": "Warmup ramp increasing."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 480,
+        "endTimeSeconds": 600,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "warmup",
+        "notes": "Warmup ramp increasing."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 600,
+        "endTimeSeconds": 720,
+        "power": 213,
+        "powerAdjustedUpward": 223,
+        "powerAdjustedDownward": 203,
+        "zone": 3,
+        "perc_ftp": 85,
+        "type": "warmup",
+        "notes": "Warmup ramp increasing."
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 720,
+        "endTimeSeconds": 900,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 3,
+        "perc_ftp": 90,
+        "type": "warmup",
+        "notes": "End of warmup ramp."
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 900,
+        "endTimeSeconds": 1860,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 3,
+        "perc_ftp": 90,
+        "type": "interval",
+        "notes": "Main set - 1st interval at 90% of FTP."
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 1860,
+        "endTimeSeconds": 2340,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Recovery period after 1st interval."
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 2340,
+        "endTimeSeconds": 3300,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 3,
+        "perc_ftp": 90,
+        "type": "interval",
+        "notes": "Main set - 2nd interval at 90% of FTP."
+      },
+      {
+        "segment_number": 11,
+        "startTimeSeconds": 3300,
+        "endTimeSeconds": 3780,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Recovery period after 2nd interval."
+      },
+      {
+        "segment_number": 12,
+        "startTimeSeconds": 3780,
+        "endTimeSeconds": 4740,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 3,
+        "perc_ftp": 90,
+        "type": "interval",
+        "notes": "Main set - 3rd interval at 90% of FTP."
+      },
+      {
+        "segment_number": 13,
+        "startTimeSeconds": 4740,
+        "endTimeSeconds": 5220,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Recovery period after 3rd interval."
+      },
+      {
+        "segment_number": 14,
+        "startTimeSeconds": 5220,
+        "endTimeSeconds": 6180,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 3,
+        "perc_ftp": 90,
+        "type": "interval",
+        "notes": "Main set - 4th interval at 90% of FTP."
+      },
+      {
+        "segment_number": 15,
+        "startTimeSeconds": 6180,
+        "endTimeSeconds": 6660,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Recovery period after 4th interval."
+      },
+      {
+        "segment_number": 16,
+        "startTimeSeconds": 6660,
+        "endTimeSeconds": 7080,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "cooldown",
+        "notes": "Cooldown period."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 7080,
+        "calculated_duration": 7080,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}
