@@ -1,0 +1,168 @@
+{
+  "prompt_id": "progressive_blocks",
+  "prompt_description": "Progressive Z2 to Z3 blocks",
+  "user_prompt": "Warmup 10 minutes, main set first block 15 minutes Z2, second block 15 minutes Z3, 5-minute recovery between, 10-minute cooldown.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T11:36:17.846371",
+  "generation_metadata": {
+    "attempts": 1,
+    "total_latency_all_attempts": 4263,
+    "total_tokens_all_attempts": {
+      "input": 1118,
+      "output": 413,
+      "total": 1531
+    },
+    "total_cost_all_attempts": 0.00603,
+    "total_input_cost_all_attempts": 0.002437,
+    "total_output_cost_all_attempts": 0.003593,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 4263,
+        "tokens": {
+          "input": 1118,
+          "output": 413,
+          "total": 1531
+        },
+        "cost": 0.00603,
+        "input_cost": 0.002437,
+        "output_cost": 0.003593
+      }
+    ]
+  },
+  "workout": {
+    "name": "Structured Workout",
+    "description": "A workout including warmup, main set with two blocks, recovery, and cooldown.",
+    "workout_duration": 3300,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 600,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "warmup",
+        "notes": "10-minute warmup at 50% FTP."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 600,
+        "endTimeSeconds": 1500,
+        "power": 164,
+        "powerAdjustedUpward": 174,
+        "powerAdjustedDownward": 154,
+        "zone": 2,
+        "perc_ftp": 66,
+        "type": "active",
+        "notes": "15 minutes in Zone 2."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 1500,
+        "endTimeSeconds": 1800,
+        "power": 100,
+        "powerAdjustedUpward": 110,
+        "powerAdjustedDownward": 90,
+        "zone": 1,
+        "perc_ftp": 40,
+        "type": "recovery",
+        "notes": "5-minute recovery at 40% FTP."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 1800,
+        "endTimeSeconds": 2700,
+        "power": 214,
+        "powerAdjustedUpward": 224,
+        "powerAdjustedDownward": 204,
+        "zone": 3,
+        "perc_ftp": 86,
+        "type": "active",
+        "notes": "15 minutes in Zone 3."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 2700,
+        "endTimeSeconds": 3000,
+        "power": 100,
+        "powerAdjustedUpward": 110,
+        "powerAdjustedDownward": 90,
+        "zone": 1,
+        "perc_ftp": 40,
+        "type": "recovery",
+        "notes": "5-minute recovery at 40% FTP."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 3000,
+        "endTimeSeconds": 3300,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "cooldown",
+        "notes": "10-minute cooldown at 50% FTP."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 3300,
+        "calculated_duration": 3300,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}

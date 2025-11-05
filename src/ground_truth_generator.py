@@ -11,6 +11,7 @@ from typing import Dict, Any, Optional
 
 from model_providers import get_provider
 from evaluator import WorkoutEvaluator
+from postprocessor import WorkoutPostprocessor
 
 
 def setup_logging(log_dir: Path, run_name: str) -> logging.Logger:
@@ -224,6 +225,10 @@ class GroundTruthGenerator:
                         "workout": None,
                     }
                     return ground_truth
+
+                # Apply postprocessing fixes to parsed JSON (before validation)
+                postprocessor = WorkoutPostprocessor(ftp, self.logger)
+                workout = postprocessor.postprocess(workout)
 
                 # Validate if requested
                 if validate:

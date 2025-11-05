@@ -12,6 +12,7 @@ import traceback
 
 from model_providers import get_provider, ModelResponse
 from evaluator import WorkoutEvaluator
+from postprocessor import WorkoutPostprocessor
 
 
 def setup_logging(log_file: Path) -> logging.Logger:
@@ -142,6 +143,11 @@ class EvalRunner:
                 except json.JSONDecodeError as e:
                     parsed_json = None
                     parse_error = str(e)
+
+                # Apply postprocessing fixes if JSON parsed successfully (before validation)
+                if parsed_json is not None:
+                    postprocessor = WorkoutPostprocessor(ftp, self.logger)
+                    parsed_json = postprocessor.postprocess(parsed_json)
 
                 # Run validation if JSON parsed successfully
                 validation_result = None

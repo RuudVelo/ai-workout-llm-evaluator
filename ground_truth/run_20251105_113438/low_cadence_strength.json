@@ -1,0 +1,264 @@
+{
+  "prompt_id": "low_cadence_strength",
+  "prompt_description": "Low cadence strength intervals",
+  "user_prompt": "Warmup\n- 20m 60% 90-100rpm\n\nMain set 6x\n- 4m 100% 40-50 rpm, power is less important than getting the torque\n- 5m recovery at 40%\n\nCooldown\n- 20m 60% 90-100rpm\n",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T11:37:11.967914",
+  "generation_metadata": {
+    "attempts": 1,
+    "total_latency_all_attempts": 10540,
+    "total_tokens_all_attempts": {
+      "input": 1151,
+      "output": 949,
+      "total": 2100
+    },
+    "total_cost_all_attempts": 0.010765,
+    "total_input_cost_all_attempts": 0.002509,
+    "total_output_cost_all_attempts": 0.008256,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 10540,
+        "tokens": {
+          "input": 1151,
+          "output": 949,
+          "total": 2100
+        },
+        "cost": 0.010765,
+        "input_cost": 0.002509,
+        "output_cost": 0.008256
+      }
+    ]
+  },
+  "workout": {
+    "name": "Torque Focused Workout",
+    "description": "Warm up and cooldown with a focus on efficient spinning, followed by high torque intervals.",
+    "workout_duration": 5640,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 1200,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "warmup",
+        "notes": "Warm-up at 60% FTP, 90-100 rpm."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 1200,
+        "endTimeSeconds": 1440,
+        "power": 250,
+        "powerAdjustedUpward": 260,
+        "powerAdjustedDownward": 240,
+        "zone": 4,
+        "perc_ftp": 100,
+        "type": "interval",
+        "notes": "4 min high torque, 40-50 rpm."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 1440,
+        "endTimeSeconds": 1740,
+        "power": 100,
+        "powerAdjustedUpward": 110,
+        "powerAdjustedDownward": 90,
+        "zone": 1,
+        "perc_ftp": 40,
+        "type": "recovery",
+        "notes": "5 min recovery at 40% FTP."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 1740,
+        "endTimeSeconds": 1980,
+        "power": 250,
+        "powerAdjustedUpward": 260,
+        "powerAdjustedDownward": 240,
+        "zone": 4,
+        "perc_ftp": 100,
+        "type": "interval",
+        "notes": "4 min high torque, 40-50 rpm."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 1980,
+        "endTimeSeconds": 2280,
+        "power": 100,
+        "powerAdjustedUpward": 110,
+        "powerAdjustedDownward": 90,
+        "zone": 1,
+        "perc_ftp": 40,
+        "type": "recovery",
+        "notes": "5 min recovery at 40% FTP."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 2280,
+        "endTimeSeconds": 2520,
+        "power": 250,
+        "powerAdjustedUpward": 260,
+        "powerAdjustedDownward": 240,
+        "zone": 4,
+        "perc_ftp": 100,
+        "type": "interval",
+        "notes": "4 min high torque, 40-50 rpm."
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 2520,
+        "endTimeSeconds": 2820,
+        "power": 100,
+        "powerAdjustedUpward": 110,
+        "powerAdjustedDownward": 90,
+        "zone": 1,
+        "perc_ftp": 40,
+        "type": "recovery",
+        "notes": "5 min recovery at 40% FTP."
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 2820,
+        "endTimeSeconds": 3060,
+        "power": 250,
+        "powerAdjustedUpward": 260,
+        "powerAdjustedDownward": 240,
+        "zone": 4,
+        "perc_ftp": 100,
+        "type": "interval",
+        "notes": "4 min high torque, 40-50 rpm."
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 3060,
+        "endTimeSeconds": 3360,
+        "power": 100,
+        "powerAdjustedUpward": 110,
+        "powerAdjustedDownward": 90,
+        "zone": 1,
+        "perc_ftp": 40,
+        "type": "recovery",
+        "notes": "5 min recovery at 40% FTP."
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 3360,
+        "endTimeSeconds": 3600,
+        "power": 250,
+        "powerAdjustedUpward": 260,
+        "powerAdjustedDownward": 240,
+        "zone": 4,
+        "perc_ftp": 100,
+        "type": "interval",
+        "notes": "4 min high torque, 40-50 rpm."
+      },
+      {
+        "segment_number": 11,
+        "startTimeSeconds": 3600,
+        "endTimeSeconds": 3900,
+        "power": 100,
+        "powerAdjustedUpward": 110,
+        "powerAdjustedDownward": 90,
+        "zone": 1,
+        "perc_ftp": 40,
+        "type": "recovery",
+        "notes": "5 min recovery at 40% FTP."
+      },
+      {
+        "segment_number": 12,
+        "startTimeSeconds": 3900,
+        "endTimeSeconds": 4140,
+        "power": 250,
+        "powerAdjustedUpward": 260,
+        "powerAdjustedDownward": 240,
+        "zone": 4,
+        "perc_ftp": 100,
+        "type": "interval",
+        "notes": "4 min high torque, 40-50 rpm."
+      },
+      {
+        "segment_number": 13,
+        "startTimeSeconds": 4140,
+        "endTimeSeconds": 4440,
+        "power": 100,
+        "powerAdjustedUpward": 110,
+        "powerAdjustedDownward": 90,
+        "zone": 1,
+        "perc_ftp": 40,
+        "type": "recovery",
+        "notes": "5 min recovery at 40% FTP."
+      },
+      {
+        "segment_number": 14,
+        "startTimeSeconds": 4440,
+        "endTimeSeconds": 5640,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "cooldown",
+        "notes": "Cooldown at 60% FTP, 90-100 rpm."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 5640,
+        "calculated_duration": 5640,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}

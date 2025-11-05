@@ -1,0 +1,396 @@
+{
+  "prompt_id": "zwift_complex_progressive_blocks",
+  "prompt_description": "Complex workout with multiple progressive blocks",
+  "user_prompt": "5min from 30 to 70% FTP\n20sec @ 80% FTP\n20sec @ 100% FTP\n20sec @ 120% FTP\n3min @ 50% FTP\n3min @ 110% FTP\n2min @ 120% FTP\n6min @ 50% FTP\n20min free ride\n5min from 50 to 30% FTP\n",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T11:35:44.991865",
+  "generation_metadata": {
+    "attempts": 1,
+    "total_latency_all_attempts": 14472,
+    "total_tokens_all_attempts": {
+      "input": 1166,
+      "output": 1574,
+      "total": 2740
+    },
+    "total_cost_all_attempts": 0.016236,
+    "total_input_cost_all_attempts": 0.002542,
+    "total_output_cost_all_attempts": 0.013694,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 14472,
+        "tokens": {
+          "input": 1166,
+          "output": 1574,
+          "total": 2740
+        },
+        "cost": 0.016236,
+        "input_cost": 0.002542,
+        "output_cost": 0.013694
+      }
+    ]
+  },
+  "workout": {
+    "name": "Custom Workout",
+    "description": "Combination of intervals, ramps, and a free ride, including a cooldown.",
+    "workout_duration": 2940,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 60,
+        "power": 75,
+        "powerAdjustedUpward": 85,
+        "powerAdjustedDownward": 65,
+        "zone": 1,
+        "perc_ftp": 30,
+        "type": "active",
+        "notes": "Ramp from 30 to 70% FTP"
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 60,
+        "endTimeSeconds": 120,
+        "power": 90,
+        "powerAdjustedUpward": 100,
+        "powerAdjustedDownward": 80,
+        "zone": 1,
+        "perc_ftp": 36,
+        "type": "active",
+        "notes": "Ramp from 30 to 70% FTP"
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 120,
+        "endTimeSeconds": 180,
+        "power": 105,
+        "powerAdjustedUpward": 115,
+        "powerAdjustedDownward": 95,
+        "zone": 1,
+        "perc_ftp": 42,
+        "type": "active",
+        "notes": "Ramp from 30 to 70% FTP"
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 180,
+        "endTimeSeconds": 240,
+        "power": 120,
+        "powerAdjustedUpward": 130,
+        "powerAdjustedDownward": 110,
+        "zone": 1,
+        "perc_ftp": 48,
+        "type": "active",
+        "notes": "Ramp from 30 to 70% FTP"
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 240,
+        "endTimeSeconds": 300,
+        "power": 135,
+        "powerAdjustedUpward": 145,
+        "powerAdjustedDownward": 125,
+        "zone": 1,
+        "perc_ftp": 54,
+        "type": "active",
+        "notes": "Ramp from 30 to 70% FTP"
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 300,
+        "endTimeSeconds": 320,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "interval",
+        "notes": "20sec @ 80% FTP"
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 320,
+        "endTimeSeconds": 340,
+        "power": 250,
+        "powerAdjustedUpward": 260,
+        "powerAdjustedDownward": 240,
+        "zone": 4,
+        "perc_ftp": 100,
+        "type": "interval",
+        "notes": "20sec @ 100% FTP"
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 340,
+        "endTimeSeconds": 360,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "20sec @ 120% FTP"
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 360,
+        "endTimeSeconds": 540,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "3min @ 50% FTP"
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 540,
+        "endTimeSeconds": 720,
+        "power": 275,
+        "powerAdjustedUpward": 285,
+        "powerAdjustedDownward": 265,
+        "zone": 5,
+        "perc_ftp": 110,
+        "type": "interval",
+        "notes": "3min @ 110% FTP"
+      },
+      {
+        "segment_number": 11,
+        "startTimeSeconds": 720,
+        "endTimeSeconds": 840,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "2min @ 120% FTP"
+      },
+      {
+        "segment_number": 12,
+        "startTimeSeconds": 840,
+        "endTimeSeconds": 1200,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "6min @ 50% FTP"
+      },
+      {
+        "segment_number": 13,
+        "startTimeSeconds": 1200,
+        "endTimeSeconds": 1380,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "active",
+        "notes": "Free ride @ 55% FTP"
+      },
+      {
+        "segment_number": 14,
+        "startTimeSeconds": 1380,
+        "endTimeSeconds": 1560,
+        "power": 144,
+        "powerAdjustedUpward": 154,
+        "powerAdjustedDownward": 134,
+        "zone": 2,
+        "perc_ftp": 58,
+        "type": "active",
+        "notes": "Free ride @ 58% FTP"
+      },
+      {
+        "segment_number": 15,
+        "startTimeSeconds": 1560,
+        "endTimeSeconds": 1740,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "active",
+        "notes": "Free ride @ 60% FTP"
+      },
+      {
+        "segment_number": 16,
+        "startTimeSeconds": 1740,
+        "endTimeSeconds": 1920,
+        "power": 156,
+        "powerAdjustedUpward": 166,
+        "powerAdjustedDownward": 146,
+        "zone": 2,
+        "perc_ftp": 62,
+        "type": "active",
+        "notes": "Free ride @ 62% FTP"
+      },
+      {
+        "segment_number": 17,
+        "startTimeSeconds": 1920,
+        "endTimeSeconds": 2100,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "active",
+        "notes": "Free ride @ 60% FTP"
+      },
+      {
+        "segment_number": 18,
+        "startTimeSeconds": 2100,
+        "endTimeSeconds": 2280,
+        "power": 144,
+        "powerAdjustedUpward": 154,
+        "powerAdjustedDownward": 134,
+        "zone": 2,
+        "perc_ftp": 58,
+        "type": "active",
+        "notes": "Free ride @ 58% FTP"
+      },
+      {
+        "segment_number": 19,
+        "startTimeSeconds": 2280,
+        "endTimeSeconds": 2460,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "active",
+        "notes": "Free ride @ 60% FTP"
+      },
+      {
+        "segment_number": 20,
+        "startTimeSeconds": 2460,
+        "endTimeSeconds": 2640,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "active",
+        "notes": "Free ride @ 55% FTP"
+      },
+      {
+        "segment_number": 21,
+        "startTimeSeconds": 2640,
+        "endTimeSeconds": 2700,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "cooldown",
+        "notes": "5min cooldown from 50 to 30% FTP"
+      },
+      {
+        "segment_number": 22,
+        "startTimeSeconds": 2700,
+        "endTimeSeconds": 2760,
+        "power": 120,
+        "powerAdjustedUpward": 130,
+        "powerAdjustedDownward": 110,
+        "zone": 1,
+        "perc_ftp": 48,
+        "type": "cooldown",
+        "notes": "5min cooldown from 50 to 30% FTP"
+      },
+      {
+        "segment_number": 23,
+        "startTimeSeconds": 2760,
+        "endTimeSeconds": 2820,
+        "power": 115,
+        "powerAdjustedUpward": 125,
+        "powerAdjustedDownward": 105,
+        "zone": 1,
+        "perc_ftp": 46,
+        "type": "cooldown",
+        "notes": "5min cooldown from 50 to 30% FTP"
+      },
+      {
+        "segment_number": 24,
+        "startTimeSeconds": 2820,
+        "endTimeSeconds": 2880,
+        "power": 110,
+        "powerAdjustedUpward": 120,
+        "powerAdjustedDownward": 100,
+        "zone": 1,
+        "perc_ftp": 44,
+        "type": "cooldown",
+        "notes": "5min cooldown from 50 to 30% FTP"
+      },
+      {
+        "segment_number": 25,
+        "startTimeSeconds": 2880,
+        "endTimeSeconds": 2940,
+        "power": 105,
+        "powerAdjustedUpward": 115,
+        "powerAdjustedDownward": 95,
+        "zone": 1,
+        "perc_ftp": 42,
+        "type": "cooldown",
+        "notes": "5min cooldown from 50 to 30% FTP"
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 2940,
+        "calculated_duration": 2940,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}

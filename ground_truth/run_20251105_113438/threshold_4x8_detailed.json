@@ -1,0 +1,204 @@
+{
+  "prompt_id": "threshold_4x8_detailed",
+  "prompt_description": "Threshold intervals with detailed instructions",
+  "user_prompt": "Start with 20 minutes of easy spinning, then complete 4 intervals of 8 minutes at threshold power with 4 minutes recovery between each. Finish with 10 minutes of light spinning.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T11:34:54.998092",
+  "generation_metadata": {
+    "attempts": 1,
+    "total_latency_all_attempts": 5541,
+    "total_tokens_all_attempts": {
+      "input": 1121,
+      "output": 584,
+      "total": 1705
+    },
+    "total_cost_all_attempts": 0.007525,
+    "total_input_cost_all_attempts": 0.002444,
+    "total_output_cost_all_attempts": 0.005081,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 5541,
+        "tokens": {
+          "input": 1121,
+          "output": 584,
+          "total": 1705
+        },
+        "cost": 0.007525,
+        "input_cost": 0.002444,
+        "output_cost": 0.005081
+      }
+    ]
+  },
+  "workout": {
+    "name": "Threshold Intervals with Warmup and Cooldown",
+    "description": "A structured workout with a 20-minute warmup, 4 threshold intervals, and a 10-minute cooldown.",
+    "workout_duration": 4440,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 1200,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "warmup",
+        "notes": "Easy spinning to warm up"
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 1200,
+        "endTimeSeconds": 1680,
+        "power": 250,
+        "powerAdjustedUpward": 260,
+        "powerAdjustedDownward": 240,
+        "zone": 4,
+        "perc_ftp": 100,
+        "type": "interval",
+        "notes": "8 minutes at threshold power"
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 1680,
+        "endTimeSeconds": 1920,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "recovery",
+        "notes": "4 minutes easy recovery"
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 1920,
+        "endTimeSeconds": 2400,
+        "power": 250,
+        "powerAdjustedUpward": 260,
+        "powerAdjustedDownward": 240,
+        "zone": 4,
+        "perc_ftp": 100,
+        "type": "interval",
+        "notes": "8 minutes at threshold power"
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 2400,
+        "endTimeSeconds": 2640,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "recovery",
+        "notes": "4 minutes easy recovery"
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 2640,
+        "endTimeSeconds": 3120,
+        "power": 250,
+        "powerAdjustedUpward": 260,
+        "powerAdjustedDownward": 240,
+        "zone": 4,
+        "perc_ftp": 100,
+        "type": "interval",
+        "notes": "8 minutes at threshold power"
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 3120,
+        "endTimeSeconds": 3360,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "recovery",
+        "notes": "4 minutes easy recovery"
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 3360,
+        "endTimeSeconds": 3840,
+        "power": 250,
+        "powerAdjustedUpward": 260,
+        "powerAdjustedDownward": 240,
+        "zone": 4,
+        "perc_ftp": 100,
+        "type": "interval",
+        "notes": "8 minutes at threshold power"
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 3840,
+        "endTimeSeconds": 4440,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "cooldown",
+        "notes": "Finish with light spinning for 10 minutes"
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 4440,
+        "calculated_duration": 4440,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}

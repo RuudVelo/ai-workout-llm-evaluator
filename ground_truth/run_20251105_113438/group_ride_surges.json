@@ -1,0 +1,216 @@
+{
+  "prompt_id": "group_ride_surges",
+  "prompt_description": "Variable intensity group ride simulation",
+  "user_prompt": "Fast group ride \u2014 started easy for 15 min, then about 40 min of surging between Z3 and Z6 depending on hills and sprints, then 10 min spin home.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T11:35:21.975197",
+  "generation_metadata": {
+    "attempts": 1,
+    "total_latency_all_attempts": 7548,
+    "total_tokens_all_attempts": {
+      "input": 1122,
+      "output": 645,
+      "total": 1767
+    },
+    "total_cost_all_attempts": 0.008057,
+    "total_input_cost_all_attempts": 0.002446,
+    "total_output_cost_all_attempts": 0.005611,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 7548,
+        "tokens": {
+          "input": 1122,
+          "output": 645,
+          "total": 1767
+        },
+        "cost": 0.008057,
+        "input_cost": 0.002446,
+        "output_cost": 0.005611
+      }
+    ]
+  },
+  "workout": {
+    "name": "Fast Group Ride",
+    "description": "A dynamic group ride with varying intensities, starting easy, followed by surging efforts, and ending with a cool down spin.",
+    "workout_duration": 3900,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 900,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "warmup",
+        "notes": "Easy start for the ride."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 900,
+        "endTimeSeconds": 1200,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 3,
+        "perc_ftp": 90,
+        "type": "interval",
+        "notes": "Surging on flat terrain."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 1200,
+        "endTimeSeconds": 1500,
+        "power": 275,
+        "powerAdjustedUpward": 285,
+        "powerAdjustedDownward": 265,
+        "zone": 5,
+        "perc_ftp": 110,
+        "type": "interval",
+        "notes": "Sprint effort on a small hill."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 1500,
+        "endTimeSeconds": 1800,
+        "power": 210,
+        "powerAdjustedUpward": 220,
+        "powerAdjustedDownward": 200,
+        "zone": 3,
+        "perc_ftp": 84,
+        "type": "interval",
+        "notes": "Recovery phase."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 1800,
+        "endTimeSeconds": 2100,
+        "power": 250,
+        "powerAdjustedUpward": 260,
+        "powerAdjustedDownward": 240,
+        "zone": 4,
+        "perc_ftp": 100,
+        "type": "interval",
+        "notes": "Surging effort."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 2100,
+        "endTimeSeconds": 2400,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Intense effort on the uphill."
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 2400,
+        "endTimeSeconds": 2700,
+        "power": 190,
+        "powerAdjustedUpward": 200,
+        "powerAdjustedDownward": 180,
+        "zone": 3,
+        "perc_ftp": 76,
+        "type": "recovery",
+        "notes": "Short recovery on the downhill."
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 2700,
+        "endTimeSeconds": 3000,
+        "power": 275,
+        "powerAdjustedUpward": 285,
+        "powerAdjustedDownward": 265,
+        "zone": 5,
+        "perc_ftp": 110,
+        "type": "interval",
+        "notes": "High effort on a steep hill."
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 3000,
+        "endTimeSeconds": 3300,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 3,
+        "perc_ftp": 90,
+        "type": "interval",
+        "notes": "Transition to spinning home."
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 3300,
+        "endTimeSeconds": 3900,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "cooldown",
+        "notes": "Cool down with a spin home."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 3900,
+        "calculated_duration": 3900,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}

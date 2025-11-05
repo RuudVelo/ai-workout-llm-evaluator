@@ -1,0 +1,192 @@
+{
+  "prompt_id": "sweet_spot_blocks_2to1_explanation",
+  "prompt_description": "Sweet spot intervals with 2:1 work to rest",
+  "user_prompt": "Warmup 10min, main set 3x20min sweet spot (88-93% FTP) with 10min easy recovery between using 2:1 work-to-rest ratio, cooldown 10min.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T11:37:51.287691",
+  "generation_metadata": {
+    "attempts": 1,
+    "total_latency_all_attempts": 5650,
+    "total_tokens_all_attempts": {
+      "input": 1127,
+      "output": 538,
+      "total": 1665
+    },
+    "total_cost_all_attempts": 0.007137,
+    "total_input_cost_all_attempts": 0.002457,
+    "total_output_cost_all_attempts": 0.004681,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 5650,
+        "tokens": {
+          "input": 1127,
+          "output": 538,
+          "total": 1665
+        },
+        "cost": 0.007137,
+        "input_cost": 0.002457,
+        "output_cost": 0.004681
+      }
+    ]
+  },
+  "workout": {
+    "name": "Sweet Spot Training with Long Intervals",
+    "description": "A structured workout with warmup, sweet spot intervals, recovery, and cooldown.",
+    "workout_duration": 6600,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 600,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "warmup",
+        "notes": "Warmup at 60% FTP."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 600,
+        "endTimeSeconds": 1800,
+        "power": 223,
+        "powerAdjustedUpward": 233,
+        "powerAdjustedDownward": 213,
+        "zone": 3,
+        "perc_ftp": 89,
+        "type": "interval",
+        "notes": "Sweet spot interval at 89% FTP."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 1800,
+        "endTimeSeconds": 2400,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "recovery",
+        "notes": "Recovery at 60% FTP."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 2400,
+        "endTimeSeconds": 3600,
+        "power": 223,
+        "powerAdjustedUpward": 233,
+        "powerAdjustedDownward": 213,
+        "zone": 3,
+        "perc_ftp": 89,
+        "type": "interval",
+        "notes": "Sweet spot interval at 89% FTP."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 3600,
+        "endTimeSeconds": 4200,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "recovery",
+        "notes": "Recovery at 60% FTP."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 4200,
+        "endTimeSeconds": 5400,
+        "power": 223,
+        "powerAdjustedUpward": 233,
+        "powerAdjustedDownward": 213,
+        "zone": 3,
+        "perc_ftp": 89,
+        "type": "interval",
+        "notes": "Sweet spot interval at 89% FTP."
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 5400,
+        "endTimeSeconds": 6000,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "recovery",
+        "notes": "Recovery at 60% FTP."
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 6000,
+        "endTimeSeconds": 6600,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "cooldown",
+        "notes": "Cooldown at 60% FTP."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 6600,
+        "calculated_duration": 6600,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}

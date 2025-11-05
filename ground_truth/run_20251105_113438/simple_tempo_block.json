@@ -1,0 +1,132 @@
+{
+  "prompt_id": "simple_tempo_block",
+  "prompt_description": "Simple tempo block workout",
+  "user_prompt": "10-minute warmup, then main set of 40 minutes at tempo, then cooldown 10 minutes.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T11:35:55.275705",
+  "generation_metadata": {
+    "attempts": 1,
+    "total_latency_all_attempts": 3037,
+    "total_tokens_all_attempts": {
+      "input": 1104,
+      "output": 234,
+      "total": 1338
+    },
+    "total_cost_all_attempts": 0.004443,
+    "total_input_cost_all_attempts": 0.002407,
+    "total_output_cost_all_attempts": 0.002036,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 3037,
+        "tokens": {
+          "input": 1104,
+          "output": 234,
+          "total": 1338
+        },
+        "cost": 0.004443,
+        "input_cost": 0.002407,
+        "output_cost": 0.002036
+      }
+    ]
+  },
+  "workout": {
+    "name": "Warmup, Tempo, Cooldown",
+    "description": "A structured workout with a 10-minute warmup, 40 minutes at tempo (zone 3), and a 10-minute cooldown.",
+    "workout_duration": 3600,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 600,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "warmup",
+        "notes": "Gradually increase intensity during warmup."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 600,
+        "endTimeSeconds": 3000,
+        "power": 214,
+        "powerAdjustedUpward": 224,
+        "powerAdjustedDownward": 204,
+        "zone": 3,
+        "perc_ftp": 86,
+        "type": "active",
+        "notes": "Maintain steady tempo pace."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 3000,
+        "endTimeSeconds": 3600,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "cooldown",
+        "notes": "Gradually decrease intensity during cooldown."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 3600,
+        "calculated_duration": 3600,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}

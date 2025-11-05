@@ -1,0 +1,168 @@
+{
+  "prompt_id": "warmup_15min",
+  "prompt_description": "15 min WU",
+  "user_prompt": "Create a warm-up for which I can do before my time trial",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T11:36:51.528072",
+  "generation_metadata": {
+    "attempts": 1,
+    "total_latency_all_attempts": 6194,
+    "total_tokens_all_attempts": {
+      "input": 1096,
+      "output": 406,
+      "total": 1502
+    },
+    "total_cost_all_attempts": 0.005921,
+    "total_input_cost_all_attempts": 0.002389,
+    "total_output_cost_all_attempts": 0.003532,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 6194,
+        "tokens": {
+          "input": 1096,
+          "output": 406,
+          "total": 1502
+        },
+        "cost": 0.005921,
+        "input_cost": 0.002389,
+        "output_cost": 0.003532
+      }
+    ]
+  },
+  "workout": {
+    "name": "Time Trial Warm-up",
+    "description": "Warm-up designed to prepare you for a time trial effort.",
+    "workout_duration": 900,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 300,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "warmup",
+        "notes": "Start easy to gradually get the muscles working."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 300,
+        "endTimeSeconds": 540,
+        "power": 175,
+        "powerAdjustedUpward": 185,
+        "powerAdjustedDownward": 165,
+        "zone": 2,
+        "perc_ftp": 70,
+        "type": "warmup",
+        "notes": "Increase intensity to get into endurance zone."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 540,
+        "endTimeSeconds": 660,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "warmup",
+        "notes": "Reach tempo level to warm up further."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 660,
+        "endTimeSeconds": 780,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 3,
+        "perc_ftp": 90,
+        "type": "warmup",
+        "notes": "Get close to threshold to prepare for high effort."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 780,
+        "endTimeSeconds": 810,
+        "power": 250,
+        "powerAdjustedUpward": 260,
+        "powerAdjustedDownward": 240,
+        "zone": 4,
+        "perc_ftp": 100,
+        "type": "warmup",
+        "notes": "Short effort at threshold to ready your system."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 810,
+        "endTimeSeconds": 900,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "cooldown",
+        "notes": "Ease off to finish warm-up with a relaxed pace."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 900,
+        "calculated_duration": 900,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}

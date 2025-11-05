@@ -1,0 +1,396 @@
+{
+  "prompt_id": "two_hour_tempo_climbing",
+  "prompt_description": "Long ride with tempo and climbing",
+  "user_prompt": "Two-hour ride, steady tempo for the first hour, moderate climbing in the second, staying below threshold.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T11:35:08.113157",
+  "generation_metadata": {
+    "attempts": 1,
+    "total_latency_all_attempts": 13091,
+    "total_tokens_all_attempts": {
+      "input": 1104,
+      "output": 1555,
+      "total": 2659
+    },
+    "total_cost_all_attempts": 0.015935,
+    "total_input_cost_all_attempts": 0.002407,
+    "total_output_cost_all_attempts": 0.013528,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 13091,
+        "tokens": {
+          "input": 1104,
+          "output": 1555,
+          "total": 2659
+        },
+        "cost": 0.015935,
+        "input_cost": 0.002407,
+        "output_cost": 0.013528
+      }
+    ]
+  },
+  "workout": {
+    "name": "Two-Hour Ride with Climb",
+    "description": "A two-hour session with a steady tempo for the first hour and moderate climbs in the second hour, staying below threshold.",
+    "workout_duration": 7200,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 3600,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "active",
+        "notes": "Steady tempo ride for the first hour."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 3600,
+        "endTimeSeconds": 3720,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 3,
+        "perc_ftp": 90,
+        "type": "interval",
+        "notes": "Moderate climb, below threshold."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 3720,
+        "endTimeSeconds": 3900,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "recovery",
+        "notes": "Recovery between climbs."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 3900,
+        "endTimeSeconds": 4020,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 3,
+        "perc_ftp": 90,
+        "type": "interval",
+        "notes": "Moderate climb, below threshold."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 4020,
+        "endTimeSeconds": 4200,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "recovery",
+        "notes": "Recovery between climbs."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 4200,
+        "endTimeSeconds": 4320,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 3,
+        "perc_ftp": 90,
+        "type": "interval",
+        "notes": "Moderate climb, below threshold."
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 4320,
+        "endTimeSeconds": 4500,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "recovery",
+        "notes": "Recovery between climbs."
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 4500,
+        "endTimeSeconds": 4620,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 3,
+        "perc_ftp": 90,
+        "type": "interval",
+        "notes": "Moderate climb, below threshold."
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 4620,
+        "endTimeSeconds": 4800,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "recovery",
+        "notes": "Recovery between climbs."
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 4800,
+        "endTimeSeconds": 4920,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 3,
+        "perc_ftp": 90,
+        "type": "interval",
+        "notes": "Moderate climb, below threshold."
+      },
+      {
+        "segment_number": 11,
+        "startTimeSeconds": 4920,
+        "endTimeSeconds": 5100,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "recovery",
+        "notes": "Recovery between climbs."
+      },
+      {
+        "segment_number": 12,
+        "startTimeSeconds": 5100,
+        "endTimeSeconds": 5220,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 3,
+        "perc_ftp": 90,
+        "type": "interval",
+        "notes": "Moderate climb, below threshold."
+      },
+      {
+        "segment_number": 13,
+        "startTimeSeconds": 5220,
+        "endTimeSeconds": 5400,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "recovery",
+        "notes": "Recovery between climbs."
+      },
+      {
+        "segment_number": 14,
+        "startTimeSeconds": 5400,
+        "endTimeSeconds": 5520,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 3,
+        "perc_ftp": 90,
+        "type": "interval",
+        "notes": "Moderate climb, below threshold."
+      },
+      {
+        "segment_number": 15,
+        "startTimeSeconds": 5520,
+        "endTimeSeconds": 5700,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "recovery",
+        "notes": "Recovery between climbs."
+      },
+      {
+        "segment_number": 16,
+        "startTimeSeconds": 5700,
+        "endTimeSeconds": 5820,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 3,
+        "perc_ftp": 90,
+        "type": "interval",
+        "notes": "Moderate climb, below threshold."
+      },
+      {
+        "segment_number": 17,
+        "startTimeSeconds": 5820,
+        "endTimeSeconds": 6000,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "recovery",
+        "notes": "Recovery between climbs."
+      },
+      {
+        "segment_number": 18,
+        "startTimeSeconds": 6000,
+        "endTimeSeconds": 6120,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 3,
+        "perc_ftp": 90,
+        "type": "interval",
+        "notes": "Moderate climb, below threshold."
+      },
+      {
+        "segment_number": 19,
+        "startTimeSeconds": 6120,
+        "endTimeSeconds": 6300,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "recovery",
+        "notes": "Recovery between climbs."
+      },
+      {
+        "segment_number": 20,
+        "startTimeSeconds": 6300,
+        "endTimeSeconds": 6420,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 3,
+        "perc_ftp": 90,
+        "type": "interval",
+        "notes": "Moderate climb, below threshold."
+      },
+      {
+        "segment_number": 21,
+        "startTimeSeconds": 6420,
+        "endTimeSeconds": 6600,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "recovery",
+        "notes": "Recovery between climbs."
+      },
+      {
+        "segment_number": 22,
+        "startTimeSeconds": 6600,
+        "endTimeSeconds": 6720,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 3,
+        "perc_ftp": 90,
+        "type": "interval",
+        "notes": "Moderate climb, below threshold."
+      },
+      {
+        "segment_number": 23,
+        "startTimeSeconds": 6720,
+        "endTimeSeconds": 6900,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "recovery",
+        "notes": "Recovery between climbs."
+      },
+      {
+        "segment_number": 24,
+        "startTimeSeconds": 6900,
+        "endTimeSeconds": 7020,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 3,
+        "perc_ftp": 90,
+        "type": "interval",
+        "notes": "Moderate climb, below threshold."
+      },
+      {
+        "segment_number": 25,
+        "startTimeSeconds": 7020,
+        "endTimeSeconds": 7200,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "cooldown",
+        "notes": "Cooldown at the end of the ride."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 7200,
+        "calculated_duration": 7200,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}

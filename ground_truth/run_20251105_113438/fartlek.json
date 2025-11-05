@@ -1,0 +1,300 @@
+{
+  "prompt_id": "fartlek",
+  "prompt_description": "Fartlek 2 hours",
+  "user_prompt": "Create a 2 hour fartlek workout.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T11:37:01.404971",
+  "generation_metadata": {
+    "attempts": 1,
+    "total_latency_all_attempts": 9851,
+    "total_tokens_all_attempts": {
+      "input": 1092,
+      "output": 1000,
+      "total": 2092
+    },
+    "total_cost_all_attempts": 0.011081,
+    "total_input_cost_all_attempts": 0.002381,
+    "total_output_cost_all_attempts": 0.0087,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 9851,
+        "tokens": {
+          "input": 1092,
+          "output": 1000,
+          "total": 2092
+        },
+        "cost": 0.011081,
+        "input_cost": 0.002381,
+        "output_cost": 0.0087
+      }
+    ]
+  },
+  "workout": {
+    "name": "2 Hour Fartlek Workout",
+    "description": "A 2-hour structured fartlek workout with varying surges in duration and intensity.",
+    "workout_duration": 7200,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 600,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "warmup",
+        "notes": "Warmup"
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 600,
+        "endTimeSeconds": 1200,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "active",
+        "notes": "Steady pace"
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 1200,
+        "endTimeSeconds": 1260,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Surge"
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 1260,
+        "endTimeSeconds": 1860,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "active",
+        "notes": "Steady pace"
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 1860,
+        "endTimeSeconds": 2040,
+        "power": 275,
+        "powerAdjustedUpward": 285,
+        "powerAdjustedDownward": 265,
+        "zone": 5,
+        "perc_ftp": 110,
+        "type": "interval",
+        "notes": "Surge"
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 2040,
+        "endTimeSeconds": 2640,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "active",
+        "notes": "Steady pace"
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 2640,
+        "endTimeSeconds": 2700,
+        "power": 375,
+        "powerAdjustedUpward": 385,
+        "powerAdjustedDownward": 365,
+        "zone": 6,
+        "perc_ftp": 150,
+        "type": "interval",
+        "notes": "Short burst"
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 2700,
+        "endTimeSeconds": 3300,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "active",
+        "notes": "Steady pace"
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 3300,
+        "endTimeSeconds": 3540,
+        "power": 350,
+        "powerAdjustedUpward": 360,
+        "powerAdjustedDownward": 340,
+        "zone": 6,
+        "perc_ftp": 140,
+        "type": "interval",
+        "notes": "Surge"
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 3540,
+        "endTimeSeconds": 4140,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "active",
+        "notes": "Steady pace"
+      },
+      {
+        "segment_number": 11,
+        "startTimeSeconds": 4140,
+        "endTimeSeconds": 4800,
+        "power": 275,
+        "powerAdjustedUpward": 285,
+        "powerAdjustedDownward": 265,
+        "zone": 5,
+        "perc_ftp": 110,
+        "type": "interval",
+        "notes": "Intense interval"
+      },
+      {
+        "segment_number": 12,
+        "startTimeSeconds": 4800,
+        "endTimeSeconds": 5400,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "active",
+        "notes": "Steady pace"
+      },
+      {
+        "segment_number": 13,
+        "startTimeSeconds": 5400,
+        "endTimeSeconds": 5700,
+        "power": 325,
+        "powerAdjustedUpward": 335,
+        "powerAdjustedDownward": 315,
+        "zone": 6,
+        "perc_ftp": 130,
+        "type": "interval",
+        "notes": "Surge"
+      },
+      {
+        "segment_number": 14,
+        "startTimeSeconds": 5700,
+        "endTimeSeconds": 6300,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "active",
+        "notes": "Steady pace"
+      },
+      {
+        "segment_number": 15,
+        "startTimeSeconds": 6300,
+        "endTimeSeconds": 6480,
+        "power": 350,
+        "powerAdjustedUpward": 360,
+        "powerAdjustedDownward": 340,
+        "zone": 6,
+        "perc_ftp": 140,
+        "type": "interval",
+        "notes": "Final surge"
+      },
+      {
+        "segment_number": 16,
+        "startTimeSeconds": 6480,
+        "endTimeSeconds": 7080,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "active",
+        "notes": "Steady pace"
+      },
+      {
+        "segment_number": 17,
+        "startTimeSeconds": 7080,
+        "endTimeSeconds": 7200,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "cooldown",
+        "notes": "Cooldown"
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 7200,
+        "calculated_duration": 7200,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}
