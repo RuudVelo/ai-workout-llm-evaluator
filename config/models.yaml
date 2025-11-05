@@ -10,14 +10,14 @@ models:
       input_per_million: 2.18
       output_per_million: 8.70
 
-  # - provider: openai
-  #   model_id: gpt-4o-mini
-  #   display_name: "GPT-4o Mini"
-  #   temperature: 0.0 # optional, default is 0.0
-  #   supports_structured_output: true
-  #   pricing:
-  #     input_per_million: 0.131
-  #     output_per_million: 0.522
+  - provider: openai
+    model_id: gpt-4o-mini
+    display_name: "GPT-4o Mini"
+    temperature: 0.0 # optional, default is 0.0
+    supports_structured_output: true
+    pricing:
+      input_per_million: 0.131
+      output_per_million: 0.522
 
   # - provider: openai
   #   model_id: gpt-5-nano
@@ -29,6 +29,7 @@ models:
   #     output_per_million: 0.35
 
   # Google Gemini Models
+
   # - provider: gemini
   #   model_id: gemini-2.5-pro
   #   display_name: "Gemini 2.5 Pro"
@@ -37,39 +38,71 @@ models:
   #     input_per_million: 1.09
   #     output_per_million: 8.69
 
-  # - provider: gemini
-  #   model_id: gemini-2.5-flash  
-  #   display_name: "Gemini 2.5 Flash"
-  #   supports_structured_output: true
-  #   reasoning_effort: low  # Options: low, medium, high, or specific token count (e.g., 1024)
-  #   pricing:
-  #     input_per_million: 0.26
-  #     output_per_million: 2.17
-
   - provider: gemini
-    model_id: gemini-2.5-flash-lite
-    display_name: "Gemini 2.5 Flash Lite"
+    model_id: gemini-2.5-flash  
+    display_name: "Gemini 2.5 Flash"
     supports_structured_output: true
     reasoning_effort: low  # Options: low, medium, high, or specific token count (e.g., 1024)
     pricing:
-      input_per_million: 0.087
-      output_per_million: 0.348  
+      input_per_million: 0.26
+      output_per_million: 2.17
+
+  # - provider: gemini
+  #   model_id: gemini-2.5-flash-lite
+  #   display_name: "Gemini 2.5 Flash Lite Med Reasoning"
+  #   supports_structured_output: true
+  #   reasoning_effort: low  # Options: low, medium, high, or specific token count (e.g., 1024)
+  #   pricing:
+  #     input_per_million: 0.087
+  #     output_per_million: 0.348  
 
 #  Together AI Models (Open Source)
-  - provider: together
-    model_id: openai/gpt-oss-20b
-    display_name: "GPT-OSS 20B"
-    reasoning_effort: low  # Options: low, medium, high, or specific token count (e.g., 1024)
-    supports_structured_output: true
-    pricing:
-      input_per_million: 0.044
-      output_per_million: 0.17
 
   # - provider: together
-  #   model_id: openai/gpt-oss-120b
-  #   display_name: "GPT-OSS 120B"
+  #   model_id: openai/gpt-oss-20b
+  #   display_name: "GPT-OSS 20B"
   #   reasoning_effort: low  # Options: low, medium, high, or specific token count (e.g., 1024)
   #   supports_structured_output: true
   #   pricing:
-  #     input_per_million: 0.14
-  #     output_per_million: 0.52
+  #     input_per_million: 0.044
+  #     output_per_million: 0.17
+
+  - provider: together
+    model_id: meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo
+    display_name: "Meta Llama 3.1 8B Instruct Turbo"
+    supports_structured_output: true
+    reasoning_effort: medium 
+    temperature: 0.7 # optional, default is 0.7
+    pricing:
+      input_per_million: 0.16
+      output_per_million: 0.16
+
+  - provider: together
+    model_id: Qwen/Qwen3-Next-80B-A3B-Instruct
+    display_name: "Qwen 3 Next 80B Instruct"
+    supports_structured_output: true
+    reasoning_effort: low 
+    temperature: 0.7 # optional, default is 0.7
+    pricing:
+      input_per_million: 0.13
+      output_per_million: 1.31
+
+  - provider: together
+    model_id: meta-llama/Llama-3.3-70B-Instruct-Turbo
+    display_name: "Llama 3.3 70B Instruct"
+    supports_structured_output: true
+    reasoning_effort: low 
+    temperature: 0.7 # optional, default is 0.7
+    pricing:
+      input_per_million: 0.77
+      output_per_million: 0.77
+
+  - provider: together
+    model_id: meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8
+    display_name: "Llama 4 Maverick 17B Instruct"
+    supports_structured_output: true
+    reasoning_effort: medium 
+    temperature: 0.7 # optional, default is 0.7
+    pricing:
+      input_per_million: 0.23
+      output_per_million: 0.74
