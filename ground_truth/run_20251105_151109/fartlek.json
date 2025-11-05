@@ -1,0 +1,348 @@
+{
+  "prompt_id": "fartlek",
+  "prompt_description": "Fartlek 2 hours",
+  "user_prompt": "Create a 2 hour fartlek workout.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T15:15:06.200914",
+  "generation_metadata": {
+    "attempts": 1,
+    "total_latency_all_attempts": 15836,
+    "total_tokens_all_attempts": {
+      "input": 1092,
+      "output": 1232,
+      "total": 2324
+    },
+    "total_cost_all_attempts": 0.013099,
+    "total_input_cost_all_attempts": 0.002381,
+    "total_output_cost_all_attempts": 0.010718,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 15836,
+        "tokens": {
+          "input": 1092,
+          "output": 1232,
+          "total": 2324
+        },
+        "cost": 0.013099,
+        "input_cost": 0.002381,
+        "output_cost": 0.010718
+      }
+    ]
+  },
+  "workout": {
+    "name": "2 Hour Fartlek",
+    "description": "60-120min with random surges of varying duration and intensity",
+    "workout_duration": 7200,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 360,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "warmup",
+        "notes": "Warm-up phase"
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 360,
+        "endTimeSeconds": 960,
+        "power": 175,
+        "powerAdjustedUpward": 185,
+        "powerAdjustedDownward": 165,
+        "zone": 2,
+        "perc_ftp": 70,
+        "type": "active",
+        "notes": "Base pace ride"
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 960,
+        "endTimeSeconds": 990,
+        "power": 213,
+        "powerAdjustedUpward": 223,
+        "powerAdjustedDownward": 203,
+        "zone": 3,
+        "perc_ftp": 85,
+        "type": "interval",
+        "notes": "Short surge"
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 990,
+        "endTimeSeconds": 1200,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "active",
+        "notes": "Return to base pace"
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 1200,
+        "endTimeSeconds": 1320,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 3,
+        "perc_ftp": 90,
+        "type": "interval",
+        "notes": "Moderate surge"
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 1320,
+        "endTimeSeconds": 1800,
+        "power": 175,
+        "powerAdjustedUpward": 185,
+        "powerAdjustedDownward": 165,
+        "zone": 2,
+        "perc_ftp": 70,
+        "type": "active",
+        "notes": "Base pace ride"
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 1800,
+        "endTimeSeconds": 1920,
+        "power": 263,
+        "powerAdjustedUpward": 273,
+        "powerAdjustedDownward": 253,
+        "zone": 5,
+        "perc_ftp": 105,
+        "type": "interval",
+        "notes": "Hard surge"
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 1920,
+        "endTimeSeconds": 2400,
+        "power": 162,
+        "powerAdjustedUpward": 172,
+        "powerAdjustedDownward": 152,
+        "zone": 2,
+        "perc_ftp": 65,
+        "type": "active",
+        "notes": "Recovery ride"
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 2400,
+        "endTimeSeconds": 2460,
+        "power": 338,
+        "powerAdjustedUpward": 348,
+        "powerAdjustedDownward": 328,
+        "zone": 6,
+        "perc_ftp": 135,
+        "type": "interval",
+        "notes": "Very hard surge"
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 2460,
+        "endTimeSeconds": 3000,
+        "power": 175,
+        "powerAdjustedUpward": 185,
+        "powerAdjustedDownward": 165,
+        "zone": 2,
+        "perc_ftp": 70,
+        "type": "active",
+        "notes": "Base pace ride"
+      },
+      {
+        "segment_number": 11,
+        "startTimeSeconds": 3000,
+        "endTimeSeconds": 3120,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Intense surge"
+      },
+      {
+        "segment_number": 12,
+        "startTimeSeconds": 3120,
+        "endTimeSeconds": 3600,
+        "power": 162,
+        "powerAdjustedUpward": 172,
+        "powerAdjustedDownward": 152,
+        "zone": 2,
+        "perc_ftp": 65,
+        "type": "active",
+        "notes": "Recovery ride"
+      },
+      {
+        "segment_number": 13,
+        "startTimeSeconds": 3600,
+        "endTimeSeconds": 3900,
+        "power": 225,
+        "powerAdjustedUpward": 235,
+        "powerAdjustedDownward": 215,
+        "zone": 3,
+        "perc_ftp": 90,
+        "type": "interval",
+        "notes": "Moderate surge"
+      },
+      {
+        "segment_number": 14,
+        "startTimeSeconds": 3900,
+        "endTimeSeconds": 4500,
+        "power": 175,
+        "powerAdjustedUpward": 185,
+        "powerAdjustedDownward": 165,
+        "zone": 2,
+        "perc_ftp": 70,
+        "type": "active",
+        "notes": "Base pace ride"
+      },
+      {
+        "segment_number": 15,
+        "startTimeSeconds": 4500,
+        "endTimeSeconds": 4560,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Intense surge"
+      },
+      {
+        "segment_number": 16,
+        "startTimeSeconds": 4560,
+        "endTimeSeconds": 4800,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Cool down phase"
+      },
+      {
+        "segment_number": 17,
+        "startTimeSeconds": 4800,
+        "endTimeSeconds": 5400,
+        "power": 175,
+        "powerAdjustedUpward": 185,
+        "powerAdjustedDownward": 165,
+        "zone": 2,
+        "perc_ftp": 70,
+        "type": "active",
+        "notes": "Base pace ride with mini surges"
+      },
+      {
+        "segment_number": 18,
+        "startTimeSeconds": 5400,
+        "endTimeSeconds": 5460,
+        "power": 240,
+        "powerAdjustedUpward": 250,
+        "powerAdjustedDownward": 230,
+        "zone": 4,
+        "perc_ftp": 96,
+        "type": "interval",
+        "notes": "Final surge"
+      },
+      {
+        "segment_number": 19,
+        "startTimeSeconds": 5460,
+        "endTimeSeconds": 6000,
+        "power": 162,
+        "powerAdjustedUpward": 172,
+        "powerAdjustedDownward": 152,
+        "zone": 2,
+        "perc_ftp": 65,
+        "type": "active",
+        "notes": "Base pace"
+      },
+      {
+        "segment_number": 20,
+        "startTimeSeconds": 6000,
+        "endTimeSeconds": 6600,
+        "power": 175,
+        "powerAdjustedUpward": 185,
+        "powerAdjustedDownward": 165,
+        "zone": 2,
+        "perc_ftp": 70,
+        "type": "active",
+        "notes": "Base pace ride with mini surges"
+      },
+      {
+        "segment_number": 21,
+        "startTimeSeconds": 6600,
+        "endTimeSeconds": 7200,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "cooldown",
+        "notes": "Final cooldown"
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 7200,
+        "calculated_duration": 7200,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}

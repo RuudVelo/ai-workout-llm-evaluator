@@ -1,0 +1,192 @@
+{
+  "prompt_id": "mixed_zones_progression",
+  "prompt_description": "Progressive workout through multiple zones",
+  "user_prompt": "Z2 endurance for 45 minutes, Z3 tempo for 20 minutes, 3x2min Z5 VO\u2082max efforts, finish with 10min Z1 recovery.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T15:11:55.039336",
+  "generation_metadata": {
+    "attempts": 1,
+    "total_latency_all_attempts": 9041,
+    "total_tokens_all_attempts": {
+      "input": 1120,
+      "output": 518,
+      "total": 1638
+    },
+    "total_cost_all_attempts": 0.006948,
+    "total_input_cost_all_attempts": 0.002442,
+    "total_output_cost_all_attempts": 0.004507,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 9041,
+        "tokens": {
+          "input": 1120,
+          "output": 518,
+          "total": 1638
+        },
+        "cost": 0.006948,
+        "input_cost": 0.002442,
+        "output_cost": 0.004507
+      }
+    ]
+  },
+  "workout": {
+    "name": "Endurance and VO2Max Session",
+    "description": "Endurance ride followed by tempo and VO2Max intervals, finishing with recovery.",
+    "workout_duration": 5100,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 2700,
+        "power": 165,
+        "powerAdjustedUpward": 175,
+        "powerAdjustedDownward": 155,
+        "zone": 2,
+        "perc_ftp": 66,
+        "type": "active",
+        "notes": "45 minutes in Zone 2 endurance"
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 2700,
+        "endTimeSeconds": 3900,
+        "power": 214,
+        "powerAdjustedUpward": 224,
+        "powerAdjustedDownward": 204,
+        "zone": 3,
+        "perc_ftp": 86,
+        "type": "active",
+        "notes": "20 minutes in Zone 3 tempo"
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 3900,
+        "endTimeSeconds": 4020,
+        "power": 275,
+        "powerAdjustedUpward": 285,
+        "powerAdjustedDownward": 265,
+        "zone": 5,
+        "perc_ftp": 110,
+        "type": "interval",
+        "notes": "2 minutes VO2Max effort"
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 4020,
+        "endTimeSeconds": 4140,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "2 minutes rest"
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 4140,
+        "endTimeSeconds": 4260,
+        "power": 275,
+        "powerAdjustedUpward": 285,
+        "powerAdjustedDownward": 265,
+        "zone": 5,
+        "perc_ftp": 110,
+        "type": "interval",
+        "notes": "2 minutes VO2Max effort"
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 4260,
+        "endTimeSeconds": 4380,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "2 minutes rest"
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 4380,
+        "endTimeSeconds": 4500,
+        "power": 275,
+        "powerAdjustedUpward": 285,
+        "powerAdjustedDownward": 265,
+        "zone": 5,
+        "perc_ftp": 110,
+        "type": "interval",
+        "notes": "2 minutes VO2Max effort"
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 4500,
+        "endTimeSeconds": 5100,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "10 minutes in Zone 1 recovery"
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 5100,
+        "calculated_duration": 5100,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}

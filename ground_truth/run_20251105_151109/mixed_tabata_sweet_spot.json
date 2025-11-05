@@ -1,0 +1,348 @@
+{
+  "prompt_id": "mixed_tabata_sweet_spot",
+  "prompt_description": "Tabata followed by sweet spot",
+  "user_prompt": "15min WU, Tabata: 8\u00d720sec all-out / 10sec easy, 10min Z2 recovery, then 2x15min sweet spot @ 88% FTP with 7.5min recovery (2:1 ratio), 10min CD.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T15:19:12.567145",
+  "generation_metadata": {
+    "attempts": 1,
+    "total_latency_all_attempts": 13117,
+    "total_tokens_all_attempts": {
+      "input": 1142,
+      "output": 1281,
+      "total": 2423
+    },
+    "total_cost_all_attempts": 0.013634,
+    "total_input_cost_all_attempts": 0.00249,
+    "total_output_cost_all_attempts": 0.011145,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 13117,
+        "tokens": {
+          "input": 1142,
+          "output": 1281,
+          "total": 2423
+        },
+        "cost": 0.013634,
+        "input_cost": 0.00249,
+        "output_cost": 0.011145
+      }
+    ]
+  },
+  "workout": {
+    "name": "Custom Intensity Workout",
+    "description": "A structured workout including Warm-up, Tabata intervals, Sweet Spot efforts, and Cooldown.",
+    "workout_duration": 4680,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 900,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "warmup",
+        "notes": "Warm-up phase to prepare your body"
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 900,
+        "endTimeSeconds": 920,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Tabata effort at 120% FTP"
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 920,
+        "endTimeSeconds": 930,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Short recovery"
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 930,
+        "endTimeSeconds": 950,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Tabata effort at 120% FTP"
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 950,
+        "endTimeSeconds": 960,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Short recovery"
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 960,
+        "endTimeSeconds": 980,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Tabata effort at 120% FTP"
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 980,
+        "endTimeSeconds": 990,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Short recovery"
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 990,
+        "endTimeSeconds": 1010,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Tabata effort at 120% FTP"
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 1010,
+        "endTimeSeconds": 1020,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Short recovery"
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 1020,
+        "endTimeSeconds": 1040,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Tabata effort at 120% FTP"
+      },
+      {
+        "segment_number": 11,
+        "startTimeSeconds": 1040,
+        "endTimeSeconds": 1050,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Short recovery"
+      },
+      {
+        "segment_number": 12,
+        "startTimeSeconds": 1050,
+        "endTimeSeconds": 1070,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Tabata effort at 120% FTP"
+      },
+      {
+        "segment_number": 13,
+        "startTimeSeconds": 1070,
+        "endTimeSeconds": 1080,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Short recovery"
+      },
+      {
+        "segment_number": 14,
+        "startTimeSeconds": 1080,
+        "endTimeSeconds": 1100,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Tabata effort at 120% FTP"
+      },
+      {
+        "segment_number": 15,
+        "startTimeSeconds": 1100,
+        "endTimeSeconds": 1110,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Short recovery"
+      },
+      {
+        "segment_number": 16,
+        "startTimeSeconds": 1110,
+        "endTimeSeconds": 1130,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Tabata effort at 120% FTP"
+      },
+      {
+        "segment_number": 17,
+        "startTimeSeconds": 1130,
+        "endTimeSeconds": 2520,
+        "power": 175,
+        "powerAdjustedUpward": 185,
+        "powerAdjustedDownward": 165,
+        "zone": 2,
+        "perc_ftp": 70,
+        "type": "recovery",
+        "notes": "Zone 2 recovery period"
+      },
+      {
+        "segment_number": 18,
+        "startTimeSeconds": 2520,
+        "endTimeSeconds": 3420,
+        "power": 220,
+        "powerAdjustedUpward": 230,
+        "powerAdjustedDownward": 210,
+        "zone": 3,
+        "perc_ftp": 88,
+        "type": "interval",
+        "notes": "Sweet Spot interval at 88% FTP"
+      },
+      {
+        "segment_number": 19,
+        "startTimeSeconds": 3420,
+        "endTimeSeconds": 3870,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "recovery",
+        "notes": "Recovery between Sweet Spot intervals"
+      },
+      {
+        "segment_number": 20,
+        "startTimeSeconds": 3870,
+        "endTimeSeconds": 4770,
+        "power": 220,
+        "powerAdjustedUpward": 230,
+        "powerAdjustedDownward": 210,
+        "zone": 3,
+        "perc_ftp": 88,
+        "type": "interval",
+        "notes": "Sweet Spot interval at 88% FTP"
+      },
+      {
+        "segment_number": 21,
+        "startTimeSeconds": 4770,
+        "endTimeSeconds": 4680,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "cooldown",
+        "notes": "Cooldown to bring heart rate down"
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 4680,
+        "calculated_duration": 4680,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}

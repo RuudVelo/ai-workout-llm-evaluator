@@ -26,7 +26,12 @@ from visualization_utils import (
     calculate_workout_stats,
     create_power_chart,
     calculate_deltas,
+    load_all_ground_truth_workouts,
+    load_all_model_workouts,
+    calculate_aggregate_stats,
+    calculate_per_workout_comparison,
 )
+import pandas as pd
 
 
 # Page configuration
@@ -38,92 +43,9 @@ st.set_page_config(
 )
 
 
-def main():
-    """Main Streamlit application."""
-
-    st.title("🚴 Workout Generator Visualizer")
-
-    # Sidebar configuration
-    st.sidebar.header("Configuration")
-
-    # FTP input
-    ftp = st.sidebar.number_input(
-        "FTP (Watts)",
-        min_value=100,
-        max_value=500,
-        value=250,
-        step=5,
-        help="Functional Threshold Power - used for the reference line on charts"
-    )
-
-    # Ground truth folder selection
-    st.sidebar.subheader("Ground Truth Run")
-    gt_folder = st.sidebar.text_input(
-        "Ground Truth Folder",
-        value="ground_truth/run_20251104_155341",
-        help="Path to ground truth run directory"
-    )
-
-    # Model results folder selection
-    st.sidebar.subheader("Model Results Run")
-    results_folder = st.sidebar.text_input(
-        "Results Folder",
-        value="results/run_20251105_120620",
-        help="Path to model results run directory"
-    )
-
-    # Validate folders exist
-    gt_path = Path(gt_folder)
-    results_path = Path(results_folder)
-
-    if not gt_path.exists():
-        st.error(f"❌ Ground truth folder not found: {gt_folder}")
-        st.info("Please enter a valid path to a ground truth run directory")
-        return
-
-    if not results_path.exists():
-        st.error(f"❌ Results folder not found: {results_folder}")
-        st.info("Please enter a valid path to a results run directory")
-        return
-
-    # Load available workouts from ground truth
-    workouts = list_available_workouts(gt_folder)
-
-    if not workouts:
-        st.warning(f"⚠️ No workouts found in {gt_folder}")
-        return
-
-    # Load available models
-    models_yaml = "config/models.yaml"
-    gt_yaml = "config/ground_truth.yaml"
-
-    available_models = list_available_models(models_yaml, gt_yaml)
-
-    if not available_models:
-        st.warning("⚠️ No models found in config/models.yaml")
-        return
-
-    # Workout selection dropdown
-    st.sidebar.subheader("Workout Selection")
-
-    workout_options = {desc: prompt_id for prompt_id, desc in workouts}
-    selected_workout_desc = st.sidebar.selectbox(
-        "Select Workout",
-        options=list(workout_options.keys()),
-        help="Choose a workout to visualize"
-    )
-
+def render_visual_comparison_tab(ftp, gt_folder, results_folder, selected_workout_desc, workout_options, selected_model):
+    """Render the visual comparison tab (current functionality)."""
     selected_prompt_id = workout_options[selected_workout_desc]
-
-    # Model selection dropdown
-    selected_model = st.sidebar.selectbox(
-        "Select Model",
-        options=available_models,
-        help="Choose a model to compare against ground truth"
-    )
-
-    # Divider
-    st.markdown("---")
 
     # Load workout data
     with st.spinner("Loading workout data..."):
@@ -194,13 +116,13 @@ def main():
             st.markdown(f"<p style='font-size: 14px; margin-bottom: 2px; font-weight: 400;'>Min/Max</p><p style='font-size: 22px; font-weight: 400; margin-top: 0px;'>{gt_stats['min_power']}/{gt_stats['max_power']}W</p>", unsafe_allow_html=True)
         with m3:
             st.markdown(f"<p style='font-size: 14px; margin-bottom: 2px; font-weight: 400;'>Latency</p><p style='font-size: 22px; font-weight: 400; margin-top: 0px;'>{gt_stats['latency_sec']:.1f}s</p>", unsafe_allow_html=True)
-            st.markdown(f"<p style='font-size: 14px; margin-bottom: 2px; font-weight: 400;'>Cost</p><p style='font-size: 22px; font-weight: 400; margin-top: 0px;'>${gt_stats['total_cost']:.4f}</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='font-size: 14px; margin-bottom: 2px; font-weight: 400;'>Cost</p><p style='font-size: 22px; font-weight: 400; margin-top: 0px;'>€{gt_stats['total_cost']:.4f}</p>", unsafe_allow_html=True)
 
         # Compact token info
         with st.expander("📊 Tokens & Cost Details"):
-            st.text(f"Input:  {gt_stats['input_tokens']:,} tokens (${gt_stats['input_cost']:.6f})")
-            st.text(f"Output: {gt_stats['output_tokens']:,} tokens (${gt_stats['output_cost']:.6f})")
-            st.text(f"Total:  {gt_stats['total_tokens']:,} tokens (${gt_stats['total_cost']:.6f})")
+            st.text(f"Input:  {gt_stats['input_tokens']:,} tokens (€{gt_stats['input_cost']:.6f})")
+            st.text(f"Output: {gt_stats['output_tokens']:,} tokens (€{gt_stats['output_cost']:.6f})")
+            st.text(f"Total:  {gt_stats['total_tokens']:,} tokens (€{gt_stats['total_cost']:.6f})")
             st.text(f"Attempts: {gt_stats['attempts']}")
 
     # RIGHT COLUMN: Model
@@ -240,14 +162,442 @@ def main():
             st.markdown(f"<p style='font-size: 14px; margin-bottom: 2px; font-weight: 400;'>Latency</p><p style='font-size: 22px; font-weight: 400; margin-top: 0px;'>{model_stats['latency_sec']:.1f}s <span style='font-size: 16px; color: {'green' if latency_delta <= 0 else 'red'}'>({latency_delta:+.1f}s)</span></p>", unsafe_allow_html=True)
 
             cost_delta = model_stats['total_cost'] - gt_stats['total_cost']
-            st.markdown(f"<p style='font-size: 14px; margin-bottom: 2px; font-weight: 400;'>Cost</p><p style='font-size: 22px; font-weight: 400; margin-top: 0px;'>${model_stats['total_cost']:.4f} <span style='font-size: 16px; color: {'green' if cost_delta <= 0 else 'red'}'>({cost_delta:+.4f})</span></p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='font-size: 14px; margin-bottom: 2px; font-weight: 400;'>Cost</p><p style='font-size: 22px; font-weight: 400; margin-top: 0px;'>€{model_stats['total_cost']:.4f} <span style='font-size: 16px; color: {'green' if cost_delta <= 0 else 'red'}'>({cost_delta:+.4f})</span></p>", unsafe_allow_html=True)
 
         # Compact token info with deltas
         with st.expander("📊 Tokens & Cost Details"):
-            st.text(f"Input:  {model_stats['input_tokens']:,} ({deltas.get('input_tokens', '0')}) tokens (${model_stats['input_cost']:.6f})")
-            st.text(f"Output: {model_stats['output_tokens']:,} ({deltas.get('output_tokens', '0')}) tokens (${model_stats['output_cost']:.6f})")
-            st.text(f"Total:  {model_stats['total_tokens']:,} ({deltas.get('total_tokens', '0')}) tokens (${model_stats['total_cost']:.6f})")
+            st.text(f"Input:  {model_stats['input_tokens']:,} ({deltas.get('input_tokens', '0')}) tokens (€{model_stats['input_cost']:.6f})")
+            st.text(f"Output: {model_stats['output_tokens']:,} ({deltas.get('output_tokens', '0')}) tokens (€{model_stats['output_cost']:.6f})")
+            st.text(f"Total:  {model_stats['total_tokens']:,} ({deltas.get('total_tokens', '0')}) tokens (€{model_stats['total_cost']:.6f})")
             st.text(f"Attempts: {model_stats['attempts']}")
+
+
+def main():
+    """Main Streamlit application."""
+
+    st.title("🚴 Workout Generator Visualizer")
+
+    # Sidebar configuration
+    st.sidebar.header("Configuration")
+
+    # FTP input
+    ftp = st.sidebar.number_input(
+        "FTP (Watts)",
+        min_value=100,
+        max_value=500,
+        value=250,
+        step=5,
+        help="Functional Threshold Power - used for the reference line on charts"
+    )
+
+    # Ground truth folder selection
+    st.sidebar.subheader("Ground Truth Run")
+    gt_folder = st.sidebar.text_input(
+        "Ground Truth Folder Path",
+        value="ground_truth/run_20251104_155341",
+        help="Enter the path to the ground truth run directory"
+    )
+
+    # Model results folder selection
+    st.sidebar.subheader("Model Results Run")
+    results_folder = st.sidebar.text_input(
+        "Results Folder Path",
+        value="results/run_20251105_120620",
+        help="Enter the path to the model results run directory"
+    )
+
+    # Validate folders exist
+    if not gt_folder or not results_folder:
+        st.info("📁 Please enter ground truth and results run directories in the sidebar")
+        return
+
+    gt_path = Path(gt_folder)
+    results_path = Path(results_folder)
+
+    if not gt_path.exists():
+        st.error(f"❌ Ground truth folder not found: {gt_folder}")
+        st.info("Please enter a valid path to a ground truth run directory")
+        return
+
+    if not results_path.exists():
+        st.error(f"❌ Results folder not found: {results_folder}")
+        st.info("Please enter a valid path to a results run directory")
+        return
+
+    # Load available workouts from ground truth
+    workouts = list_available_workouts(gt_folder)
+
+    if not workouts:
+        st.warning(f"⚠️ No workouts found in {gt_folder}")
+        return
+
+    # Load available models
+    models_yaml = "config/models.yaml"
+    gt_yaml = "config/ground_truth.yaml"
+
+    available_models = list_available_models(models_yaml, gt_yaml)
+
+    if not available_models:
+        st.warning("⚠️ No models found in config/models.yaml")
+        return
+
+    # Workout selection dropdown (for Visual Comparison tab)
+    st.sidebar.subheader("Workout Selection")
+
+    workout_options = {desc: prompt_id for prompt_id, desc in workouts}
+    selected_workout_desc = st.sidebar.selectbox(
+        "Select Workout",
+        options=list(workout_options.keys()),
+        help="Choose a workout to visualize"
+    )
+
+    # Model selection dropdown
+    selected_model = st.sidebar.selectbox(
+        "Select Model",
+        options=available_models,
+        help="Choose a model to compare against ground truth"
+    )
+
+    # Add custom CSS for sticky tabs
+    st.markdown("""
+        <style>
+        /* Make tabs sticky */
+        div[data-baseweb="tab-list"] {
+            position: sticky !important;
+            top: 0 !important;
+            z-index: 999 !important;
+            background-color: white !important;
+            padding-top: 1rem !important;
+            padding-bottom: 0.5rem !important;
+        }
+
+        /* Alternative selector for tabs container */
+        .stTabs [data-baseweb="tab-list"] {
+            position: sticky !important;
+            top: 0 !important;
+            z-index: 999 !important;
+            background-color: white !important;
+            padding-top: 1rem !important;
+            padding-bottom: 0.5rem !important;
+        }
+
+        /* Ensure tabs stay on top */
+        .stTabs {
+            position: relative !important;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+
+    # Create tabs
+    tab1, tab2 = st.tabs(["📊 Table Comparison", "📈 Visual Comparison"])
+
+    with tab1:
+        # TABLE COMPARISON TAB
+        st.header("Aggregate Model Comparison")
+
+        # Load all workouts for all models
+        with st.spinner("Loading all workout data..."):
+            gt_workouts = load_all_ground_truth_workouts(gt_folder)
+
+            if not gt_workouts:
+                st.error("No ground truth workouts found")
+                return
+
+            # Calculate aggregate stats for each model
+            model_stats_list = []
+            for model_name in available_models:
+                model_workouts = load_all_model_workouts(results_folder, model_name)
+                agg_stats = calculate_aggregate_stats(gt_workouts, model_workouts, ftp)
+
+                if agg_stats:
+                    agg_stats['Model'] = model_name
+                    model_stats_list.append(agg_stats)
+
+        # Summary Cards Section
+        if model_stats_list:
+            st.subheader("📊 Key Insights")
+
+            # Find best models for different metrics
+            df_stats = pd.DataFrame(model_stats_list)
+
+            # Best model for cost (lowest avg cost)
+            best_cost_model = df_stats.loc[df_stats['avg_cost'].idxmin()]
+
+            # Fastest model (lowest avg latency)
+            best_speed_model = df_stats.loc[df_stats['avg_latency_ms'].idxmin()]
+
+            # Most token efficient (lowest avg total tokens)
+            best_tokens_model = df_stats.loc[df_stats['total_tokens'].idxmin()]
+
+            # Highest success rate
+            best_success_model = df_stats.loc[df_stats['success_rate'].idxmax()]
+
+            # Display summary cards in columns
+            col1, col2, col3, col4 = st.columns(4)
+
+            with col1:
+                st.markdown(f"""
+                <div style='padding: 15px; background-color: #f0f9ff; border-radius: 8px; border-left: 4px solid #0ea5e9;'>
+                    <p style='font-size: 14px; color: #64748b; margin: 0;'>💰 Most Cost-Effective</p>
+                    <p style='font-size: 20px; font-weight: 600; margin: 5px 0;'>{best_cost_model['Model']}</p>
+                    <p style='font-size: 14px; color: #0ea5e9; margin: 0;'>€{best_cost_model['avg_cost']:.4f}/workout</p>
+                </div>
+                """, unsafe_allow_html=True)
+
+            with col2:
+                st.markdown(f"""
+                <div style='padding: 15px; background-color: #f0fdf4; border-radius: 8px; border-left: 4px solid #22c55e;'>
+                    <p style='font-size: 14px; color: #64748b; margin: 0;'>⚡ Fastest</p>
+                    <p style='font-size: 20px; font-weight: 600; margin: 5px 0;'>{best_speed_model['Model']}</p>
+                    <p style='font-size: 14px; color: #22c55e; margin: 0;'>{best_speed_model['avg_latency_ms']:.0f}ms avg</p>
+                </div>
+                """, unsafe_allow_html=True)
+
+            with col3:
+                st.markdown(f"""
+                <div style='padding: 15px; background-color: #fef3c7; border-radius: 8px; border-left: 4px solid #f59e0b;'>
+                    <p style='font-size: 14px; color: #64748b; margin: 0;'>🎯 Most Token Efficient</p>
+                    <p style='font-size: 20px; font-weight: 600; margin: 5px 0;'>{best_tokens_model['Model']}</p>
+                    <p style='font-size: 14px; color: #f59e0b; margin: 0;'>{best_tokens_model['total_tokens']:,} tokens</p>
+                </div>
+                """, unsafe_allow_html=True)
+
+            with col4:
+                st.markdown(f"""
+                <div style='padding: 15px; background-color: #fce7f3; border-radius: 8px; border-left: 4px solid #ec4899;'>
+                    <p style='font-size: 14px; color: #64748b; margin: 0;'>✅ Most Reliable</p>
+                    <p style='font-size: 20px; font-weight: 600; margin: 5px 0;'>{best_success_model['Model']}</p>
+                    <p style='font-size: 14px; color: #ec4899; margin: 0;'>{best_success_model['success_rate']:.1f}% success</p>
+                </div>
+                """, unsafe_allow_html=True)
+
+            st.markdown("<br>", unsafe_allow_html=True)
+
+        if not model_stats_list:
+            st.warning("No model data available for comparison")
+        else:
+            # Create DataFrame
+            df = pd.DataFrame(model_stats_list)
+
+            # Reorder columns
+            column_order = [
+                'Model', 'total_workouts', 'success_rate',
+                'avg_cost', 'delta_avg_cost', 'total_cost', 'delta_total_cost',
+                'total_input_tokens', 'delta_total_input_tokens',
+                'total_output_tokens', 'delta_total_output_tokens',
+                'total_tokens', 'delta_total_tokens',
+                'avg_latency_ms', 'delta_avg_latency_ms',
+                'total_latency_ms', 'delta_total_latency_ms',
+                'avg_attempts', 'delta_avg_attempts',
+                'avg_duration', 'delta_avg_duration',
+                'avg_power', 'delta_avg_power',
+                'avg_intervals', 'delta_avg_intervals'
+            ]
+
+            df = df[column_order]
+
+            # Rename columns for display
+            df_display = df.rename(columns={
+                'Model': 'Model',
+                'total_workouts': 'Workouts',
+                'success_rate': 'Success %',
+                'avg_cost': 'Avg Cost (€)',
+                'delta_avg_cost': 'Δ Avg Cost',
+                'total_cost': 'Total Cost (€)',
+                'delta_total_cost': 'Δ Total Cost',
+                'total_input_tokens': 'Input Tokens',
+                'delta_total_input_tokens': 'Δ Input',
+                'total_output_tokens': 'Output Tokens',
+                'delta_total_output_tokens': 'Δ Output',
+                'total_tokens': 'Total Tokens',
+                'delta_total_tokens': 'Δ Tokens',
+                'avg_latency_ms': 'Avg Latency (ms)',
+                'delta_avg_latency_ms': 'Δ Avg Latency',
+                'total_latency_ms': 'Total Latency (ms)',
+                'delta_total_latency_ms': 'Δ Total Latency',
+                'avg_attempts': 'Avg Attempts',
+                'delta_avg_attempts': 'Δ Attempts',
+                'avg_duration': 'Avg Duration (s)',
+                'delta_avg_duration': 'Δ Duration',
+                'avg_power': 'Avg Power (W)',
+                'delta_avg_power': 'Δ Power',
+                'avg_intervals': 'Avg Intervals',
+                'delta_avg_intervals': 'Δ Intervals'
+            })
+
+            # Format numeric columns
+            df_display['Avg Cost (€)'] = df_display['Avg Cost (€)'].apply(lambda x: f"€{x:.4f}")
+            df_display['Total Cost (€)'] = df_display['Total Cost (€)'].apply(lambda x: f"€{x:.4f}")
+            df_display['Success %'] = df_display['Success %'].apply(lambda x: f"{x:.1f}%")
+            df_display['Avg Latency (ms)'] = df_display['Avg Latency (ms)'].apply(lambda x: f"{x:.0f}")
+            df_display['Total Latency (ms)'] = df_display['Total Latency (ms)'].apply(lambda x: f"{x:.0f}")
+            df_display['Avg Duration (s)'] = df_display['Avg Duration (s)'].apply(lambda x: f"{x:.0f}")
+            df_display['Avg Power (W)'] = df_display['Avg Power (W)'].apply(lambda x: f"{x:.1f}")
+            df_display['Avg Intervals'] = df_display['Avg Intervals'].apply(lambda x: f"{x:.1f}")
+            df_display['Avg Attempts'] = df_display['Avg Attempts'].apply(lambda x: f"{x:.1f}")
+
+            # Format delta columns with color indicators
+            def format_delta_cost(x):
+                if x < 0:
+                    return f"🟢 {x:.4f}"
+                elif x > 0:
+                    return f"🔴 {x:+.4f}"
+                else:
+                    return f"{x:.4f}"
+
+            def format_delta_numeric(x):
+                if x < 0:
+                    return f"🟢 {x:+.0f}"
+                elif x > 0:
+                    return f"🔴 {x:+.0f}"
+                else:
+                    return f"{x:.0f}"
+
+            df_display['Δ Avg Cost'] = df_display['Δ Avg Cost'].apply(format_delta_cost)
+            df_display['Δ Total Cost'] = df_display['Δ Total Cost'].apply(format_delta_cost)
+            df_display['Δ Input'] = df_display['Δ Input'].apply(format_delta_numeric)
+            df_display['Δ Output'] = df_display['Δ Output'].apply(format_delta_numeric)
+            df_display['Δ Tokens'] = df_display['Δ Tokens'].apply(format_delta_numeric)
+            df_display['Δ Avg Latency'] = df_display['Δ Avg Latency'].apply(format_delta_numeric)
+            df_display['Δ Total Latency'] = df_display['Δ Total Latency'].apply(format_delta_numeric)
+            df_display['Δ Attempts'] = df_display['Δ Attempts'].apply(format_delta_numeric)
+            df_display['Δ Duration'] = df_display['Δ Duration'].apply(format_delta_numeric)
+            df_display['Δ Power'] = df_display['Δ Power'].apply(lambda x: f"🟢 {x:+.1f}" if x < 0 else (f"🔴 {x:+.1f}" if x > 0 else f"{x:.1f}"))
+            df_display['Δ Intervals'] = df_display['Δ Intervals'].apply(format_delta_numeric)
+
+            # Display dataframe
+            st.dataframe(df_display, use_container_width=True, height=400)
+
+        # Per-Workout Breakdown Section
+        st.markdown("---")
+        st.header("Per-Workout Breakdown")
+
+        # Collect all per-workout comparisons
+        with st.spinner("Loading per-workout comparisons..."):
+            all_workout_comparisons = []
+            for model_name in available_models:
+                model_workouts = load_all_model_workouts(results_folder, model_name)
+                comparisons = calculate_per_workout_comparison(gt_workouts, model_workouts, ftp, model_name)
+                all_workout_comparisons.extend(comparisons)
+
+        if not all_workout_comparisons:
+            st.warning("No per-workout comparison data available")
+        else:
+            # Create DataFrame
+            df_workouts = pd.DataFrame(all_workout_comparisons)
+
+            # Add filters
+            col1, col2 = st.columns(2)
+            with col1:
+                # Model filter
+                all_models = sorted(df_workouts['Model'].unique())
+                selected_models_filter = st.multiselect(
+                    "Filter by Model(s)",
+                    options=all_models,
+                    default=all_models,
+                    help="Select one or more models to display"
+                )
+            with col2:
+                # Workout filter
+                all_workouts = sorted(df_workouts['Workout'].unique())
+                selected_workouts_filter = st.multiselect(
+                    "Filter by Workout(s)",
+                    options=all_workouts,
+                    default=all_workouts,
+                    help="Select one or more workouts to display"
+                )
+
+            # Apply filters
+            df_filtered = df_workouts[
+                (df_workouts['Model'].isin(selected_models_filter)) &
+                (df_workouts['Workout'].isin(selected_workouts_filter))
+            ]
+
+            if df_filtered.empty:
+                st.info("No workouts match the selected filters")
+            else:
+                # Reorder columns for display
+                display_columns = [
+                    'Model', 'Workout',
+                    'cost', 'delta_cost',
+                    'input_tokens', 'delta_input_tokens',
+                    'output_tokens', 'delta_output_tokens',
+                    'total_tokens', 'delta_total_tokens',
+                    'latency_ms', 'delta_latency_ms',
+                    'attempts', 'delta_attempts',
+                    'duration', 'delta_duration',
+                    'avg_power', 'delta_avg_power',
+                    'intervals', 'delta_intervals',
+                    'validation_passed'
+                ]
+
+                df_display_workouts = df_filtered[display_columns].copy()
+
+                # Rename columns for display
+                df_display_workouts = df_display_workouts.rename(columns={
+                    'Model': 'Model',
+                    'Workout': 'Workout',
+                    'cost': 'Cost (€)',
+                    'delta_cost': 'Δ Cost',
+                    'input_tokens': 'Input Tokens',
+                    'delta_input_tokens': 'Δ Input',
+                    'output_tokens': 'Output Tokens',
+                    'delta_output_tokens': 'Δ Output',
+                    'total_tokens': 'Total Tokens',
+                    'delta_total_tokens': 'Δ Tokens',
+                    'latency_ms': 'Latency (ms)',
+                    'delta_latency_ms': 'Δ Latency',
+                    'attempts': 'Attempts',
+                    'delta_attempts': 'Δ Attempts',
+                    'duration': 'Duration (s)',
+                    'delta_duration': 'Δ Duration',
+                    'avg_power': 'Avg Power (W)',
+                    'delta_avg_power': 'Δ Power',
+                    'intervals': 'Intervals',
+                    'delta_intervals': 'Δ Intervals',
+                    'validation_passed': 'Valid'
+                })
+
+                # Format numeric columns
+                df_display_workouts['Cost (€)'] = df_display_workouts['Cost (€)'].apply(lambda x: f"€{x:.4f}")
+                df_display_workouts['Latency (ms)'] = df_display_workouts['Latency (ms)'].apply(lambda x: f"{x:.0f}")
+                df_display_workouts['Duration (s)'] = df_display_workouts['Duration (s)'].apply(lambda x: f"{x:.0f}")
+                df_display_workouts['Avg Power (W)'] = df_display_workouts['Avg Power (W)'].apply(lambda x: f"{x:.1f}")
+                df_display_workouts['Valid'] = df_display_workouts['Valid'].apply(lambda x: '✅' if x else '❌')
+
+                # Format delta columns with color indicators
+                def format_delta_cost_workout(x):
+                    if x < 0:
+                        return f"🟢 {x:.4f}"
+                    elif x > 0:
+                        return f"🔴 {x:+.4f}"
+                    else:
+                        return f"{x:.4f}"
+
+                def format_delta_numeric_workout(x):
+                    if x < 0:
+                        return f"🟢 {x:+.0f}"
+                    elif x > 0:
+                        return f"🔴 {x:+.0f}"
+                    else:
+                        return f"{x:.0f}"
+
+                df_display_workouts['Δ Cost'] = df_display_workouts['Δ Cost'].apply(format_delta_cost_workout)
+                df_display_workouts['Δ Input'] = df_display_workouts['Δ Input'].apply(format_delta_numeric_workout)
+                df_display_workouts['Δ Output'] = df_display_workouts['Δ Output'].apply(format_delta_numeric_workout)
+                df_display_workouts['Δ Tokens'] = df_display_workouts['Δ Tokens'].apply(format_delta_numeric_workout)
+                df_display_workouts['Δ Latency'] = df_display_workouts['Δ Latency'].apply(format_delta_numeric_workout)
+                df_display_workouts['Δ Attempts'] = df_display_workouts['Δ Attempts'].apply(format_delta_numeric_workout)
+                df_display_workouts['Δ Duration'] = df_display_workouts['Δ Duration'].apply(format_delta_numeric_workout)
+                df_display_workouts['Δ Power'] = df_display_workouts['Δ Power'].apply(lambda x: f"🟢 {x:+.1f}" if x < 0 else (f"🔴 {x:+.1f}" if x > 0 else f"{x:.1f}"))
+                df_display_workouts['Δ Intervals'] = df_display_workouts['Δ Intervals'].apply(format_delta_numeric_workout)
+
+                # Display dataframe
+                st.dataframe(df_display_workouts, use_container_width=True, height=600)
+
+    with tab2:
+        # VISUAL COMPARISON TAB (existing functionality)
+        render_visual_comparison_tab(ftp, gt_folder, results_folder, selected_workout_desc, workout_options, selected_model)
 
 
 if __name__ == "__main__":

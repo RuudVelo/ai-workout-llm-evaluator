@@ -1,0 +1,576 @@
+{
+  "prompt_id": "ronnestad_tripe_set_no_explanation",
+  "prompt_description": "Double Ronnestad sets with sweet spot between",
+  "user_prompt": "20min WU, 3 Ronnestad sets with 5 min of recovery in between, 15min CD.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T15:20:30.565252",
+  "generation_metadata": {
+    "attempts": 1,
+    "total_latency_all_attempts": 26773,
+    "total_tokens_all_attempts": {
+      "input": 1108,
+      "output": 2583,
+      "total": 3691
+    },
+    "total_cost_all_attempts": 0.024888,
+    "total_input_cost_all_attempts": 0.002415,
+    "total_output_cost_all_attempts": 0.022472,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 26773,
+        "tokens": {
+          "input": 1108,
+          "output": 2583,
+          "total": 3691
+        },
+        "cost": 0.024888,
+        "input_cost": 0.002415,
+        "output_cost": 0.022472
+      }
+    ]
+  },
+  "workout": {
+    "name": "Ronnestad 3 Sets Workout",
+    "description": "20min Warmup, 3 Ronnestad sets with 5min recovery in between, 15min Cooldown.",
+    "workout_duration": 3500,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 1200,
+        "power": 130,
+        "powerAdjustedUpward": 140,
+        "powerAdjustedDownward": 120,
+        "zone": 1,
+        "perc_ftp": 52,
+        "type": "warmup",
+        "notes": "Warmup"
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 1200,
+        "endTimeSeconds": 1230,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 6,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Ronnestad Set 1 - Interval 1"
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 1230,
+        "endTimeSeconds": 1245,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Ronnestad Set 1 - Rest 1"
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 1245,
+        "endTimeSeconds": 1275,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 6,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Ronnestad Set 1 - Interval 2"
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 1275,
+        "endTimeSeconds": 1290,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Ronnestad Set 1 - Rest 2"
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 1290,
+        "endTimeSeconds": 1320,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 6,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Ronnestad Set 1 - Interval 3"
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 1320,
+        "endTimeSeconds": 1335,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Ronnestad Set 1 - Rest 3"
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 1335,
+        "endTimeSeconds": 1365,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 6,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Ronnestad Set 1 - Interval 4"
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 1365,
+        "endTimeSeconds": 1380,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Ronnestad Set 1 - Rest 4"
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 1380,
+        "endTimeSeconds": 1410,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 6,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Ronnestad Set 1 - Interval 5"
+      },
+      {
+        "segment_number": 11,
+        "startTimeSeconds": 1410,
+        "endTimeSeconds": 1440,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Ronnestad Set 1 - Rest 5"
+      },
+      {
+        "segment_number": 12,
+        "startTimeSeconds": 1440,
+        "endTimeSeconds": 1470,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 6,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Ronnestad Set 1 - Interval 6"
+      },
+      {
+        "segment_number": 13,
+        "startTimeSeconds": 1470,
+        "endTimeSeconds": 1475,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Ronnestad Set 1 - Rest 6"
+      },
+      {
+        "segment_number": 14,
+        "startTimeSeconds": 1475,
+        "endTimeSeconds": 1775,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "recovery",
+        "notes": "Recovery between sets"
+      },
+      {
+        "segment_number": 15,
+        "startTimeSeconds": 1775,
+        "endTimeSeconds": 1805,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 6,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Ronnestad Set 2 - Interval 1"
+      },
+      {
+        "segment_number": 16,
+        "startTimeSeconds": 1805,
+        "endTimeSeconds": 1820,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Ronnestad Set 2 - Rest 1"
+      },
+      {
+        "segment_number": 17,
+        "startTimeSeconds": 1820,
+        "endTimeSeconds": 1850,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 6,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Ronnestad Set 2 - Interval 2"
+      },
+      {
+        "segment_number": 18,
+        "startTimeSeconds": 1850,
+        "endTimeSeconds": 1865,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Ronnestad Set 2 - Rest 2"
+      },
+      {
+        "segment_number": 19,
+        "startTimeSeconds": 1865,
+        "endTimeSeconds": 1895,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 6,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Ronnestad Set 2 - Interval 3"
+      },
+      {
+        "segment_number": 20,
+        "startTimeSeconds": 1895,
+        "endTimeSeconds": 1910,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Ronnestad Set 2 - Rest 3"
+      },
+      {
+        "segment_number": 21,
+        "startTimeSeconds": 1910,
+        "endTimeSeconds": 1940,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 6,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Ronnestad Set 2 - Interval 4"
+      },
+      {
+        "segment_number": 22,
+        "startTimeSeconds": 1940,
+        "endTimeSeconds": 1955,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Ronnestad Set 2 - Rest 4"
+      },
+      {
+        "segment_number": 23,
+        "startTimeSeconds": 1955,
+        "endTimeSeconds": 1985,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 6,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Ronnestad Set 2 - Interval 5"
+      },
+      {
+        "segment_number": 24,
+        "startTimeSeconds": 1985,
+        "endTimeSeconds": 2000,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Ronnestad Set 2 - Rest 5"
+      },
+      {
+        "segment_number": 25,
+        "startTimeSeconds": 2000,
+        "endTimeSeconds": 2030,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 6,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Ronnestad Set 2 - Interval 6"
+      },
+      {
+        "segment_number": 26,
+        "startTimeSeconds": 2030,
+        "endTimeSeconds": 2035,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Ronnestad Set 2 - Rest 6"
+      },
+      {
+        "segment_number": 27,
+        "startTimeSeconds": 2035,
+        "endTimeSeconds": 2335,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "recovery",
+        "notes": "Recovery between sets"
+      },
+      {
+        "segment_number": 28,
+        "startTimeSeconds": 2335,
+        "endTimeSeconds": 2365,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 6,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Ronnestad Set 3 - Interval 1"
+      },
+      {
+        "segment_number": 29,
+        "startTimeSeconds": 2365,
+        "endTimeSeconds": 2380,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Ronnestad Set 3 - Rest 1"
+      },
+      {
+        "segment_number": 30,
+        "startTimeSeconds": 2380,
+        "endTimeSeconds": 2410,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 6,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Ronnestad Set 3 - Interval 2"
+      },
+      {
+        "segment_number": 31,
+        "startTimeSeconds": 2410,
+        "endTimeSeconds": 2425,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Ronnestad Set 3 - Rest 2"
+      },
+      {
+        "segment_number": 32,
+        "startTimeSeconds": 2425,
+        "endTimeSeconds": 2455,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 6,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Ronnestad Set 3 - Interval 3"
+      },
+      {
+        "segment_number": 33,
+        "startTimeSeconds": 2455,
+        "endTimeSeconds": 2470,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Ronnestad Set 3 - Rest 3"
+      },
+      {
+        "segment_number": 34,
+        "startTimeSeconds": 2470,
+        "endTimeSeconds": 2500,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 6,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Ronnestad Set 3 - Interval 4"
+      },
+      {
+        "segment_number": 35,
+        "startTimeSeconds": 2500,
+        "endTimeSeconds": 2515,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Ronnestad Set 3 - Rest 4"
+      },
+      {
+        "segment_number": 36,
+        "startTimeSeconds": 2515,
+        "endTimeSeconds": 2545,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 6,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Ronnestad Set 3 - Interval 5"
+      },
+      {
+        "segment_number": 37,
+        "startTimeSeconds": 2545,
+        "endTimeSeconds": 2560,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Ronnestad Set 3 - Rest 5"
+      },
+      {
+        "segment_number": 38,
+        "startTimeSeconds": 2560,
+        "endTimeSeconds": 2590,
+        "power": 313,
+        "powerAdjustedUpward": 323,
+        "powerAdjustedDownward": 303,
+        "zone": 6,
+        "perc_ftp": 125,
+        "type": "interval",
+        "notes": "Ronnestad Set 3 - Interval 6"
+      },
+      {
+        "segment_number": 39,
+        "startTimeSeconds": 2590,
+        "endTimeSeconds": 2595,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "rest",
+        "notes": "Ronnestad Set 3 - Rest 6"
+      },
+      {
+        "segment_number": 40,
+        "startTimeSeconds": 2595,
+        "endTimeSeconds": 3500,
+        "power": 130,
+        "powerAdjustedUpward": 140,
+        "powerAdjustedDownward": 120,
+        "zone": 1,
+        "perc_ftp": 52,
+        "type": "cooldown",
+        "notes": "Cooldown"
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 3500,
+        "calculated_duration": 3500,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}

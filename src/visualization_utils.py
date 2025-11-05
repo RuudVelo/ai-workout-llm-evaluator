@@ -179,6 +179,10 @@ def calculate_workout_stats(workout_data: Dict, ftp: int) -> Dict:
     else:
         return {}
 
+    # Ensure workout is a valid dictionary
+    if not workout or not isinstance(workout, dict):
+        return {}
+
     intervals = workout.get('intervals', [])
 
     if not intervals:
@@ -284,6 +288,10 @@ def create_power_chart(workout_data: Dict, ftp: int, title: str) -> Optional[go.
     else:
         return None
 
+    # Ensure workout is a valid dictionary
+    if not workout or not isinstance(workout, dict):
+        return None
+
     intervals = workout.get('intervals', [])
 
     if not intervals:
@@ -372,6 +380,194 @@ def create_power_chart(workout_data: Dict, ftp: int, title: str) -> Optional[go.
     return fig
 
 
+def load_all_ground_truth_workouts(run_dir: str) -> Dict[str, Dict]:
+    """
+    Load all ground truth workouts from a run directory.
+
+    Args:
+        run_dir: Path to ground truth run directory
+
+    Returns:
+        Dictionary mapping prompt_id to workout data
+    """
+    workouts = {}
+    run_path = Path(run_dir)
+
+    if not run_path.exists():
+        return workouts
+
+    for json_file in run_path.glob("*.json"):
+        try:
+            with open(json_file, 'r') as f:
+                data = json.load(f)
+                prompt_id = data.get('prompt_id', json_file.stem)
+                workouts[prompt_id] = data
+        except (json.JSONDecodeError, IOError):
+            continue
+
+    return workouts
+
+
+def load_all_model_workouts(run_dir: str, model_display_name: str) -> Dict[str, Dict]:
+    """
+    Load all workouts for a specific model from results directory.
+
+    Args:
+        run_dir: Path to results run directory
+        model_display_name: Display name of the model
+
+    Returns:
+        Dictionary mapping prompt_id to workout data
+    """
+    workouts = {}
+    run_path = Path(run_dir)
+
+    if not run_path.exists():
+        return workouts
+
+    for json_file in run_path.glob("*.json"):
+        try:
+            with open(json_file, 'r') as f:
+                data = json.load(f)
+                # Check if this file is for the requested model
+                if data.get('model', {}).get('display_name') == model_display_name:
+                    prompt_id = data.get('prompt_id')
+                    if prompt_id:
+                        workouts[prompt_id] = data
+        except (json.JSONDecodeError, IOError):
+            continue
+
+    return workouts
+
+
+def calculate_aggregate_stats(gt_workouts: Dict[str, Dict], model_workouts: Dict[str, Dict], ftp: int) -> Dict:
+    """
+    Calculate aggregate statistics comparing model workouts to ground truth.
+
+    Args:
+        gt_workouts: Dictionary of ground truth workouts (prompt_id -> data)
+        model_workouts: Dictionary of model workouts (prompt_id -> data)
+        ftp: Functional Threshold Power
+
+    Returns:
+        Dictionary with aggregate statistics
+    """
+    total_workouts = len(gt_workouts)
+    successful_workouts = 0
+
+    # Accumulators
+    total_cost = 0
+    total_input_tokens = 0
+    total_output_tokens = 0
+    total_tokens = 0
+    total_latency = 0
+    total_attempts = 0
+    total_duration = 0
+    total_power = 0
+    total_intervals = 0
+
+    # GT accumulators for deltas
+    gt_total_cost = 0
+    gt_total_input_tokens = 0
+    gt_total_output_tokens = 0
+    gt_total_tokens = 0
+    gt_total_latency = 0
+    gt_total_attempts = 0
+    gt_total_duration = 0
+    gt_total_power = 0
+    gt_total_intervals = 0
+
+    valid_comparisons = 0
+
+    for prompt_id, gt_data in gt_workouts.items():
+        if prompt_id not in model_workouts:
+            continue
+
+        model_data = model_workouts[prompt_id]
+
+        # Check if model workout passed validation
+        if model_data.get('validation_passed', False):
+            successful_workouts += 1
+
+        # Calculate stats for both
+        gt_stats = calculate_workout_stats(gt_data, ftp)
+        model_stats = calculate_workout_stats(model_data, ftp)
+
+        if not gt_stats or not model_stats:
+            continue
+
+        valid_comparisons += 1
+
+        # Accumulate model stats
+        total_cost += model_stats['total_cost']
+        total_input_tokens += model_stats['input_tokens']
+        total_output_tokens += model_stats['output_tokens']
+        total_tokens += model_stats['total_tokens']
+        total_latency += model_stats['latency_ms']
+        total_attempts += model_stats['attempts']
+        total_duration += model_stats['duration']
+        total_power += model_stats['avg_power']
+        total_intervals += model_stats['num_intervals']
+
+        # Accumulate GT stats
+        gt_total_cost += gt_stats['total_cost']
+        gt_total_input_tokens += gt_stats['input_tokens']
+        gt_total_output_tokens += gt_stats['output_tokens']
+        gt_total_tokens += gt_stats['total_tokens']
+        gt_total_latency += gt_stats['latency_ms']
+        gt_total_attempts += gt_stats['attempts']
+        gt_total_duration += gt_stats['duration']
+        gt_total_power += gt_stats['avg_power']
+        gt_total_intervals += gt_stats['num_intervals']
+
+    if valid_comparisons == 0:
+        return {}
+
+    # Calculate averages
+    avg_cost = total_cost / valid_comparisons
+    avg_latency = total_latency / valid_comparisons
+    avg_attempts = total_attempts / valid_comparisons
+    avg_duration = total_duration / valid_comparisons
+    avg_power = total_power / valid_comparisons
+    avg_intervals = total_intervals / valid_comparisons
+
+    gt_avg_cost = gt_total_cost / valid_comparisons
+    gt_avg_latency = gt_total_latency / valid_comparisons
+    gt_avg_attempts = gt_total_attempts / valid_comparisons
+    gt_avg_duration = gt_total_duration / valid_comparisons
+    gt_avg_power = gt_total_power / valid_comparisons
+    gt_avg_intervals = gt_total_intervals / valid_comparisons
+
+    return {
+        'total_workouts': total_workouts,
+        'successful_workouts': successful_workouts,
+        'success_rate': (successful_workouts / total_workouts * 100) if total_workouts > 0 else 0,
+        'total_cost': total_cost,
+        'avg_cost': avg_cost,
+        'total_input_tokens': total_input_tokens,
+        'total_output_tokens': total_output_tokens,
+        'total_tokens': total_tokens,
+        'avg_latency_ms': avg_latency,
+        'total_latency_ms': total_latency,
+        'avg_attempts': avg_attempts,
+        'avg_duration': avg_duration,
+        'avg_power': avg_power,
+        'avg_intervals': avg_intervals,
+        # Deltas
+        'delta_total_cost': total_cost - gt_total_cost,
+        'delta_avg_cost': avg_cost - gt_avg_cost,
+        'delta_total_input_tokens': total_input_tokens - gt_total_input_tokens,
+        'delta_total_output_tokens': total_output_tokens - gt_total_output_tokens,
+        'delta_total_tokens': total_tokens - gt_total_tokens,
+        'delta_avg_latency_ms': avg_latency - gt_avg_latency,
+        'delta_total_latency_ms': total_latency - gt_total_latency,
+        'delta_avg_attempts': avg_attempts - gt_avg_attempts,
+        'delta_avg_duration': avg_duration - gt_avg_duration,
+        'delta_avg_power': avg_power - gt_avg_power,
+        'delta_avg_intervals': avg_intervals - gt_avg_intervals,
+    }
+
+
 def calculate_deltas(gt_stats: Dict, model_stats: Dict) -> Dict:
     """
     Calculate differences between ground truth and model statistics.
@@ -405,3 +601,70 @@ def calculate_deltas(gt_stats: Dict, model_stats: Dict) -> Dict:
             deltas[field] = f"{delta:+d}" if isinstance(delta, int) else f"{delta:+.0f}"
 
     return deltas
+
+
+def calculate_per_workout_comparison(gt_workouts: Dict[str, Dict], model_workouts: Dict[str, Dict], ftp: int, model_name: str) -> List[Dict]:
+    """
+    Calculate per-workout comparison statistics between model and ground truth.
+
+    Args:
+        gt_workouts: Dictionary of ground truth workouts (prompt_id -> data)
+        model_workouts: Dictionary of model workouts (prompt_id -> data)
+        ftp: Functional Threshold Power
+        model_name: Display name of the model
+
+    Returns:
+        List of dictionaries with per-workout comparison data
+    """
+    comparisons = []
+
+    for prompt_id, gt_data in gt_workouts.items():
+        if prompt_id not in model_workouts:
+            continue
+
+        model_data = model_workouts[prompt_id]
+
+        # Calculate stats for both
+        gt_stats = calculate_workout_stats(gt_data, ftp)
+        model_stats = calculate_workout_stats(model_data, ftp)
+
+        if not gt_stats or not model_stats:
+            continue
+
+        # Extract workout description
+        workout_desc = gt_stats.get('description', prompt_id)
+
+        comparison = {
+            'Model': model_name,
+            'Workout': workout_desc,
+            'prompt_id': prompt_id,
+            # Cost metrics
+            'cost': model_stats['total_cost'],
+            'delta_cost': model_stats['total_cost'] - gt_stats['total_cost'],
+            # Token metrics
+            'input_tokens': model_stats['input_tokens'],
+            'output_tokens': model_stats['output_tokens'],
+            'total_tokens': model_stats['total_tokens'],
+            'delta_input_tokens': model_stats['input_tokens'] - gt_stats['input_tokens'],
+            'delta_output_tokens': model_stats['output_tokens'] - gt_stats['output_tokens'],
+            'delta_total_tokens': model_stats['total_tokens'] - gt_stats['total_tokens'],
+            # Latency
+            'latency_ms': model_stats['latency_ms'],
+            'delta_latency_ms': model_stats['latency_ms'] - gt_stats['latency_ms'],
+            # Attempts
+            'attempts': model_stats['attempts'],
+            'delta_attempts': model_stats['attempts'] - gt_stats['attempts'],
+            # Workout metrics
+            'duration': model_stats['duration'],
+            'delta_duration': model_stats['duration'] - gt_stats['duration'],
+            'avg_power': model_stats['avg_power'],
+            'delta_avg_power': model_stats['avg_power'] - gt_stats['avg_power'],
+            'intervals': model_stats['num_intervals'],
+            'delta_intervals': model_stats['num_intervals'] - gt_stats['num_intervals'],
+            # Validation
+            'validation_passed': model_data.get('validation_passed', False),
+        }
+
+        comparisons.append(comparison)
+
+    return comparisons

@@ -1,0 +1,168 @@
+{
+  "prompt_id": "progressive_blocks",
+  "prompt_description": "Progressive Z2 to Z3 blocks",
+  "user_prompt": "Warmup 10 minutes, main set first block 15 minutes Z2, second block 15 minutes Z3, 5-minute recovery between, 10-minute cooldown.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T15:13:55.962653",
+  "generation_metadata": {
+    "attempts": 1,
+    "total_latency_all_attempts": 6766,
+    "total_tokens_all_attempts": {
+      "input": 1118,
+      "output": 438,
+      "total": 1556
+    },
+    "total_cost_all_attempts": 0.006248,
+    "total_input_cost_all_attempts": 0.002437,
+    "total_output_cost_all_attempts": 0.003811,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 6766,
+        "tokens": {
+          "input": 1118,
+          "output": 438,
+          "total": 1556
+        },
+        "cost": 0.006248,
+        "input_cost": 0.002437,
+        "output_cost": 0.003811
+      }
+    ]
+  },
+  "workout": {
+    "name": "Z2 to Z3 Ramp Workout",
+    "description": "A structured workout with a warmup, two main sets transitioning from Zone 2 to Zone 3, interspersed with recovery, and concluded with a cooldown.",
+    "workout_duration": 3600,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 600,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "warmup",
+        "notes": "Gradual warmup to prepare for main set."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 600,
+        "endTimeSeconds": 1500,
+        "power": 164,
+        "powerAdjustedUpward": 174,
+        "powerAdjustedDownward": 154,
+        "zone": 2,
+        "perc_ftp": 66,
+        "type": "active",
+        "notes": "First block at Zone 2 to build endurance."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 1500,
+        "endTimeSeconds": 1800,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Recovery block to prepare for next effort."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 1800,
+        "endTimeSeconds": 2700,
+        "power": 214,
+        "powerAdjustedUpward": 224,
+        "powerAdjustedDownward": 204,
+        "zone": 3,
+        "perc_ftp": 86,
+        "type": "active",
+        "notes": "Second block shifting to Zone 3 for increased intensity."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 2700,
+        "endTimeSeconds": 3000,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Recovery to ensure effective cooldown."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 3000,
+        "endTimeSeconds": 3600,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "cooldown",
+        "notes": "Cooldown to bring intensity back down and aid recovery."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 3600,
+        "calculated_duration": 3600,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}

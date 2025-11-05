@@ -1,0 +1,216 @@
+{
+  "prompt_id": "simple_threshold_60min",
+  "prompt_description": "Simple threshold workout request",
+  "user_prompt": "Create a 60 minute threshold workout.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T15:14:40.334182",
+  "generation_metadata": {
+    "attempts": 1,
+    "total_latency_all_attempts": 10773,
+    "total_tokens_all_attempts": {
+      "input": 1091,
+      "output": 589,
+      "total": 1680
+    },
+    "total_cost_all_attempts": 0.007503,
+    "total_input_cost_all_attempts": 0.002378,
+    "total_output_cost_all_attempts": 0.005124,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 10773,
+        "tokens": {
+          "input": 1091,
+          "output": 589,
+          "total": 1680
+        },
+        "cost": 0.007503,
+        "input_cost": 0.002378,
+        "output_cost": 0.005124
+      }
+    ]
+  },
+  "workout": {
+    "name": "Threshold Workout",
+    "description": "60 minute continuous threshold workout with periodic surges",
+    "workout_duration": 3600,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 120,
+        "power": 138,
+        "powerAdjustedUpward": 148,
+        "powerAdjustedDownward": 128,
+        "zone": 1,
+        "perc_ftp": 55,
+        "type": "warmup",
+        "notes": "Warm-up"
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 120,
+        "endTimeSeconds": 600,
+        "power": 237,
+        "powerAdjustedUpward": 247,
+        "powerAdjustedDownward": 227,
+        "zone": 3,
+        "perc_ftp": 95,
+        "type": "active",
+        "notes": "Threshold effort"
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 600,
+        "endTimeSeconds": 620,
+        "power": 275,
+        "powerAdjustedUpward": 285,
+        "powerAdjustedDownward": 265,
+        "zone": 5,
+        "perc_ftp": 110,
+        "type": "interval",
+        "notes": "Surge effort"
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 620,
+        "endTimeSeconds": 1100,
+        "power": 237,
+        "powerAdjustedUpward": 247,
+        "powerAdjustedDownward": 227,
+        "zone": 3,
+        "perc_ftp": 95,
+        "type": "active",
+        "notes": "Threshold effort"
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 1100,
+        "endTimeSeconds": 1120,
+        "power": 275,
+        "powerAdjustedUpward": 285,
+        "powerAdjustedDownward": 265,
+        "zone": 5,
+        "perc_ftp": 110,
+        "type": "interval",
+        "notes": "Surge effort"
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 1120,
+        "endTimeSeconds": 1600,
+        "power": 237,
+        "powerAdjustedUpward": 247,
+        "powerAdjustedDownward": 227,
+        "zone": 3,
+        "perc_ftp": 95,
+        "type": "active",
+        "notes": "Threshold effort"
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 1600,
+        "endTimeSeconds": 1620,
+        "power": 275,
+        "powerAdjustedUpward": 285,
+        "powerAdjustedDownward": 265,
+        "zone": 5,
+        "perc_ftp": 110,
+        "type": "interval",
+        "notes": "Surge effort"
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 1620,
+        "endTimeSeconds": 2100,
+        "power": 237,
+        "powerAdjustedUpward": 247,
+        "powerAdjustedDownward": 227,
+        "zone": 3,
+        "perc_ftp": 95,
+        "type": "active",
+        "notes": "Threshold effort"
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 2100,
+        "endTimeSeconds": 2120,
+        "power": 275,
+        "powerAdjustedUpward": 285,
+        "powerAdjustedDownward": 265,
+        "zone": 5,
+        "perc_ftp": 110,
+        "type": "interval",
+        "notes": "Surge effort"
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 2120,
+        "endTimeSeconds": 3600,
+        "power": 237,
+        "powerAdjustedUpward": 247,
+        "powerAdjustedDownward": 227,
+        "zone": 3,
+        "perc_ftp": 95,
+        "type": "active",
+        "notes": "Threshold effort cooldown"
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 3600,
+        "calculated_duration": 3600,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}

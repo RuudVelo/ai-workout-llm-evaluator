@@ -1,0 +1,132 @@
+{
+  "prompt_id": "tempo_time_window",
+  "prompt_description": "Tempo block using time markers",
+  "user_prompt": "60-minute ride. Easy spinning for first 15 minutes. From 15:00-45:00, maintain tempo at 80% FTP. Last 15 minutes easy cooldown.",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T15:16:18.891963",
+  "generation_metadata": {
+    "attempts": 1,
+    "total_latency_all_attempts": 4328,
+    "total_tokens_all_attempts": {
+      "input": 1120,
+      "output": 220,
+      "total": 1340
+    },
+    "total_cost_all_attempts": 0.004356,
+    "total_input_cost_all_attempts": 0.002442,
+    "total_output_cost_all_attempts": 0.001914,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 4328,
+        "tokens": {
+          "input": 1120,
+          "output": 220,
+          "total": 1340
+        },
+        "cost": 0.004356,
+        "input_cost": 0.002442,
+        "output_cost": 0.001914
+      }
+    ]
+  },
+  "workout": {
+    "name": "60-minute Ride",
+    "description": "A structured 60-minute ride with easy spinning, tempo, and cooldown phases.",
+    "workout_duration": 3600,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 900,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "warmup",
+        "notes": "Easy spinning to start the ride"
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 900,
+        "endTimeSeconds": 2700,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "active",
+        "notes": "Maintain a steady tempo effort"
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 2700,
+        "endTimeSeconds": 3600,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "cooldown",
+        "notes": "Ease into a cooldown for the last part of the ride"
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 3600,
+        "calculated_duration": 3600,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}

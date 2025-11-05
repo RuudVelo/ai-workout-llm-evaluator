@@ -1,0 +1,228 @@
+{
+  "prompt_id": "warmup_15min",
+  "prompt_description": "15 min WU",
+  "user_prompt": "Create a warm-up for which I can do before my time trial",
+  "ftp": 250,
+  "reference_model": {
+    "provider": "openai",
+    "model_id": "gpt-4o",
+    "display_name": "GPT-4o"
+  },
+  "generated_at": "2025-11-05T15:14:50.353109",
+  "generation_metadata": {
+    "attempts": 1,
+    "total_latency_all_attempts": 9999,
+    "total_tokens_all_attempts": {
+      "input": 1096,
+      "output": 688,
+      "total": 1784
+    },
+    "total_cost_all_attempts": 0.008375,
+    "total_input_cost_all_attempts": 0.002389,
+    "total_output_cost_all_attempts": 0.005986,
+    "all_attempts": [
+      {
+        "attempt": 1,
+        "latency_ms": 9999,
+        "tokens": {
+          "input": 1096,
+          "output": 688,
+          "total": 1784
+        },
+        "cost": 0.008375,
+        "input_cost": 0.002389,
+        "output_cost": 0.005986
+      }
+    ]
+  },
+  "workout": {
+    "name": "Pre-Time Trial Warm-Up",
+    "description": "A structured warm-up routine designed to prepare you for a time trial event.",
+    "workout_duration": 900,
+    "intervals": [
+      {
+        "segment_number": 1,
+        "startTimeSeconds": 0,
+        "endTimeSeconds": 120,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "warmup",
+        "notes": "Easy pedaling to start the warm-up."
+      },
+      {
+        "segment_number": 2,
+        "startTimeSeconds": 120,
+        "endTimeSeconds": 240,
+        "power": 150,
+        "powerAdjustedUpward": 160,
+        "powerAdjustedDownward": 140,
+        "zone": 2,
+        "perc_ftp": 60,
+        "type": "warmup",
+        "notes": "Increase to a steady state pace."
+      },
+      {
+        "segment_number": 3,
+        "startTimeSeconds": 240,
+        "endTimeSeconds": 360,
+        "power": 175,
+        "powerAdjustedUpward": 185,
+        "powerAdjustedDownward": 165,
+        "zone": 2,
+        "perc_ftp": 70,
+        "type": "warmup",
+        "notes": "Further increase to build intensity."
+      },
+      {
+        "segment_number": 4,
+        "startTimeSeconds": 360,
+        "endTimeSeconds": 420,
+        "power": 200,
+        "powerAdjustedUpward": 210,
+        "powerAdjustedDownward": 190,
+        "zone": 3,
+        "perc_ftp": 80,
+        "type": "warmup",
+        "notes": "Short ramp to near threshold level."
+      },
+      {
+        "segment_number": 5,
+        "startTimeSeconds": 420,
+        "endTimeSeconds": 480,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "cooldown",
+        "notes": "Brief recovery period."
+      },
+      {
+        "segment_number": 6,
+        "startTimeSeconds": 480,
+        "endTimeSeconds": 540,
+        "power": 250,
+        "powerAdjustedUpward": 260,
+        "powerAdjustedDownward": 240,
+        "zone": 4,
+        "perc_ftp": 100,
+        "type": "interval",
+        "notes": "Brief effort at threshold pace."
+      },
+      {
+        "segment_number": 7,
+        "startTimeSeconds": 540,
+        "endTimeSeconds": 600,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Recovery period to prepare for next effort."
+      },
+      {
+        "segment_number": 8,
+        "startTimeSeconds": 600,
+        "endTimeSeconds": 660,
+        "power": 275,
+        "powerAdjustedUpward": 285,
+        "powerAdjustedDownward": 265,
+        "zone": 5,
+        "perc_ftp": 110,
+        "type": "interval",
+        "notes": "Short, high-intensity effort."
+      },
+      {
+        "segment_number": 9,
+        "startTimeSeconds": 660,
+        "endTimeSeconds": 720,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "recovery",
+        "notes": "Recovery before final effort."
+      },
+      {
+        "segment_number": 10,
+        "startTimeSeconds": 720,
+        "endTimeSeconds": 780,
+        "power": 300,
+        "powerAdjustedUpward": 310,
+        "powerAdjustedDownward": 290,
+        "zone": 5,
+        "perc_ftp": 120,
+        "type": "interval",
+        "notes": "Final high-intensity burst."
+      },
+      {
+        "segment_number": 11,
+        "startTimeSeconds": 780,
+        "endTimeSeconds": 900,
+        "power": 125,
+        "powerAdjustedUpward": 135,
+        "powerAdjustedDownward": 115,
+        "zone": 1,
+        "perc_ftp": 50,
+        "type": "cooldown",
+        "notes": "Cool down and steady breathing."
+      }
+    ]
+  },
+  "validation_results": {
+    "overall_score": "8/8",
+    "pass_rate": 100.0,
+    "all_passed": true,
+    "metrics": [
+      {
+        "metric": "schema_validation",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "metric": "required_fields",
+        "passed": true,
+        "missing_fields": []
+      },
+      {
+        "metric": "duration_consistency",
+        "passed": true,
+        "declared_duration": 900,
+        "calculated_duration": 900,
+        "difference": 0
+      },
+      {
+        "metric": "time_continuity",
+        "passed": true,
+        "gaps": [],
+        "overlaps": []
+      },
+      {
+        "metric": "power_zone_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "ftp_percentage_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "power_adjustment_accuracy",
+        "passed": true,
+        "mismatches": []
+      },
+      {
+        "metric": "segment_type_validity",
+        "passed": true,
+        "invalid_types": []
+      }
+    ]
+  },
+  "validation_passed": true
+}
