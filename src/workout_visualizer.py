@@ -258,7 +258,7 @@ def render_model_vs_model_tab(ftp, results_folder, selected_workout_desc, workou
             model_left
         )
         if model_left_chart:
-            st.plotly_chart(model_left_chart, use_container_width=True)
+            st.plotly_chart(model_left_chart, use_container_width=True, key="model_left_chart")
         else:
             st.error("Could not generate chart")
 
@@ -292,7 +292,7 @@ def render_model_vs_model_tab(ftp, results_folder, selected_workout_desc, workou
             model_right
         )
         if model_right_chart:
-            st.plotly_chart(model_right_chart, use_container_width=True)
+            st.plotly_chart(model_right_chart, use_container_width=True, key="model_right_chart")
         else:
             st.error("Could not generate chart")
 
