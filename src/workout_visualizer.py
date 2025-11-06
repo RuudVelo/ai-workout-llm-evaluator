@@ -23,6 +23,7 @@ from visualization_utils import (
     load_model_workout,
     list_available_workouts,
     list_available_models,
+    list_available_models_from_run,
     calculate_workout_stats,
     create_power_chart,
     calculate_deltas,
@@ -231,14 +232,12 @@ def main():
         st.warning(f"⚠️ No workouts found in {gt_folder}")
         return
 
-    # Load available models
-    models_yaml = "config/models.yaml"
-    gt_yaml = "config/ground_truth.yaml"
-
-    available_models = list_available_models(models_yaml, gt_yaml)
+    # Load available models from the results run folder (self-contained approach)
+    available_models = list_available_models_from_run(results_folder)
 
     if not available_models:
-        st.warning("⚠️ No models found in config/models.yaml")
+        st.warning(f"⚠️ No models found in {results_folder}")
+        st.info("Make sure the results folder contains JSON files with model data")
         return
 
     # Workout selection dropdown (for Visual Comparison tab)

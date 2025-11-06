@@ -119,9 +119,48 @@ def list_available_workouts(run_dir: str) -> List[Tuple[str, str]]:
     return sorted(workouts, key=lambda x: x[1])
 
 
+def list_available_models_from_run(run_dir: str) -> List[str]:
+    """
+    List all available models from a run directory by scanning JSON files.
+
+    This reads the display names directly from the JSON files in the run folder,
+    making run folders self-contained and portable.
+
+    Args:
+        run_dir: Path to results run directory (e.g., 'results/run_20251105_120620')
+
+    Returns:
+        List of unique model display names found in the JSON files
+    """
+    run_path = Path(run_dir)
+
+    if not run_path.exists():
+        return []
+
+    display_names = set()
+
+    # Scan all JSON files (excluding summary.json and any log files)
+    for json_file in run_path.glob("*.json"):
+        if json_file.name in ['summary.json', 'evaluation.json']:
+            continue
+
+        try:
+            with open(json_file, 'r') as f:
+                data = json.load(f)
+                display_name = data.get('model', {}).get('display_name')
+                if display_name:
+                    display_names.add(display_name)
+        except (json.JSONDecodeError, IOError):
+            continue
+
+    return sorted(list(display_names))
+
+
 def list_available_models(models_yaml_path: str, ground_truth_yaml_path: str) -> List[str]:
     """
     List all available models from models.yaml, excluding the ground truth model.
+
+    DEPRECATED: Use list_available_models_from_run() instead for self-contained run folders.
 
     Args:
         models_yaml_path: Path to models.yaml
