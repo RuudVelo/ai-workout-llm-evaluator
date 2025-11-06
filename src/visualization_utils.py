@@ -707,3 +707,111 @@ def calculate_per_workout_comparison(gt_workouts: Dict[str, Dict], model_workout
         comparisons.append(comparison)
 
     return comparisons
+
+
+def load_evaluation_report(run_dir: str) -> Optional[Dict]:
+    """
+    Load the evaluation report JSON file from a run directory.
+
+    Args:
+        run_dir: Path to results run directory
+
+    Returns:
+        Evaluation report data or None if not found
+    """
+    report_path = Path(run_dir) / "evaluation_report.json"
+
+    if not report_path.exists():
+        return None
+
+    try:
+        with open(report_path, 'r') as f:
+            return json.load(f)
+    except (json.JSONDecodeError, IOError) as e:
+        print(f"Error loading evaluation report: {e}")
+        return None
+
+
+def extract_structure_quality_data(evaluation_report: Dict) -> List[Dict]:
+    """
+    Extract structure quality data from evaluation report.
+
+    Args:
+        evaluation_report: The loaded evaluation_report.json
+
+    Returns:
+        List of dictionaries with structure quality data per evaluation
+    """
+    if not evaluation_report:
+        return []
+
+    evaluations = evaluation_report.get('evaluations', [])
+    sq_data = []
+
+    for eval_item in evaluations:
+        if eval_item.get('evaluation_skipped', False):
+            continue
+
+        sq = eval_item.get('structure_quality', {})
+        if not sq.get('enabled', False) or sq.get('composite_score') is None:
+            continue
+
+        prompt_id = eval_item.get('prompt_id', 'unknown')
+        model_name = eval_item.get('model', 'unknown')
+
+        # Get component scores
+        components = sq.get('components', {})
+        zone_dist = components.get('power_zone_distribution_match', {})
+        pattern_sim = components.get('power_pattern_similarity', {})
+
+        sq_data.append({
+            'prompt_id': prompt_id,
+            'model': model_name,
+            'composite_score': sq.get('composite_score', 0),
+            'zone_distribution_score': zone_dist.get('score', 0) * 100 if zone_dist.get('score') is not None else 0,
+            'pattern_similarity_score': pattern_sim.get('score', 0) * 100 if pattern_sim.get('score') is not None else 0,
+            'zone_distribution_method': zone_dist.get('method', 'N/A'),
+            'pattern_similarity_method': pattern_sim.get('method', 'N/A'),
+        })
+
+    return sq_data
+
+
+def get_score_category(score: float) -> str:
+    """
+    Categorize a structure quality score.
+
+    Args:
+        score: Composite score (0-100)
+
+    Returns:
+        Category string: Excellent, Good, Fair, or Poor
+    """
+    if score >= 90:
+        return "Excellent"
+    elif score >= 75:
+        return "Good"
+    elif score >= 60:
+        return "Fair"
+    else:
+        return "Poor"
+
+
+def get_score_color(score: float) -> str:
+    """
+    Get color for a structure quality score.
+
+    Args:
+        score: Composite score (0-100)
+
+    Returns:
+        Hex color string
+    """
+    if score >= 90:
+        return "#00C851"  # Green
+    elif score >= 75:
+        return "#4169E1"  # Blue
+    elif score >= 60:
+        return "#FFD700"  # Yellow
+    else:
+        return "#FF0000"  # Red

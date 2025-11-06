@@ -1,0 +1,63 @@
+structure_quality_scoring:
+  enabled: true
+
+  # Overall component weights (must sum to 1.0)
+  component_weights:
+    power_zone_distribution_match: 0.50
+    power_pattern_similarity: 0.50
+
+  # Power zone distribution settings
+  power_zone_distribution:
+    method: "jensen_shannon"  # Options: jensen_shannon, cosine, chi_square
+    min_zone_percentage_threshold: 5.0  # Ignore zones with <5% time in comparison
+
+  # Power pattern similarity settings
+  power_pattern_similarity:
+    method: "segmented_dtw"  # Options: segmented_dtw, dtw, correlation
+    fallback_method: "correlation"  # Fallback if DTW fails or is too slow
+    resolution_seconds: 1  # Time series resolution (1 second recommended)
+
+    # Segment weights for segmented_dtw (must sum to 1.0)
+    segment_weights:
+      warmup: 0.15
+      main: 0.70
+      cooldown: 0.15
+
+    # DTW parameters
+    dtw_window_size: null  # null = no constraint, or specify max seconds offset allowed
+    dtw_max_duration: 7200  # Skip DTW if workout > 2 hours (use fallback)
+
+    # Segment identification rules
+    segment_identification:
+      warmup_types: ["warmup"]
+      main_types: ["interval", "active", "recovery", "rest"]
+      cooldown_types: ["cooldown"]
+
+      # Fallback logic if no warmup/cooldown found
+      auto_detect_segments: true
+      warmup_duration_threshold: 600  # First 10min = warmup if no explicit type
+      cooldown_duration_threshold: 600  # Last 10min = cooldown if no explicit type
+
+  # Fallback behavior
+  fallback:
+    on_missing_ground_truth: "skip"  # Options: skip, neutral_score, error
+    on_calculation_error: "skip"  # Options: skip, neutral_score, error
+    neutral_score_value: 0.5
+
+# Display settings for visualization
+visualization:
+  score_display_format: "percentage"  # Options: percentage (0-100), decimal (0-1.0)
+
+  # Color thresholds for score visualization
+  color_thresholds:
+    excellent: 90  # >= 90%
+    good: 75       # >= 75%
+    fair: 60       # >= 60%
+    poor: 0        # < 60%
+
+  # Score interpretation labels
+  score_labels:
+    excellent: "Excellent Match"
+    good: "Good Match"
+    fair: "Fair Match"
+    poor: "Poor Match"

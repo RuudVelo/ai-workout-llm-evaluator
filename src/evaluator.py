@@ -409,14 +409,25 @@ def evaluate_result_file(
 
         if gt_file.exists():
             from comparison_metrics import compare_to_ground_truth
+            from structure_quality_metrics import evaluate_structure_quality
 
             with open(gt_file, "r") as f:
                 ground_truth = json.load(f)
 
             comparison = compare_to_ground_truth(ground_truth["workout"], workout)
             eval_result["ground_truth_comparison"] = comparison
+
+            # Add structure quality scoring
+            structure_quality = evaluate_structure_quality(
+                ground_truth["workout"], workout
+            )
+            eval_result["structure_quality"] = structure_quality
         else:
             eval_result["ground_truth_comparison"] = {
+                "available": False,
+                "reason": f"No ground truth file found: {gt_file.name}",
+            }
+            eval_result["structure_quality"] = {
                 "available": False,
                 "reason": f"No ground truth file found: {gt_file.name}",
             }
@@ -460,6 +471,13 @@ def evaluate_run_directory(
         if e.get("ground_truth_comparison", {}).get("all_passed") is not None
     ]
 
+    # Calculate structure quality metrics if available
+    structure_quality_scores = [
+        e.get("structure_quality")
+        for e in valid_evals
+        if e.get("structure_quality", {}).get("composite_score") is not None
+    ]
+
     aggregate = {
         "run_directory": str(run_dir),
         "total_results": len(evaluations),
@@ -499,6 +517,49 @@ def evaluate_run_directory(
             ),
         }
 
+    # Add structure quality summary
+    if structure_quality_scores:
+        # Filter out None scores for average calculation
+        valid_scores = [
+            sq.get("composite_score", 0)
+            for sq in structure_quality_scores
+            if sq.get("composite_score") is not None
+        ]
+
+        aggregate["structure_quality"] = {
+            "available": len(structure_quality_scores),
+            "valid_scores": len(valid_scores),
+            "average_composite_score": (
+                round(sum(valid_scores) / len(valid_scores), 2)
+                if valid_scores
+                else 0
+            ),
+            "excellent_count": sum(
+                1
+                for sq in structure_quality_scores
+                if sq.get("composite_score") is not None
+                and sq.get("composite_score", 0) >= 90
+            ),
+            "good_count": sum(
+                1
+                for sq in structure_quality_scores
+                if sq.get("composite_score") is not None
+                and 75 <= sq.get("composite_score", 0) < 90
+            ),
+            "fair_count": sum(
+                1
+                for sq in structure_quality_scores
+                if sq.get("composite_score") is not None
+                and 60 <= sq.get("composite_score", 0) < 75
+            ),
+            "poor_count": sum(
+                1
+                for sq in structure_quality_scores
+                if sq.get("composite_score") is not None
+                and sq.get("composite_score", 0) < 60
+            ),
+        }
+
     # Save evaluation report
     eval_report_path = run_dir / "evaluation_report.json"
     with open(eval_report_path, "w") as f:
@@ -522,6 +583,17 @@ def evaluate_run_directory(
             f"    Perfect matches: {gt_summary['all_passed_count']}/{gt_summary['available']}"
         )
         print(f"    Average similarity: {gt_summary['average_similarity']}%")
+
+    if "structure_quality" in aggregate:
+        sq_summary = aggregate["structure_quality"]
+        print("\n  Structure Quality Scoring:")
+        print(f"    Available: {sq_summary['available']}")
+        print(f"    Average composite score: {sq_summary['average_composite_score']}%")
+        print(
+            f"    Distribution: Excellent={sq_summary['excellent_count']}, "
+            f"Good={sq_summary['good_count']}, Fair={sq_summary['fair_count']}, "
+            f"Poor={sq_summary['poor_count']}"
+        )
 
     print(f"\nReport saved to: {eval_report_path}")
 

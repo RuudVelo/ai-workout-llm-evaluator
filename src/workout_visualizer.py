@@ -32,6 +32,7 @@ from visualization_utils import (
     calculate_aggregate_stats,
     calculate_per_workout_comparison,
 )
+from structure_quality_tab import render_structure_quality_tab
 import pandas as pd
 
 
@@ -262,8 +263,8 @@ def main():
     st.sidebar.subheader("Navigation")
     view_mode = st.sidebar.radio(
         "Select View",
-        options=["📊 Table Comparison", "📈 Visual Comparison"],
-        help="Choose between aggregate table view or individual workout comparison"
+        options=["📊 Table Comparison", "📈 Visual Comparison", "🎯 Structure Quality"],
+        help="Choose between aggregate table view, individual workout comparison, or structure quality analysis"
     )
 
     # Render content based on selected view
@@ -570,6 +571,10 @@ def main():
 
                 # Display dataframe
                 st.dataframe(df_display_workouts, use_container_width=True, height=600)
+
+    elif view_mode == "🎯 Structure Quality":
+        # STRUCTURE QUALITY TAB
+        render_structure_quality_tab(results_folder)
 
     else:  # Visual Comparison view
         render_visual_comparison_tab(ftp, gt_folder, results_folder, selected_workout_desc, workout_options, selected_model)
