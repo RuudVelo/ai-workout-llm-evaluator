@@ -174,6 +174,186 @@ def render_visual_comparison_tab(ftp, gt_folder, results_folder, selected_workou
             st.text(f"Attempts: {model_stats['attempts']}")
 
 
+def render_model_vs_model_tab(ftp, results_folder, selected_workout_desc, workout_options, available_models):
+    """Render the model vs model comparison tab."""
+    selected_prompt_id = workout_options[selected_workout_desc]
+
+    st.markdown("---")
+
+    # Model selectors in two columns
+    selector_col1, selector_col2 = st.columns(2)
+
+    with selector_col1:
+        model_left = st.selectbox(
+            "Left Model",
+            options=available_models,
+            key="model_left",
+            help="Select the model to display on the left"
+        )
+
+    with selector_col2:
+        model_right = st.selectbox(
+            "Right Model",
+            options=available_models,
+            key="model_right",
+            index=min(1, len(available_models) - 1) if len(available_models) > 1 else 0,
+            help="Select the model to display on the right"
+        )
+
+    # Load workout data
+    with st.spinner("Loading workout data..."):
+        model_left_data = load_model_workout(results_folder, model_left, selected_prompt_id)
+        model_right_data = load_model_workout(results_folder, model_right, selected_prompt_id)
+
+    # Check if data loaded successfully
+    if not model_left_data:
+        st.error(f"❌ Could not load workout for {model_left}: {selected_prompt_id}")
+        st.info("This model may not have generated this specific workout.")
+        return
+
+    if not model_right_data:
+        st.error(f"❌ Could not load workout for {model_right}: {selected_prompt_id}")
+        st.info("This model may not have generated this specific workout.")
+        return
+
+    # Calculate statistics
+    model_left_stats = calculate_workout_stats(model_left_data, ftp)
+    model_right_stats = calculate_workout_stats(model_right_data, ftp)
+    deltas = calculate_deltas(model_left_stats, model_right_stats)
+
+    # Display workout description and prompt (use left model's data, both should have the same prompt)
+    description = model_left_stats.get('description', selected_workout_desc)
+    user_prompt = model_left_stats.get('user_prompt', 'N/A')
+    st.markdown(f"**{description}** | _{user_prompt}_")
+
+    # Custom CSS for consistent metric fonts and styling
+    st.markdown("""
+        <style>
+        [data-testid="stMetricValue"] {
+            font-size: 22px;
+            font-weight: 400;
+        }
+        [data-testid="stMetricLabel"] {
+            font-size: 14px;
+            font-weight: 400;
+        }
+        div[data-testid="stMetric"] {
+            background-color: transparent;
+            padding: 5px;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+
+    # Create two columns for side-by-side comparison
+    left_col, right_col = st.columns(2)
+
+    # LEFT COLUMN: Model Left
+    with left_col:
+        st.markdown(f"#### 🤖 {model_left}")
+
+        # Chart
+        model_left_chart = create_power_chart(
+            model_left_data,
+            ftp,
+            model_left
+        )
+        if model_left_chart:
+            st.plotly_chart(model_left_chart, use_container_width=True)
+        else:
+            st.error("Could not generate chart")
+
+        # Compact metrics in 3 columns
+        m1, m2, m3 = st.columns(3)
+        with m1:
+            st.markdown(f"<p style='font-size: 14px; margin-bottom: 2px; font-weight: 400;'>Duration</p><p style='font-size: 22px; font-weight: 400; margin-top: 0px;'>{model_left_stats['duration_formatted']}</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='font-size: 14px; margin-bottom: 2px; font-weight: 400;'>Intervals</p><p style='font-size: 22px; font-weight: 400; margin-top: 0px;'>{model_left_stats['num_intervals']}</p>", unsafe_allow_html=True)
+        with m2:
+            st.markdown(f"<p style='font-size: 14px; margin-bottom: 2px; font-weight: 400;'>Avg Power</p><p style='font-size: 22px; font-weight: 400; margin-top: 0px;'>{model_left_stats['avg_power']:.1f}W</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='font-size: 14px; margin-bottom: 2px; font-weight: 400;'>Min/Max</p><p style='font-size: 22px; font-weight: 400; margin-top: 0px;'>{model_left_stats['min_power']}/{model_left_stats['max_power']}W</p>", unsafe_allow_html=True)
+        with m3:
+            st.markdown(f"<p style='font-size: 14px; margin-bottom: 2px; font-weight: 400;'>Latency</p><p style='font-size: 22px; font-weight: 400; margin-top: 0px;'>{model_left_stats['latency_sec']:.1f}s</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='font-size: 14px; margin-bottom: 2px; font-weight: 400;'>Cost</p><p style='font-size: 22px; font-weight: 400; margin-top: 0px;'>€{model_left_stats['total_cost']:.4f}</p>", unsafe_allow_html=True)
+
+        # Compact token info
+        with st.expander("📊 Tokens & Cost Details"):
+            st.text(f"Input:  {model_left_stats['input_tokens']:,} tokens (€{model_left_stats['input_cost']:.6f})")
+            st.text(f"Output: {model_left_stats['output_tokens']:,} tokens (€{model_left_stats['output_cost']:.6f})")
+            st.text(f"Total:  {model_left_stats['total_tokens']:,} tokens (€{model_left_stats['total_cost']:.6f})")
+            st.text(f"Attempts: {model_left_stats['attempts']}")
+
+    # RIGHT COLUMN: Model Right
+    with right_col:
+        st.markdown(f"#### 🤖 {model_right}")
+
+        # Chart
+        model_right_chart = create_power_chart(
+            model_right_data,
+            ftp,
+            model_right
+        )
+        if model_right_chart:
+            st.plotly_chart(model_right_chart, use_container_width=True)
+        else:
+            st.error("Could not generate chart")
+
+        # Compact metrics with deltas (comparing to left model)
+        m1, m2, m3 = st.columns(3)
+        with m1:
+            duration_delta_sec = int(deltas.get('duration', '0'))
+            st.markdown(f"<p style='font-size: 14px; margin-bottom: 2px; font-weight: 400;'>Duration</p><p style='font-size: 22px; font-weight: 400; margin-top: 0px;'>{model_right_stats['duration_formatted']} <span style='font-size: 16px; color: {'green' if duration_delta_sec <= 0 else 'red'}'>({duration_delta_sec:+d}s)</span></p>", unsafe_allow_html=True)
+
+            intervals_delta = int(deltas.get('num_intervals', '0'))
+            st.markdown(f"<p style='font-size: 14px; margin-bottom: 2px; font-weight: 400;'>Intervals</p><p style='font-size: 22px; font-weight: 400; margin-top: 0px;'>{model_right_stats['num_intervals']} <span style='font-size: 16px; color: {'green' if intervals_delta <= 0 else 'red'}'>({intervals_delta:+d})</span></p>", unsafe_allow_html=True)
+
+        with m2:
+            avg_power_delta = float(deltas.get('avg_power', '0'))
+            st.markdown(f"<p style='font-size: 14px; margin-bottom: 2px; font-weight: 400;'>Avg Power</p><p style='font-size: 22px; font-weight: 400; margin-top: 0px;'>{model_right_stats['avg_power']:.1f}W <span style='font-size: 16px; color: {'green' if avg_power_delta <= 0 else 'red'}'>({avg_power_delta:+.1f}W)</span></p>", unsafe_allow_html=True)
+
+            min_delta = int(deltas.get('min_power', '0'))
+            max_delta = int(deltas.get('max_power', '0'))
+            st.markdown(f"<p style='font-size: 14px; margin-bottom: 2px; font-weight: 400;'>Min/Max</p><p style='font-size: 22px; font-weight: 400; margin-top: 0px;'>{model_right_stats['min_power']}/{model_right_stats['max_power']}W <span style='font-size: 16px; color: gray'>({min_delta:+d}/{max_delta:+d}W)</span></p>", unsafe_allow_html=True)
+
+        with m3:
+            latency_delta = (model_right_stats['latency_ms'] - model_left_stats['latency_ms'])/1000
+            st.markdown(f"<p style='font-size: 14px; margin-bottom: 2px; font-weight: 400;'>Latency</p><p style='font-size: 22px; font-weight: 400; margin-top: 0px;'>{model_right_stats['latency_sec']:.1f}s <span style='font-size: 16px; color: {'green' if latency_delta <= 0 else 'red'}'>({latency_delta:+.1f}s)</span></p>", unsafe_allow_html=True)
+
+            cost_delta = model_right_stats['total_cost'] - model_left_stats['total_cost']
+            st.markdown(f"<p style='font-size: 14px; margin-bottom: 2px; font-weight: 400;'>Cost</p><p style='font-size: 22px; font-weight: 400; margin-top: 0px;'>€{model_right_stats['total_cost']:.4f} <span style='font-size: 16px; color: {'green' if cost_delta <= 0 else 'red'}'>({cost_delta:+.4f})</span></p>", unsafe_allow_html=True)
+
+        # Compact token info with deltas
+        with st.expander("📊 Tokens & Cost Details"):
+            st.text(f"Input:  {model_right_stats['input_tokens']:,} ({deltas.get('input_tokens', '0')}) tokens (€{model_right_stats['input_cost']:.6f})")
+            st.text(f"Output: {model_right_stats['output_tokens']:,} ({deltas.get('output_tokens', '0')}) tokens (€{model_right_stats['output_cost']:.6f})")
+            st.text(f"Total:  {model_right_stats['total_tokens']:,} ({deltas.get('total_tokens', '0')}) tokens (€{model_right_stats['total_cost']:.6f})")
+            st.text(f"Attempts: {model_right_stats['attempts']}")
+
+    # Comparison summary at the bottom
+    st.markdown("---")
+    st.markdown("### 📊 Comparison Summary")
+
+    summary_cols = st.columns(4)
+
+    with summary_cols[0]:
+        duration_diff = model_right_stats['duration'] - model_left_stats['duration']
+        st.metric("Duration Difference", f"{duration_diff:+d}s",
+                 delta=f"{abs(duration_diff)}s", delta_color="inverse")
+
+    with summary_cols[1]:
+        latency_diff = model_right_stats['latency_sec'] - model_left_stats['latency_sec']
+        st.metric("Latency Difference", f"{latency_diff:+.1f}s",
+                 delta=f"{abs(latency_diff):.1f}s", delta_color="inverse")
+
+    with summary_cols[2]:
+        cost_diff = model_right_stats['total_cost'] - model_left_stats['total_cost']
+        st.metric("Cost Difference", f"€{cost_diff:+.4f}",
+                 delta=f"€{abs(cost_diff):.4f}", delta_color="inverse")
+
+    with summary_cols[3]:
+        token_diff = model_right_stats['total_tokens'] - model_left_stats['total_tokens']
+        st.metric("Token Difference", f"{token_diff:+,}",
+                 delta=f"{abs(token_diff):,}", delta_color="inverse")
+
+
 def main():
     """Main Streamlit application."""
 
@@ -263,8 +443,8 @@ def main():
     st.sidebar.subheader("Navigation")
     view_mode = st.sidebar.radio(
         "Select View",
-        options=["📊 Table Comparison", "📈 Visual Comparison", "🎯 Structure Quality"],
-        help="Choose between aggregate table view, individual workout comparison, or structure quality analysis"
+        options=["📊 Table Comparison", "📈 Visual Comparison Ground Truth", "🔄 Model vs Model", "🎯 Structure Quality"],
+        help="Choose between aggregate table view, ground truth comparison, model-to-model comparison, or structure quality analysis"
     )
 
     # Render content based on selected view
@@ -576,7 +756,11 @@ def main():
         # STRUCTURE QUALITY TAB
         render_structure_quality_tab(results_folder)
 
-    else:  # Visual Comparison view
+    elif view_mode == "🔄 Model vs Model":
+        # MODEL VS MODEL COMPARISON TAB
+        render_model_vs_model_tab(ftp, results_folder, selected_workout_desc, workout_options, available_models)
+
+    else:  # Visual Comparison Ground Truth view
         render_visual_comparison_tab(ftp, gt_folder, results_folder, selected_workout_desc, workout_options, selected_model)
 
 
