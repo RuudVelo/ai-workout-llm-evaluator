@@ -331,10 +331,15 @@ def render_structure_quality_tab(results_folder: str):
         df_filtered['category'] = df_filtered['composite_score'].apply(get_score_category)
         category_counts = df_filtered['category'].value_counts()
 
+        # Reorder categories in intuitive order: Excellent, Good, Fair, Poor
+        category_order = ['Excellent', 'Good', 'Fair', 'Poor']
+        ordered_categories = [cat for cat in category_order if cat in category_counts.index]
+        ordered_values = [category_counts[cat] for cat in ordered_categories]
+
         fig_pie = px.pie(
-            values=category_counts.values,
-            names=category_counts.index,
-            color=category_counts.index,
+            values=ordered_values,
+            names=ordered_categories,
+            color=ordered_categories,
             color_discrete_map={
                 'Excellent': '#00C851',
                 'Good': '#4169E1',
