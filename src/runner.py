@@ -15,6 +15,32 @@ from evaluator import WorkoutEvaluator
 from postprocessor import WorkoutPostprocessor
 
 
+def sanitize_display_name(display_name: str) -> str:
+    """
+    Convert display_name to filesystem-safe string.
+
+    Removes or replaces characters that are problematic for filenames:
+    - Slashes (/) → underscores
+    - Spaces → underscores
+    - Parentheses → removed
+    - Other special characters as needed
+
+    Args:
+        display_name: The model's display name (e.g., "GPT-4o", "Claude 3.5 Sonnet")
+
+    Returns:
+        Sanitized string safe for use in filenames
+    """
+    sanitized = display_name
+    sanitized = sanitized.replace('/', '_')
+    sanitized = sanitized.replace(' ', '_')
+    sanitized = sanitized.replace('(', '')
+    sanitized = sanitized.replace(')', '')
+    sanitized = sanitized.replace('[', '')
+    sanitized = sanitized.replace(']', '')
+    return sanitized
+
+
 def setup_logging(log_file: Path) -> logging.Logger:
     """Setup logging to both file and console."""
     log_file.parent.mkdir(parents=True, exist_ok=True)
@@ -351,8 +377,12 @@ class EvalRunner:
         skipped_reference_model = original_model_count > len(models)
 
         # Apply filters if provided
+        # Support filtering by both model_id and display_name for flexibility
         if model_filter:
-            models = [m for m in models if m["model_id"] in model_filter]
+            models = [
+                m for m in models
+                if m["model_id"] in model_filter or m["display_name"] in model_filter
+            ]
 
         if prompt_filter:
             prompts = [p for p in prompts if p["id"] in prompt_filter]
@@ -380,7 +410,8 @@ class EvalRunner:
                 all_results.append(result)
 
                 # Save individual result
-                filename = f"{prompt_config['id']}_{model_config['model_id'].replace('/', '_')}.json"
+                display_name_safe = sanitize_display_name(model_config['display_name'])
+                filename = f"{prompt_config['id']}_{display_name_safe}.json"
                 result_path = self.run_dir / filename
                 self._save_json(result, result_path)
 
