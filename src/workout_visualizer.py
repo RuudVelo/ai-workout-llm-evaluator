@@ -45,6 +45,27 @@ st.set_page_config(
 )
 
 
+def get_available_folders(base_dir: str) -> list:
+    """Get list of available run folders from a base directory."""
+    try:
+        base_path = Path(base_dir)
+        if not base_path.exists():
+            return []
+
+        # Find all subdirectories that start with 'run_'
+        folders = [
+            f"{base_dir}/{folder.name}"
+            for folder in base_path.iterdir()
+            if folder.is_dir() and folder.name.startswith('run_')
+        ]
+
+        # Sort by name (which includes timestamp) - newest first
+        folders.sort(reverse=True)
+        return folders
+    except Exception:
+        return []
+
+
 def render_visual_comparison_tab(ftp, gt_folder, results_folder, selected_workout_desc, workout_options, selected_model):
     """Render the visual comparison tab (current functionality)."""
     selected_prompt_id = workout_options[selected_workout_desc]
@@ -374,19 +395,39 @@ def main():
 
     # Ground truth folder selection
     st.sidebar.subheader("Ground Truth Run")
-    gt_folder = st.sidebar.text_input(
-        "Ground Truth Folder Path",
-        value="ground_truth/run_20251104_155341",
-        help="Enter the path to the ground truth run directory"
-    )
+    gt_folders = get_available_folders("ground_truth")
+
+    if gt_folders:
+        gt_folder = st.sidebar.selectbox(
+            "Select Ground Truth Run",
+            options=gt_folders,
+            help="Choose a ground truth run directory"
+        )
+    else:
+        st.sidebar.warning("No ground truth folders found in 'ground_truth/'")
+        gt_folder = st.sidebar.text_input(
+            "Ground Truth Folder Path",
+            value="ground_truth/run_20251104_155341",
+            help="Enter the path manually"
+        )
 
     # Model results folder selection
     st.sidebar.subheader("Model Results Run")
-    results_folder = st.sidebar.text_input(
-        "Results Folder Path",
-        value="results/run_20251105_120620",
-        help="Enter the path to the model results run directory"
-    )
+    results_folders = get_available_folders("results")
+
+    if results_folders:
+        results_folder = st.sidebar.selectbox(
+            "Select Results Run",
+            options=results_folders,
+            help="Choose a results run directory"
+        )
+    else:
+        st.sidebar.warning("No results folders found in 'results/'")
+        results_folder = st.sidebar.text_input(
+            "Results Folder Path",
+            value="results/run_20251105_120620",
+            help="Enter the path manually"
+        )
 
     # Validate folders exist
     if not gt_folder or not results_folder:
@@ -443,7 +484,7 @@ def main():
     st.sidebar.subheader("Navigation")
     view_mode = st.sidebar.radio(
         "Select View",
-        options=["📊 Table Comparison", "📈 Visual Comparison Ground Truth", "🔄 Model vs Model", "🎯 Structure Quality"],
+        options=["📊 Table Comparison", "📈 Visual Comparison Ground Truth", "🔄 Visual Comparison Model vs Model", "🎯 Structure Quality"],
         help="Choose between aggregate table view, ground truth comparison, model-to-model comparison, or structure quality analysis"
     )
 
@@ -756,7 +797,7 @@ def main():
         # STRUCTURE QUALITY TAB
         render_structure_quality_tab(results_folder)
 
-    elif view_mode == "🔄 Model vs Model":
+    elif view_mode == "🔄 Visual Comparison Model vs Model":
         # MODEL VS MODEL COMPARISON TAB
         render_model_vs_model_tab(ftp, results_folder, selected_workout_desc, workout_options, available_models)
 
